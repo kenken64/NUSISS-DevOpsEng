@@ -532,9 +532,97 @@ sudo docker build -t kenken64/backend .
 sudo docker run kenken64/backend
 ```
 
-## Container port forwarding
+## Container port forwarding and specify working directory
 
 1. Forward outside host port to the container 
 ```
 sudo docker run -p 8080:3000 kenken64/backend
+```
+
+2. We can export the container port and map a different port number from
+the host server
+```
+# small and compact as possible
+from node:alpine
+
+WORKDIR /usr/app
+
+COPY ./ ./
+RUN npm install
+EXPOSE 3000/tcp
+CMD ["npm", "start"]
+```
+
+3. rebuild the image 
+```
+sudo docker build -t kenken64/backend .
+```
+
+4. Start the newly build image 
+```
+sudo docker run -p 8080:3000/tcp kenken64/backend
+```
+
+## Optimize for unnecessary rebuild
+
+Mapping volume from the container to the outside file system 
+
+```
+sudo docker run -p 8080:3000 -v /usr/app/node_modules -v $(pwd):/usr/app kenken64/backend
+```
+
+## Multiple container setup
+1. Download the visits project
+2. cd visits project
+3. Create a dockefile on the visits project
+```
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+run npm install
+COPY . .
+
+CMD ["npm", "start"]
+```
+4. Build a docker image
+```
+sudo docker build -t kenken64/visits:latest .
+```
+
+5. Start a separate container running redis server
+```
+sudo docker run redis
+```
+
+6. Run the docker image as container
+```
+sudo docker run -p 8081:8081/tcp kenken64/visits:latest
+```
+
+## Deep dive with docker compose
+1. Create a docker-compose.yml , spawn two separate containers
+
+```
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    build: .
+    ports:
+      - "4001:8081"
+```
+
+2. Just define docker-compose , docker engine automatically put two container on the same network
+
+An argument -d is sent to background
+```
+docker-compose up -d
+```
+
+3. Shutdown the docker compose containers
+```
+docker-compose down
 ```
