@@ -1,0 +1,21 @@
+<div class="container">      
+    <div class="row">
+    <br>
+    <a href="/show-newQuizform" class="btn btn-primary"><ion-icon name="add"></ion-icon></a>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Question</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        {{#each quizes}} 
+          <tr>
+            <td>{{this.question}}</td>
+            <td><a href="/show-EditQuiz/{{this._id}}"><i class="icon ion-md-save"></i></a></td>
+            <td><a href="/show-DeleteQuiz/{{this._id}}"><i class="icon ion-md-trash"></i></a></td> 
+          </tr>          
+       {{/each}}   
+      </table>
+    </div>
+</div>

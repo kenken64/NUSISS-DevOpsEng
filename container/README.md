@@ -346,3 +346,195 @@ bunnyppl@instance-1:~$ sudo docker exec 3e00723f6add redis-cli
 bunnyppl@instance-1:~$
 ```
 
+How to launch a shell without keep using exec / debugging inside the container
+
+```
+sudo docker exec -it 3e00723f6add sh
+```
+
+What is a sh ? shell prompt command processor.
+
+Container do not automatically share each others file system
+
+First terminal
+```
+sudo docker run -it busybox sh
+```
+
+Second terminal
+```
+sudo docker run -it busybox sh
+```
+
+On the first terminal
+```
+touch nusiss.txt
+vi nusiss.txt
+Kennet is here !
+```
+
+On the second terminal, the nusiss.txt won't appear on the second instance
+```
+ls -lrt
+```
+
+## Create our own custom image, start our own custom container
+
+1. Create a working directory 
+```
+mkdir redis-image
+```
+
+2. Change to the working directory
+```
+cd redis-image
+```
+
+3. Create a Dockerfile 
+```
+# Use an existing docker image as a base
+FROM alpine
+# Download and install all the dependencies
+RUN apk add --update redis
+# Tell the image what to do when it start as a container
+CMD ["redis-server"]
+```
+
+4. Build the docker image
+```
+sudo docker build .
+```
+
+```
+Step 1/3 : FROM alpine
+latest: Pulling from library/alpine
+bdf0201b3a05: Pull complete 
+Digest: sha256:28ef97b8686a0b5399129e9b763d5b7e5ff03576aa5580d6f4182a49c5f
+e1913
+Status: Downloaded newer image for alpine:latest
+ ---> cdf98d1859c1
+Step 2/3 : RUN apk add --update redis
+ ---> Running in b24d1d4ac4d4
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.g
+z
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.
+tar.gz
+(1/1) Installing redis (4.0.12-r0)
+Executing redis-4.0.12-r0.pre-install
+Executing redis-4.0.12-r0.post-install
+Executing busybox-1.29.3-r10.trigger
+OK: 7 MiB in 15 packages
+Removing intermediate container b24d1d4ac4d4
+ ---> 4c10182a4a9d
+Step 3/3 : CMD ["redis-server"]
+ ---> Running in 260af2f27436
+Removing intermediate container 260af2f27436
+ ---> aaca4a7419f6
+Successfully built aaca4a7419f6
+```
+
+5. Run the custom image as container
+
+```
+sudo docker run aaca4a7419f6
+```
+
+6. Explain the Dockerfile line by line
+
+## Rebuild with Cache
+
+New image id is generated everytime
+
+```
+# Use an existing docker image as a base
+FROM alpine
+# Download and install all the dependencies
+RUN apk add --update redis
+RUN apk add --update gcc
+# Tell the image what to do when it start as a container
+CMD ["redis-server"]
+```
+
+```
+# Use an existing docker image as a base
+FROM alpine
+# Download and install all the dependencies
+RUN apk add --update gcc
+RUN apk add --update redis
+
+# Tell the image what to do when it start as a container
+CMD ["redis-server"]
+```
+
+## Tagging an Image
+
+Naming convention for tagging an image dockerId/project-name/version
+```
+sudo docker build -t kenken64/redis/latest .
+```
+
+## Manual create and image using commit
+```
+sudo docker run -it alpine sh
+apk add --update redis
+sudo docker ps
+sudo docker commit -c 'CMD ["redis-server"]' aaca4a7419f6
+sudo docker run aaca4a7419f4
+```
+
+## Dockerize your Real World Project
+
+1. Create a Dockerfile on the NodeJS application
+
+```
+# small and compact as possible
+from node:alpine
+
+RUN npm install
+
+CMD ["npm", "start"]
+```
+
+2. rebuild the docker image 
+```
+sudo docker build .
+```
+
+```
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+```
+
+3. Inside the container , npm not finding the package.json
+
+```
+# small and compact as possible
+from node:alpine
+COPY ./ ./
+RUN npm install
+
+CMD ["npm", "start"]
+```
+
+4. Rebuild the image with tag
+
+```
+sudo docker build -t kenken64/backend .
+```
+
+5.  Run the tagged image 
+```
+sudo docker run kenken64/backend
+```
+
+## Container port forwarding
+
+1. Forward outside host port to the container 
+```
+sudo docker run -p 8080:3000 kenken64/backend
+```

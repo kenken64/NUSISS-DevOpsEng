@@ -1,0 +1,26 @@
+{
+  "name": "acd-sample-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest -c test/jest.config.js",
+    "test:new": "jest -c test/jest.new.config.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "hbs": "^4.0.1",
+    "mongodb": "^3.1.10",
+    "prompt": "^1.0.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-puppeteer": "^3.5.2",
+    "puppeteer": "^1.10.0"
+  }
+}

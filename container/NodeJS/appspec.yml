@@ -1,0 +1,25 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ubuntu/acdsampleapp
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      runas: ubuntu
+  ApplicationStop:
+    - location: scripts/stopServer.sh
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/startServer.sh
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/validate.sh
+      runas: ubuntu
