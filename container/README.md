@@ -126,7 +126,13 @@ bunnyppl@instance-1:~$ sudo docker run hello-world ls
 docker: Error response from daemon: OCI runtime create failed: container_linux.go:345: starting container process caused "exec: \"ls\": executable file not found in $PATH": unknown.
 ```
 
-### List all the images on Docker
+### List all the images on Docker Engine
+
+```
+docker images
+```
+
+### List all the container on Docker Engine
 ```
 docker ps
 ```
@@ -626,3 +632,89 @@ docker-compose up -d
 ```
 docker-compose down
 ```
+
+## Automatic container restart after crashes
+
+1. Simulate crash on the index.js of the visits project
+
+```
+const express = require('express');
+const redis = require('redis');
+const process = require('process');
+
+const app = express();
+const client = redis.createClient({
+  host: 'redis-server',
+  port: 6379
+});
+client.set('visits', 0);
+
+app.get('/', (req, res) => {
+  // simulate crash
+  process.exit(0);
+  client.get('visits', (err, visits) => {
+    res.send('Number of visits is ' + visits);
+    client.set('visits', parseInt(visits) + 1);
+  });
+});
+
+app.listen(8081, () => {
+  console.log('Listening on port 8081');
+});
+```
+
+2. Startup and rebuild the docker compose
+```
+docker-compose up --build
+```
+
+3. Launch web browser, access the web app via http://localhost:4001. Notice the logs indicated process crashed.
+
+4. Check the current process of the container
+```
+docker ps
+```
+
+5. Amend your docker-compose yml to have the policy restart always
+
+```
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always
+    build: .
+    ports:
+      - "4001:8081"
+```
+
+6. Re-startup the container and acess the app on the web browser
+```
+docker-compose up
+```
+7. Change the policy of the docker compose to on
+
+```
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: on-failure
+    build: .
+    ports:
+      - "4001:8081"
+```
+
+8. What is unless-stopped is forceful by developer on the command prompt
+
+## How to check the docker compose status
+
+Different is only show containers for the current project yml file.
+
+```
+docker-compose ps
+```
+
+## Deploy container CDCI to AWS Elastic Beanstack
