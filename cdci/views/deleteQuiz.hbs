@@ -1,0 +1,35 @@
+<div class="container">
+    
+    <br />
+    <form action="/deleteQuiz" method="POST">
+        <input type="hidden" id="id" name="id" value="{{deleteQuiz.id}}"/>
+        <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" class="form-control" id="question" name="question" aria-describedby="questionHelp" value="{{deleteQuiz.question}}" disabled="true" placeholder="Enter question">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Answers</label>
+        </div>
+        <div class="form-group">
+            <label for="answer1">A.</label>
+            <input type="text" class="form-control" id="answer1" name="answer1" placeholder="Answer" disabled="true" value="{{deleteQuiz.answer1}}">
+        </div>
+       <div class="form-group">
+            <label for="answer2">B.</label>
+            <input type="text" class="form-control" id="answer2" name="answer2" placeholder="Answer" disabled="true" value="{{deleteQuiz.answer2}}">
+        </div>
+        <div class="form-group">
+            <label for="answer3">C.</label>
+            <input type="text" class="form-control" id="answer3" name="answer3" placeholder="Answer" disabled="true" value="{{deleteQuiz.answer3}}">
+        </div>
+        <div class="form-group">
+            <label for="answer4">D.</label>
+            <input type="text" class="form-control" id="answer4" name="answer4" placeholder="Answer" disabled="true" value="{{deleteQuiz.answer4}}">
+        </div>
+        <div class="form-group">
+            <label for="correctAnswer">Correct Answer</label>
+            <input type="text" class="form-control" id="correctAnswer" name="correctAnswer" placeholder="Correct Answer" disabled="true" value="{{deleteQuiz.correctAnswer}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+</div>
