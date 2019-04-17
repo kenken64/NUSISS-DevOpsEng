@@ -718,8 +718,22 @@ docker-compose ps
 ```
 
 ## Deploy container CDCI to AWS Elastic Beanstack
-1. Create a Dockerfile.dev under the React App
+1. Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
+FROM node:alpine
 
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm installl
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+```
+
+2. Build the docker image
+```
+sudo docker build -f Dockerfile.dev -t kenken64/react-app
 ```
