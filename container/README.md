@@ -717,7 +717,7 @@ Different is only show containers for the current project yml file.
 docker-compose ps
 ```
 
-## Deploy container CDCI to AWS Elastic Beanstack
+## WORKSHOP - Deploy container CDCI to AWS Elastic Beanstack
 1. Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
@@ -747,6 +747,9 @@ sudo docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-
 4. Download ngrok since the react app doesn't have SSL installed
 
 ```
+chmod +x ngrok
 ./ngrok authtoken KuTKRosrawrDMAgX1ayq_7AAmsVSom4E6GtT18S1pn
 ./ngrok http 3000
 ```
+
+5. Use web browser to access the generated ngrok address from the terminal

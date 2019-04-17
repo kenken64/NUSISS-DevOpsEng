@@ -73,7 +73,7 @@ class App extends Component {
               }
             />
             <ReactFlagsSelect
-                countries={["US", "GB", "CN"]} defaultCountry="US"
+                countries={["US", "GB", "CN", "MY"]} defaultCountry="US"
                 onSelect={this.onSelectFlag}/>
         </header>
         
