@@ -753,3 +753,9 @@ chmod +x ngrok
 ```
 
 5. Use web browser to access the generated ngrok address from the terminal
+
+6. Create a docker-compose.yml 
+
+```
+
+```
