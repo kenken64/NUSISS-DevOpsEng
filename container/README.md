@@ -726,7 +726,7 @@ FROM node:alpine
 WORKDIR '/app'
 
 COPY package.json .
-RUN npm installl
+RUN npm install
 
 COPY . .
 
