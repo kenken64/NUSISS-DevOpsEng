@@ -756,7 +756,8 @@ chmod +x ngrok
 
 6. Create a docker-compose.yml 
 
-```version: '3'
+```
+version: '3'
 services:
     web:
       build: 
@@ -776,7 +777,21 @@ sudo docker-compose up --build
 ```
 
 8. Implement test on separate container
-
+```
+sudo docker exec -it 87b898a5cc64 npm run test
 ```
 
+Add second service in the docker compose yml file
+```
+version: '3'
+services:
+    web:
+      build: 
+        context: .
+        dockerfile: Dockerfile.dev
+      ports:
+        - "3000:3000"
+      volumes:
+        - /app/node_modules
+        - .:/app
 ```
