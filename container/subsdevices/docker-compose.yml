@@ -1,4 +1,4 @@
-VERSION: '3'
+VERSION: 3
 services:
     web:
       build: 
