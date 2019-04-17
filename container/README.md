@@ -756,6 +756,27 @@ chmod +x ngrok
 
 6. Create a docker-compose.yml 
 
+```version: '3'
+services:
+    web:
+      build: 
+        context: .
+        dockerfile: Dockerfile.dev
+      ports:
+        - "3000:3000"
+      volumes:
+        - /app/node_modules
+        - .:/app
+```
+
+
+7. Start the docker container using docker-compose
+```
+sudo docker-compose up --build
+```
+
+8. Implement test on separate container
+
 ```
 
 ```
