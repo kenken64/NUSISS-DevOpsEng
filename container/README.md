@@ -737,3 +737,16 @@ CMD ["npm", "run", "start"]
 ```
 sudo docker build -f Dockerfile.dev -t kenken64/react-app
 ```
+
+3. Run the docker image as container with port forward and volume mounting
+
+```
+sudo docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
+```
+
+4. Download ngrok since the react app doesn't have SSL installed
+
+```
+./ngrok authtoken KuTKRosrawrDMAgX1ayq_7AAmsVSom4E6GtT18S1pn
+./ngrok http 3000
+```
