@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.text { 
+  position: relative;
+  display: inline-block;
+  font-family: Monaco, Arial, Helvetica, sans-serif;
+  line-height: 60px;
+  font-size: 60px;
+  color: white;
+  min-width: 360px;
+}
+
+.apply-font-size {
+  font-size: 100px;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #606060;
+  vertical-align: top;
+  width: 10px;
+  /* Set height to the line height of .text */
+  height: 60px;
+  /* 
+  Animation paramaters:
+  blink = animation-name, 
+  1s = animation-duration, 
+  step-end = animation-timing-function,
+  infinite = animation-iteration-count
+  */
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}

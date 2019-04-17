@@ -718,3 +718,8 @@ docker-compose ps
 ```
 
 ## Deploy container CDCI to AWS Elastic Beanstack
+1. Create a Dockerfile.dev under the React App
+
+```
+
+```

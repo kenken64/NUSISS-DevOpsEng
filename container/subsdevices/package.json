@@ -1,0 +1,36 @@
+{
+  "name": "subs-device",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://kenken64.github.io/subdevice/",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "font-picker": "^3.0.2",
+    "font-picker-react": "^3.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-flags-select": "^1.1.10",
+    "react-scripts": "2.1.8",
+    "react-speech-recognition": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
