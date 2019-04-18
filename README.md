@@ -1,5 +1,5 @@
 
-![alt text](./docker.png =200x100"docker")
+![alt text](./docker.png){:height="500px" width="400px"}
 # [Container Management - Docker](./container/README.md)
 
 ![alt text](./puppet.png =200x100"puppet")
