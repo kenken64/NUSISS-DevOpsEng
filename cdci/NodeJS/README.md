@@ -1,4 +1,4 @@
-## Agile Continous Delivery Sample App
+## Agile Continous Delivery Web Application
 
 * Jenkins Hosted on AWS : http://ec2-13-251-81-39.ap-southeast-1.compute.amazonaws.com
     * username: user
@@ -78,7 +78,12 @@ sudo gdebi google-chrome-stable_current_amd64.deb
 ## Test ACD Sample App
 * Working on the acd sample app Github repo. Checkout the source codes from github
 ```
-git clone https://github.com/kenken64/acd-sample-app
+git clone https://github.com/kenken64/acd-sample-app 
+```
+or use the copy on this repo
+
+```
+./cdci/NodeJS/
 ```
 
 * Install Node JS dependencies
