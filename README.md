@@ -2,4 +2,4 @@
 
 [Configuration Management - Puppet](./puppet/README.md)
 
-[CD/CI](./cdci/README.md)
+[CD/CI](./cdci/NodeJS/README.md)

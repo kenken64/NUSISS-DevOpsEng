@@ -781,7 +781,7 @@ sudo docker-compose up --build
 sudo docker exec -it 87b898a5cc64 npm run test
 ```
 
-Add second service in the docker compose yml file
+Add test service in the docker compose yml file
 ```
 version: '3'
 services:
@@ -794,4 +794,16 @@ services:
       volumes:
         - /app/node_modules
         - .:/app
+    test:
+      build:
+        context: .
+        dockerfile: Dockerfile.dev
+      volumes:
+          - /app/node_modules
+          - .:/app
+      command: ["npm", "run", "test"]
+```
+9. Start the docker container using docker-compose
+```
+sudo docker-compose up --build
 ```
