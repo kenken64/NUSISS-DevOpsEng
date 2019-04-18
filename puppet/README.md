@@ -59,3 +59,21 @@ ping nusiss.puppetslave2.edu.sg
 ping nusiss.puppetmaster.edu.sg
 
 ```
+
+6. Make sure all the packages within the Ubuntu is up to date
+
+```
+sudo apt-get update
+```
+
+7. On the puppet master host install the master software
+
+```
+sudo apt-get install puppetmaster -y
+```
+
+8. On both the slave install the puppet agent software, puppetslave1 and puppetslave2
+
+```
+sudo apt-get install puppet -y
+```
