@@ -717,6 +717,51 @@ Different is only show containers for the current project yml file.
 docker-compose ps
 ```
 
+## Publish your own Docker Image to the DockerHub repo
+
+1. Login to docker hub through the CLI
+```
+bunnyppl@instance-1:~/NUSISS-DevOpsEng/container/subsdevices$ sudo docker login
+```
+```
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: kenken64
+Password: 
+WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
+
+2. Retrieve the docker Id from cli
+
+```
+sudo docker images
+```
+
+3. Tag the image 
+```
+sudo docker tag d8b928587243 kenken64/subsdevices:v1       
+```
+
+4. Push the tagged image to the docker hub
+```
+sudo docker push kenken64/subsdevices:v1
+```
+
+```
+The push refers to repository [docker.io/kenken64/subsdevices]
+82674fe9a8e6: Pushed 
+6f5e00ced6e0: Pushed 
+86865100bc00: Pushed 
+7e93be41b55d: Pushed 
+1c07e18a989b: Mounted from library/node 
+b92d384cdf06: Mounted from library/node 
+a464c54f93a9: Mounted from library/node 
+v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
+```
+
 ## WORKSHOP - Deploy container CDCI to AWS Elastic Beanstack
 1. Create a Dockerfile.dev under the React App (subsdevices)
 
@@ -822,7 +867,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 ```
 
@@ -838,47 +883,66 @@ sudo docker build .
 sudo docker run -p 8080:80 936ca285e822
 ```
 
-## Publish your own Docker Image to the DockerHub repo
-
-1. Login to docker hub through the CLI
-```
-bunnyppl@instance-1:~/NUSISS-DevOpsEng/container/subsdevices$ sudo docker login
-```
-```
-Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
-Username: kenken64
-Password: 
-WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
-Configure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-Login Succeeded
-```
-
-2. Retrieve the docker Id from cli
+13. Use ngrok to tunnel due to we do not have domain name, take the generated domain name and test it on the web browser
 
 ```
-sudo docker images
+./ngrok http 8080
 ```
 
-3. Tag the image 
-```
-sudo docker tag d8b928587243 kenken64/subsdevices:v1       
-```
-
-4. Push the tagged image to the docker hub
-```
-sudo docker push kenken64/subsdevices:v1
-```
+14 Let's integrate with the travis CI with AWS elastic beanstalk, create a .travis.yml
 
 ```
-The push refers to repository [docker.io/kenken64/subsdevices]
-82674fe9a8e6: Pushed 
-6f5e00ced6e0: Pushed 
-86865100bc00: Pushed 
-7e93be41b55d: Pushed 
-1c07e18a989b: Mounted from library/node 
-b92d384cdf06: Mounted from library/node 
-a464c54f93a9: Mounted from library/node 
-v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
+sudo: required
+services:
+  - docker
+
+before install:
+  - docker build -t kenken64/subsdevices:v1 -f Dockerfile.dev .
+
+script: 
+  - docker run kenken64/subsdevices:v1 npm run test -- --coverage
 ```
+
+15. Login into travis CI dashboard and monitor the successful build
+
+16. Login into AWS account and create a elastic beanstalk instance
+Watch the below video
+
+https://youtu.be/L01gk757pq4
+https://youtu.be/vJG-4J2cp0s
+https://youtu.be/vz2Y8LvcdHw
+https://youtu.be/XUfBsttJnbA
+
+- Make sure the region is singapore
+- Deployment type is Docker 
+- Source code is Sample application
+- Wait for awhile to make sure the setup is done.
+
+17. Amend the .travis.yml with additional deployment
+
+```
+sudo: required
+services:
+  - docker
+
+before install:
+  - docker build -t kenken64/subsdevices:v1 -f Dockerfile.dev .
+
+script: 
+  - docker run kenken64/subsdevices:v1 npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-subdevices"
+  env: "DockerSubdevices-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-200097394821"
+  bucket_path: "docker-subdevices"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
+```
+
+18. Git add, commit and push to the github repo that is configure with travis CI

@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before install:
+  - docker build -t kenken64/subsdevices:v1 -f Dockerfile.dev .
+
+script: 
+  - docker run kenken64/subsdevices:v1 npm run test -- --coverage
+
+deploy:
+  provider: eslaticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-subdevices"
+  env: "DockerSubdevices-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-200097394821"
+  bucket_path: "docker-subdevices"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
