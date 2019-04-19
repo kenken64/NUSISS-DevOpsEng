@@ -832,6 +832,12 @@ COPY --from=builder /app/build /usr/share/nginx/html
 sudo docker build .
 ```
 
+12. Start the multi phase container setup and expose the port
+
+```
+sudo docker run -p 8080:80 936ca285e822
+```
+
 ## Publish your own Docker Image to the DockerHub repo
 
 1. Login to docker hub through the CLI

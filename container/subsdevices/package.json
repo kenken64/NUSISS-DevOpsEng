@@ -2,7 +2,7 @@
   "name": "subs-device",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kenken64.github.io/subdevice/",
+  "homepage": ".",
   "dependencies": {
     "classnames": "^2.2.6",
     "font-picker": "^3.0.2",
