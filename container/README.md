@@ -762,7 +762,7 @@ a464c54f93a9: Mounted from library/node
 v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
 ```
 
-## WORKSHOP - Deploy container CDCI to AWS Elastic Beanstack
+## WORKSHOP - Deploy docker container via CDCI to AWS Elastic Beanstalk
 1. Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
