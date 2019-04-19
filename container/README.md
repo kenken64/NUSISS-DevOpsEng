@@ -808,6 +808,9 @@ services:
 sudo docker-compose up --build
 ```
 
+10. Multi step build process, different base images
+
+
 ## Publish your own Docker Image to the DockerHub repo
 
 1. Login to docker hub through the CLI
