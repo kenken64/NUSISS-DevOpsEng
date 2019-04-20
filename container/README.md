@@ -1,3 +1,14 @@
+<img src="./images/img1.png" width="500" height="300">
+
+<img src="./images/img2.png" width="500" height="300">
+
+
+<img src="./images/img3.png" width="500" height="300">
+
+
+<img src="./images/img4.png" width="500" height="300">
+
+
 ## Install Docker on Google Cloud Engine/AWS
 
 1. Update Ubuntu/Debian package manager's index
@@ -44,10 +55,14 @@ sudo add-apt-repository \
 sudo apt-get install docker-ce docker-ce-cli containerd.io
  ```
 
+<img src="./images/img5.png" width="400" height="200">
+
+
  8. Test hello world 
  ```
  sudo docker run hello-world
  ```
+
 
 ## Installing Docker Compose
 
@@ -108,6 +123,12 @@ Server: Docker Engine - Community
 ```
 
 ### Override defaults command parameters
+
+<img src="./images/img6.png" width="500" height="300">
+
+<img src="./images/img7.png" width="500" height="300">
+
+
 ```
 sudo docker run busybox echo are you ok?
 ```
@@ -161,6 +182,10 @@ c8ae6686b9a4        hello-world         "/hello"                26 minutes ago  
 ```
 
 ## Container Lifecycle
+
+<img src="./images/img8.png" width="400" height="200">
+
+<img src="./images/img9.png" width="400" height="200">
 
 Create docker image
 
@@ -246,6 +271,16 @@ hi there
 ```
 
 ### Stopping vs Killing container
+
+<img src="./images/img10.png" width="400" height="200">
+
+<img src="./images/img11.png" width="400" height="200">
+
+<img src="./images/img12.png" width="400" height="200">
+
+<img src="./images/img13.png" width="400" height="200">
+
+<img src="./images/img14.png" width="400" height="200">
 
 10 seconds to shutdown with stop then it will fallback to kill 
 
@@ -677,6 +712,9 @@ docker ps
 
 5. Amend your docker-compose yml to have the policy restart always
 
+<img src="./images/img15.png" width="400" height="200">
+
+
 ```
 version: '3'
 services:
@@ -763,6 +801,11 @@ v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1
 ```
 
 ## WORKSHOP - Deploy docker container via CDCI to AWS Elastic Beanstalk
+
+<img src="./images/img16.png" width="400" height="200">
+
+<img src="./images/img17.png" width="400" height="200">
+
 1. Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
@@ -891,6 +934,13 @@ sudo docker run -p 8080:80 936ca285e822
 
 14 Let's integrate with the travis CI with AWS elastic beanstalk, create a .travis.yml
 
+<img src="./images/img18.png" width="400" height="200">
+
+<img src="./images/img19.png" width="400" height="200">
+
+<img src="./images/img20.png" width="400" height="200">
+
+
 ```
 sudo: required
 services:
@@ -946,3 +996,21 @@ deploy:
 ```
 
 18. Git add, commit and push to the github repo that is configure with travis CI
+
+<img src="./images/img21.png" width="400" height="200">
+
+<img src="./images/img22.png" width="400" height="200">
+
+<img src="./images/img23.png" width="400" height="200">
+
+<img src="./images/img21.png" width="400" height="200">
+
+<img src="./images/img22.png" width="400" height="200">
+
+<img src="./images/img23.png" width="400" height="200">
+
+<img src="./images/img24.png" width="400" height="200">
+
+<img src="./images/img25.png" width="500" height="200">
+
+<img src="./images/img26.png" width="400" height="200">
