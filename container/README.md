@@ -6,7 +6,7 @@
 <img src="./images/img3.png" width="500" height="300">
 
 
-<img src="./images/img4.png" width="500" height="300">
+<img src="./images/img4.png" width="500" height="400">
 
 
 ## Install Docker on Google Cloud Engine/AWS
