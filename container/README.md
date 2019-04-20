@@ -66,7 +66,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ## Installing Docker Compose
 
-Unlike the Mac and Windows Docker Desktop versions, we must manually install Docker Compose. See the instructions for the installation steps (Click on the tab for Linux)
+Unlike the Mac and Windows Docker Desktop versions, we must manually install Docker Compose. See the instructions for the installation steps (Click on the link below for Linux)
 
 https://docs.docker.com/compose/install/#install-compose
 
