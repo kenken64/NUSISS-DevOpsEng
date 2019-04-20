@@ -959,8 +959,11 @@ script:
 Watch the below video
 
 https://youtu.be/L01gk757pq4
+
 https://youtu.be/vJG-4J2cp0s
+
 https://youtu.be/vz2Y8LvcdHw
+
 https://youtu.be/XUfBsttJnbA
 
 - Make sure the region is singapore
