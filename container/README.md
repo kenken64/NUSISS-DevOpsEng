@@ -938,11 +938,10 @@ sudo docker run -p 8080:80 936ca285e822
 
 14 Let's integrate with the travis CI with AWS elastic beanstalk, create a .travis.yml
 
-<img src="./images/img18.png" width="600" height="400">
-
+<img src="./images/img18.png">
 <img src="./images/img19.png" width="600" height="400">
 
-<img src="./images/img20.png" width="600" height="400">
+<img src="./images/img20.png">
 
 
 ```
@@ -1004,20 +1003,20 @@ deploy:
 
 18. Git add, commit and push to the github repo that is configure with travis CI
 
-<img src="./images/img21.png" width="400" height="200">
+<img src="./images/img21.png" >
+<br>
+<img src="./images/img22.png" >
+<br>
+<img src="./images/img23.png">
 
-<img src="./images/img22.png" width="400" height="200">
+<img src="./images/img21.png">
 
-<img src="./images/img23.png" width="400" height="200">
+<img src="./images/img22.png">
 
-<img src="./images/img21.png" width="400" height="200">
+<img src="./images/img23.png">
 
-<img src="./images/img22.png" width="400" height="200">
+<img src="./images/img24.png">
 
-<img src="./images/img23.png" width="400" height="200">
+<img src="./images/img25.png">
 
-<img src="./images/img24.png" width="400" height="200">
-
-<img src="./images/img25.png" width="500" height="200">
-
-<img src="./images/img26.png" width="400" height="200">
+<img src="./images/img26.png">
