@@ -73,7 +73,9 @@ nusiss.puppetmaster.edu.sg
 
 12. Send certificate from agent to the master 
 
-Agent 
+<br>
+
+## Agent 
 
 <img src="./images/puppet13.png" width="800" height="300">
 
