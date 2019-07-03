@@ -52,58 +52,31 @@
 nusiss.puppetmaster.edu.sg
 
 <img src="./images/puppet8.png" width="800" height="500">
-```
-sudo service puppetmaster status
 
-● puppetmaster.service - Puppet master
-   Loaded: loaded (/lib/systemd/system/puppetmaster.service; enabled; vendo
-   Active: active (running) since Thu 2019-04-18 07:57:04 UTC; 2min 59s ago
- Main PID: 4569 (puppet)
-   CGroup: /system.slice/puppetmaster.service
-           └─4569 /usr/bin/ruby /usr/bin/puppet master
-
-Apr 18 07:57:01 master-puppet systemd[1]: Starting Puppet master...
-Apr 18 07:57:03 master-puppet puppet-master[4543]: Signed certificate reque
-Apr 18 07:57:04 master-puppet puppet-master[4543]: master-puppet.asia-south
-Apr 18 07:57:04 master-puppet puppet-master[4543]: Signed certificate reque
-Apr 18 07:57:04 master-puppet puppet-master[4543]: Removing file Puppet::SS
-Apr 18 07:57:04 master-puppet puppet-master[4543]: Removing file Puppet::SS
-Apr 18 07:57:04 master-puppet puppet-master[4569]: Reopening log files
-Apr 18 07:57:04 master-puppet puppet-master[4569]: Starting Puppet master v
-Apr 18 07:57:04 master-puppet systemd[1]: Started Puppet master.
-```
 
 10. On the slave instance, check both the service of the agent is up
 
-```
-sudo service puppet status
-```
+<img src="./images/puppet9.png" width="600" height="300">
 
 11. Configure both agent to be aware of the master node
 
-```
-sudo nano /etc/puppet/puppet.conf
-```
 
-```
-[agent]
-server=nusiss.puppetmaster.edu.sg
-runinterval=5s
-```
+<img src="./images/puppet10.png" width="600" height="300">
 
-Restart both the agents
+<img src="./images/puppet11.png" width="600" height="300">
 
-```
-sudo service puppet restart
-```
+
+## Restart both the puppet agents
+
+<img src="./images/puppet12.png" width="600" height="300">
 
 
 12. Send certificate from agent to the master 
 
 Agent 
-```
-sudo puppet agent --no-daemonize --onetime --verbose
-```
+
+<img src="./images/puppet13.png" width="800" height="300">
+
 
 Over the master side sign the request certificate
 
