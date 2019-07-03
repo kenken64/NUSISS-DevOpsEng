@@ -36,24 +36,22 @@
 6. Make sure all the packages within the Ubuntu is up to date
 
 <img src="./images/puppet5.png" width="400" height="300">
-```
-sudo apt-get update
-```
+
 
 7. On the puppet master host install the master software
 
-```
-sudo apt-get install puppetmaster -y
-```
+<img src="./images/puppet6.png" width="400" height="300">
+
 
 8. On both the slave install the puppet agent software, puppetslave1 and puppetslave2
 
-```
-sudo apt-get install puppet -y
-```
+<img src="./images/puppet7.png" width="400" height="300">
+
 
 9. Check whether the puppet master service is up
 nusiss.puppetmaster.edu.sg
+
+<img src="./images/puppet8.png" width="800" height="400">
 ```
 sudo service puppetmaster status
 
