@@ -20,12 +20,12 @@
 
 ## Slave 1
 
-<img src="./images/puppet3.png" width="1024" height="480">
+<img src="./images/puppet3.png" width="800" height="480">
 
 
 ## Slave 2
 
-<img src="./images/puppet3.png" width="1024" height="480">
+<img src="./images/puppet3.png" width="800" height="480">
 
 
 5. Make sure all the instances about to ping each other
