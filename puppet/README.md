@@ -7,32 +7,16 @@
     slave 1 - nusiss.puppetslave1.edu.sg  
     slave 2 - nusiss.puppetslave2.edu.sg  
 
-```
-sudo -i
-hostname nusiss.puppetmaster.edu.sg
-```
+<img src="./images/puppet1.png" width="640" height="480">
 
-```
-sudo -i
-hostname nusiss.puppetslave1.edu.sg
-```
-
-```
-sudo -i
-hostname nusiss.puppetslave2.edu.sg
-```
 3. Exit and logout the system after changing hostname of all the 3 instances
 
 4. Lets fixed all the master and slave servers with their ip and hostname on the host file
 
     Master
 
-```
-sudo i
-echo 10.148.0.7 nusiss.puppetslave2.edu.sg >> /etc/hosts
-echo 10.148.0.5 nusiss.puppetslave1.edu.sg >> /etc/hosts
+<img src="./images/puppet2.png" width="640" height="480">
 
-````
 
     Slave 1
 
