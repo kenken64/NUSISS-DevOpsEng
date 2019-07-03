@@ -80,6 +80,7 @@ Agent
 
 Over the master side sign the request certificate
 
+<img src="./images/puppet14.png" width="800" height="300">
 ```
 sudo puppet cert list --all
 sudo puppet cert sign slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal
@@ -87,6 +88,7 @@ sudo puppet cert sign slave-2.asia-southeast1-b.c.door-sensor-app-237520.interna
 ```
 
 Agent 
+<img src="./images/puppet15.png" width="800" height="300">
 ```
 sudo puppet agent --enable
 sudo puppet agent server nusiss.puppetmaster.edu.sg
@@ -94,10 +96,13 @@ sudo puppet agent server nusiss.puppetmaster.edu.sg
 
 13 Preapre and validate manifest for the installation of software that do not happens to be available on the agent instances
 
+<img src="./images/puppet16.png" width="800" height="300">
 ```
 cd /etc/puppet/manifests
 sudo nano site.pp
 ```
+
+<img src="./images/puppet17.png" width="800" height="300">
 ```
 node 'slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal', 'slave-2.asia-southeast1-b.c.door-sensor-app-237520.internal'
  package { 'htop':
@@ -108,18 +113,21 @@ node 'slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal', 'slave-2.asi
 ```
 
 Validate the pp configuration file
+<img src="./images/puppet20.png" width="800" height="300">
 ```
 sudo puppet parser validate site.pp
 ```
 
 14. To force the update on the agent side 
 
+<img src="./images/puppet18.png" width="800" height="300">
 ```
 sudo puppet agent -t
 ```
 
 15. By right all agents are configured with update interval of 5 secs.
 
+<img src="./images/puppet19.png" width="800" height="300">
 ```
 bunnyppl@nusiss:~$ htop
 -bash: /usr/bin/htop: No such file or directory
