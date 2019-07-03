@@ -1,6 +1,6 @@
 ## Docker Swarm
 
-* This workshop require student to install virtualbox windows or macos
+* This workshop require student to install Virtualbox on their host machine where the OS is either Windows 10/Macos
 
 ```
 brew cask install virtualbox
