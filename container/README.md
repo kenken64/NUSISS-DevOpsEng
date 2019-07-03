@@ -1000,11 +1000,11 @@ deploy:
 
 18. Git add, commit and push to the github repo that is configure with travis CI
 
-<img src="./images/img21.png" width="600" height="400">
+<img src="./images/img21.png" width="400" height="200">
 
-<img src="./images/img22.png" width="600" height="400">
+<img src="./images/img22.png" width="400" height="200">
 
-<img src="./images/img23.png" width="600" height="400">
+<img src="./images/img23.png" width="400" height="200">
 
 <img src="./images/img21.png" width="400" height="200">
 
