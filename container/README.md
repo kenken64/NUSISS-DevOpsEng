@@ -395,16 +395,18 @@ How to launch a shell without keep using exec / debugging inside the container
 sudo docker exec -it 3e00723f6add sh
 ```
 
-What is a sh ? shell prompt command processor.
+## What is a sh ? 
+
+Shell prompt command processor.
 
 Container do not automatically share each others file system
 
-First terminal
+### First terminal
 ```
 sudo docker run -it busybox sh
 ```
 
-Second terminal
+### Second terminal
 ```
 sudo docker run -it busybox sh
 ```
@@ -714,7 +716,7 @@ docker ps
 
 5. Amend your docker-compose yml to have the policy restart always
 
-<img src="./images/img15.png" width="400" height="200">
+<img src="./images/img15.png" width="600" height="300">
 
 
 ```
