@@ -102,7 +102,7 @@ cd /etc/puppet/manifests
 sudo nano site.pp
 ```
 
-<img src="./images/puppet17.png" width="800" height="300">
+<img src="./images/puppet17.png" width="500" height="300">
 ```
 node 'slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal', 'slave-2.asia-southeast1-b.c.door-sensor-app-237520.internal'
  package { 'htop':
@@ -113,21 +113,21 @@ node 'slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal', 'slave-2.asi
 ```
 
 Validate the pp configuration file
-<img src="./images/puppet20.png" width="800" height="300">
+<img src="./images/puppet20.png" width="500" height="300">
 ```
 sudo puppet parser validate site.pp
 ```
 
 14. To force the update on the agent side 
 
-<img src="./images/puppet18.png" width="800" height="300">
+<img src="./images/puppet18.png" width="500" height="300">
 ```
 sudo puppet agent -t
 ```
 
 15. By right all agents are configured with update interval of 5 secs.
 
-<img src="./images/puppet19.png" width="800" height="300">
+<img src="./images/puppet19.png" width="600" height="300">
 ```
 bunnyppl@nusiss:~$ htop
 -bash: /usr/bin/htop: No such file or directory
