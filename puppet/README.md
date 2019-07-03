@@ -13,39 +13,29 @@
 
 4. Lets fixed all the master and slave servers with their ip and hostname on the host file
 
-    Master
+## Master
 
 <img src="./images/puppet2.png" width="1024" height="480">
 
 
-    Slave 1
+## Slave 1
 
-```
-sudo i
-echo 10.148.0.4 nusiss.puppetmaster.edu.sg >> /etc/hosts
-
-````
+<img src="./images/puppet3.png" width="1024" height="480">
 
 
-    Slave 2
+## Slave 2
 
-```
-sudo i
-echo 10.148.0.4 nusiss.puppetmaster.edu.sg >> /etc/hosts
+<img src="./images/puppet3.png" width="1024" height="480">
 
-````
 
 5. Make sure all the instances about to ping each other
 
-```
-ping nusiss.puppetslave1.edu.sg
-ping nusiss.puppetslave2.edu.sg
-ping nusiss.puppetmaster.edu.sg
+<img src="./images/puppet4.png" width="1024" height="480">
 
-```
 
 6. Make sure all the packages within the Ubuntu is up to date
 
+<img src="./images/puppet5.png" width="1024" height="480">
 ```
 sudo apt-get update
 ```
