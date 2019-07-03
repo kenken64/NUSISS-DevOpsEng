@@ -82,8 +82,8 @@ Over the master side sign the request certificate
 
 <img src="./images/puppet14.png" width="800" height="300">
 
-
-Agent 
+<br>
+## Agent 
 <img src="./images/puppet15.png" width="800" height="300">
 
 13 Preapre and validate manifest for the installation of software that do not happens to be available on the agent instances
