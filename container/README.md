@@ -183,7 +183,7 @@ c8ae6686b9a4        hello-world         "/hello"                26 minutes ago  
 
 ## Container Lifecycle
 
-<img src="./images/img8.png" width="400" height="200">
+<img src="./images/img8.png" width="600" height="300">
 
 <img src="./images/img9.png" width="400" height="200">
 
