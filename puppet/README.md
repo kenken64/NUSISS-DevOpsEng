@@ -102,7 +102,7 @@ cd /etc/puppet/manifests
 sudo nano site.pp
 ```
 
-<img src="./images/puppet17.png" width="500" height="300">
+<img src="./images/puppet17.png" width="800" height="350">
 ```
 node 'slave-1.asia-southeast1-b.c.door-sensor-app-237520.internal', 'slave-2.asia-southeast1-b.c.door-sensor-app-237520.internal'
  package { 'htop':
