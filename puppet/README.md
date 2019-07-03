@@ -89,10 +89,11 @@ Agent
 13 Preapre and validate manifest for the installation of software that do not happens to be available on the agent instances
 
 <img src="./images/puppet16.png" width="500" height="300">
-
+<br>
 <img src="./images/puppet17.png" width="800" height="350">
-
+<br>
 Validate the pp configuration file
+
 <img src="./images/puppet20.png" width="500" height="300">
 
 14. To force the update on the agent side 
