@@ -11,12 +11,12 @@
 
 # [AWS CodeDeploy - CD/CI](./cdci/NodeJS/README.md)
 
+<img src="./dockerswarm.png" width="200" height="200">
+
+# [Docker Swarm](./container/swarm/README.md)
+
 # COMING SOON
 
 <img src="./Kubernetes.png" width="400" height="200">
 
 # [Kubernetes](./kubernetes/README.md)
-
-<img src="./dockerswarm.png" width="200" height="200">
-
-# [Docker Swarm](./container/dockerswarm/README.md)
