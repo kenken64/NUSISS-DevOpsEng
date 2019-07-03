@@ -45,7 +45,7 @@
 
 8. On both the slave install the puppet agent software, puppetslave1 and puppetslave2
 
-<img src="./images/puppet7.png" width="400" height="300">
+<img src="./images/puppet7.png" width="600" height="300">
 
 
 9. Check whether the puppet master service is up
