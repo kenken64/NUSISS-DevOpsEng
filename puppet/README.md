@@ -83,6 +83,7 @@ Over the master side sign the request certificate
 <img src="./images/puppet14.png" width="800" height="300">
 
 <br>
+
 ## Agent 
 <img src="./images/puppet15.png" width="800" height="300">
 
