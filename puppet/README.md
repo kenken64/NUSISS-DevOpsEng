@@ -40,7 +40,7 @@
 
 7. On the puppet master host install the master software
 
-<img src="./images/puppet6.png" width="400" height="300">
+<img src="./images/puppet6.png" width="600" height="300">
 
 
 8. On both the slave install the puppet agent software, puppetslave1 and puppetslave2
