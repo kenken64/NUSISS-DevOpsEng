@@ -30,7 +30,7 @@
 
 5. Make sure all the instances about to ping each other
 
-<img src="./images/puppet4.png" width="400" height="300">
+<img src="./images/puppet4.png" width="500" height="300">
 
 
 6. Make sure all the packages within the Ubuntu is up to date
