@@ -51,7 +51,7 @@
 9. Check whether the puppet master service is up
 nusiss.puppetmaster.edu.sg
 
-<img src="./images/puppet8.png" width="800" height="400">
+<img src="./images/puppet8.png" width="800" height="500">
 ```
 sudo service puppetmaster status
 
