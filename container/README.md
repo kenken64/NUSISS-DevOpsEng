@@ -272,15 +272,15 @@ hi there
 
 ### Stopping vs Killing container
 
-<img src="./images/img10.png" width="400" height="200">
+<img src="./images/img10.png" width="800" height="200">
 
-<img src="./images/img11.png" width="400" height="200">
+<img src="./images/img11.png" width="400" height="300">
 
-<img src="./images/img12.png" width="400" height="200">
+<img src="./images/img12.png" width="400" height="300">
 
-<img src="./images/img13.png" width="400" height="200">
+<img src="./images/img13.png" width="400" height="300">
 
-<img src="./images/img14.png" width="400" height="200">
+<img src="./images/img14.png" width="400" height="300">
 
 10 seconds to shutdown with stop then it will fallback to kill 
 
