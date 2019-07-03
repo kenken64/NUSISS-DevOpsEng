@@ -15,7 +15,7 @@
 
     Master
 
-<img src="./images/puppet2.png" width="640" height="480">
+<img src="./images/puppet2.png" width="1024" height="480">
 
 
     Slave 1
