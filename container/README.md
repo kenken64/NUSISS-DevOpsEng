@@ -72,7 +72,9 @@ https://docs.docker.com/compose/install/#install-compose
 
 After completing, test your installation:
 
+```
 docker-compose -v
+```
 
 This should print the version and build numbers to your console.
 
@@ -278,9 +280,9 @@ hi there
 
 <img src="./images/img12.png" width="400" height="300">
 
-<img src="./images/img13.png" width="400" height="300">
+<img src="./images/img13.png" width="800" height="400">
 
-<img src="./images/img14.png" width="400" height="300">
+<img src="./images/img14.png" width="800" height="300">
 
 10 seconds to shutdown with stop then it will fallback to kill 
 
