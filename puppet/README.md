@@ -96,7 +96,7 @@ sudo puppet agent server nusiss.puppetmaster.edu.sg
 
 13 Preapre and validate manifest for the installation of software that do not happens to be available on the agent instances
 
-<img src="./images/puppet16.png" width="800" height="300">
+<img src="./images/puppet16.png" width="500" height="300">
 ```
 cd /etc/puppet/manifests
 sudo nano site.pp
