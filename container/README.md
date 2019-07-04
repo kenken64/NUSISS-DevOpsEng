@@ -276,7 +276,7 @@ hi there
 
 ### Stopping vs Killing container
 
-<img src="./images/img10.png" width="800" height="200">
+<img src="./images/img10.png" width="800" height="300">
 
 <img src="./images/img11.png" width="400" height="300">
 
