@@ -189,7 +189,7 @@ c8ae6686b9a4        hello-world         "/hello"                26 minutes ago  
 
 <img src="./images/img8.png" width="900" height="150">
 
-<img src="./images/img9.png" width="400" height="200">
+<img src="./images/img9.png" width="500" height="300">
 
 Create docker image
 
