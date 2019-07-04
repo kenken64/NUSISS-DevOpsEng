@@ -3,7 +3,7 @@
 * This workshop require student to install Virtualbox on their host machine  the OS can be either Windows 10/Macos/Linux
 
 
-** MacOS users require to install brew (https://brew.sh/)
+* MacOS users require to install brew (https://brew.sh/)
 
 ```
 brew cask install virtualbox
