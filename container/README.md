@@ -963,13 +963,13 @@ script:
 16. Login into AWS account and create a elastic beanstalk instance
 Watch the below video
 
-* https://youtu.be/L01gk757pq4
+| Video URL        | Description           | 
+| ------------- |:-------------:| 
+| https://youtu.be/L01gk757pq4      | AWS - Create Elastic BeanStalk | 
+| https://youtu.be/vJG-4J2cp0s      | AWS - Create Elastic BeanStalk Part 2      | 
+| https://youtu.be/vz2Y8LvcdHw | Configure IAM for Travis CI with Elastic Beanstalk      | 
+| https://youtu.be/XUfBsttJnbA | Configure env variable @ Travis CI      | 
 
-* https://youtu.be/vJG-4J2cp0s
-
-* https://youtu.be/vz2Y8LvcdHw
-
-* https://youtu.be/XUfBsttJnbA
 
 - Make sure the region is singapore
 - Deployment type is Docker 
