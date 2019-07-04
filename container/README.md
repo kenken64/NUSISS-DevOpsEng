@@ -718,7 +718,7 @@ docker ps
 
 5. Amend your docker-compose yml to have the policy restart always
 
-<img src="./images/img15.png" width="600" height="300">
+<img src="./images/img15.png" width="500" height="250">
 
 
 ```
