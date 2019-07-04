@@ -961,7 +961,7 @@ script:
 15. Login into travis CI dashboard and monitor the successful build
 
 16. Login into AWS account and create a elastic beanstalk instance.
-Watch the below walkthorugh youtube videos:-
+Watch the below step by step walkthorugh youtube videos:-
 
 | Video URL        | Description           | 
 | ------------- |:-------------:| 
