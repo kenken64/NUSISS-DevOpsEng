@@ -1,22 +1,15 @@
+<img src="./docker.png" width="200" height="200">
+<img src="./puppet.png" width="200" height="200">
+<img src="./aws_code_deploy.png" width="200" height="200">
+<img src="./dockerswarm.png" width="200" height="200">
+<img src="./Kubernetes.png" width="200" height="200">
 
-<img src="./docker.png" width="300" height="200">
 
-# [Container Management - Docker](./container/README.md)
+| Topic        | Url           | 
+| ------------- |:-------------:| 
+| Docker      | [Container Management - Docker](./container/README.md) | 
+| Puppet      | [Configuration Management - Puppet](./puppet/README.md)      | 
+| AWS CD/CI | [AWS CodeDeploy - CD/CI](./cdci/NodeJS/README.md)      | 
+| Docker Swarm | [Docker Swarm](./swarm/README.md)      | 
+| Kurbenetes | [Kubernetes](./kubernetes/README.md)      | 
 
-<img src="./puppet.png" width="300" height="200">
-
-# [Configuration Management - Puppet](./puppet/README.md)
-
-<img src="./aws_code_deploy.png" width="300" height="200">
-
-# [AWS CodeDeploy - CD/CI](./cdci/NodeJS/README.md)
-
-<img src="./dockerswarm.png" width="300" height="200">
-
-# [Docker Swarm](./swarm/README.md)
-
-# COMING SOON
-
-<img src="./Kubernetes.png" width="300" height="200">
-
-# [Kubernetes](./kubernetes/README.md)
