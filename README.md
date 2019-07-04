@@ -13,7 +13,7 @@
 | ------------- |:-------------:| 
 | Docker      | [Container Management - Docker](./container/README.md) | 
 | Puppet      | [Configuration Management - Puppet](./puppet/README.md)      | 
-| AWS CD/CI | [AWS CodeDeploy - CD/CI](./cdci/NodeJS/README.md)      | 
+| AWS CD/CI | [AWS Code Pipeline / CodeDeploy - CD/CI](./cdci/NodeJS/README.md)      | 
 | Docker Swarm | [Docker Swarm](./swarm/README.md)      | 
 | Kurbenetes | [Kubernetes](./kubernetes/README.md)      | 
 
