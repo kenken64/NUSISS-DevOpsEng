@@ -971,10 +971,10 @@ Watch the below step by step walkthorugh youtube videos:-
 | https://youtu.be/XUfBsttJnbA | Configure env variable @ Travis CI      | 
 
 
-- Make sure the region is singapore
-- Deployment type is Docker 
-- Source code is Sample application
-- Wait for awhile to make sure the setup is done.
+- Make sure the AWS region is always set to <b>Singapore</b>
+- Deployment type is choosen as Docker 
+- Source code is Sample application given in this tutorial 
+- The configuration and setup takes a few minutes to finish.
 
 17. Amend the .travis.yml with additional deployment
 
