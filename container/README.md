@@ -938,7 +938,7 @@ sudo docker run -p 8080:80 936ca285e822
 ./ngrok http 8080
 ```
 
-14 Let's integrate with the travis CI with AWS elastic beanstalk, create a .travis.yml
+14. Let's integrate with the travis CI with AWS elastic beanstalk, create a .travis.yml
 
 <img src="./images/img18.png">
 <img src="./images/img19.png" width="600" height="400">
@@ -963,13 +963,13 @@ script:
 16. Login into AWS account and create a elastic beanstalk instance
 Watch the below video
 
-https://youtu.be/L01gk757pq4
+* https://youtu.be/L01gk757pq4
 
-https://youtu.be/vJG-4J2cp0s
+* https://youtu.be/vJG-4J2cp0s
 
-https://youtu.be/vz2Y8LvcdHw
+* https://youtu.be/vz2Y8LvcdHw
 
-https://youtu.be/XUfBsttJnbA
+* https://youtu.be/XUfBsttJnbA
 
 - Make sure the region is singapore
 - Deployment type is Docker 
