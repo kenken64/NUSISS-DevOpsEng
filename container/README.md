@@ -278,9 +278,9 @@ hi there
 
 <img src="./images/img10.png" width="800" height="300">
 
-<img src="./images/img11.png" width="400" height="300">
+<img src="./images/img11.png" width="800" height="300">
 
-<img src="./images/img12.png" width="400" height="300">
+<img src="./images/img12.png" width="800" height="300">
 
 <img src="./images/img13.png" width="800" height="400">
 
