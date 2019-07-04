@@ -875,7 +875,7 @@ sudo docker-compose up --build
 sudo docker exec -it 87b898a5cc64 npm run test
 ```
 
-Add test service in the docker compose yml file
+* Add test service in the docker compose yml file
 ```
 version: '3'
 services:
