@@ -5,7 +5,7 @@
 <img src="./images/img2.png" >
 
 
-<img src="./images/img3.png" width="500" height="300">
+<img src="./images/img3.png">
 
 
 <img src="./images/img4.png" width="500" height="400">
