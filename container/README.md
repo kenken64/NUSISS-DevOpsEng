@@ -284,7 +284,7 @@ hi there
 
 <img src="./images/img13.png" width="800" height="400">
 
-<img src="./images/img14.png" width="800" height="300">
+<img src="./images/img14.png" width="600" height="300">
 
 10 seconds to shutdown with stop then it will fallback to kill 
 
