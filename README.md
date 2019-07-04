@@ -1,15 +1,12 @@
 <table>
     <tr>
-        <td><img style="float: right;" src="./docker.png" width="100" height="100"></td>
-        <td><img style="float: right;" src="./puppet.png" width="100" height="100"></td>
-        <td><img style="float: right;" src="./aws_code_deploy.png" width="100" height="100"></td>
+        <td><img style="float: right;" src="./docker.png" width="200" height="100"></td>
+        <td><img style="float: right;" src="./puppet.png" width="200" height="100"></td>
+        <td><img style="float: right;" src="./aws_code_deploy.png" width="200" height="100"></td>
+        <td><img style="float: right;" src="./dockerswarm.png" width="200" height="100"></td>
+        <td><img style="float: right;" src="./Kubernetes.png" width="200" height="100"></td>
     </tr>
 </table>
-
-
-
-<img style="float: right;" src="./dockerswarm.png" width="200" height="200">
-<img style="float: right;" src="./Kubernetes.png" width="200" height="200">
 
 
 | Topic        | Url           | 
