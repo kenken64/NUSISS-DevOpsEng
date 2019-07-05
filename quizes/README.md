@@ -114,6 +114,9 @@ D) docker service scale --replicas 4 --name myservice nginx
 ### 10. You are using self-signed UCP certs and have a second DNS name that points to your internal controllers. When installing UCP, which flag should you use to add this additional name?
 
 A) --internal-server-cert
+
 B) --dns
+
 C) --san
+
 D) --external-server-cert
