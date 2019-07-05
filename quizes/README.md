@@ -1,6 +1,6 @@
 Q1. Which command is used to place an image into a registry?
-A. docker commit
-B. docker tag
+...A. docker commit
+...B. docker tag
 C. docker push
 D. docker images
 E. docker pull
