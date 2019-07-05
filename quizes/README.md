@@ -85,6 +85,7 @@ D) /run/docker/swarm
 <br>
 
 ### 8. Which of the following will put the Docker engine into debug mode?
+
 A) echo '{"debug": true}' > /var/lib/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 
