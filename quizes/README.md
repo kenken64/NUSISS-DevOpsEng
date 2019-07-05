@@ -51,6 +51,7 @@ C) /api/v0/meta/cluster_status
 
 D) /replica_status
 
+Answer : D
 <br>
 
 ### 5. Which of the following endpoints exposed by Docker Trusted Registry can be used to assess the health of a Docker Trusted Registry replica?
@@ -63,6 +64,7 @@ C) /replica_status
 
 D) /nginx/health
 
+Answer: A
 <br>
 
 ### 6. One of your developers is trying to push an image to the registry (dtr.example.com). The push fails with the error “denied: requested access to the resource is denied”. What should you verify the user has completed?
@@ -75,6 +77,7 @@ C) docker push <username>/<image:tag> dtr.example.com
 
 D) docker images login -u <username> -p <password> dtr.example.com
 
+Answer: A
 <br>
 
 ### 7. You have been asked to backup the swarm state on a Linux installation. By default, where do Docker manager nodes store the swarm state and manager logs?
@@ -87,6 +90,7 @@ C) /etc/docker/swarm
 
 D) /run/docker/swarm
 
+Answer: B
 <br>
 
 ### 8. Which of the following will put the Docker engine into debug mode?
@@ -103,6 +107,7 @@ dockerd>
 D) echo '{"debug": true}' > /etc/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 
+Answer: D
 <br>
 
 ### 9. How do you deploy 4 new instances of nginx with a single command?
@@ -115,6 +120,7 @@ C) docker service scale myservice=4 nginx
 
 D) docker service scale --replicas 4 --name myservice nginx
 
+Answer: A
 <br>
 
 ### 10. You are using self-signed UCP certs and have a second DNS name that points to your internal controllers. When installing UCP, which flag should you use to add this additional name?
@@ -127,4 +133,5 @@ C) --san
 
 D) --external-server-cert
 
+Answer: C
 <br>
