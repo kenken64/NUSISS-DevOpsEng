@@ -201,8 +201,11 @@ Answer: C
 ### 15. Which of the following lvm mode should a production host using the devicemapper as a storage driver use?
 
 A) loop-vm
+
 B) overlay
+
 C) direct-lvm
+
 D) zfs
 
 C is meant to be used in production
@@ -212,8 +215,11 @@ C is meant to be used in production
 ### 16. Correct order to backup docker ucp cluster?
 
 A) swarm, ucp , dtr
+
 B) dtr, ucp, swarm
+
 C) ucp, dtr , swarm
+
 D) swarm, dtr, ucp
 
 Answer: A
@@ -229,8 +235,11 @@ https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
 ### 17. Which of the following commands can take a tar file as an argument and add the extracted content into the image automatically?
 
 A) COPY
+
 B) ADD 
+
 C) ADD and COPY both
+
 D) None of these
 
 Answer : B
@@ -239,25 +248,37 @@ https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-
 
 <br>
 
-You want to get shell access into a running container with id<container-id>. Which command should you use for it?
-a. docker exec
-b. docker ps
-c. docker run
-d. docker bash
+### 18. You want to get shell access into a running container with id<container-id>. Which command should you use for it?
 
-a   docker exec -it <container-id> bash is the command which you should use  i  stand for interactive and t stand for shell
+A) docker exec
 
+B) docker ps
 
-Which TCP ports must be open on all nodes participating in the docker swarm?
-a. 2377
-b. 7946
-c. 2377 and 7946
-d. 2388
+C) docker run
+
+D) docker bash
+
+Answer : A   
+
+docker exec -it <container-id> bash is the command which you should use  i  stand for interactive and t stand for shell
+
+<br>
+
+### 19. Which TCP ports must be open on all nodes participating in the docker swarm?
+
+A) 2377
+
+B) 7946
+
+C) 2377 and 7946
+
+D) 2388
 
 Answer : C
 
 https://docs.docker.com/engine/swarm/swarm-tutorial/
 
+<br>
 
 Docker content trust policy provides the ability to use ______ for verifying integrity and the publisher of all the data received from a registry over any channel
 
