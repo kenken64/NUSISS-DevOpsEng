@@ -11,8 +11,7 @@ D) docker images
 E) docker pull
 <br>
 
-### 2. Which network allows Docker Trusted Registry components running on different nodes to
-communicate and replicate Docker Trusted Registry data?
+### 2. Which network allows Docker Trusted Registry components running on different nodes to communicate and replicate Docker Trusted Registry data?
 
 A) dtr-ol
 
@@ -25,10 +24,11 @@ D) dtr-vlan
 <br>
 
 ### 3. which one is a valid command to run global service in docker swarm?
-- A. docker service create —mode global
-- B. docker swarm create —mode global
-- C. docker service create —global
-- D. docker swarm create —global
+
+A) docker service create —mode global
+B) docker swarm create —mode global
+C) docker service create —global
+D) docker swarm create —global
 
 Answer is A. Refer to the cli documentation 
 https://docs.docker.com/engine/reference/commandline/service_create/
@@ -36,31 +36,43 @@ https://docs.docker.com/engine/reference/commandline/service_create/
 <br>
 
 ### 4. Which of the following is not an endpoint exposed by Docker Trusted Registry that can be used to assess the health of a Docker Trusted Registry replica?
-A. /health
-B. /nginx_status
-C. /api/v0/meta/cluster_status
-D. /replica_status
+
+A) /health
+
+B) /nginx_status
+
+C) /api/v0/meta/cluster_status
+
+D) /replica_status
 
 ### 5. Which of the following endpoints exposed by Docker Trusted Registry can be used to assess the health of a Docker Trusted Registry replica?
-A. /health
-B. /api/health
-C. /replica_status
-D. /nginx/health
+
+A) /health
+
+B) /api/health
+
+C) /replica_status
+
+D) /nginx/health
 
 ### 6. One of your developers is trying to push an image to the registry (dtr.example.com). The push fails with the error “denied: requested access to the resource is denied”. What should you verify the user has completed?
 
-- A. docker login -u <username> -p <password> dtr.example.com
-- B. docker registry login -u username -p <password> dtr.example.com
-- C. docker push <username>/<image:tag> dtr.example.com
-- D. docker images login -u <username> -p <password> dtr.example.com
+A) docker login -u <username> -p <password> dtr.example.com
+
+B) docker registry login -u username -p <password> dtr.example.com
+
+C) docker push <username>/<image:tag> dtr.example.com
+
+D) docker images login -u <username> -p <password> dtr.example.com
+
 <br>
 
-7. You have been asked to backup the swarm state on a Linux installation. By default, where
-do Docker manager nodes store the swarm state and manager logs?
-- A. /var/run/docker/swarm
-- B. /var/lib/docker/swarm
-- C. /etc/docker/swarm
-- D. /run/docker/swarm
+7. You have been asked to backup the swarm state on a Linux installation. By default, where do Docker manager nodes store the swarm state and manager logs?
+
+A) /var/run/docker/swarm
+B) /var/lib/docker/swarm
+C) /etc/docker/swarm
+D) /run/docker/swarm
 <br>
 
 8. Which of the following will put the Docker engine into debug mode?
