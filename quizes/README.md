@@ -51,6 +51,8 @@ C) /api/v0/meta/cluster_status
 
 D) /replica_status
 
+<br>
+
 ### 5. Which of the following endpoints exposed by Docker Trusted Registry can be used to assess the health of a Docker Trusted Registry replica?
 
 A) /health
@@ -60,6 +62,8 @@ B) /api/health
 C) /replica_status
 
 D) /nginx/health
+
+<br>
 
 ### 6. One of your developers is trying to push an image to the registry (dtr.example.com). The push fails with the error “denied: requested access to the resource is denied”. What should you verify the user has completed?
 
@@ -82,6 +86,7 @@ B) /var/lib/docker/swarm
 C) /etc/docker/swarm
 
 D) /run/docker/swarm
+
 <br>
 
 ### 8. Which of the following will put the Docker engine into debug mode?
@@ -98,6 +103,7 @@ dockerd>
 D) echo '{"debug": true}' > /etc/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 
+<br>
 
 ### 9. How do you deploy 4 new instances of nginx with a single command?
 
@@ -120,3 +126,5 @@ B) --dns
 C) --san
 
 D) --external-server-cert
+
+<br>
