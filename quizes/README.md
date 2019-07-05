@@ -26,8 +26,11 @@ D) dtr-vlan
 ### 3. which one is a valid command to run global service in docker swarm?
 
 A) docker service create —mode global
+
 B) docker swarm create —mode global
+
 C) docker service create —global
+
 D) docker swarm create —global
 
 Answer is A. Refer to the cli documentation 
