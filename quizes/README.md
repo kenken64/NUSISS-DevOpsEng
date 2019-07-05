@@ -73,7 +73,7 @@ D) docker images login -u <username> -p <password> dtr.example.com
 
 <br>
 
-###7. You have been asked to backup the swarm state on a Linux installation. By default, where do Docker manager nodes store the swarm state and manager logs?
+### 7. You have been asked to backup the swarm state on a Linux installation. By default, where do Docker manager nodes store the swarm state and manager logs?
 
 A) /var/run/docker/swarm
 
@@ -84,7 +84,7 @@ C) /etc/docker/swarm
 D) /run/docker/swarm
 <br>
 
-###8. Which of the following will put the Docker engine into debug mode?
+### 8. Which of the following will put the Docker engine into debug mode?
 A) echo '{"debug": true}' > /var/lib/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 
@@ -98,7 +98,7 @@ D) echo '{"debug": true}' > /etc/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 
 
-###9. How do you deploy 4 new instances of nginx with a single command?
+### 9. How do you deploy 4 new instances of nginx with a single command?
 
 A) docker service create --replicas 4 --name myservice nginx
 
@@ -110,7 +110,7 @@ D) docker service scale --replicas 4 --name myservice nginx
 
 <br>
 
-###10. You are using self-signed UCP certs and have a second DNS name that points to your internal controllers. When installing UCP, which flag should you use to add this additional name?
+### 10. You are using self-signed UCP certs and have a second DNS name that points to your internal controllers. When installing UCP, which flag should you use to add this additional name?
 
 A) --internal-server-cert
 B) --dns
