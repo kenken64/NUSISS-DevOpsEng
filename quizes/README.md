@@ -10,7 +10,7 @@ D) docker images
 
 E) docker pull
 
-Answer C 
+Answer C  https://docs.docker.com/engine/reference/commandline/push/
 <b>
 
 ### 2. Which network allows Docker Trusted Registry components running on different nodes to communicate and replicate Docker Trusted Registry data?
@@ -24,6 +24,8 @@ C) dtr-br
 D) dtr-vlan
 
 Answer A 
+
+https://success.docker.com/article/how-to-test-the-dtr-ol-network
 <br>
 
 ### 3. which one is a valid command to run global service in docker swarm?
@@ -135,3 +137,176 @@ D) --external-server-cert
 
 Answer: C
 <br>
+
+### 11. How to prevent any .pyc file in your entire docker context from being added inside your Docker?
+
+A) **.pyc
+
+B) **/*.pyc
+
+C) *.pyc
+
+D) /*.pyc
+
+Answer: B
+
+https://codefresh.io/docker-tutorial/not-ignore-dockerignore/
+
+<br>
+
+### 12. Bob has configured his docker daemon to use syslog log driver by default. how can he run a container which uses son-file log driver?
+
+A) By using “—log-opt-json-file along with the docker run
+
+B) By using “—log-driver json-file” along with docker run
+
+C) By using “—logger json-file” along with docker run
+
+D) Its impossible
+
+Answer: B
+
+<br>
+
+### 13. Which of the following commands can be used to see IPv4 subnet of the network?
+
+A) docker network ls
+
+B) docker info network
+
+C) docker network info
+
+D) docker network inspect
+
+Answer: D
+
+https://docs.docker.com/engine/reference/commandline/network_inspect/
+
+<br>
+
+### 14. You want to ensure that a container doesn’t expect memory usage than a specified amount. Which of the following will be used by default by docker to achieve that ?
+
+A) namespaces
+
+B) selinux
+
+C) cgroups
+
+D) seccomp
+
+Answer: C
+
+<br>
+
+### 15. Which of the following lvm mode should a production host using the devicemapper as a storage driver use?
+
+A) loop-vm
+B) overlay
+C) direct-lvm
+D) zfs
+
+C is meant to be used in production
+
+<br>
+
+### 16. Correct order to backup docker ucp cluster?
+
+A) swarm, ucp , dtr
+B) dtr, ucp, swarm
+C) ucp, dtr , swarm
+D) swarm, dtr, ucp
+
+Answer: A
+
+ucp - universal control plane
+dtr - docker trust registry
+swarm - nodes with manager 
+
+https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
+
+<br>
+
+### 17. Which of the following commands can take a tar file as an argument and add the extracted content into the image automatically?
+
+A) COPY
+B) ADD 
+C) ADD and COPY both
+D) None of these
+
+Answer : B
+
+https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-in-a-dockerile
+
+<br>
+
+You want to get shell access into a running container with id<container-id>. Which command should you use for it?
+a. docker exec
+b. docker ps
+c. docker run
+d. docker bash
+
+a   docker exec -it <container-id> bash is the command which you should use  i  stand for interactive and t stand for shell
+
+
+Which TCP ports must be open on all nodes participating in the docker swarm?
+a. 2377
+b. 7946
+c. 2377 and 7946
+d. 2388
+
+Answer : C
+
+https://docs.docker.com/engine/swarm/swarm-tutorial/
+
+
+Docker content trust policy provides the ability to use ______ for verifying integrity and the publisher of all the data received from a registry over any channel
+
+a. end to end encryption
+b. digital signatures
+c. symmetric key encryption
+d. a container
+
+b
+
+Which of the following is NOT true about secrets?
+a. Secrets are encrypted during transit and also at rest
+b. Secrets are available to swarm services and standalone container
+c. Secrets are mounted in container’s filesystem directly
+d. Secrets can be used for storing username and password
+
+b Secrets can be used only by swarm service not standalone
+
+https://docs.docker.com/engine/swarm/secrets/
+
+
+A global service is a service that runs ____ task/tasks on every node that meet the placement and resource constraints
+
+a.  Many
+b.  one
+c.  more than one
+d. none
+
+b
+
+https://docs.docker.com/engine/swarm/services/#replicated-or-global-services
+
+Which of the following statement is correct? Pick exactly two statements.
+
+a. Image is a collection of immutable layers whereas container is a running instance of an image 
+b. Container can exist without the image but image cannot exist without container
+c. Only one container can be spawned from a given image at a time
+d. If multiple containers are spawned from the same image then they all use the same copy of image in memory
+
+a and d 
+
+Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
+
+a. True
+b. False
+
+Answer is A 
+Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
+
+$ docker network create -d overlay network test.network
+Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
+
