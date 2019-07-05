@@ -9,7 +9,9 @@ C) docker push
 D) docker images
 
 E) docker pull
-<br>
+
+Answer C 
+<b>
 
 ### 2. Which network allows Docker Trusted Registry components running on different nodes to communicate and replicate Docker Trusted Registry data?
 
@@ -21,6 +23,7 @@ C) dtr-br
 
 D) dtr-vlan
 
+Answer A 
 <br>
 
 ### 3. which one is a valid command to run global service in docker swarm?
