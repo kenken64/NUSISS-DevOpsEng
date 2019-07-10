@@ -40,9 +40,6 @@ C) docker service create —global
 D) docker swarm create —global
 ```
 
-Answer is A. Refer to the cli documentation
-https://docs.docker.com/engine/reference/commandline/service_create/
-
 <br>
 
 ### 4. Which of the following is not an endpoint exposed by Docker Trusted Registry that can be used to assess the health of a Docker Trusted Registry replica?
@@ -57,7 +54,6 @@ C) /api/v0/meta/cluster_status
 D) /replica_status
 ```
 
-Answer : D
 <br>
 
 ### 5. Which of the following endpoints exposed by Docker Trusted Registry can be used to assess the health of a Docker Trusted Registry replica?
@@ -72,7 +68,6 @@ C) /replica_status
 D) /nginx/health
 ```
 
-Answer: A
 <br>
 
 ### 6. One of your developers is trying to push an image to the registry (dtr.example.com). The push fails with the error “denied: requested access to the resource is denied”. What should you verify the user has completed?
@@ -87,7 +82,6 @@ C) docker push <username>/<image:tag> dtr.example.com
 D) docker images login -u <username> -p <password> dtr.example.com
 ```
 
-Answer: A
 <br>
 
 ### 7. You have been asked to backup the swarm state on a Linux installation. By default, where do Docker manager nodes store the swarm state and manager logs?
@@ -102,7 +96,6 @@ C) /etc/docker/swarm
 D) /run/docker/swarm
 ```
 
-Answer: B
 <br>
 
 ### 8. Which of the following will put the Docker engine into debug mode?
@@ -121,7 +114,6 @@ D) echo '{"debug": true}' > /etc/docker/daemon.json ; sudo kill -HUP <pid of
 dockerd>
 ```
 
-Answer: D
 <br>
 
 ### 9. How do you deploy 4 new instances of nginx with a single command?
@@ -136,7 +128,6 @@ C) docker service scale myservice=4 nginx
 D) docker service scale --replicas 4 --name myservice nginx
 ```
 
-Answer: A
 <br>
 
 ### 10. You are using self-signed UCP certs and have a second DNS name that points to your internal controllers. When installing UCP, which flag should you use to add this additional name?
@@ -151,7 +142,6 @@ C) --san
 D) --external-server-cert
 ```
 
-Answer: C
 <br>
 
 ### 11. How to prevent any .pyc file in your entire docker context from being added inside your Docker?
@@ -165,10 +155,6 @@ C) \*.pyc
 
 D) /\*.pyc
 ```
-
-Answer: B
-
-https://codefresh.io/docker-tutorial/not-ignore-dockerignore/
 
 <br>
 
@@ -184,8 +170,6 @@ C) By using “—logger json-file” along with docker run
 D) Its impossible
 ```
 
-Answer: B
-
 <br>
 
 ### 13. Which of the following commands can be used to see IPv4 subnet of the network?
@@ -199,10 +183,6 @@ C) docker network info
 
 D) docker network inspect
 ```
-
-Answer: D
-
-https://docs.docker.com/engine/reference/commandline/network_inspect/
 
 <br>
 
@@ -218,8 +198,6 @@ C) cgroups
 D) seccomp
 ```
 
-Answer: C
-
 <br>
 
 ### 15. Which of the following lvm mode should a production host using the devicemapper as a storage driver use?
@@ -233,8 +211,6 @@ C) direct-lvm
 
 D) zfs
 ```
-
-Answer: C is meant to be used in production
 
 <br>
 
@@ -250,14 +226,6 @@ C) ucp, dtr , swarm
 D) swarm, dtr, ucp
 ```
 
-Answer: A
-
-ucp - universal control plane
-dtr - docker trust registry
-swarm - nodes with manager
-
-https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
-
 <br>
 
 ### 17. Which of the following commands can take a tar file as an argument and add the extracted content into the image automatically?
@@ -271,10 +239,6 @@ C) ADD and COPY both
 
 D) None of these
 ```
-
-Answer : B
-
-https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-in-a-dockerile
 
 <br>
 
@@ -290,10 +254,6 @@ C) docker run
 D) docker bash
 ```
 
-Answer : A
-
-docker exec -it <container-id> bash is the command which you should use i stand for interactive and t stand for shell
-
 <br>
 
 ### 19. Which TCP ports must be open on all nodes participating in the docker swarm?
@@ -307,10 +267,6 @@ C) 2377 and 7946
 
 D) 2388
 ```
-
-Answer : C
-
-https://docs.docker.com/engine/swarm/swarm-tutorial/
 
 <br>
 
@@ -326,7 +282,6 @@ C) symmetric key encryption
 D) a container
 ```
 
-Answer: B
 <br>
 
 ### 21. Which of the following is NOT true about secrets?
@@ -341,12 +296,6 @@ C) Secrets are mounted in container’s filesystem directly
 D) Secrets can be used for storing username and password
 ```
 
-Answer : B
-
-Secrets can be used only by swarm service not standalone
-
-https://docs.docker.com/engine/swarm/secrets/
-
 <br>
 
 ### 22. A global service is a service that runs \_\_\_\_ task/tasks on every node that meet the placement and resource constraints
@@ -360,10 +309,6 @@ C) more than one
 
 D) none
 ```
-
-Answer : B
-
-https://docs.docker.com/engine/swarm/services/#replicated-or-global-services
 
 <br>
 
@@ -380,7 +325,6 @@ D) If multiple containers are spawned from the same image then they all use the 
 
 ```
 
-Answer : A and D
 <br>
 
 ### 24. Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
@@ -393,13 +337,6 @@ B) False
 
 ```
 
-Answer is A
-
-Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
-
-\$ docker network create -d overlay network test.network
-Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
-
 ### Answers
 
 1. C.<br>
@@ -408,47 +345,60 @@ Error response from daemon. Cannot create a multi host network from a worker nod
 2. A.<br>
    https://success.docker.com/article/how-to-test-the-dtr-ol-network
 
-3)
+3) A. <br>
+   Refer to the cli documentation
+   https://docs.docker.com/engine/reference/commandline/service_create/
 
-4)
+4) D.
 
-5)
+5) A.
 
-6)
+6) A.
 
-7)
+7) B.
 
-8)
+8) D.
 
-9)
+9) A.
 
-10)
+10) C.
 
-11)
+11) B. <br>
+    https://codefresh.io/docker-tutorial/not-ignore-dockerignore/
 
-12)
+12) B.
 
-13)
+13) D.
+    https://docs.docker.com/engine/reference/commandline/network_inspect/
 
-14)
+14) C.
 
-15)
+15) C. <br>
+    Is meant to be used in production environment.
 
-16)
+16) A. <br>
+    ucp - universal control plane dtr - docker trust registry swarm - nodes with manager
+    https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
 
-17)
+17) B. <br>
+    https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-in-a-dockerile
 
-18)
+18. A. <br>
+    docker exec -it bash is the command which you should use i stand for interactive and t stand for shell
 
-19)
+19. C. <br>
+    https://docs.docker.com/engine/swarm/swarm-tutorial/
 
-20)
+20) B.
 
-21)
+21. B. <br>
+    Secrets can be used only by swarm service not standalone
+    https://docs.docker.com/engine/swarm/secrets/
 
-22)
+22) B. <br>
+    https://docs.docker.com/engine/swarm/services/#replicated-or-global-services
 
-23)
+23) A and D
 
 24. A.
 
