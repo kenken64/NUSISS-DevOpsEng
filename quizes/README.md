@@ -302,7 +302,9 @@ C) Secrets are mounted in container’s filesystem directly
 
 D) Secrets can be used for storing username and password
 
-Answer : B Secrets can be used only by swarm service not standalone
+Answer : B
+
+Secrets can be used only by swarm service not standalone
 
 https://docs.docker.com/engine/swarm/secrets/
 
