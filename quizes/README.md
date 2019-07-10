@@ -407,3 +407,55 @@ Error response from daemon. Cannot create a multi host network from a worker nod
 ```
 
 ```
+
+### Answers
+
+1. C.
+   https://docs.docker.com/engine/reference/commandline/push/
+
+2. A.
+   https://success.docker.com/article/how-to-test-the-dtr-ol-network
+
+3)
+
+4)
+
+5)
+
+6)
+
+7)
+
+8)
+
+9)
+
+10)
+
+11)
+
+12)
+
+13)
+
+14)
+
+15)
+
+16)
+
+17)
+
+18)
+
+19)
+
+20)
+
+21)
+
+22)
+
+23)
+
+24)
