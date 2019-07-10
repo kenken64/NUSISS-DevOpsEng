@@ -12,7 +12,6 @@ D) docker images
 E) docker pull
 ```
 
-Answer C https://docs.docker.com/engine/reference/commandline/push/
 <b>
 
 ### 2. Which network allows Docker Trusted Registry components running on different nodes to communicate and replicate Docker Trusted Registry data?
@@ -27,9 +26,6 @@ C) dtr-br
 D) dtr-vlan
 ```
 
-Answer A
-
-https://success.docker.com/article/how-to-test-the-dtr-ol-network
 <br>
 
 ### 3. which one is a valid command to run global service in docker swarm?
@@ -404,10 +400,6 @@ Overlay networks can’t exist if docker engine is not part of a swarm. So to cr
 \$ docker network create -d overlay network test.network
 Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
 
-```
-
-```
-
 ### Answers
 
 1. C.
@@ -458,4 +450,10 @@ Error response from daemon. Cannot create a multi host network from a worker nod
 
 23)
 
-24)
+24. A.
+
+    <br>
+    Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
+
+\$ docker network create -d overlay network test.network
+Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
