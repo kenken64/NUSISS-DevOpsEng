@@ -352,6 +352,7 @@ Secrets can be used only by swarm service not standalone
 https://docs.docker.com/engine/swarm/secrets/
 
 <br>
+
 ### 22. A global service is a service that runs \_\_\_\_ task/tasks on every node that meet the placement and resource constraints
 
 ```
@@ -369,7 +370,9 @@ Answer : B
 https://docs.docker.com/engine/swarm/services/#replicated-or-global-services
 
 <br>
+
 ### 23. Which of the following statement is correct? Pick exactly two statements.
+
 ```
 A) Image is a collection of immutable layers whereas container is a running instance of an image
 
@@ -380,9 +383,12 @@ C) Only one container can be spawned from a given image at a time
 D) If multiple containers are spawned from the same image then they all use the same copy of image in memory
 
 ```
+
 Answer : A and D
 <br>
+
 ### 24. Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
+
 ```
 
 A) True
@@ -390,10 +396,14 @@ A) True
 B) False
 
 ```
+
 Answer is A
 
 Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
 
 \$ docker network create -d overlay network test.network
 Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
+
+```
+
 ```
