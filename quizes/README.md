@@ -310,6 +310,7 @@ https://docs.docker.com/engine/swarm/secrets/
 
 ### 22. A global service is a service that runs \_\_\_\_ task/tasks on every node that meet the placement and resource constraints
 
+```
 A) Many
 
 B) one
@@ -317,6 +318,7 @@ B) one
 C) more than one
 
 D) none
+```
 
 Answer : B
 
