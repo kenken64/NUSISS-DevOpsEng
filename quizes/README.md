@@ -10,7 +10,7 @@ D) docker images
 
 E) docker pull
 
-Answer C  https://docs.docker.com/engine/reference/commandline/push/
+Answer C https://docs.docker.com/engine/reference/commandline/push/
 <b>
 
 ### 2. Which network allows Docker Trusted Registry components running on different nodes to communicate and replicate Docker Trusted Registry data?
@@ -23,7 +23,7 @@ C) dtr-br
 
 D) dtr-vlan
 
-Answer A 
+Answer A
 
 https://success.docker.com/article/how-to-test-the-dtr-ol-network
 <br>
@@ -38,7 +38,7 @@ C) docker service create —global
 
 D) docker swarm create —global
 
-Answer is A. Refer to the cli documentation 
+Answer is A. Refer to the cli documentation
 https://docs.docker.com/engine/reference/commandline/service_create/
 
 <br>
@@ -140,13 +140,13 @@ Answer: C
 
 ### 11. How to prevent any .pyc file in your entire docker context from being added inside your Docker?
 
-A) **.pyc
+A) \*\*.pyc
 
-B) **/*.pyc
+B) \*_/_.pyc
 
-C) *.pyc
+C) \*.pyc
 
-D) /*.pyc
+D) /\*.pyc
 
 Answer: B
 
@@ -226,7 +226,7 @@ Answer: A
 
 ucp - universal control plane
 dtr - docker trust registry
-swarm - nodes with manager 
+swarm - nodes with manager
 
 https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
 
@@ -236,7 +236,7 @@ https://docs.docker.com/ee/ucp/admin/backups-and-disaster-recovery/
 
 A) COPY
 
-B) ADD 
+B) ADD
 
 C) ADD and COPY both
 
@@ -258,9 +258,9 @@ C) docker run
 
 D) docker bash
 
-Answer : A   
+Answer : A
 
-docker exec -it <container-id> bash is the command which you should use  i  stand for interactive and t stand for shell
+docker exec -it <container-id> bash is the command which you should use i stand for interactive and t stand for shell
 
 <br>
 
@@ -280,54 +280,67 @@ https://docs.docker.com/engine/swarm/swarm-tutorial/
 
 <br>
 
-Docker content trust policy provides the ability to use ______ for verifying integrity and the publisher of all the data received from a registry over any channel
+### 20. Docker content trust policy provides the ability to use **\_\_** for verifying integrity and the publisher of all the data received from a registry over any channel
 
-a. end to end encryption
-b. digital signatures
-c. symmetric key encryption
-d. a container
+A) end to end encryption
 
-b
+B) digital signatures
 
-Which of the following is NOT true about secrets?
-a. Secrets are encrypted during transit and also at rest
-b. Secrets are available to swarm services and standalone container
-c. Secrets are mounted in container’s filesystem directly
-d. Secrets can be used for storing username and password
+C) symmetric key encryption
 
-b Secrets can be used only by swarm service not standalone
+D) a container
+
+Answer: B
+
+### 21. Which of the following is NOT true about secrets?
+
+A) Secrets are encrypted during transit and also at rest
+
+B) Secrets are available to swarm services and standalone container
+
+C) Secrets are mounted in container’s filesystem directly
+
+D) Secrets can be used for storing username and password
+
+Answer : B Secrets can be used only by swarm service not standalone
 
 https://docs.docker.com/engine/swarm/secrets/
 
+### 22. A global service is a service that runs \_\_\_\_ task/tasks on every node that meet the placement and resource constraints
 
-A global service is a service that runs ____ task/tasks on every node that meet the placement and resource constraints
+A) Many
 
-a.  Many
-b.  one
-c.  more than one
-d. none
+B) one
 
-b
+C) more than one
+
+D) none
+
+Answer : B
 
 https://docs.docker.com/engine/swarm/services/#replicated-or-global-services
 
-Which of the following statement is correct? Pick exactly two statements.
+### 23. Which of the following statement is correct? Pick exactly two statements.
 
-a. Image is a collection of immutable layers whereas container is a running instance of an image 
-b. Container can exist without the image but image cannot exist without container
-c. Only one container can be spawned from a given image at a time
-d. If multiple containers are spawned from the same image then they all use the same copy of image in memory
+A) Image is a collection of immutable layers whereas container is a running instance of an image
 
-a and d 
+B) Container can exist without the image but image cannot exist without container
 
-Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
+C) Only one container can be spawned from a given image at a time
 
-a. True
-b. False
+D) If multiple containers are spawned from the same image then they all use the same copy of image in memory
 
-Answer is A 
+Answer : A and D
+
+### 24. Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
+
+A) True
+
+B) False
+
+Answer is A
+
 Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
 
-$ docker network create -d overlay network test.network
+\$ docker network create -d overlay network test.network
 Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
-
