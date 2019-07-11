@@ -406,9 +406,9 @@ B) Role
 C) Subject
 
 D) Resource collection
+```
 
 C & D
-```
 
 Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/grant-permissions/
 
@@ -434,6 +434,7 @@ Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/
 
 ## 31 Which of the followings are Docker Engine Security features? (select all that apply)
 
+```
 A) You can configure Docker’s trust features so that your users can push and pull trusted images
 
 B) You can use certificate-based client-server authentication to verify a Docker daemon has the rights to access images on a registry
@@ -441,6 +442,7 @@ B) You can use certificate-based client-server authentication to verify a Docker
 C) You can configure secure computing mode (Seccomp) policies to secure system calls in a container
 
 D) You can protect the Docker daemon socket and ensure only trusted Docker client connections
+```
 
 A , B , C, D
 
@@ -462,26 +464,33 @@ A , B , C
 
 Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/#sign-images-that-ucp-can-trust
 
-Where is the option to integrate Docker Enterprise with LDAP?
+## 33 Where is the option to integrate Docker Enterprise with LDAP?
 
-A Docker Machine
-B Docker Trusted Registry
-C Docker Compose
-D Universal Control Plane
+A) Docker Machine
+
+B) Docker Trusted Registry
+
+C) Docker Compose
+
+D) Universal Control Plane
 
 D
 
 https://docs.docker.com/datacenter/ucp/2.2/guides/admin/configure/external-auth/
 
-What is the difference between UCP workers and managers?
+<br>
 
-A ucp-agent service automatically starts serving all UCP components in manager node, and only a proxy service in worker node
+## 34 What is the difference between UCP workers and managers?
 
-B ucp-agent service automatically starts serving all UCP components in worker node, and only a proxy service in manager node
+A) ucp-agent service automatically starts serving all UCP components in manager node, and only a proxy service in worker node
+
+B) ucp-agent service automatically starts serving all UCP components in worker node, and only a proxy service in manager node
 
 A
 
 https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#under-the-hood
+
+<br>
 
 ### Answers
 
