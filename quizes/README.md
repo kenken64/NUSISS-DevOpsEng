@@ -652,19 +652,30 @@ C
     Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
 
 25) D.
+
     Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/user/access-ucp/cli-based-access/
 
-26)
+26) B.
 
-27)
+    Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/scan-images-for-vulnerabilities/#the-docker-security-scan-process
 
-28)
+27) B.
 
-29)
+28) D.
 
-30)
+    Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/
 
-31)
+29) C & D.
+
+    Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/grant-permissions/
+
+30) B.
+
+    Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/
+
+31) A , B , C, D.
+
+    Reference: https://docs.docker.com/engine/security
 
 32)
 
