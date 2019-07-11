@@ -339,7 +339,7 @@ B) False
 
 <br>
 
-### 25. What are the two types of UCP client bundles?
+## 25. What are the two types of UCP client bundles?
 
 ```
 A)	Docker CLI bundles and Docker web UI bundles
@@ -353,6 +353,7 @@ D)	Admin user certificate bundles and user certificate bundles
 
 D
 Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/user/access-ucp/cli-based-access/
+
 <br>
 
 ## 26 Docker security scan result is available in both UCP and DTR. True or false?
