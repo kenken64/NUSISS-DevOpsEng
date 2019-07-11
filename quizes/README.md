@@ -351,9 +351,6 @@ C)	Docker UCP client bundles and DTR client bundles
 D)	Admin user certificate bundles and user certificate bundles
 ```
 
-D
-Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/user/access-ucp/cli-based-access/
-
 <br>
 
 ## 26 Docker security scan result is available in both UCP and DTR. True or false?
@@ -568,6 +565,21 @@ D) Good candidates for replicated service are monitoring agents that you want to
 A
 <br>
 
+Which network driver type is best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated?
+
+```
+A)	User-defined bridge networks
+
+B)	Overlay networks
+
+C)	Host networks
+
+D)	Macvlan networks
+```
+
+C
+<br>
+
 ### Answers
 
 1. C.<br>
@@ -614,7 +626,7 @@ A
 17) B. <br>
     https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-in-a-dockerile
 
-18. A. <br>
+18) A. <br>
     docker exec -it bash is the command which you should use i stand for interactive and t stand for shell
 
 19. C. <br>
@@ -622,7 +634,7 @@ A
 
 20) B.
 
-21. B. <br>
+21) B. <br>
     Secrets can be used only by swarm service not standalone
     https://docs.docker.com/engine/swarm/secrets/
 
@@ -631,10 +643,41 @@ A
 
 23) A and D
 
-24. A.
+24) A.
 
     <br>
     Overlay networks can’t exist if docker engine is not part of a swarm. So to create overlay network being a manager node in a swarm is a necessary condition. If we try creating overlay network from a non manager node we get the following error
 
     \$ docker network create -d overlay network test.network
     Error response from daemon. Cannot create a multi host network from a worker node.Please create the network from a manager node.
+
+25) D.
+    Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/user/access-ucp/cli-based-access/
+
+26)
+
+27)
+
+28)
+
+29)
+
+30)
+
+31)
+
+32)
+
+33)
+
+34)
+
+35)
+
+36)
+
+37)
+
+38)
+
+39)
