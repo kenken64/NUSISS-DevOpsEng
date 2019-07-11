@@ -327,7 +327,7 @@ D) If multiple containers are spawned from the same image then they all use the 
 
 <br>
 
-### 24. Overlay networks cannot be crated if docker engine is not a manager node in docker swarm?
+### 24. Overlay networks cannot be create if docker engine is not a manager node in docker swarm?
 
 ```
 
@@ -336,6 +336,151 @@ A) True
 B) False
 
 ```
+
+<br>
+
+### 25. What are the two types of UCP client bundles?
+
+```
+A)	Docker CLI bundles and Docker web UI bundles
+
+B)	Ops client bundles and dev client bundles
+
+C)	Docker UCP client bundles and DTR client bundles
+
+D)	Admin user certificate bundles and user certificate bundles
+```
+
+D
+Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/user/access-ucp/cli-based-access/
+<br>
+
+## 26 Docker security scan result is available in both UCP and DTR. True or false?
+
+```
+A) True
+
+B) False
+```
+
+B
+Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/scan-images-for-vulnerabilities/#the-docker-security-scan-process
+<br>
+
+## 27 Docker security scan can be started by all users including those with read-only access. True or false?
+
+```
+A	True
+
+B	False
+```
+
+B
+<br>
+
+## 28 What is the command that need to be executed to sign an image before pushing it to repository?
+
+```
+A) export TRUST_DOCKER_CONTENT=1
+
+B) export TRUST_DOCKER_IMAGE=1
+
+C) export SIGN_DOCKER_IMAGE=1
+
+D) export DOCKER_CONTENT_TRUST=1
+```
+
+D
+Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/
+
+<br>
+
+## 29 What is a grant made up of in Docker's Role Based Access Controls (RBAC)? (select three)
+
+```
+A) Certificate
+
+B) Role
+
+C) Subject
+
+D) Resource collection
+
+C & D
+```
+
+Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/grant-permissions/
+
+<br>
+
+## 30 Where do you create Docker Role Based Access Controls (RBAC)?
+
+```
+A) Docker Machine
+
+B) Universal Control Plane
+
+C) Docker Compose
+
+D) Docker Trusted Registry
+```
+
+B
+
+Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/
+
+<br>
+
+## 31 Which of the followings are Docker Engine Security features? (select all that apply)
+
+A) You can configure Docker’s trust features so that your users can push and pull trusted images
+
+B) You can use certificate-based client-server authentication to verify a Docker daemon has the rights to access images on a registry
+
+C) You can configure secure computing mode (Seccomp) policies to secure system calls in a container
+
+D) You can protect the Docker daemon socket and ensure only trusted Docker client connections
+
+A , B , C, D
+
+Reference: https://docs.docker.com/engine/security
+
+## 32 What are the steps needed to sign images in a way that UCP trusts them? (select three)
+
+```
+A) Configure Notary client
+
+B) Delegate signing to the keys in your UCP client bundle
+
+C) Initialize trust metadata for the repository
+
+D) Approve image sign on UCP
+```
+
+A , B , C
+
+Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/#sign-images-that-ucp-can-trust
+
+Where is the option to integrate Docker Enterprise with LDAP?
+
+A Docker Machine
+B Docker Trusted Registry
+C Docker Compose
+D Universal Control Plane
+
+D
+
+https://docs.docker.com/datacenter/ucp/2.2/guides/admin/configure/external-auth/
+
+What is the difference between UCP workers and managers?
+
+A ucp-agent service automatically starts serving all UCP components in manager node, and only a proxy service in worker node
+
+B ucp-agent service automatically starts serving all UCP components in worker node, and only a proxy service in manager node
+
+A
+
+https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#under-the-hood
 
 ### Answers
 
