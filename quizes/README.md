@@ -361,8 +361,6 @@ A) True
 B) False
 ```
 
-B
-Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/scan-images-for-vulnerabilities/#the-docker-security-scan-process
 <br>
 
 ## 27 Docker security scan can be started by all users including those with read-only access. True or false?
@@ -373,7 +371,6 @@ A	True
 B	False
 ```
 
-B
 <br>
 
 ## 28 What is the command that need to be executed to sign an image before pushing it to repository?
@@ -387,9 +384,6 @@ C) export SIGN_DOCKER_IMAGE=1
 
 D) export DOCKER_CONTENT_TRUST=1
 ```
-
-D
-Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/
 
 <br>
 
@@ -405,10 +399,6 @@ C) Subject
 D) Resource collection
 ```
 
-C & D
-
-Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/grant-permissions/
-
 <br>
 
 ## 30 Where do you create Docker Role Based Access Controls (RBAC)?
@@ -422,10 +412,6 @@ C) Docker Compose
 
 D) Docker Trusted Registry
 ```
-
-B
-
-Reference: https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/
 
 <br>
 
@@ -441,9 +427,7 @@ C) You can configure secure computing mode (Seccomp) policies to secure system c
 D) You can protect the Docker daemon socket and ensure only trusted Docker client connections
 ```
 
-A , B , C, D
-
-Reference: https://docs.docker.com/engine/security
+<br>
 
 ## 32 What are the steps needed to sign images in a way that UCP trusts them? (select three)
 
@@ -457,9 +441,7 @@ C) Initialize trust metadata for the repository
 D) Approve image sign on UCP
 ```
 
-A , B , C
-
-Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/#sign-images-that-ucp-can-trust
+<br>
 
 ## 33 Where is the option to integrate Docker Enterprise with LDAP?
 
@@ -471,10 +453,6 @@ C) Docker Compose
 
 D) Universal Control Plane
 
-D
-
-https://docs.docker.com/datacenter/ucp/2.2/guides/admin/configure/external-auth/
-
 <br>
 
 ## 34 What is the difference between UCP workers and managers?
@@ -482,10 +460,6 @@ https://docs.docker.com/datacenter/ucp/2.2/guides/admin/configure/external-auth/
 A) ucp-agent service automatically starts serving all UCP components in manager node, and only a proxy service in worker node
 
 B) ucp-agent service automatically starts serving all UCP components in worker node, and only a proxy service in manager node
-
-A
-
-https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#under-the-hood
 
 <br>
 
@@ -501,7 +475,6 @@ C) html
 D) yaml
 ```
 
-A
 <br>
 
 ## 36 What are the two types of docker swarm services?
@@ -515,8 +488,6 @@ C) local and global services
 
 D) replicated and local services
 ```
-
-A
 
 <br>
 
@@ -532,7 +503,6 @@ C) To display system-wide information
 D) To return low-level information on Docker objects
 ```
 
-D
 <br>
 
 ## 38 Which of the following is the docker command to enable autolock on an existing swarm cluster?
@@ -547,7 +517,6 @@ C) docker swarm autolock
 D) docker swarm update --autolock-swarm=true
 ```
 
-B
 <br>
 
 ## 39 What is the difference between a replicated and a global service?
@@ -562,10 +531,9 @@ C) Replicated service runs one task on every node. Global service runs multiple 
 D) Good candidates for replicated service are monitoring agents that you want to run on every node in the swarm. Good candidates for global service are http servers.
 ```
 
-A
 <br>
 
-Which network driver type is best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated?
+## 40 Which network driver type is best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated?
 
 ```
 A)	User-defined bridge networks
@@ -577,7 +545,6 @@ C)	Host networks
 D)	Macvlan networks
 ```
 
-C
 <br>
 
 ### Answers
@@ -677,18 +644,26 @@ C
 
     Reference: https://docs.docker.com/engine/security
 
-32)
+32) A , B , C.
 
-33)
+    Reference: https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/sign-images/#sign-images-that-ucp-can-trust
 
-34)
+33) D.
 
-35)
+    https://docs.docker.com/datacenter/ucp/2.2/guides/admin/configure/external-auth/
 
-36)
+34) A.
 
-37)
+    https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#under-the-hood
 
-38)
+35) A.
 
-39)
+36) A.
+
+37) D.
+
+38) B.
+
+39) A.
+
+40) C.
