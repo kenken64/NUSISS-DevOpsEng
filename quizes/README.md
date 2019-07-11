@@ -492,6 +492,82 @@ https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#under-the-hood
 
 <br>
 
+## 35 What is the default format of docker inspect output?
+
+```
+A) json
+
+B) xml
+
+C) html
+
+D) yaml
+```
+
+A
+<br>
+
+## 36 What are the two types of docker swarm services?
+
+```
+A) replicated and global services
+
+B) distributed and replicated services
+
+C) local and global services
+
+D) replicated and local services
+```
+
+A
+
+<br>
+
+## 37 What is the function of docker inspect command?
+
+```
+A) To inspect changes to files or directories on a container's filesystem
+
+B) To manage Docker configs
+
+C) To display system-wide information
+
+D) To return low-level information on Docker objects
+```
+
+D
+<br>
+
+## 38 Which of the following is the docker command to enable autolock on an existing swarm cluster?
+
+```
+A) docker swarm --autolock=true
+
+B) docker swarm update --autolock=true
+
+C) docker swarm autolock
+
+D) docker swarm update --autolock-swarm=true
+```
+
+B
+<br>
+
+## 39 What is the difference between a replicated and a global service?
+
+```
+A) Number of identical tasks can be specified for a replicated service. There is no pre-specified number of tasks for global service.
+
+B) Replicated service can only be deployed on manager node. Global service can be deployed on both manager and worker node.
+
+C) Replicated service runs one task on every node. Global service runs multiple task on every node.
+
+D) Good candidates for replicated service are monitoring agents that you want to run on every node in the swarm. Good candidates for global service are http servers.
+```
+
+A
+<br>
+
 ### Answers
 
 1. C.<br>

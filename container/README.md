@@ -1,24 +1,25 @@
 # Container - Docker
 
+Playground URL - https://labs.play-with-docker.com/
+
 <img src="./images/img1.png" >
 
 <img src="./images/img2.png" >
 
-
 <img src="./images/img3.png">
 
-
 <img src="./images/img4.png" width="500" height="400">
-
 
 ## Install Docker on Google Cloud Engine/AWS
 
 1. Update Ubuntu/Debian package manager's index
+
 ```
 sudo apt-get update
 ```
 
 2. Install packages to allow apt to use a repository over HTTPS:
+
 ```
 sudo apt-get install \
     apt-transport-https \
@@ -27,11 +28,15 @@ sudo apt-get install \
     gnupg-agent \
     software-properties-common
 ```
+
 3. Add Docker’s official GPG key:
+
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
+
 4. Verify the fingerprint
+
 ```
 $ sudo apt-key fingerprint 0EBFCD88
 pub   rsa4096 2017-02-22 [SCEA]
@@ -41,30 +46,33 @@ sub   rsa4096 2017-02-22 [S]
 ```
 
 5. Use the following command to set up the stable repository. To add the nightly or test repository, add the word nightly or test (or both) after the word stable in the commands below.
+
 ```
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 ```
+
 6. Update package index
+
 ```
  sudo apt-get update
- ```
+```
 
- 7. Install the latest version of Docker CE and containerd, or go to the next step to install a specific version:
- ```
+7.  Install the latest version of Docker CE and containerd, or go to the next step to install a specific version:
+
+```
 sudo apt-get install docker-ce docker-ce-cli containerd.io
- ```
+```
 
 <img src="./images/img5.png" width="400" height="200">
 
+8.  Test hello world
 
- 8. Test hello world 
- ```
- sudo docker run hello-world
- ```
-
+```
+sudo docker run hello-world
+```
 
 ## Installing Docker Compose
 
@@ -88,21 +96,17 @@ https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-
 
 The docker group will likely already be created, but you still need to add your user to this group.
 
-
-
 ## Start on Boot
 
 Follow these instructions so that Docker and its services start automatically on boot:
 
 https://docs.docker.com/install/linux/linux-postinstall/#configure-docker-to-start-on-boot
 
-
-
 You may need to restart your system before starting the course material.
 
 ## Using Docker Client
 
-### Check version 
+### Check version
 
 ```
 bunnyppl@instance-1:~$ sudo docker version
@@ -132,7 +136,6 @@ Server: Docker Engine - Community
 
 <img src="./images/img7.png" width="500" height="300">
 
-
 ```
 sudo docker run busybox echo are you ok?
 ```
@@ -142,6 +145,7 @@ sudo docker run busybox ls
 ```
 
 ### Not all images the same
+
 ```
 bunnyppl@instance-1:~$ sudo docker run hello-world ls
 
@@ -158,6 +162,7 @@ docker images
 ```
 
 ### List all the container on Docker Engine
+
 ```
 docker ps
 ```
@@ -208,6 +213,7 @@ sudo docker start -a e6e4746d1a831508ab3dd838e734b2ed8f641f3545a7f41758d1f503e8c
 ```
 
 Check docker exist with status
+
 ```
 sudo docker ps --all
 ```
@@ -219,6 +225,7 @@ sudo docker start -a 7eb505e0966e
 ```
 
 Not allow to run mutiple same container at once
+
 ```
 sudo docker start -a 7eb505e0966e echo hi there
 ```
@@ -259,6 +266,7 @@ Total reclaimed space: 0B
 ### Retrieving all output logs without -a
 
 There is not restart on the container
+
 ```
 bunnyppl@instance-1:~$ sudo docker create busybox echo hi there
 a1f8bcd83040df5cfd6f1e7389d89104761f33eb153ec4765faba7d34b953bb0
@@ -286,7 +294,7 @@ hi there
 
 <img src="./images/img14.png" width="500" height="250">
 
-10 seconds to shutdown with stop then it will fallback to kill 
+10 seconds to shutdown with stop then it will fallback to kill
 
 ```
 sudo docker create busybox ping www.google.com
@@ -326,11 +334,13 @@ f48779733ad7
 ```
 
 Let's restart the docker again with the container id
+
 ```
 sudo docker start f48779733ad7
 ```
 
 No grace period
+
 ```
 bunnyppl@instance-1:~$ sudo docker kill f48779733ad7
 f48779733ad7
@@ -369,6 +379,7 @@ sudo systemctl restart redis.service
 ```
 
 Run redis server inside the container
+
 ```
 sudo docker run redis
 ```
@@ -380,12 +391,13 @@ bunnyppl@instance-1:~$ sudo docker exec -it 3e00723f6add redis-cli
 
 127.0.0.1:6379> set myvalue 4
 OK
-127.0.0.1:6379> get myvalue 
+127.0.0.1:6379> get myvalue
 "4"
-127.0.0.1:6379> 
+127.0.0.1:6379>
 ```
 
 Without it argument
+
 ```
 bunnyppl@instance-1:~$ sudo docker exec 3e00723f6add redis-cli
 bunnyppl@instance-1:~$
@@ -397,23 +409,26 @@ How to launch a shell without keep using exec / debugging inside the container
 sudo docker exec -it 3e00723f6add sh
 ```
 
-## What is a sh ? 
+## What is a sh ?
 
 Shell prompt command processor.
 
 Container do not automatically share each others file system
 
 ### First terminal
+
 ```
 sudo docker run -it busybox sh
 ```
 
 ### Second terminal
+
 ```
 sudo docker run -it busybox sh
 ```
 
 On the first terminal
+
 ```
 touch nusiss.txt
 vi nusiss.txt
@@ -421,23 +436,27 @@ Kennet is here !
 ```
 
 On the second terminal, the nusiss.txt won't appear on the second instance
+
 ```
 ls -lrt
 ```
 
 ## Create our own custom image, start our own custom container
 
-1. Create a working directory 
+1. Create a working directory
+
 ```
 mkdir redis-image
 ```
 
 2. Change to the working directory
+
 ```
 cd redis-image
 ```
 
-3. Create a Dockerfile 
+3. Create a Dockerfile
+
 ```
 # Use an existing docker image as a base
 FROM alpine
@@ -448,6 +467,7 @@ CMD ["redis-server"]
 ```
 
 4. Build the docker image
+
 ```
 sudo docker build .
 ```
@@ -455,7 +475,7 @@ sudo docker build .
 ```
 Step 1/3 : FROM alpine
 latest: Pulling from library/alpine
-bdf0201b3a05: Pull complete 
+bdf0201b3a05: Pull complete
 Digest: sha256:28ef97b8686a0b5399129e9b763d5b7e5ff03576aa5580d6f4182a49c5f
 e1913
 Status: Downloaded newer image for alpine:latest
@@ -516,11 +536,13 @@ CMD ["redis-server"]
 ## Tagging an Image
 
 Naming convention for tagging an image dockerId/project-name/version
+
 ```
 sudo docker build -t kenken64/redis/latest .
 ```
 
 ## Manual create and image using commit
+
 ```
 sudo docker run -it alpine sh
 apk add --update redis
@@ -542,7 +564,8 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
-2. rebuild the docker image 
+2. rebuild the docker image
+
 ```
 sudo docker build .
 ```
@@ -574,20 +597,23 @@ CMD ["npm", "start"]
 sudo docker build -t kenken64/backend .
 ```
 
-5.  Run the tagged image 
+5.  Run the tagged image
+
 ```
 sudo docker run kenken64/backend
 ```
 
 ## Container port forwarding and specify working directory
 
-1. Forward outside host port to the container 
+1. Forward outside host port to the container
+
 ```
 sudo docker run -p 8080:3000 kenken64/backend
 ```
 
 2. We can export the container port and map a different port number from
-the host server
+   the host server
+
 ```
 # small and compact as possible
 from node:alpine
@@ -600,28 +626,32 @@ EXPOSE 3000/tcp
 CMD ["npm", "start"]
 ```
 
-3. rebuild the image 
+3. rebuild the image
+
 ```
 sudo docker build -t kenken64/backend .
 ```
 
-4. Start the newly build image 
+4. Start the newly build image
+
 ```
 sudo docker run -p 8080:3000/tcp kenken64/backend
 ```
 
 ## Optimize for unnecessary rebuild
 
-Mapping volume from the container to the outside file system 
+Mapping volume from the container to the outside file system
 
 ```
 sudo docker run -p 8080:3000 -v /usr/app/node_modules -v $(pwd):/usr/app kenken64/backend
 ```
 
 ## Multiple container setup
+
 1. Download the visits project
 2. cd visits project
 3. Create a dockefile on the visits project
+
 ```
 FROM node:alpine
 
@@ -633,22 +663,27 @@ COPY . .
 
 CMD ["npm", "start"]
 ```
+
 4. Build a docker image
+
 ```
 sudo docker build -t kenken64/visits:latest .
 ```
 
 5. Start a separate container running redis server
+
 ```
 sudo docker run redis
 ```
 
 6. Run the docker image as container
+
 ```
 sudo docker run -p 8081:8081/tcp kenken64/visits:latest
 ```
 
 ## Deep dive with docker compose
+
 1. Create a docker-compose.yml , spawn two separate containers
 
 ```
@@ -665,11 +700,13 @@ services:
 2. Just define docker-compose , docker engine automatically put two container on the same network
 
 An argument -d is sent to background
+
 ```
 docker-compose up -d
 ```
 
 3. Shutdown the docker compose containers
+
 ```
 docker-compose down
 ```
@@ -705,6 +742,7 @@ app.listen(8081, () => {
 ```
 
 2. Startup and rebuild the docker compose
+
 ```
 docker-compose up --build
 ```
@@ -712,6 +750,7 @@ docker-compose up --build
 3. Launch web browser, access the web app via http://localhost:4001. Notice the logs indicated process crashed.
 
 4. Check the current process of the container
+
 ```
 docker ps
 ```
@@ -719,7 +758,6 @@ docker ps
 5. Amend your docker-compose yml to have the policy restart always
 
 <img src="./images/img15.png" width="500" height="250">
-
 
 ```
 version: '3'
@@ -734,9 +772,11 @@ services:
 ```
 
 6. Re-startup the container and acess the app on the web browser
+
 ```
 docker-compose up
 ```
+
 7. Change the policy of the docker compose to on
 
 ```
@@ -764,13 +804,15 @@ docker-compose ps
 ## Publish your own Docker Image to the DockerHub repo
 
 1. Login to docker hub through the CLI
+
 ```
 bunnyppl@instance-1:~/NUSISS-DevOpsEng/container/subsdevices$ sudo docker login
 ```
+
 ```
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
 Username: kenken64
-Password: 
+Password:
 WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
@@ -784,25 +826,27 @@ Login Succeeded
 sudo docker images
 ```
 
-3. Tag the image 
+3. Tag the image
+
 ```
-sudo docker tag d8b928587243 kenken64/subsdevices:v1       
+sudo docker tag d8b928587243 kenken64/subsdevices:v1
 ```
 
 4. Push the tagged image to the docker hub
+
 ```
 sudo docker push kenken64/subsdevices:v1
 ```
 
 ```
 The push refers to repository [docker.io/kenken64/subsdevices]
-82674fe9a8e6: Pushed 
-6f5e00ced6e0: Pushed 
-86865100bc00: Pushed 
-7e93be41b55d: Pushed 
-1c07e18a989b: Mounted from library/node 
-b92d384cdf06: Mounted from library/node 
-a464c54f93a9: Mounted from library/node 
+82674fe9a8e6: Pushed
+6f5e00ced6e0: Pushed
+86865100bc00: Pushed
+7e93be41b55d: Pushed
+1c07e18a989b: Mounted from library/node
+b92d384cdf06: Mounted from library/node
+a464c54f93a9: Mounted from library/node
 v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
 ```
 
@@ -828,6 +872,7 @@ CMD ["npm", "run", "start"]
 ```
 
 2. Build the docker image
+
 ```
 sudo docker build -f Dockerfile.dev -t kenken64/react-app
 ```
@@ -848,13 +893,13 @@ chmod +x ngrok
 
 5. Use web browser to access the generated ngrok address from the terminal
 
-6. Create a docker-compose.yml 
+6. Create a docker-compose.yml
 
 ```
 version: '3'
 services:
     web:
-      build: 
+      build:
         context: .
         dockerfile: Dockerfile.dev
       ports:
@@ -864,23 +909,25 @@ services:
         - .:/app
 ```
 
-
 7. Start the docker container using docker-compose
+
 ```
 sudo docker-compose up --build
 ```
 
 8. Implement test on separate container
+
 ```
 sudo docker exec -it 87b898a5cc64 npm run test
 ```
 
-* Add test service in the docker compose yml file
+- Add test service in the docker compose yml file
+
 ```
 version: '3'
 services:
     web:
-      build: 
+      build:
         context: .
         dockerfile: Dockerfile.dev
       ports:
@@ -897,7 +944,9 @@ services:
           - .:/app
       command: ["npm", "run", "test"]
 ```
+
 9. Start the docker container using docker-compose
+
 ```
 sudo docker-compose up --build
 ```
@@ -945,7 +994,6 @@ sudo docker run -p 8080:80 936ca285e822
 
 <img src="./images/img20.png">
 
-
 ```
 sudo: required
 services:
@@ -954,26 +1002,25 @@ services:
 before install:
   - docker build -t kenken64/subsdevices:v1 -f Dockerfile.dev .
 
-script: 
+script:
   - docker run kenken64/subsdevices:v1 npm run test -- --coverage
 ```
 
 15. Login into travis CI dashboard and monitor the successful build
 
 16. Login into AWS account and create a elastic beanstalk instance.
-Watch the below step by step walkthorugh youtube videos:-
+    Watch the below step by step walkthorugh youtube videos:-
 
-| Video URL        | Description           | 
-| ------------- |:-------------:| 
-| https://youtu.be/L01gk757pq4      | AWS - Create Elastic BeanStalk | 
-| https://youtu.be/vJG-4J2cp0s      | AWS - Create Elastic BeanStalk Part 2      | 
-| https://youtu.be/vz2Y8LvcdHw | Configure IAM for Travis CI with Elastic Beanstalk      | 
-| https://youtu.be/XUfBsttJnbA | Configure env variable @ Travis CI      | 
-
+| Video URL                    |                    Description                     |
+| ---------------------------- | :------------------------------------------------: |
+| https://youtu.be/L01gk757pq4 |           AWS - Create Elastic BeanStalk           |
+| https://youtu.be/vJG-4J2cp0s |       AWS - Create Elastic BeanStalk Part 2        |
+| https://youtu.be/vz2Y8LvcdHw | Configure IAM for Travis CI with Elastic Beanstalk |
+| https://youtu.be/XUfBsttJnbA |         Configure env variable @ Travis CI         |
 
 - Make sure the AWS region is always set to <b>Singapore</b>
-- Deployment type is choosen as Docker 
-- Source code is Sample application given in this tutorial 
+- Deployment type is choosen as Docker
+- Source code is Sample application given in this tutorial
 - The configuration and setup takes a few minutes to finish.
 
 17. Amend the .travis.yml with additional deployment
@@ -986,7 +1033,7 @@ services:
 before install:
   - docker build -t kenken64/subsdevices:v1 -f Dockerfile.dev .
 
-script: 
+script:
   - docker run kenken64/subsdevices:v1 npm run test -- --coverage
 
 deploy:
@@ -996,10 +1043,10 @@ deploy:
   env: "DockerSubdevices-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-200097394821"
   bucket_path: "docker-subdevices"
-  on: 
+  on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: 
+  secret_access_key:
     secure: "$AWS_SECRET_KEY"
 ```
 
