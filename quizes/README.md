@@ -578,7 +578,7 @@ D)	Macvlan networks
 
 12) B.
 
-13) D.
+13) D. <br>
     https://docs.docker.com/engine/reference/commandline/network_inspect/
 
 14) C.
