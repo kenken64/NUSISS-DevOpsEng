@@ -39,6 +39,23 @@ Going back to the example of save point in a game, you can think of a branch as 
 
 With this terminology in mind, let's take a high-level look at how we'll be using Git by looking at the typical workflow when working with version control.
 
+# Windows Setup
+
+Installing Git
+To download Git:
+
+* go to https://git-scm.com/downloads
+* download the software for Windows
+* install Git choosing all of the default options
+Once everything is installed, you should be able to run git on the command line. If it displays the usage information, then you're good to go!
+
+If you run into any issues, please remember to take advantage of Knowledge and the community in your Study Group.
+
+Configuring the Command Prompt on Windows
+We're about to configure the Command Prompt to display helpful information when in a directory that's under version control. This is an optional step! You do not need to re-configure your Command Prompt for Git to work. You can complete the entire course without reconfiguring it. However, reconfiguring the Command Prompt makes it significantly easier to use.
+
+If you choose to configure your Command Prompt, here's what it should look like when you're finished.
+
 # Mac & Linux Setup
 
 Installing Git
