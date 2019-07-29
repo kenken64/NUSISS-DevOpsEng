@@ -497,3 +497,14 @@ Switching branches is a straightforward operation. Executing the following will 
 git checkout <branchname>
 ```
 Git tracks a history of checkout operations in the reflog. You can execute git reflog to view the history.
+
+### How to resolve conflict
+
+To see the beginning of the merge conflict in your file, search the file for the conflict marker <<<<<<<. When you open the file in your text editor, you'll see the changes from the HEAD or base branch after the line <<<<<<< HEAD. Next, you'll see =======, which divides your changes from the changes in the other branch, followed by >>>>>>> BRANCH-NAME. In this example, one person wrote "open an issue" in the base or HEAD branch and another person wrote "ask your question in IRC" in the compare branch or branch-a.
+
+If you have questions, please
+<<<<<<< HEAD
+open an issue
+=======
+ask your question in IRC.
+>>>>>>> branch-a
