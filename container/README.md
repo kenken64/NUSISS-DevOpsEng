@@ -1,5 +1,10 @@
 # Container - Docker
 
+
+## What is Docker/Container?
+
+Docker is a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc
+
 Playground URL - https://labs.play-with-docker.com/
 
 <img src="./images/img1.png" >
