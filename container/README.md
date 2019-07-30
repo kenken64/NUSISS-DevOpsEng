@@ -5,6 +5,17 @@
 
 Docker is a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc
 
+## VM vs Container
+
+| VMs        | Containers           | 
+| ------------- |:-------------:| 
+| Heavyweight      | Lightweight | 
+| Limited performance      | [Native performance | 
+| Hardware-level virtualization      | OS virtualization     | 
+| Startup time in minutes | Startup time in milliseconds      | 
+| Allocates required memory | Requires less memory space      | 
+| Fully isolated and hence more secure | Process-level isolation, possibly less secure      |
+
 Playground URL - https://labs.play-with-docker.com/
 
 <img src="./images/img1.png" >
