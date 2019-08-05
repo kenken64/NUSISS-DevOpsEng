@@ -1,3 +1,13 @@
+<style>
+img[src~="thumbnail"] {
+   width:150px;
+   height:100px;
+}
+img[src~="bordered"] {
+   border: 1px solid black;
+}
+</style>
+
 | Workshop        | Url           | 
 | ------------- |:-------------:| 
 | S-DOEA - Workshop - Jenkins Installation       | [Workshop #1](./workshop/workshop1.md) |
@@ -10,12 +20,12 @@
 
 <table>
     <tr>
-        <td><img style="float: right;" src="./git.png" width="200" height="100"></td>
-        <td><img style="float: right;" src="./docker.png" width="200" height="100"></td>
-        <td><img style="float: right;" src="./puppet.png" width="200" height="100"></td>
-        <td><img style="float: right;" src="./aws_code_deploy.png" width="200" height="100"></td>
-        <td><img style="float: right;" src="./dockerswarm.png" width="200" height="100"></td>
-        <td><img style="float: right;" src="./Kubernetes.png" width="200" height="100"></td>
+        <td><img style="width:650px; height:100px; float: right;" src="./git.png"></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./docker.png"></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./puppet.png"></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./aws_code_deploy.png"></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./dockerswarm.png"></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./Kubernetes.png"></td>
     </tr>
 </table>
 
