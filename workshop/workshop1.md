@@ -1,24 +1,21 @@
 # Jenkins Installation
 
-1. Use bitnami instance
-2. Get the password 
-3. Learn how to setup jenkins project
-4. Familiar with the configuration
-
-
-## Pre-requisites for cloud installation
+## Pre-requisites for Cloud installation
 * AWS account
 
 ### Step by step installation
-1. Navigate to the services link
+1. Navigate to the AWS services link
 2. Select EC2
-3. Launch a new instance
+3. Launch a new instance, search 'bitnami jenkins' on the marketplace 
 4. Choose Ubuntu 18.04 free tier
 5. Generate a new key for the ssh login
-6. 
+6. Logon into the ssh session, change directory to /home/bitnami
+7. Look for the username and password under the bitnami_credential file.
+8. Retrieve ip4 public IP address or the DNS from the AWS jenkins instance console panel
+9. Launch the web browser then access the jenkins web admin app.
 
 ## Pre-requisites for local workstatio installation
-* Java JDK 9
+* Java JDK 9 or higher
 
 ### Step by step installation
 1. Navigate the Jenkins official website. Download the WAR file from the LTS link. By default, the latest release and the Long-Term support release will be available for download. The past releases are also available for download. Click the Long-Term Support Release tab in the download section. 
