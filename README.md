@@ -1,12 +1,3 @@
-<style>
-img[src~="thumbnail"] {
-   width:150px;
-   height:100px;
-}
-img[src~="bordered"] {
-   border: 1px solid black;
-}
-</style>
 
 | Workshop        | Url           | 
 | ------------- |:-------------:| 
@@ -20,7 +11,7 @@ img[src~="bordered"] {
 
 <table>
     <tr>
-        <td><img style="width:650px; height:100px; float: right;" src="./git.png"></td>
+        <td><img style="width:800px; height:200px; float: right;" src="./git.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./docker.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./puppet.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./aws_code_deploy.png"></td>
