@@ -14,7 +14,7 @@
 8. Retrieve ip4 public IP address or the DNS from the AWS jenkins instance console panel
 9. Launch the web browser then access the jenkins web admin app.
 
-## Pre-requisites for local workstatio installation
+## Pre-requisites for local workstation installation
 * Java JDK 9 or higher
 
 ### Step by step installation
