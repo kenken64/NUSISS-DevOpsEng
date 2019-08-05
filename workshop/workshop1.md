@@ -7,7 +7,14 @@
 1. Navigate to the AWS services link
 2. Select EC2
 3. Launch a new instance, search 'bitnami jenkins' on the marketplace 
-4. Choose Ubuntu 18.04 free tier
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2.png"/>
+<br>
+
+4. Search 'bitnami jenkins' on AWS marketplace click on Select to create the instance
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2.png"/>
+<br>
 5. Generate a new key for the ssh login
 6. Logon into the ssh session, change directory to /home/bitnami
 7. Look for the username and password under the bitnami_credential file.
