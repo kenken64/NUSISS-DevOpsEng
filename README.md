@@ -11,7 +11,7 @@
 
 <table>
     <tr>
-        <td><img style="width:800px; height:200px; float: right;" src="./git.png"></td>
+        <td><img style="float: right;" src="./git.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./docker.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./puppet.png"></td>
         <td><img style="width:650px;height:100px; float: right;" src="./aws_code_deploy.png"></td>
