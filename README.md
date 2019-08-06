@@ -1,8 +1,8 @@
 
 | Workshop        | Url           | 
 | ------------- |:-------------:| 
-| S-DOEA - Workshop - Jenkins Installation       | [Workshop #1](./workshop/workshop1.md) |
-| S-DOEA - Workshop - Github Workshop       | [Workshop #2](./workshop/workshop2.md) | 
+| S-DOEA - Workshop - Github Workshop       | [Workshop #1](./workshop/workshop2.md) | 
+| S-DOEA - Workshop - Jenkins Installation       | [Workshop #2](./workshop/workshop1.md) |
 | S-DOEA - Workshop - Jenkins - CI Workshop       | [Workshop #3](./workshop/workshop3.md) | 
 | S-DOEA - Workshop - Infrastructure as Code Workshop (Puppet)       | [Workshop #4](./workshop/workshop4.md) | 
 | S-DOEA - Workshop - Containers and Container Management Workshop       | [Workshop #5](./workshop/workshop5.md) | 
