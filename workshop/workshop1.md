@@ -5,6 +5,10 @@
 
 ### Step by step installation
 1. Navigate to the AWS services link top left corner beside the AWS logo
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins24.png"/>
+<br>
+
 2. Search/Select EC2 under the compute category
 3. Launch a new instance, search 'bitnami jenkins' on the marketplace 
 <br>
