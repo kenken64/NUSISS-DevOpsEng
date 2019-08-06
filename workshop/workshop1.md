@@ -259,15 +259,8 @@ OS	Output
 | Windows | Append the String; C:\Program Files\Java\jdk1.7.0_60\bin to the end of the system variable PATH. | 
 | Linux | export PATH=$PATH:$JAVA_HOME/bin/ | 
 
-3. Download Tomcat
-
-The official website for tomcat is Tomcat. If you click the given link, you can get the home page of the tomcat official website as shown below.
- 
-Browse to the link https://tomcat.apache.org/download-70.cgi to get the download for tomcat.
- 
-Go to the ‘Binary Distributions’ section. Download the 32-bit Windows zip file.
+3. Download Tomcat. The official website for tomcat is Tomcat. If you click the given link, you can get the home page of the tomcat official website as shown below. Browse to the link https://tomcat.apache.org/download-70.cgi to get the download for tomcat. Go to the ‘Binary Distributions’ section. Download the 32-bit Windows zip file.
 Then unzip the contents of the downloaded zip file.
-
 
 4. Jenkins and Tomcat Setup
 Copy the Jenkis.war file which was downloaded from the previous section and copy it to the webapps folder in the tomcat folder.
