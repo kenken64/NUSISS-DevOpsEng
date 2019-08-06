@@ -1,8 +1,8 @@
 # Infrastructure as Code 
 
-Setting up EC2 instances for puppet
+# Setting up EC2 instances for puppet
 
-Creating EC2 Key pair
+## Creating EC2 Key pair
 
 1.	Login to AWS consle and open the Amazon EC2 console.
 2.	In the top navigation bar, choose the region in the dropdown region selector.
