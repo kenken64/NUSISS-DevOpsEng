@@ -4,7 +4,7 @@
 * [Github](https://github.com/)/[Gitlab](https://about.gitlab.com/) account
 * Download & Install Git for Windows https://git-scm.com/download/win
 
-** For mac users please use brew 
+### For mac users please use brew 
 
 Homebrew (http://brew.sh/) is another alternative to install Git. If you have Homebrew installed, install Git via
 
