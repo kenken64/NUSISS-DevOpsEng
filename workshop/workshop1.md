@@ -16,9 +16,13 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2.png"/>
 <br>
 5. Generate a new key for the ssh login
+
 6. Logon into the ssh session, change directory to /home/bitnami
+
 7. Look for the username and password under the bitnami_credential file.
+
 8. Retrieve ip4 public IP address or the DNS from the AWS jenkins instance console panel
+
 9. Launch the web browser then access the jenkins web admin app.
 
 ## Pre-requisites for local workstation installation
