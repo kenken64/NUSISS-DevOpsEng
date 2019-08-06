@@ -319,16 +319,23 @@ You will then be presented with the following screen −
  
 Click on Configure system. Discussed below are some of the Jenkins configuration settings which can be carried out.
 Jenkins Home Directory
-Jenkins needs some disk space to perform builds and keep archives. One can check this location from the configuration screen of Jenkins. By default, this is set to ~/.jenkins, and this location will initially be stored within your user profile location. In a proper environment, you need to change this location to an adequate location to store all relevant builds and archives. Once can do this in the following ways
-•	Set "JENKINS_HOME" environment variable to the new home directory before launching the servlet container.
-•	Set "JENKINS_HOME" system property to the servlet container.
-•	Set JNDI environment entry "JENKINS_HOME" to the new directory.
+Jenkins needs some disk space to perform builds and keep archives. One can check this location from the configuration screen of Jenkins. By default, this is set to ~/.jenkins, and this location will initially be stored within your user profile location. In a proper environment, you need to change this location to an adequate location to store all relevant builds and archives. 
+Once can do this in the following ways
+
+*	Set "JENKINS_HOME" environment variable to the new home directory before launching the servlet container.
+
+*	Set "JENKINS_HOME" system property to the servlet container.
+*	Set JNDI environment entry "JENKINS_HOME" to the new directory.
 The following example will use the first option of setting the "JENKINS_HOME" environment variable.
 First create a new folder E:\Apps\Jenkins. Copy all the contents from the existing ~/.jenkins to this new directory.
+
 Set the JENKINS_HOME environment variable to point to the base directory location where Java is installed on your machine. For example,
-OS	Output
-Windows	Set Environmental variable JENKINS_HOME to you’re the location you desire. As an example you can set it to E:\Apps\Jenkins
-Linux	export JENKINS_HOME =/usr/local/Jenkins or the location you desire.
+
+| OS        | Output           | 
+| ------------- |:-------------:| 
+| Windows | Set Environmental variable JENKINS_HOME to you’re the location you desire. As an example you can set it to E:\Apps\Jenkins | 
+| Linux | export JENKINS_HOME =/usr/local/Jenkins or the location you desire. | 
+
 In the Jenkins dashboard, click Manage Jenkins from the left hand side menu. Then click on ‘Configure System’ from the right hand side.
 In the Home directory, you will now see the new directory which has been configured.
  

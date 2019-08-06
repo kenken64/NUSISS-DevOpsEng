@@ -100,7 +100,7 @@ To https://github.com/kenken64/ProjectA.git
 
 12. Verify all the files are pushed to the github repo after the above steps
 
-** Whenever there is new files created or any changes to the current codebase if the developer would like to check in their codes please run step 8,9,10 again. For those of you not very comfortable with command line there are many IDE git integration software out there. I'll demo how it works for Visual Studio Code. Git GUI Standalone software by Atlassian https://www.sourcetreeapp.com/
+** Whenever there is new files created or any changes to the current codebase if the developer would like to check in their codes please run step 8,9,10 again. For those of you not very comfortable with command line there are many IDE Git integration software out there. See below screen capture for Visual Studio Code Git Plugin. Also Git GUI Standalone software by Atlassian https://www.sourcetreeapp.com/
 
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/git5.png"/>
