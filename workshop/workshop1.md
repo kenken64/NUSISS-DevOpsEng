@@ -2,6 +2,8 @@
 
 ## Pre-requisites for Cloud installation
 * AWS account
+* Download & Install Putty and PuttyGen https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
 
 ### Step by step installation
 1. Navigate to the AWS services link top left corner beside the AWS logo
@@ -208,6 +210,8 @@ Once the processing is complete without major errors, the following line will co
 INFO: Jenkins is fully up and running
 ```
 
+Stop the process by pressing Ctrl + C
+
 ### Accessing Jenkins
 Once Jenkins is up and running, one can access Jenkins from the link − http://localhost:8080
 This link will bring up the Jenkins dashboard.
@@ -345,7 +349,7 @@ This is used to add custom environment variables which will apply to all the job
 
 By default, the Jenkins URL points to localhost. If you have a domain name setup for your machine, set this to the domain name else overwrite localhost with IP of machine. This will help in setting up slaves and while sending out links using the email as you can directly access the Jenkins URL using the environment variable JENKINS_URL which can be accessed as ${JENKINS_URL}.
 
-##Email Notification
+## Email Notification
 
 In the email Notification area, you can configure the SMTP settings for sending out emails. This is required for Jenkins to connect to the SMTP mail server and send out emails to the recipient list.
 
