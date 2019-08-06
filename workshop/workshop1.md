@@ -14,7 +14,7 @@
 4. Search 'bitnami jenkins' on AWS marketplace click on Select to create the instance
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2.png"/>
-<br>
+
 5. Generate a new key for the ssh login
 
 6. Logon into the ssh session, change directory to /home/bitnami
