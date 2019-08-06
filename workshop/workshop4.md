@@ -29,7 +29,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 
 1.	In the left navigation pane, under Instances, click Instances.
 2.	Launch Instance.
-3.	Select Ubuntu Server 16.04 LTS (HVM), SSD Volume Type image.
+3.	Select Ubuntu Server 18.04 LTS (HVM), SSD Volume Type image.
  
 <br>
 <img style="float: center;" src="./screens/puppet3.png">
