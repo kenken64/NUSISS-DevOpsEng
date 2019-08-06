@@ -259,13 +259,14 @@ OS	Output
 | Windows | Append the String; C:\Program Files\Java\jdk1.7.0_60\bin to the end of the system variable PATH. | 
 | Linux | export PATH=$PATH:$JAVA_HOME/bin/ | 
 
-3. Download Tomcat. The official website for tomcat is Tomcat. If you click the given link, you can get the home page of the tomcat official website as shown below. Browse to the link https://tomcat.apache.org/download-70.cgi to get the download for tomcat. Go to the ‘Binary Distributions’ section. Download the 32-bit Windows zip file.
-Then unzip the contents of the downloaded zip file.
+3. Download Tomcat. The official website for tomcat is Tomcat. If you click the given link, you can get the home page of the tomcat official website as shown below. Browse to the link https://tomcat.apache.org/download-70.cgi to get the download for tomcat. 
 
-4. Jenkins and Tomcat Setup
+4. Go to the ‘Binary Distributions’ section. Download the 32-bit Windows zip file. Then unzip the contents of the downloaded zip file.
+
+5. Jenkins and Tomcat Setup
 Copy the Jenkis.war file which was downloaded from the previous section and copy it to the webapps folder in the tomcat folder.
 
-5. Now open the command prompt. From the command prompt, browse to the directory where the tomcat7 folder is location. Browse to the bin directory in this folder and run the start.bat file
+6. Now open the command prompt. From the command prompt, browse to the directory where the tomcat7 folder is location. Browse to the bin directory in this folder and run the start.bat file
 E:\Apps\tomcat7\bin>startup.bat
 Once the processing is complete without major errors, the following line will come in the output of the command prompt.
 INFO: Server startup in 1302 ms
@@ -331,7 +332,7 @@ Linux	export JENKINS_HOME =/usr/local/Jenkins or the location you desire.
 In the Jenkins dashboard, click Manage Jenkins from the left hand side menu. Then click on ‘Configure System’ from the right hand side.
 In the Home directory, you will now see the new directory which has been configured.
  
-## Number of executors
+## No. of executors
 This refers to the total number of concurrent job executions that can take place on the Jenkins machine. This can be changed based on requirements. Sometimes the recommendation is to keep this number the same as the number of CPU on the machines for better performance.
 
 ## Environment Variables
@@ -375,11 +376,19 @@ The following screenshot shows some of the name-value information available in t
 ## System Log
 
 The System Log screen is a convenient way to view the Jenkins log files in real time. Again, the main use of this screen is for troubleshooting.
-Load Statistics
+
+
+## Load Statistics
+
 This pages displays graphical data on how busy the Jenkins instance is in terms of the number of concurrent builds and the length of the build queue which gives an idea of how long your builds need to wait before being executed. These statistics can give a good idea of whether extra capacity or extra build nodes is required from an infrastructure perspective.
-Script Console
+
+## Script Console
 This screen lets you run Groovy scripts on the server. It is useful for advanced troubleshooting since it requires a strong knowledge of the internal Jenkins architecture.
-Manage nodes
+
+## Manage nodes
+
 Jenkins is capable of handling parallel and distributed builds. In this screen, you can configure how many builds you want. Jenkins runs simultaneously, and, if you are using distributed builds, set up build nodes. A build node is another machine that Jenkins can use to execute its builds.
-Prepare for Shutdown
+
+## Prepare for Shutdown
+
 If there is a need to shut down Jenkins, or the server Jenkins is running on, it is best not to do so when a build is being executed. To shut down Jenkins cleanly, you can use the Prepare for Shutdown link, which prevents any new builds from being started. Eventually, when all of the current builds have finished, one will be able to shut down Jenkins cleanly.
