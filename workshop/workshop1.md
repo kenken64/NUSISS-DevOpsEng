@@ -102,7 +102,7 @@ Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1085-aws x86_64)
   *** Bitnami Forums: https://community.bitnami.com/ ***
 ```
 
-17. Look for the username and password under the bitnami_credentials file. View the jenkins credential file with the below command
+17. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
 
 ```
 more bitnami_credentials
