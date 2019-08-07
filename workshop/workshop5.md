@@ -1,5 +1,10 @@
 # Containers and Container Management 
 
+## Pre-requisite
+* AWS Account 
+* Dockerhub Account
+* Github Account
+
 ## Test out the Docker installation on the Puppet Slave server
 
 1. Test out whether docker cli is install correctly

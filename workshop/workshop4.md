@@ -1,5 +1,8 @@
 # Infrastructure as Code 
 
+## Pre-requisite
+* AWS Account 
+
 # Setting up EC2 instances for puppet
 
 ## Creating EC2 Key pair
