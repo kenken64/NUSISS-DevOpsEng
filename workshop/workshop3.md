@@ -3,6 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Oracle Account
+* Github Account 
 
 ## Setup Jenkins before creating new build job
 
@@ -36,11 +37,41 @@
 <img style="float: center;" src="./screens/jenkinsci5.png">
 <br>
 
+6. Restart Jenkins, copy and paste the URL on your browser's address bar
+
+http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/safeRestart
+
 ## Create a Ant Project Job 
 
-1. Configure a new project as development
-2. Configure a new project as staging
-3. Configure as production
-4. All from different branches
-5. Introduce pull request to merge from one branch to another
-6. Demo the build are propogated from one jenkins task to another
+1. Fork the following git repository https://github.com/kenken64/StackAnnotation to your own Github Account
+
+2. Clone the codes down to your local working directory
+```
+git clone https://github.com/<your username>/StackAnnotation
+```
+
+3. Branch it as development, check it into the remote repository
+
+```
+git checkout -b development
+git add .
+git commit -m "new development branch"
+git push origin development
+```
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci6.png">
+<br>
+
+2. Go to Jenkins, configure a new freestyle job
+
+
+3. Enter task description as 'This is a StackAnnotation ant build'
+
+4. Tick the Github Project option then enter the url as <your StackAnnotation github repo url>
+
+5. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+
+6. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
+
+
