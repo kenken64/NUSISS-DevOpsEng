@@ -158,7 +158,7 @@ git commit -m "new development branch"
 git push origin development
 ```
 
-2. Go to Jenkins, configure a new freestyle job
+2. Go to Jenkins, configure a new freestyle job, name the item name as StackAnnotationMaven
 <br>
 <img style="float: center;" src="./screens/jenkinsci21.png">
 <br>
