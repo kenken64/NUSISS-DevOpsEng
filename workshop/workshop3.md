@@ -59,6 +59,40 @@ git commit -m "new development branch"
 git push origin development
 ```
 
+
+4. Go to Jenkins, configure a new freestyle job
+<br>
+<img style="float: center;" src="./screens/jenkinsci6.png">
+<br>
+
+
+5. Enter task description as 'This is a StackAnnotation ant build'
+
+6. Tick the Github Project option then enter the url as <your StackAnnotation github repo url>
+
+7. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+
+8. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
+
+
+## Create an Maven Project Job 
+
+1. Fork the following git repository https://github.com/kenken64/StackAnnotationMaven.git to your own Github Account
+
+2. Clone the codes down to your local working directory
+```
+git clone https://github.com/<your username>/StackAnnotationMaven.git
+```
+
+3. Branch it as development, check it into the remote repository
+
+```
+git checkout -b development
+git add .
+git commit -m "new development branch"
+git push origin development
+```
+
 <br>
 <img style="float: center;" src="./screens/jenkinsci6.png">
 <br>
@@ -66,12 +100,11 @@ git push origin development
 2. Go to Jenkins, configure a new freestyle job
 
 
-3. Enter task description as 'This is a StackAnnotation ant build'
+3. Enter task description as 'This is a StackAnnotation Maven build'
 
-4. Tick the Github Project option then enter the url as <your StackAnnotation github repo url>
+4. Tick the Github Project option then enter the url as <your StackAnnotationMaven github repo url>
 
-5. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+5. Under source code management, select Git ten enter the repository URL as <your StackAnnotationMaven github repo url>. Change the branch to be build to '*/development'
 
 6. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
-
 
