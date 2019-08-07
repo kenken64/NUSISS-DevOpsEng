@@ -159,11 +159,17 @@ git push origin development
 ```
 
 2. Go to Jenkins, configure a new freestyle job
-
+<br>
+<img style="float: center;" src="./screens/jenkinsci21.png">
+<br>
 
 3. Enter task description as 'This is a StackAnnotation Maven build'
 
 4. Tick the Github Project option then enter the url as '<your StackAnnotationMaven github repo url>'
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci22.png">
+<br>
 
 5. Under source code management, select Git ten enter the repository URL as '<your StackAnnotationMaven github repo url>'. Change the branch to be build to '*/development'
 
@@ -172,34 +178,34 @@ git push origin development
 7. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci11.png">
+<img style="float: center;" src="./screens/jenkinsci23.png">
 <br>
 
 8. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * *
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci10.png">
+<img style="float: center;" src="./screens/jenkinsci24.png">
 <br>
 
 9. Configure the pre build step, add top-level Maven step then select Maven version as 'Maven' follow by entering goals as surefire-report:report. Refer to https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci14.png">
+<img style="float: center;" src="./screens/jenkinsci25.png">
 <br>
 
 
 10. Lastly, configure the post build action where it will generate Junit published report from the maven build. Enter 'target/surefire-reports/TEST-sg.edu.nus.StackAnnotation.AppTest.xml' to the test report XML field.
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci15.png">
+<img style="float: center;" src="./screens/jenkinsci26.png">
 <br>
 
 11. The build will trigger automatically
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci16.png">
+<img style="float: center;" src="./screens/jenkinsci27.png">
 <br>
-<img style="float: center;" src="./screens/jenkinsci17.png">
+<img style="float: center;" src="./screens/jenkinsci28.png">
 <br>
 12. Lets make changes to the test case and invalidate the build. the configured jenkins build will fail. Under the file AppTest.java line 18 change th eline of code to as below
 
@@ -215,13 +221,17 @@ git push origin development
 ```
 14. The outcome of the build will be unstable. Status of the build will be flag out as amber.
 <br>
-<img style="float: center;" src="./screens/jenkinsci18.png">
+<img style="float: center;" src="./screens/jenkinsci29.png">
 <br>
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci19.png">
+<img style="float: center;" src="./screens/jenkinsci30.png">
 <br>
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci20.png">
+<img style="float: center;" src="./screens/jenkinsci31.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci32.png">
 <br>
