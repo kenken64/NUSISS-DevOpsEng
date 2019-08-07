@@ -41,7 +41,7 @@
 
 http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/safeRestart
 
-## Create a Ant Project Job 
+## Create an Ant Project Job 
 
 1. Fork the following git repository https://github.com/kenken64/StackAnnotation to your own Github Account
 
