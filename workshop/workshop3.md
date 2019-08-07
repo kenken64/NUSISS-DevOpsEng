@@ -134,6 +134,7 @@ git push origin development
 <br>
 <img style="float: center;" src="./screens/jenkinsci20.png">
 <br>
+
 ## Create a Maven Project Job 
 
 1. Fork the following git repository https://github.com/kenken64/StackAnnotationMaven.git to your own Github Account
@@ -157,10 +158,6 @@ git commit -m "new development branch"
 git push origin development
 ```
 
-<br>
-<img style="float: center;" src="./screens/jenkinsci6.png">
-<br>
-
 2. Go to Jenkins, configure a new freestyle job
 
 
@@ -172,3 +169,59 @@ git push origin development
 
 6. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
 
+7. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci11.png">
+<br>
+
+8. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM.
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci10.png">
+<br>
+
+9. configure the pre build step, add invoke ant step then select Ant version as 'Ant' follow by targets as build
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci14.png">
+<br>
+
+
+10. Lastly, configure the post build action where it will generate Junit published report from the ant build
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci15.png">
+<br>
+
+11. The build will trigger automatically
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci16.png">
+<br>
+<img style="float: center;" src="./screens/jenkinsci17.png">
+<br>
+12. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file MyStringStackTest.java line 35 add a new line of code 
+
+```
+stack.push (s1);
+```
+
+13. Commit the changes to the github.
+```
+git add .
+git commit -m "fail the test case"
+git push origin development
+```
+14. The outcome of the build will be unstable
+<br>
+<img style="float: center;" src="./screens/jenkinsci18.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci19.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/jenkinsci20.png">
+<br>
