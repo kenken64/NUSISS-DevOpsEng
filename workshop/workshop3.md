@@ -163,9 +163,9 @@ git push origin development
 
 3. Enter task description as 'This is a StackAnnotation Maven build'
 
-4. Tick the Github Project option then enter the url as <your StackAnnotationMaven github repo url>
+4. Tick the Github Project option then enter the url as '<your StackAnnotationMaven github repo url>'
 
-5. Under source code management, select Git ten enter the repository URL as <your StackAnnotationMaven github repo url>. Change the branch to be build to '*/development'
+5. Under source code management, select Git ten enter the repository URL as '<your StackAnnotationMaven github repo url>'. Change the branch to be build to '*/development'
 
 6. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
 
