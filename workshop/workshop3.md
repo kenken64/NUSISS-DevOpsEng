@@ -84,7 +84,7 @@ git push origin development
 <img style="float: center;" src="./screens/jenkinsci11.png">
 <br>
 
-8. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM.
+8. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci10.png">
@@ -171,17 +171,17 @@ git push origin development
 <img style="float: center;" src="./screens/jenkinsci22.png">
 <br>
 
-5. Under source code management, select Git ten enter the repository URL as '<your StackAnnotationMaven github repo url>'. Change the branch to be build to '*/development'
+5. Under source code management, select Git then enter the repository URL as 'your StackAnnotationMaven github repo url'. Change the branch to be build to '*/development'
 
 6. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
 
-7. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+7. Under source code management, select Git ten enter the repository URL as 'your StackAnnotation github repo url'. Change the branch sepcifier to '*/development'
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci23.png">
 <br>
 
-8. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * *
+8. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci24.png">
