@@ -207,10 +207,10 @@ git push origin development
 <br>
 <img style="float: center;" src="./screens/jenkinsci28.png">
 <br>
-12. Lets make changes to the test case and invalidate the build. the configured jenkins build will fail. Under the file AppTest.java line 18 change th eline of code to as below
+12. Lets make changes to the test case and invalidate the build. Under the file AppTest.java line 18 change the code to as below 
 
 ```
-assertTrue( true );
+assertTrue( false );
 ```
 
 13. Commit the changes to the github.
