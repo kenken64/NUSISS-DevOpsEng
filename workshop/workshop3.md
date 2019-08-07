@@ -4,18 +4,18 @@
 * AWS Account 
 * Oracle Account
 
-## Setup Jenkins before creating project
+## Setup Jenkins before creating new build job
 
 1. Launch internet browser, navigate to the <bitnami jenkins Public DNS>. Login using the credential retrieve from the credential file
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci1.png">
+<img style="float: center;" src="./screens/jenkinsci2.png">
 <br>
 
 2. Go to Manage Jenkins then Global Tool configuration -> Configure JDK. Input name as 'JDK', prepare with your Oracle credential to login so that the installer can download JDK From Oracle website, tick agree with the T&E. Click Save
 
 <br>
-<img style="float: center;" src="./screens/jenkinsci2.png">
+<img style="float: center;" src="./screens/jenkinsci1.png">
 <br>
 
 3. Go to Manage Jenkins then Global Tool configuration -> Install & Configure Ant. 
