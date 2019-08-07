@@ -48,7 +48,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <br> 
  
 6.	Leave Step 4 and 5 as default.
-7.	Select the security group you have created earlier for your instances.
+7.	Select the security group you have created earlier for your instances. Add two custom rules to the security group port 80 (HTTP) and 8140 (TCP). Port 8140 is used for the master and slave synchronization.
  
 <br>
 <img style="float: center;" src="./screens/puppet6.png">
@@ -73,14 +73,14 @@ You will need the public DNS and the private key (PEM) file that have been downl
 
 Setting Up Puppet on EC2 Instances
 
-SSH into Puppet Master
+SSH into Puppet <b>Master</b>
 
 ```
 ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
 ssh -i <key pair>.pem ubuntu@<public dns>
 ```
 
-SSH in Puppet Agent
+SSH in Puppet <b>Agent</b>
 
 ```
 ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
@@ -89,6 +89,7 @@ ssh -i <key pair>.pem ubuntu@<public dns>
 
 Assign a hostname for the Puppet Master EC2 instance
 
+### Master
 ```
 sudo hostname <public dns>
 ```
@@ -96,6 +97,7 @@ sudo hostname <public dns>
 
 Assign a hostname for the Puppet Agent EC2 instance
 
+### Agent
 ```
 sudo hostname <public dns>
 ```
@@ -123,6 +125,7 @@ b.	Add a Puppet Agent host entry
 c.	Update the system
 d.	Install puppet master
 
+### Master
 ```
 sudo su -
 
@@ -139,6 +142,7 @@ b.	Add a Puppet Master host entry
 c.	Update the system
 d.	Install puppet
 
+### Agent
 ```
 sudo su -
 
@@ -150,10 +154,16 @@ apt-get install puppet
 ```
 Configure Puppet Agent to be able to communicate with Puppet Master through the Puppet's configuration file puppet.conf located under the /etc/puppet directory on the Puppet Agent Linux operating system.
 
-Add a server entry to the end of the [main] configuration section of the puppet.conf file
+Add a server entry to the end of the [main] configuration section of the puppet.conf file. Important take note this must the public DNS server name if not the issue certification service won't work.
+
+### Agent
 
 ```
-server = ip-172-31-28-4.ap-southeast-1.compute.internal
+[Main]
+server = ec2-54-255-189-95.ap-southeast-1.compute.amazonaws.com
+
+[agent]
+runinterval=5m
 ```
 
 
@@ -163,19 +173,23 @@ Puppet uses SSL certificates to authenticate communication between master and ag
 By default, the Puppet client runs as a daemon, and the puppet agent command forks off the Puppet daemon into the background and exits immediately. The first time Puppet runs on an agent node, it will send a certificate signing request to the Puppet master. Before the master will be able to communicate and control the agent node, it must sign that particular agent node's certificate. 
 Puppet Agent request for cert from Puppet Master
 
+
+### Agent
 ```
 puppet agent --no-daemonize --onetime --verbose
-puppet agent --test
+puppet agent --test -d
 ```
 
 Checking the list of certificates and cert requests on Puppet Master
 
+### Master
 ```
 puppet cert list -all
 ```
 
 Puppet Master sign cert request from Puppet Agent
 
+### Master
 ```
 puppet cert sign ec2-13-229-118-197.ap-southeast-1.compute.amazonaws.com
 ```
@@ -187,16 +201,117 @@ Puppet manifests are made up of a number of major components:
 5.	Classes: Collections of resources
 6.	Definitions: Composite collections of resources
 
-Create a site.pp file on the Puppet Master node that tells Puppet where and what configuration to load for our clients in the etc/puppet/ manifests directory.
+Create a pp file and modules on the Puppet Master node that tells Puppet where and what configuration to load for our clients in the etc/puppet/code manifests directory.
+
+### Master 
 ```
-node default {
-  file { ‘/tmp/hello’ :
-    content => "hello world!!!"
-  }
+cd /etc/puppet/code
+
+mkdir environments
+
+cd environments
+
+mkdir production
+
+mkdir modules
+
+mkdir manifests
+
+cd manifests
+```
+
+Create a site.pp file that navigate to the custom module 
+
+### Master 
+```
+node "default" {
+  include modulea
 }
 ```
 
+Create puppet module directory structure
+
+### Master 
+```
+cd ../modules
+
+mkdir modulea
+
+mkdir files 
+
+mkdir manifests
+
+cd files 
+
+touch test.txt
+
+cd .. 
+
+cd manifests
+
+nano init.pp
+
+```
+
+Create a module class pp file
+
+### Master 
+```
+class modulea {
+file { '/home/ubuntu':
+        ensure => directory,
+        owner => 'ubuntu',
+        group => 'ubuntu',
+}
+
+package { 'htop':
+    ensure => installed,
+}
+
+exec { "apt-update":
+  command => "/usr/bin/apt-get update"
+}
+
+exec { "install-dep":
+  command => "/usr/bin/apt-get --yes install apt-transport-https ca-certificates curl software-properties-common"
+}
+
+exec { "curl-docker":
+  command => "/usr/bin/curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+}
+
+exec { "add-docker-dep":
+  command => "/usr/bin/add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable'"
+}
+
+Exec["apt-update"] -> Package <| |>
+Exec["install-dep"] -> Package <| |>
+Exec["curl-docker"] -> Package <| |>
+Exec["add-docker-dep"] -> Package <| |>
+Exec["apt-update"] -> Package <| |>
+
+package { 'docker-ce':
+    ensure => installed,
+}
+
+
+file { "/home/ubuntu/test.txt":
+        mode => "0644",
+        owner => 'ubuntu',
+        group => 'ubuntu',
+        source => "puppet:///modules/modulea/test.txt",
+    }
+}
+
+```
+
 On the Puppet Agent node, sync with Puppet Master node.
+
+### Agent
 ```
-puppet agent --server ec2-13-228-28-198.ap-southeast-1.compute.amazonaws.com
+puppet agent --test -d 
 ```
+
+## References
+* https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+* https://puppet.com/docs/puppet/6.7/configuration.html#runinterval
