@@ -175,20 +175,20 @@ git push origin development
 <img style="float: center;" src="./screens/jenkinsci11.png">
 <br>
 
-8. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM.
+8. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * *
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci10.png">
 <br>
 
-9. configure the pre build step, add invoke ant step then select Ant version as 'Ant' follow by targets as build
+9. Configure the pre build step, add top-level Maven step then select Maven version as 'Maven' follow by entering goals as surefire-report:report. Refer to https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci14.png">
 <br>
 
 
-10. Lastly, configure the post build action where it will generate Junit published report from the ant build
+10. Lastly, configure the post build action where it will generate Junit published report from the maven build. Enter 'target/surefire-reports/TEST-sg.edu.nus.StackAnnotation.AppTest.xml' to the test report XML field.
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci15.png">
@@ -201,10 +201,10 @@ git push origin development
 <br>
 <img style="float: center;" src="./screens/jenkinsci17.png">
 <br>
-12. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file MyStringStackTest.java line 35 add a new line of code 
+12. Lets make changes to the test case and invalidate the build. the configured jenkins build will fail. Under the file AppTest.java line 18 change th eline of code to as below
 
 ```
-stack.push (s1);
+assertTrue( true );
 ```
 
 13. Commit the changes to the github.
@@ -213,7 +213,7 @@ git add .
 git commit -m "fail the test case"
 git push origin development
 ```
-14. The outcome of the build will be unstable
+14. The outcome of the build will be unstable. Status of the build will be flag out as amber.
 <br>
 <img style="float: center;" src="./screens/jenkinsci18.png">
 <br>
