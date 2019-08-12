@@ -1,4 +1,4 @@
-# Github Workshop
+# S-DOEA - Workshop - Github Workshop
 
 ## Pre-requisites 
 * [Github](https://github.com/)/[Gitlab](https://about.gitlab.com/) account

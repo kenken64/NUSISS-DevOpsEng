@@ -1,4 +1,4 @@
-# Jenkins CI Setup
+# S-DOEA - Workshop - Jenkins - CI Workshop
 
 ## Pre-requisite
 * AWS Account 

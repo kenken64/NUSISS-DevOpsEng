@@ -1,4 +1,4 @@
-# Containers and Container Management 
+# S-DOEA - Workshop - Containers and Container Management Workshop
 
 ## Pre-requisite
 * AWS Account 
