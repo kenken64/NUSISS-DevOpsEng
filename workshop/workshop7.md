@@ -1,4 +1,6 @@
-# AWS Codestar with Python Flask Project
+# S-DOEA - Workshop - End to end DevOps Engineering and Automation
+
+## AWS Codestar with Python Flask Project
 
 At the end of this tutorial, you will be able to push your code changes to Github and run it in an EC2 instance deployed AWS CodeBuild.
 
