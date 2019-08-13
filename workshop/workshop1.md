@@ -299,7 +299,7 @@ The official website for maven is Apache Maven. If you click the given link, you
 4. Setting up Jenkins and Maven
 In the Jenkins dashboard (Home screen), click Manage Jenkins from the left-hand side menu.
  
-5. Then, click on ‘Configure System’ from the right hand side.
+5. Then, click on ‘Configure Global Configuration' from the right hand side.
   
 6. In the Configure system screen, scroll down till you see the Maven section and then click on the ‘Add Maven’ button.
  
