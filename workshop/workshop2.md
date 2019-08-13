@@ -112,4 +112,4 @@ For branching, tagging and etc please visit the following link https://github.co
 ## Reference
 * Software sourcetree - https://www.sourcetreeapp.com/
 * Eclipse with Git - https://www.vogella.com/tutorials/EclipseGit/article.html
-* Visual Studio Code - https://code.visualstudio.com/docs/introvideos/versioncontrol
+* Visual Studio Code - https://scotch.io/tutorials/git-integration-in-visual-studio-code
