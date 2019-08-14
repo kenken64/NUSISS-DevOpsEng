@@ -238,7 +238,7 @@ Or alternatively, if you already have a security group created previously. You m
  
 9.	Configure the cluster with the following information:
 
-
+<br>
 <img src="screens/ecs9.png" >
 <br>
 
@@ -257,6 +257,7 @@ Click <b>‘Create’</b> button to continue to create your new cluster.
   
 11.	Once you have successfully created your cluster, you will see a similar screen as shown.
 
+<br>
 <img src="screens/ecs13.png" >
 <br>
 
@@ -317,7 +318,8 @@ Without the relevant rights access to the user, you will not be able to use dock
 <img src="screens/ecs24.png" >
 <br> 
  
-8.	Execute the command 
+8.	Execute the command
+
 ```
 aws ecr get-login --no-include-email --region ap-southeast-1 
 ```
