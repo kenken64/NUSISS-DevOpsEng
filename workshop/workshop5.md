@@ -237,12 +237,14 @@ Or alternatively, if you already have a security group created previously. You m
 <br>
  
 9.	Configure the cluster with the following information:
- 
+
+
 <img src="screens/ecs9.png" >
 <br>
 
 If you have previously spin off EC2 instances, VPC and subnets will have already been created and you could use them for this workshop to create your new EC2 instances. 
- 
+
+
 10.	Choose the security group you have created earlier and let the ECS automatically Create new container instance IAM role for you.
  
 <img src="screens/ecs10.png" >
