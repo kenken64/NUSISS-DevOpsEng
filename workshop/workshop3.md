@@ -7,8 +7,17 @@
 
 ## Setup Jenkins before creating new build job
 
-1. Launch internet browser, navigate to the <bitnami jenkins Public DNS>. Login using the credential retrieve from the credential file
+1. Launch internet browser, navigate to the link below. Login using the credential retrieve from the credential file
 
+* Jenkins Server 1
+    - url : http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/
+    - username : user
+    - password : Dh9b6mi4AQOF
+
+* Jenkins Server 2
+    - url : http://ec2-54-153-244-64.ap-southeast-2.compute.amazonaws.com/jenkins/
+    - username : user
+    - password : Bs26yqNVB0ci
 <br>
 <img style="float: center;" src="./screens/jenkinsci2.png">
 <br>
