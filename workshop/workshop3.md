@@ -7,7 +7,7 @@
 
 ## Setup Jenkins before creating new build job
 
-1. Launch internet browser, navigate to the link below. Login using the credential retrieve from the credential file
+1. Launch internet browser, navigate to the link below. Login using the credential provided as below:-
 
 * Jenkins Server 1
     - url : http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/
