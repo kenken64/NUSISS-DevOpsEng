@@ -1,5 +1,10 @@
-# DevOps in the Cloud
+# S-DOEA - Workshop - DevOps in the Cloud (CodeCommit/CodeBuild/CodeDeploy)
 
+## Pre-requisite
+* AWS Account 
+* Access to this url : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree?
+* Docker Engine 
+* DockerHub Account
 
 ## Dockerized a sample web app
 
