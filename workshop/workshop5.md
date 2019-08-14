@@ -379,6 +379,7 @@ to push the image to AWS-ECR repository you have created earlier.
  
 5.	Provide the container a name.
 
+<br>
 <img src="screens/ecs33.png" >
 <br>
 
@@ -430,7 +431,8 @@ Click ‘Add’ button to proceed with creating the container for the task.
 <br>
  
 3.	Provide the following information as shown.
- 
+
+<br>
 <img src="screens/ecs42.png" >
 <br> 
 
@@ -438,7 +440,8 @@ Click ‘Add’ button to proceed with creating the container for the task.
 <br> 
  
 4.	Configure the network information as shown.
- 
+
+<br>
 <img src="screens/ecs44.png" >
 <br> 
 
@@ -447,6 +450,7 @@ Click ‘Add’ button to proceed with creating the container for the task.
  
 5.	Determine if there will be auto scaling as shown.
 
+<br>
 <img src="screens/ecs46.png" >
 <br> 
 
@@ -457,9 +461,11 @@ Click ‘Add’ button to proceed with creating the container for the task.
 <br> 
 
 Click ‘Create Service’ to start creating your service.
+
  
 7.	You show see the message as shown if you have successfully created your service.
 
+<br>
 <img src="screens/ecs48.png" >
 <br> 
 
