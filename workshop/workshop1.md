@@ -218,59 +218,6 @@ This link will bring up the Jenkins dashboard.
 
 <img style="width:650px;height:400px; float: right;" src="./screens/local_jenkins1.png">
  
-### Jenkins – Tomcat Setup
-The following prerequisites must be met for Jenkins Tomcat setup.
-1.  Verifying Java Installation
-To verify Java installation, open the console and execute the following java command.
-
-If Java has been installed properly on your system, then you should get one of the following outputs, depending on the platform you are working on.
-OS	Output
-
-```
-$java –version
-
-Linux	java version "1.7.0_25"
-Open JDK Runtime Environment (rhel-2.3.10.4.el6_4-x86_64)
-Open JDK 64-Bit Server VM (build 23.7-b01, mixed mode)
-```
-
-We assume the readers of this tutorial have latest JDK installed on their system before proceeding for this tutorial.
-
-In case you do not have Java JDK, you can download it from the link Oracle
-
-https://www.oracle.com/technetwork/java/javase/downloads/index.html
-
-
-2. Verifying Java Installation
-
-Set the JAVA_HOME environment variable to point to the base directory location where Java is installed on your machine. For example,
-
-| OS        | Output           | 
-| ------------- |:-------------:| 
-| Windows | Windows	Set Environmental variable JAVA_HOME to C:\ProgramFiles\java\jdk1.7.0_60 | 
-| Linux | export JAVA_HOME=/usr/local/java-current | 
-
-
-Append the full path of the Java compiler location to the System Path.
-OS	Output
-
-| OS        | Output           | 
-| ------------- |:-------------:| 
-| Windows | Append the String; C:\Program Files\Java\jdk1.7.0_60\bin to the end of the system variable PATH. | 
-| Linux | export PATH=$PATH:$JAVA_HOME/bin/ | 
-
-3. Download Tomcat. The official website for tomcat is Tomcat. If you click the given link, you can get the home page of the tomcat official website as shown below. Browse to the link https://tomcat.apache.org/download-70.cgi to get the download for tomcat. 
-
-4. Go to the ‘Binary Distributions’ section. Download the 32-bit Windows zip file. Then unzip the contents of the downloaded zip file.
-
-5. Jenkins and Tomcat Setup
-Copy the Jenkis.war file which was downloaded from the previous section and copy it to the webapps folder in the tomcat folder.
-
-6. Now open the command prompt. From the command prompt, browse to the directory where the tomcat7 folder is location. Browse to the bin directory in this folder and run the start.bat file
-E:\Apps\tomcat7\bin>startup.bat
-Once the processing is complete without major errors, the following line will come in the output of the command prompt.
-INFO: Server startup in 1302 ms
-Open the browser and go to the link − http://localhost:8080/jenkins. Jenkins will be up and running on tomcat.
  
 ##  Jenkins - Git Setup
 For this exercise, you have to ensure that Internet connectivity is present from the machine on which Jenkins is installed. In your Jenkins Dashboard (Home screen), click the Manage Jenkins option on the left hand side.
