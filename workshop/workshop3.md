@@ -81,13 +81,13 @@ git push origin development
 
 5. Enter task description as 'This is a StackAnnotation ant build'
 
-6. Tick the Github Project option then enter the url as <your StackAnnotation github repo url>
+6. Tick the Github Project option then enter the url as ```<your StackAnnotation github repo url>```
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci8.png">
 <br>
 
-7. Under source code management, select Git ten enter the repository URL as <your StackAnnotation github repo url>. Change the branch to be build to '*/development'
+7. Under source code management, select Git ten enter the repository URL as ```<your StackAnnotation github repo url>```. Change the branch to be build to '*/development'
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci11.png">
@@ -174,7 +174,7 @@ git push origin development
 
 3. Enter task description as 'This is a StackAnnotation Maven build'
 
-4. Tick the Github Project option then enter the url as '<your StackAnnotationMaven github repo url>'
+4. Tick the Github Project option then enter the url as ```<your StackAnnotationMaven github repo url>```
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci22.png">
