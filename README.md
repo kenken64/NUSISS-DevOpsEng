@@ -36,4 +36,4 @@
 
 # Community
 
-Join us on Telegram 
+Join us on Telegram https://t.me/issncs
