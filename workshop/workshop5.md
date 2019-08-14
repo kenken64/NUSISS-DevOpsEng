@@ -4,7 +4,7 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-
+* Access to the following URL : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/
 ## Test out the Docker installation on the Puppet Slave server
 
 1. Test out whether docker cli is install correctly
