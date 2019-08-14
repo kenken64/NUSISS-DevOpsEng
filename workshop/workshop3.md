@@ -58,7 +58,7 @@ http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/safeResta
 <img style="float: center;" src="./screens/jenkinsci6.png">
 <br>
 
-2. Clone the codes down to your local working directory
+2. Clone the codes down to your local working directory. Replace <your username> with your own Github username.
 ```
 git clone https://github.com/<your username>/StackAnnotation
 ```
@@ -153,7 +153,7 @@ git push origin development
 <br>
 
 
-2. Clone the codes down to your local working directory
+2. Clone the codes down to your local working directory. Replace <your username> with your own Github username.
 ```
 git clone https://github.com/<your username>/StackAnnotationMaven.git
 ```
