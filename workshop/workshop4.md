@@ -75,7 +75,8 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into these instances.
  
 
-Setting Up Puppet on EC2 Instances
+Setting Up Puppet on EC2 Instances (Additional instructions will be provided during the class)
+
 
 SSH into Puppet <b>Master</b>
 
