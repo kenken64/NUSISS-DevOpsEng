@@ -131,10 +131,13 @@ c.	Update the system
 d.	Install puppet master
 
 ### Master
+
+Obtain the private ip and dns from the AWS EC2 dashboard. (Master)
+
 ```
 sudo su -
 
-echo 172.31.28.1 ip-172-31-28-1.ap-southeast-1.compute.internal >> /etc/hosts
+echo <private ip> <private dns> >> /etc/hosts
 
 apt-get update
 
@@ -148,10 +151,13 @@ c.	Update the system
 d.	Install puppet
 
 ### Agent
+
+Obtain the private ip and dns from the AWS EC2 dashboard (Agent/Slave)
+
 ```
 sudo su -
 
-echo 172.31.28.4 ip-172-31-28-4.ap-southeast-1.compute.internal >> /etc/hosts
+echo <private ip> <private dns> >> /etc/hosts
 
 apt-get update
 
