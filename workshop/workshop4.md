@@ -10,7 +10,7 @@
 
 1.	Login to AWS consle and open the Amazon EC2 console.
 2.	In the top navigation bar, choose the region in the dropdown region selector.
-•	Region: Singapore (ap-south-east-1)
+  •	Region: Singapore/Sydney (ap-south-east-1/ap-southeast-2	a)
 3.	In the left navigation pane, under Network and Security, click Key Pairs.
 4.	Create Key Pair.
 <br>
