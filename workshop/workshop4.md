@@ -225,6 +225,8 @@ cd environments
 
 mkdir production
 
+cd production
+
 mkdir modules
 
 mkdir manifests
