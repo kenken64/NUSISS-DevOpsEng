@@ -249,6 +249,8 @@ cd ../modules
 
 mkdir modulea
 
+cd  modulea
+
 mkdir files 
 
 mkdir manifests
@@ -322,6 +324,21 @@ On the Puppet Agent node, sync with Puppet Master node.
 ### Agent/Slave
 ```
 puppet agent --test -d 
+```
+
+## Troubleshooting
+
+Unable to sign certificate from the slave
+```
+Error: Could not request certificate: The certificate retrieved from the master does not match the agent's private key. Did you forget to run as root?
+Certificate fingerprint: E0:F6:92:CE:96:A5:D1:9C:4B:DB:0D:66:31:FF:04:C1:04:A2:65:67:BD:21:52:BF:CD:D0:F8:DD:E0:7F:47:65
+To fix this, remove the certificate from both the master and the agent and then start a puppet run, which will automatically regenerate a certificate.
+On the master:
+  puppet cert clean ec2-63-33-70-42.eu-west-1.compute.amazonaws.com
+On the agent:
+  1a. On most platforms: find /var/lib/puppet/ssl -name ec2-63-33-70-42.eu-west-1.compute.amazonaws.com.pem -delete
+  1b. On Windows: del "\var\lib\puppet\ssl\certs\ec2-63-33-70-42.eu-west-1.compute.amazonaws.com.pem" /f
+  2. puppet agent -t
 ```
 
 ## References
