@@ -58,7 +58,7 @@ $ sudo chmod g+rwx "$HOME/.docker" -R
 
 <img src="../container/images/img17.png" width="400" height="200">
 
-1. Create a Dockerfile.dev under the React App (subsdevices)
+1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git . Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
 FROM node:alpine

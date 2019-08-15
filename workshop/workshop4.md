@@ -276,7 +276,7 @@ nano init.pp
 
 ```
 
-Create a module class pp file
+Create a module class init.pp file. Paste the below codes into the init.pp
 
 ### Master 
 ```
