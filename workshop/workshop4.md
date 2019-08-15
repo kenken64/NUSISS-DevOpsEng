@@ -81,15 +81,15 @@ Setting Up Puppet on EC2 Instances (Additional instructions will be provided dur
 SSH into Puppet <b>Master</b>
 
 ```
+chmod 400 <your key pair>.pem 
 ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
-ssh -i <key pair>.pem ubuntu@<public dns>
 ```
 
 SSH in Puppet <b>Agent</b>
 
 ```
+chmod 400 <your key pair>.pem 
 ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
-ssh -i <key pair>.pem ubuntu@<public dns>
 ```
 
 Assign a hostname for the Puppet Master EC2 instance
