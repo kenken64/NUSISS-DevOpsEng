@@ -202,7 +202,7 @@ Puppet Master sign cert request from Puppet Agent
 
 ### Master
 ```
-puppet cert sign ec2-13-229-118-197.ap-southeast-1.compute.amazonaws.com
+puppet cert sign <public agent dns>
 ```
 Puppet manifests are made up of a number of major components:
 1.	Resources: Individual configuration items
