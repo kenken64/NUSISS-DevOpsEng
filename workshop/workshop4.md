@@ -158,7 +158,8 @@ Obtain the private ip and dns from the AWS EC2 dashboard (Agent/Slave)
 sudo su -
 
 echo <private ip> <private dns> >> /etc/hosts
-
+echo <master private ip> <master private dns> >> /etc/hosts
+echo <master public ip> <master public dns> >> /etc/hosts
 apt-get update
 
 apt-get install puppet
