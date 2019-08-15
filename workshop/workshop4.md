@@ -171,7 +171,7 @@ Add a server entry to the end of the [main] configuration section of the puppet.
 
 ```
 [Main]
-server = ec2-54-255-189-95.ap-southeast-1.compute.amazonaws.com
+server = <master public dns>
 
 [agent]
 runinterval=5m
