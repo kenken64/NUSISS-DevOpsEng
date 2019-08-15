@@ -102,7 +102,7 @@ sudo hostname <public dns>
 
 Assign a hostname for the Puppet Agent EC2 instance
 
-### Agent
+### Agent/Slave
 ```
 sudo hostname <public dns>
 ```
@@ -150,7 +150,7 @@ b.	Add a Puppet Master host entry
 c.	Update the system
 d.	Install puppet
 
-### Agent
+### Agent/Slave
 
 Obtain the private ip and dns from the AWS EC2 dashboard (Agent/Slave)
 
@@ -167,7 +167,7 @@ Configure Puppet Agent to be able to communicate with Puppet Master through the 
 
 Add a server entry to the end of the [main] configuration section of the puppet.conf file. Important take note this must the public DNS server name if not the issue certification service won't work.
 
-### Agent
+### Agent/Slave
 
 ```
 [Main]
@@ -185,7 +185,7 @@ By default, the Puppet client runs as a daemon, and the puppet agent command for
 Puppet Agent request for cert from Puppet Master
 
 
-### Agent
+### Agent/Slave
 ```
 puppet agent --no-daemonize --onetime --verbose
 puppet agent --test -d
@@ -318,7 +318,7 @@ file { "/home/ubuntu/test.txt":
 
 On the Puppet Agent node, sync with Puppet Master node.
 
-### Agent
+### Agent/Slave
 ```
 puppet agent --test -d 
 ```
