@@ -237,6 +237,13 @@ cd manifests
 Create a site.pp file that navigate to the custom module 
 
 ### Master 
+
+```
+nano site.pp
+```
+
+Enter the codes to the site pp file
+
 ```
 node "default" {
   include modulea
