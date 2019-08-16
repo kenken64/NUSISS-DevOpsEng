@@ -76,7 +76,7 @@ CMD ["npm", "run", "start"]
 2. Build the docker image
 
 ```
-sudo docker build -f Dockerfile.dev -t kenken64/react-app
+sudo docker build -f Dockerfile.dev -t kenken64/react-app .
 ```
 
 3. Run the docker image as container with port forward and volume mounting
