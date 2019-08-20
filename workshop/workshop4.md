@@ -79,14 +79,14 @@ You will need the public DNS and the private key (PEM) file that have been downl
 Setting Up Puppet on EC2 Instances (Additional instructions will be provided during the class)
 
 
-SSH into Puppet <b>Master</b>
+SSH into Puppet <b>Master</b> via Jupyter Notebook Terminal
 
 ```
 chmod 400 <your key pair>.pem 
 ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
 ```
 
-SSH in Puppet <b>Agent</b>
+SSH in Puppet <b>Agent</b> via Jupyter Notebook Terminal
 
 ```
 chmod 400 <your key pair>.pem 
