@@ -12,12 +12,12 @@
 * Jenkins Server 1
     - url : http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/
     - username : user
-    - password : Dh9b6mi4AQOF
+    - password : <PASSWORD WILL BE PROVIDED DURING CLASS>
 
 * Jenkins Server 2
     - url : http://ec2-54-153-244-64.ap-southeast-2.compute.amazonaws.com/jenkins/
     - username : user
-    - password : Bs26yqNVB0ci
+    - password : <PASSWORD WILL BE PROVIDED DURING CLASS>
 <br>
 <img style="float: center;" src="./screens/jenkinsci2.png">
 <br>
