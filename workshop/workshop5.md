@@ -189,7 +189,7 @@ sudo docker run -p 8080:80 936ca285e822
 ./ngrok http 8080
 ```
 
-## Install AWS CLI on the Slave Server
+## Install AWS CLI on the Slave Server via Jupyter Notebook
 
 1. Execute the command line below
 

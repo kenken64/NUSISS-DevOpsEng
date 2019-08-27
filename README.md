@@ -6,7 +6,7 @@
 | S-DOEA - Workshop - Jenkins - CI Workshop       | [Workshop #3](./workshop/workshop3.md) | 
 | S-DOEA - Workshop - Infrastructure as Code Workshop (Puppet)       | [Workshop #4](./workshop/workshop4.md) | 
 | S-DOEA - Workshop - Containers and Container Management Workshop       | [Workshop #5](./workshop/workshop5.md) | 
-| S-DOEA - Workshop - DevOps in the Cloud  (CodeCommit/CodeBuild/CodeDeploy)     | [Workshop #6](./workshop/workshop6.md) | 
+| S-DOEA - Workshop - DevOps in the Cloud  (Optional)     | [Workshop #6](./workshop/workshop6.md) | 
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation       | [Workshop #7](./workshop/workshop7.md) |
 
 <table>
