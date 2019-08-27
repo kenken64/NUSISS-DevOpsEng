@@ -67,30 +67,66 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet7.png">
 <br> 
 
-10.	After your instances have been created and running, name your instances.
+10.	After your instances have been created and running, name your instances according to the naming convention <initial name> puppet master and slave.
 
 <br>
 <img style="float: center;" src="./screens/puppet8.png">
 <br> 
- 
-You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into these instances.
+
+11. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook.
+
+<br>
+<img style="float: center;" src="./screens/upload_pem.png">
+<br> 
+
+<br>
+<img style="float: center;" src="./screens/upload_pem2.png">
+<br> 
+
+
+You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into the respective instances.
  
 
 Setting Up Puppet on EC2 Instances (Additional instructions will be provided during the class)
 
 
-SSH into Puppet <b>Master</b> via Jupyter Notebook Terminal
+SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
 
 ```
 chmod 400 <your key pair>.pem 
-ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
+ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 ```
 
-SSH in Puppet <b>Agent</b> via Jupyter Notebook Terminal
+Upon logon into the master server, kindly perform the below command
+```
+nano ~/.bashrc
+```
+Search the following line 
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+Change the existing line to below  
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
+```
+
+SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
 
 ```
-chmod 400 <your key pair>.pem 
-ssh -i <key pair>.pem ubuntu@ec2-<ip>.<region>.compute.amazonaws.com
+ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
+```
+
+Upon logon into the master server, kindly perform the below command
+```
+nano ~/.bashrc
+```
+Search the following line 
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+Change the existing line to below  
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ slave $ '
 ```
 
 Assign a hostname for the Puppet Master EC2 instance
@@ -142,7 +178,7 @@ echo <private ip> <private dns> >> /etc/hosts
 
 apt-get update
 
-apt-get install puppetmaster
+apt-get install puppetmaster -y
 ```
 
 On Puppet Agent EC2 Instance, perform the following steps:
@@ -163,7 +199,7 @@ echo <master private ip> <master private dns> >> /etc/hosts
 echo <master public ip> <master public dns> >> /etc/hosts
 apt-get update
 
-apt-get install puppet
+apt-get install puppet -y
 ```
 Configure Puppet Agent to be able to communicate with Puppet Master through the Puppet's configuration file puppet.conf located under the /etc/puppet directory on the Puppet Agent Linux operating system.
 
@@ -176,7 +212,7 @@ Add a server entry to the end of the [main] configuration section of the puppet.
 server = <master public dns>
 
 [agent]
-runinterval=5m
+runinterval = 5m
 ```
 
 
@@ -188,6 +224,23 @@ Puppet Agent request for cert from Puppet Master
 
 
 ### Agent/Slave
+Start the pupper service and also check the status of the service after issuing the start command
+
+```
+service puppet start
+service puppet status
+```
+
+### Master
+Start the pupper service and also check the status of the service after issuing the start command
+
+```
+service puppet start
+service puppet status
+```
+
+
+### Agent/Slave
 ```
 puppet agent --no-daemonize --onetime --verbose
 puppet agent --test -d
@@ -196,16 +249,13 @@ puppet agent --test -d
 Checking the list of certificates and cert requests on Puppet Master
 
 ### Master
+
+Puppet Master sign cert request from Puppet Agent/Slave
+
 ```
 puppet cert list -all
 ```
 
-Puppet Master sign cert request from Puppet Agent
-
-### Master
-```
-puppet cert sign <public agent dns>
-```
 Puppet manifests are made up of a number of major components:
 1.	Resources: Individual configuration items
 2.	Files: Physical files you can serve out to your agents
@@ -250,6 +300,8 @@ node "default" {
   include modulea
 }
 ```
+
+To save press Ctrl + x and answer yes to save
 
 Create puppet module directory structure
 
@@ -328,6 +380,7 @@ file { "/home/ubuntu/test.txt":
 }
 
 ```
+To save press Ctrl + x and answer yes to save
 
 On the Puppet Agent node, sync with Puppet Master node.
 
