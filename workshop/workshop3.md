@@ -63,9 +63,10 @@ http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/safeResta
 git clone https://github.com/<your username>/StackAnnotation
 ```
 
-3. Branch it as development, check it into the remote repository
+3. Branch it as development, check it into the remote repository. (Make sure on your terminal you are on the project directory)
 
 ```
+cd StackAnnotation
 git checkout -b development
 git add .
 git commit -m "new development branch"
@@ -87,7 +88,7 @@ git push origin development
 <img style="float: center;" src="./screens/jenkinsci8.png">
 <br>
 
-7. Under source code management, select Git ten enter the repository URL as ```<your StackAnnotation github repo url>```. Change the branch to be build to '*/development'
+7. Under source code management, select Git then enter the repository URL as ```<your StackAnnotation github repo url>```. Change the branch to be build to '*/development'
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci11.png">
@@ -99,7 +100,7 @@ git push origin development
 <img style="float: center;" src="./screens/jenkinsci10.png">
 <br>
 
-9. configure the pre build step, add invoke ant step then select Ant version as 'Ant' follow by targets as build
+9. Configure the pre build step, add invoke ant step then select Ant version as 'Ant' follow by targets as build
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci14.png">

@@ -189,6 +189,30 @@ sudo docker run -p 8080:80 936ca285e822
 ./ngrok http 8080
 ```
 
+## Install AWS CLI on the Slave Server
+
+1. Execute the command line below
+
+```
+pip3 install awscli --upgrade --user
+```
+
+2. Verify whether aws cli is installed properly
+
+```
+aws --version
+```
+
+3. Configure the aws cli https://docs.aws.amazon.com/general/latest/gr/rande.html
+
+```
+aws configure 
+
+AWS Access Key ID [****************ZLWC]: AKIA4UVXEV7IHCNLZLWCAWS Secret Access Key [****************/oyY]: 9i65B6ADkwZwuM2gkL9cMTHdLpC6oM/Z+M/k/oyY
+Default region name [SG]: ap-southeast-2
+Default output format [SG]: json
+```
+
 ## Create Elastic Container Service Cluster
 
 1.	Before creating a new ECS cluster, navigate to EC2 Service on the AWS console.
@@ -321,7 +345,7 @@ Without the relevant rights access to the user, you will not be able to use dock
 8.	Execute the command
 
 ```
-aws ecr get-login --no-include-email --region ap-southeast-1 
+(aws ecr get-login --no-include-email --region ap-southeast-2 )
 ```
 
 to get the command to login to AWS using Docker.
@@ -330,12 +354,16 @@ to get the command to login to AWS using Docker.
 <img src="screens/ecs25.png" >
 <br>
 
-	Login using the command string return from the response.
+Login using the command string return from the response.
 
 9.	Execute the command 
 ```
-docker tag myapp:latest 557271209954.dkr.ecr.ap-southeast-1.amazonaws.com/mysimpledockerprojectrepo:latest to tag the image for deploying to AWS ECS.
+docker tag myapp:latest 557271209954.dkr.ecr.ap-southeast-1.amazonaws.com/mysimpledockerprojectrepo:latest 
 ```
+
+to tag the image for deploying to AWS ECS.
+
+
 <img src="screens/ecs26.png" >
 <br>
 
