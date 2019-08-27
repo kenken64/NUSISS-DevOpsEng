@@ -136,10 +136,10 @@ ifconfig
 
 
 On Puppet Master EC2 Instance, perform the following steps:
-* a.	Login as root
-* b.	Add a Puppet Agent host entry
-* c.	Update the system
-* d.	Install puppet master
+* Login as root
+* Add a Puppet Agent private host entry
+* Update the system's package manager
+* Install puppet master
 
 ### Master
 
@@ -172,10 +172,10 @@ source ~/.bashrc
 ```
 
 On Puppet Agent EC2 Instance, perform the following steps:
-* a.	Login as root
-* b.	Add a Puppet Master host entry
-* c.	Update the system
-* d.	Install puppet
+* Login as root
+*	Add a Puppet Master/Private host entry
+* Update the system's package manager
+* Install puppet
 
 ### Agent/Slave
 
