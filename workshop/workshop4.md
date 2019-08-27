@@ -97,37 +97,13 @@ chmod 400 <your key pair>.pem
 ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 ```
 
-Upon logon into the master server, kindly perform the below command
-```
-nano ~/.bashrc
-```
-Search the following line 
-```
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-```
-Change the existing line to below  
-```
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
-```
-
 SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
 
 ```
 ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
 ```
 
-Upon logon into the master server, kindly perform the below command
-```
-nano ~/.bashrc
-```
-Search the following line 
-```
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-```
-Change the existing line to below  
-```
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ slave $ '
-```
+
 
 Assign a hostname for the Puppet Master EC2 instance
 
@@ -179,6 +155,22 @@ apt-get update
 apt-get install puppetmaster -y
 ```
 
+Kindly perform the command below to label the master server prompt
+```
+nano ~/.bashrc
+```
+Search the following line 
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+Change the existing line to below  
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
+```
+```
+source ~/.bashrc
+```
+
 On Puppet Agent EC2 Instance, perform the following steps:
 a.	Login as root
 b.	Add a Puppet Master host entry
@@ -198,6 +190,22 @@ echo <master public ip> <master public dns> >> /etc/hosts
 apt-get update
 
 apt-get install puppet -y
+```
+
+Kindly perform the command below to label the slave server prompt
+```
+nano ~/.bashrc
+```
+Search the following line 
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+```
+Change the existing line to below  
+```
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ slave $ '
+```
+```
+source ~/.bashrc
 ```
 Configure Puppet Agent to be able to communicate with Puppet Master through the Puppet's configuration file puppet.conf located under the /etc/puppet directory on the Puppet Agent Linux operating system.
 
