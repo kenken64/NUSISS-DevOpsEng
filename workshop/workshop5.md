@@ -58,7 +58,13 @@ $ sudo chmod g+rwx "$HOME/.docker" -R
 
 <img src="../container/images/img17.png" width="400" height="200">
 
-1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git . Create a Dockerfile.dev under the React App (subsdevices)
+1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git . 
+
+```
+git clone https://github.com/kenken64/reactjs-subdevice.git
+```
+
+2. Create a Dockerfile.dev under the React App (subsdevices)
 
 ```
 FROM node:alpine
@@ -73,29 +79,19 @@ COPY . .
 CMD ["npm", "run", "start"]
 ```
 
-2. Build the docker image
+3. Build the docker image
 
 ```
-sudo docker build -f Dockerfile.dev -t kenken64/react-app .
+docker build -f Dockerfile.dev -t kenken64/react-app .
 ```
 
-3. Run the docker image as container with port forward and volume mounting
+4. Run the docker image as container with port forward and volume mounting
 
 ```
-sudo docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
 ```
 
-4. Download ngrok since the react app doesn't have SSL installed
-
-```
-chmod +x ngrok
-./ngrok authtoken KuTKRosrawrDMAgX1ayq_7AAmsVSom4E6GtT18S1pn
-./ngrok http 3000
-```
-
-5. Use web browser to access the generated ngrok address from the terminal
-
-6. Create a docker-compose.yml
+5. Create a docker-compose.yml
 
 ```
 version: '3'
@@ -111,16 +107,16 @@ services:
         - .:/app
 ```
 
-7. Start the docker container using docker-compose
+6. Start the docker container using docker-compose
 
 ```
 sudo docker-compose up --build
 ```
 
-8. Implement test on separate container
+7. Implement test on separate container, please replace the hash value of the container id from step 6
 
 ```
-sudo docker exec -it 87b898a5cc64 npm run test
+docker exec -it 87b898a5cc64 npm run test
 ```
 
 - Add test service in the docker compose yml file
@@ -147,13 +143,13 @@ services:
       command: ["npm", "run", "test"]
 ```
 
-9. Start the docker container using docker-compose
+8. Start the docker container using docker-compose
 
 ```
 sudo docker-compose up --build
 ```
 
-10. Multi step build process, different base images
+9. Multi step build process, different base images
 
 ```
 # builder phase
@@ -171,23 +167,21 @@ EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 ```
 
-11. Build the multi phase container setup
+10. Build the multi phase container setup
 
 ```
-sudo docker build .
+docker build .
 ```
 
-12. Start the multi phase container setup and expose the port
+11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-sudo docker run -p 8080:80 936ca285e822
+docker run -p 8080:80 936ca285e822 
 ```
 
-13. Use ngrok to tunnel due to we do not have domain name, take the generated domain name and test it on the web browser
+12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
 
-```
-./ngrok http 8080
-```
+13. Launch your browser and try accessign the app http://```<slave server public DNS>```
 
 ## Install AWS CLI on the Slave Server via Jupyter Notebook
 

@@ -147,19 +147,17 @@ sudo hostname <public dns>
 
 Resolve domain names without using Domain Name System
 
-Find the IP address for the Puppet Master EC2 Instance
+Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
 ```
 ifconfig
 ```
 
 
-Find the IP address for the Puppet Aget EC2 Instance
+Verify the IP address for the Puppet Agent EC2 Instance, check against the AWS EC2 dashboard
 ```
 ifconfig
 ```
 
-
- 
 
 On Puppet Master EC2 Instance, perform the following steps:
 a.	Login as root
