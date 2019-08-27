@@ -162,6 +162,7 @@ git clone https://github.com/<your username>/StackAnnotationMaven.git
 3. Branch it as development, check it into the remote repository
 
 ```
+cd StackAnnotationMaven
 git checkout -b development
 git add .
 git commit -m "new development branch"
