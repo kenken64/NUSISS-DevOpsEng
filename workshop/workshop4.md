@@ -137,7 +137,7 @@ ifconfig
 
 On Puppet Master EC2 Instance, perform the following steps:
 * Login as root
-* Add a Puppet Agent private host entry
+* Add a Puppet Master private host entry
 * Update the system's package manager
 * Install puppet master
 
