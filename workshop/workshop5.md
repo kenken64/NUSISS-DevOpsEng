@@ -183,6 +183,8 @@ docker run -p 8080:80 936ca285e822
 
 13. Launch your browser and try accessign the app http://```<slave server public DNS>```
 
+# ECR, ECS Optional 
+
 ## Install AWS CLI on the Slave Server via Jupyter Notebook
 
 1. Execute the command line below
