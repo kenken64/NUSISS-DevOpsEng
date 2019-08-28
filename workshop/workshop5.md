@@ -181,7 +181,7 @@ docker run -p 8080:80 936ca285e822
 
 12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
 
-13. Launch your browser and try accessign the app http://```<slave server public DNS>```
+13. Launch your browser and try accessign the app http://```<slave server public DNS>:8080```
 
 # ECR, ECS Optional 
 
