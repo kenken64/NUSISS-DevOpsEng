@@ -235,6 +235,7 @@ Start the pupper service and also check the status of the service after issuing 
 ```
 service puppet start
 service puppet status
+puppet agent --enable
 ```
 
 ### Master
@@ -260,6 +261,7 @@ Puppet Master sign cert request from Puppet Agent/Slave
 
 ```
 puppet cert list -all
+puppet cert sign --all
 ```
 
 Puppet manifests are made up of a number of major components:
