@@ -2,7 +2,8 @@
 
 ## Pre-requisites for Cloud installation
 * AWS account
-* Download & Install Putty and PuttyGen https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+* Jupyter Notebbok Password will be provided during class
+* Access to this url : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree
 
 
 ### Step by step installation
@@ -74,8 +75,26 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. For Windows user please follow the instructions https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html to use Putty to login into the AWS EC2 instance. For Mac/Linux user the OS itself have built in ssh tools. Just type the below command will do. Upon logging into the EC2 instance, change directory to /home/bitnami
+15. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook. Upon logging into the EC2 instance, change directory to /home/bitnami
 
+<br>
+<img style="float: center;" src="./screens/upload_pem.png">
+<br> 
+
+<br>
+<img style="float: center;" src="./screens/upload_pem2.png">
+<br> 
+
+
+You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into the respective EC2 bitnami instance.
+ 
+
+
+<br>
+<img style="float: center;" src="./screens/upload_pem3.png">
+<br> 
+
+Perform this command to logon into the bitnami server 
 
 ```
 $ ssh -i <pem filename> ubuntu@<aws ec2 hostname>

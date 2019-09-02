@@ -92,6 +92,10 @@ Setting Up Puppet on EC2 Instances (Additional instructions will be provided dur
 
 SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
 
+<br>
+<img style="float: center;" src="./screens/upload_pem3.png">
+<br> 
+
 ```
 chmod 400 <your key pair>.pem 
 ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
