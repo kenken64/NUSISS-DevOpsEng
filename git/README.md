@@ -510,3 +510,7 @@ open an issue
 ask your question in IRC.
 >>>>>>> branch-a
 ```
+
+### Git Workflow
+
+<img style="float: right;" src="./git6.jpg">
