@@ -35,6 +35,6 @@
 | Docker Quizes | [Docker Quizes](./quizes/README.md)      |
 | Kurbenetes | [Kubernetes](./kubernetes/README.md)  - Coming soon     | 
 
-# Community
+# Community and Social Media
 
-Join us on Telegram https://t.me/issncs
+Join us on Fcaebook https://www.facebook.com/ISS.NUS/
