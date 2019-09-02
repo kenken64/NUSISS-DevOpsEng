@@ -33,7 +33,9 @@
 | AWS CD/CI with Jenkins | [AWS Code Pipeline / CodeDeploy - CD/CI](./cdci/NodeJS/README.md)      | 
 | Docker Swarm | [Docker Swarm](./swarm/README.md)      | 
 | Docker Quizes | [Docker Quizes](./quizes/README.md)      |
-| Kurbenetes | [Kubernetes](./kubernetes/README.md)  - Coming soon     | 
+| Kurbenetes | [Kubernetes](./kubernetes/README.md)  - Coming soon    | 
+| Ansible | [ansible](./ansible/README.md)  - Coming soon     |
+| Terraform | [terraform](./terraform/README.md)  - Coming soon     | 
 
 # Community and Social Media
 
