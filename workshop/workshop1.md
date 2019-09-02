@@ -75,7 +75,7 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook. Upon logging into the EC2 instance, change directory to /home/bitnami
+15. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
@@ -98,7 +98,9 @@ Perform this command to logon into the bitnami server
 
 ```
 $ ssh -i <pem filename> ubuntu@<aws ec2 hostname>
-
+```
+Upon logging into the EC2 instance, change directory to /home/bitnami
+```
 $ cd /home/bitnami 
 ```
 
