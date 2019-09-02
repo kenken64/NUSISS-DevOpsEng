@@ -513,4 +513,4 @@ ask your question in IRC.
 
 ### Git Workflow
 
-<img style="float: right;" src="./git6.jpg">
+<img style="float: right;" src="./git6.png">
