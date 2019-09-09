@@ -15,7 +15,7 @@
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
 * Jenkins Server 2
-    - url : http://ec2-54-153-244-64.ap-southeast-2.compute.amazonaws.com/jenkins/
+    - url : http://ec2-3-105-229-16.ap-southeast-2.compute.amazonaws.com/jenkins/
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 <br>
