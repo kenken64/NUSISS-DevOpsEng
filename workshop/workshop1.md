@@ -4,6 +4,7 @@
 * AWS account
 * Jupyter Notebbok Password will be provided during class
 * Access to this url : https://nusiss.ngrok.io
+* Region: Sydney
 
 
 ### Step by step installation
