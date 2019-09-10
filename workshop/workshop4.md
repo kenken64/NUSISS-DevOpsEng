@@ -73,7 +73,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet8.png">
 <br> 
 
-11. Access the Jupyter notebook URL https://nusiss.ngrok.io . Upload the pem to the root directory of the jupyter notebook.
+11. Access the Jupyter notebook URL via https://nusiss.ngrok.io . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
