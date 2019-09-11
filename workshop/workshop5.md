@@ -64,6 +64,8 @@ Relogin your Notebook terminal
 
 ```
 git clone https://github.com/kenken64/reactjs-subdevice.git
+
+cd reactjs-subdevice
 ```
 
 2. Create a Dockerfile.dev under the React App (subsdevices)
