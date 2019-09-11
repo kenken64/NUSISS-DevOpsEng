@@ -180,7 +180,7 @@ sudo docker build .
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-sudo docker run -p 8080:80 936ca285e822 
+sudo docker run -p 8080:80 936ca285e822 > /dev/null 2>&1
 ```
 
 12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
