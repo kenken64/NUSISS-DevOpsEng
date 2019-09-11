@@ -111,7 +111,7 @@ services:
         - .:/app
 ```
 
-6. Start the docker container using docker-compose
+6. Start the docker container using docker-compose, To terminate this process press Ctrl + C
 
 ```
 sudo docker-compose up --build
