@@ -171,7 +171,7 @@ EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 ```
 
-10. Build the multi phase container setup
+10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built f2422c014da3
 
 ```
 sudo docker build .
