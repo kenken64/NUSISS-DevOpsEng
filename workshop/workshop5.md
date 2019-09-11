@@ -89,7 +89,7 @@ CMD ["npm", "run", "start"]
 docker build -f Dockerfile.dev -t kenken64/react-app .
 ```
 
-4. Run the docker image as container with port forward and volume mounting
+4. Run the docker image as container with port forward and volume mounting, once is up and running. To terminate this process press Ctrl + C
 
 ```
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
@@ -147,7 +147,7 @@ services:
       command: ["npm", "run", "test"]
 ```
 
-8. Start the docker container using docker-compose
+8. Start the docker container using docker-compose, once the process is running with warning messages press Ctrl + C to terminate the prompt. 
 
 ```
 sudo docker-compose up --build
