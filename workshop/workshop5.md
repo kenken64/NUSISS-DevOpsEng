@@ -52,6 +52,8 @@ $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 $ sudo chmod g+rwx "$HOME/.docker" -R
 ```
 
+Relogin your Notebook terminal
+
 ## Dockerized a sample web app
 
 <img src="../container/images/img16.png" width="400" height="200">
