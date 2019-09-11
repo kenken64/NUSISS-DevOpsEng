@@ -117,10 +117,11 @@ services:
 sudo docker-compose up --build
 ```
 
-7. Implement test on separate container, please replace the hash value of the container id from step 6
+7. Implement test on separate container, please replace the hash value of the container id from ps command
 
 ```
-docker exec -it 87b898a5cc64 npm run test
+docker ps 
+docker exec -it <container id from docker ps> npm run test
 ```
 
 - Add test service in the docker compose yml file
