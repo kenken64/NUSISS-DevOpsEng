@@ -149,7 +149,7 @@ services:
 sudo docker-compose up --build
 ```
 
-9. Multi step build process, different base images
+9. Multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
 
 ```
 # builder phase
@@ -170,13 +170,13 @@ COPY --from=builder /app/build /usr/share/nginx/html
 10. Build the multi phase container setup
 
 ```
-docker build .
+sudo docker build .
 ```
 
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-docker run -p 8080:80 936ca285e822 
+sudo docker run -p 8080:80 936ca285e822 
 ```
 
 12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
