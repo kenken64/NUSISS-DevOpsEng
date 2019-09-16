@@ -4,6 +4,7 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
+* Digital Ocean Account
 * Access to the following URL : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/
 ## Test out the Docker installation on the Puppet Slave server
 
@@ -52,7 +53,7 @@ $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 $ sudo chmod g+rwx "$HOME/.docker" -R
 ```
 
-## Dockerized a sample web app
+## Dockerized a ReactJS Web application
 
 <img src="../container/images/img16.png" width="400" height="200">
 
@@ -182,6 +183,13 @@ docker run -p 8080:80 936ca285e822
 12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
 
 13. Launch your browser and try accessign the app http://```<slave server public DNS>:8080```
+
+# Setup Nginx Docker server with SSL certificate using docker-compose
+
+1. Create a Digital Ocean account follow by a droplet creation (Ubuntu) 
+2. Login to Digital Ocean droplet via SSH
+3. 
+
 
 # ECR, ECS Optional 
 
