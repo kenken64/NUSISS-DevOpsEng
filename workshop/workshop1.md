@@ -3,7 +3,8 @@
 ## Pre-requisites for Cloud installation
 * AWS account
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree
+* Access to this url : https://nusiss.ngrok.io
+* Region: Sydney
 
 
 ### Step by step installation
@@ -97,6 +98,7 @@ You will need the public DNS and the private key (PEM) file that have been downl
 Perform this command to logon into the bitnami server 
 
 ```
+$ chmod 400 <pem filename>
 $ ssh -i <pem filename> ubuntu@<aws ec2 hostname>
 ```
 Upon logging into the EC2 instance, change directory to /home/bitnami

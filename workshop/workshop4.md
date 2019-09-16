@@ -3,7 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree?
+* Access to this url : https://nusiss.ngrok.io
 
 # Setting up EC2 instances for puppet
 
@@ -73,7 +73,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet8.png">
 <br> 
 
-11. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook.
+11. Access the Jupyter notebook URL via https://nusiss.ngrok.io . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
@@ -399,6 +399,19 @@ On the Puppet Agent node, sync with Puppet Master node.
 ### Agent/Slave
 ```
 puppet agent --test -d 
+```
+### Capture Result save it to the Google drive
+```
+$ docker --version
+```
+
+```
+htop
+```
+Press Q to quit
+
+```
+ls -lrt /home/ubuntu/test.txt
 ```
 
 ## Troubleshooting

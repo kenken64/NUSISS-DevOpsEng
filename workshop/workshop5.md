@@ -4,8 +4,8 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-* Digital Ocean Account
-* Access to the following URL : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/
+* Access to the following URL : https://nusiss.ngrok.io/
+
 ## Test out the Docker installation on the Puppet Slave server
 
 1. Test out whether docker cli is install correctly
@@ -53,7 +53,9 @@ $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 $ sudo chmod g+rwx "$HOME/.docker" -R
 ```
 
-## Dockerized a ReactJS Web application
+Relogin your Notebook terminal
+
+## Dockerized a sample web app
 
 <img src="../container/images/img16.png" width="400" height="200">
 
@@ -63,6 +65,8 @@ $ sudo chmod g+rwx "$HOME/.docker" -R
 
 ```
 git clone https://github.com/kenken64/reactjs-subdevice.git
+
+cd reactjs-subdevice
 ```
 
 2. Create a Dockerfile.dev under the React App (subsdevices)
@@ -86,7 +90,7 @@ CMD ["npm", "run", "start"]
 docker build -f Dockerfile.dev -t kenken64/react-app .
 ```
 
-4. Run the docker image as container with port forward and volume mounting
+4. Run the docker image as container with port forward and volume mounting, once is up and running. To terminate this process press Ctrl + C
 
 ```
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
@@ -108,16 +112,17 @@ services:
         - .:/app
 ```
 
-6. Start the docker container using docker-compose
+6. Start the docker container using docker-compose, To terminate this process press Ctrl + C
 
 ```
 sudo docker-compose up --build
 ```
 
-7. Implement test on separate container, please replace the hash value of the container id from step 6
+7. Implement test on separate container, please replace the hash value of the container id from ps command
 
 ```
-docker exec -it 87b898a5cc64 npm run test
+docker ps 
+docker exec -it <container id from docker ps> npm run test
 ```
 
 - Add test service in the docker compose yml file
@@ -144,13 +149,13 @@ services:
       command: ["npm", "run", "test"]
 ```
 
-8. Start the docker container using docker-compose
+8. Start the docker container using docker-compose, once the process is running with warning messages press Ctrl + C to terminate the prompt. 
 
 ```
 sudo docker-compose up --build
 ```
 
-9. Multi step build process, different base images
+9. Multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
 
 ```
 # builder phase
@@ -168,16 +173,16 @@ EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 ```
 
-10. Build the multi phase container setup
+10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built f2422c014da3
 
 ```
-docker build .
+sudo docker build .
 ```
 
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-docker run -p 8080:80 936ca285e822 
+sudo docker run -p 8080:80 936ca285e822 > /dev/null 2>&1
 ```
 
 12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
