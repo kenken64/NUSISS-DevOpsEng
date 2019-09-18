@@ -30,7 +30,7 @@
 | Docker      | [Container Management - Docker](./container/README.md) | 
 | Puppet      | [Configuration Management - Puppet](./puppet/README.md)      | 
 | AWS CLI     | [AWS Command Line Interface Provisioning tools](./awscli/README.md) | 
-| AWS Boto3 Python     | [AWS Python Scripts](./boto3/README.md) | 
+| AWS SDK Python     | [AWS Python Scripts](./boto3/README.md) | 
 | AWS CD/CI with Jenkins | [AWS Code Pipeline / CodeDeploy - CD/CI](./cdci/NodeJS/README.md)      | 
 | Docker Swarm | [Docker Swarm](./swarm/README.md)      | 
 | Docker Quizes | [Docker Quizes](./quizes/README.md)      |
