@@ -98,7 +98,7 @@ front end application.
 
 ```
 after_success:
- - git push <remote_name> --delete <branch_name>
+ - git push <remote_name> :<branch_name>
 ```
 * Perform static code analysis 
 ```
