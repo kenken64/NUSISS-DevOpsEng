@@ -95,6 +95,11 @@ successful or if it has failed
 Only attempt this if you have completed the above workshop.
 * Delete the release branch when you have successfully published the
 front end application.
+
+```
+after_success:
+ - git push <remote_name> --delete <branch_name>
+```
 * Perform static code analysis 
 ```
 ng lint
