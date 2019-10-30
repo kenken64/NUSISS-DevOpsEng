@@ -1,12 +1,95 @@
-# S-DOEA - Workshop - DevOps in the Cloud (CodeCommit/CodeBuild/CodeDeploy)
+# S-DOEA - Workshop - DevOps in the Cloud 
+
+## Objective 
+The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis
 
 ## Pre-requisite
-* AWS Account 
-* Access to this url : https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree?
-* Docker Engine 
-* DockerHub Account
+* Slack Account
+* Zeit account
+* Github Account
 
-## Dockerized a sample web app
+  - Generate the personal access token
+  <img src="./screens/github_token.png" >
+
+## Setup
+* Create an account in Travis and allow it access to your GitHub
+  - Configure a secure environment variable for all branches
+  <img src="./screens/travis1.png" >
+  <img src="./screens/travis2.png" >
+  <img src="./screens/travis3.png" >
+* Create a zeit.co account (https://zeit.co/) if you wish to publish to a new site
+* Install Zeit CLI
+* Create a Slack channel
+* Select a deployable application from your repository
+
+## Workshop
+In this workshop you will setup a CI to automatically build and publish your
+* Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your account.
+
+* Add the below codes to the package.json file under the scripts block
+```
+"deploy": "now --no-clipboard --token=$NOW_TOKEN --public --prod"
+```
+Angular application to Zeit.
+* Add a .travis.yml file to you repository
+```
+language: node_js
+node_js:
+  - node
+
+dist: bionic
+sudo: required
+
+notifications:
+  email:
+    recipients:
+      - bunnyppl@gmail.com
+    on_success: always
+    on_failure: always
+  slack: 
+    rooms:
+      - csf-2019:JOLzMXebwOog6dJnFQ7yVERe#ken-build
+    on_success: change
+    on_failure: always 
+    template:
+      - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} in PR <%{pull_request_url}|#%{pull_request_number}> by %{author} %{result} in %{duration}"  
+branches:
+  only:
+   - master
+before_script:
+  - npm install -g @angular/cli
+  - npm install -g now
+script:
+  - ng build --prod --base-href https://kenken64.github.io/weather-app/
+  - ng build --prod --output-path ./dist/zeit-cloud --base-href https://weather-app.bunnyppl.now.sh/
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/weather-app
+  on:
+    branch: master
+deploy:
+  provider: script
+  script: npm run deploy 
+  local_dir: dist/zeit-cloud
+  on:
+    branch: master
+```
+* Travis should build wherever there is a push to the release branch
+* After a successful build, the application should be published to Zeit (or
+GitHub)
+* Send a notification to your Slack channel regardless whether the build is
+successful or if it has failed
+
+## Optional Workshop
+Only attempt this if you have completed the workshop.
+Delete the release branch when you have successfully published the
+frontend application.
+
+
+## Dockerized a sample web app (Optional)
 
 <img src="../container/images/img16.png" width="400" height="200">
 

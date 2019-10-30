@@ -866,6 +866,13 @@ a464c54f93a9: Mounted from library/node
 v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
 ```
 
+## Networking
+
+## Managing Secrets
+
+## Managing Environment Variables
+
+
 ## WORKSHOP - Deploy docker container via CDCI to AWS Elastic Beanstalk
 
 <img src="./images/img16.png" width="400" height="200">
