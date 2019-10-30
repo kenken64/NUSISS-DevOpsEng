@@ -19,19 +19,27 @@ The objective of this workshops is to learn how to setup and deploy frontend app
   <img src="./screens/travis3.png" >
 * Create a zeit.co account (https://zeit.co/) if you wish to publish to a new site
 * Install Zeit CLI
-* Create a Slack channel
+* Create a Slack channel integrate your workspace with Travis
 * Select a deployable application from your repository
 
 ## Workshop
-In this workshop you will setup a CI to automatically build and publish your
-* Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your account.
+In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Zeit using Travis.
+
+* Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
+
+* Checkout the development branch
 
 * Add the below codes to the package.json file under the scripts block
 ```
 "deploy": "now --no-clipboard --token=$NOW_TOKEN --public --prod"
 ```
-Angular application to Zeit.
-* Add a .travis.yml file to you repository
+
+* Add a .travis.yml file to you  working repository
+  - Notify all your co-workers on the build
+  - Install all relevant dependencies
+  - Perform a build on the frontend
+  - Deploy to the cloud provider
+
 ```
 language: node_js
 node_js:
@@ -85,8 +93,16 @@ successful or if it has failed
 
 ## Optional Workshop
 Only attempt this if you have completed the workshop.
-Delete the release branch when you have successfully published the
-frontend application.
+* Delete the release branch when you have successfully published the
+front end application.
+* Perform static code analysis 
+```
+ng lint
+```
+* Perform vulnebrality scanning 
+```
+npm audit fix
+```
 
 
 ## Dockerized a sample web app (Optional)
