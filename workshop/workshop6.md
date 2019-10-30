@@ -92,7 +92,7 @@ GitHub)
 successful or if it has failed
 
 ## Optional Workshop
-Only attempt this if you have completed the workshop.
+Only attempt this if you have completed the above workshop.
 * Delete the release branch when you have successfully published the
 front end application.
 * Perform static code analysis 
