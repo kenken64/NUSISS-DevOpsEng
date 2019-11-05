@@ -189,12 +189,6 @@ sudo docker run -p 8080:80 936ca285e822 > /dev/null 2>&1
 
 13. Launch your browser and try accessign the app http://```<slave server public DNS>:8080```
 
-# Setup Nginx Docker server with SSL certificate using docker-compose
-
-1. Create a Digital Ocean account follow by a droplet creation (Ubuntu) 
-2. Login to Digital Ocean droplet via SSH
-3. 
-
 
 # ECR, ECS Optional 
 
