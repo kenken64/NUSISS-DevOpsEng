@@ -98,6 +98,8 @@ You will need the public DNS and the private key (PEM) file that have been downl
 Perform this command to logon into the bitnami server 
 
 ```
+$ cd ..
+$ cd Notebooks
 $ chmod 400 <pem filename>
 $ ssh -i <pem filename> ubuntu@<aws ec2 hostname>
 ```
