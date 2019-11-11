@@ -199,7 +199,7 @@ Please refer to https://docs.bitnami.com/ for more details.
 
 
 
-## Pre-requisites for local workstation installation
+## Pre-requisites for local workstation installation (Optional)
 * Java JDK 9 or higher
 
 ### Step by step installation
