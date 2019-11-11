@@ -28,28 +28,6 @@
 <img style="float: center;" src="./screens/jenkinsci1.png">
 <br>
 
-3. Go to Manage Jenkins then Global Tool configuration -> Install & Configure Ant. 
-
-<br>
-<img style="float: center;" src="./screens/jenkinsci3.png">
-<br>
-
-4. Install & Configure Maven under the Global Tool configuration
-
-<br>
-<img style="float: center;" src="./screens/jenkinsci4.png">
-<br>
-
-5. Install & Configure Docker under the Global Tool configuration
-
-<br>
-<img style="float: center;" src="./screens/jenkinsci5.png">
-<br>
-
-6. Restart Jenkins, copy and paste the URL on your browser's address bar
-
-http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/safeRestart
-
 ## Create an Ant Project Job 
 
 1. Fork the following git repository https://github.com/kenken64/StackAnnotation to your own Github Account
