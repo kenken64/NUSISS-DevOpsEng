@@ -220,7 +220,7 @@ Add a server entry to the end of the [main] configuration section of the puppet.
 ### Agent/Slave
 
 ```
-[Main]
+[main]
 server = <master public dns>
 
 [agent]
