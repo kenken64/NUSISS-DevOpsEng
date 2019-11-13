@@ -5,7 +5,7 @@ The objective of this workshops is to learn how to setup and deploy frontend app
 
 ## Pre-requisite
 * Slack Account
-* Zeit account
+* Travis account
 * Github Account
 
   - Generate the personal access token
