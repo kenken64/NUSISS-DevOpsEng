@@ -60,7 +60,7 @@ before_script:
   - npm install -g @angular/cli
   - npm install -g now
 script:
-  - ng build --prod --base-href https://kenken64.github.io/bitcoin-order-app/
+  - ng build --prod --base-href https://<your github username>.github.io/bitcoin-order-app/
 
   
 deploy:
