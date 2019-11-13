@@ -68,7 +68,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/bitcoin-order-app
+  local_dir: dist/bitcoin
   on:
     branch: master
 
