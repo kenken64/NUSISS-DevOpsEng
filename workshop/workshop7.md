@@ -9,6 +9,7 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 ## Pre-requisites
 - Github Account
 - AWS Account
+- Region : Sydney
 - AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair. *There is no need for us to ssh into a machine here so we can skip the `chmod` step in the guide.*
 
 ## Step by step guide - basic CodeStar setup
@@ -39,6 +40,9 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 
     ![Project loading](screens/setup-loading.png "Project loading")
 
+
+1. Capture screenshot of the successful build, save it along as part of your submission.
+
 1. In the lower right side of the Project setup page, the application endpoint will show up when the deployment has finished loading. You can check the deployment status in the Continuous deployment section.
 
 1. Click the Application Endpoint when it is ready and you should be able to see the JSON response of your Flask API.
@@ -48,3 +52,34 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
     ```
     return Response(json.dumps({'Output': 'Hello World from Codestar'}), mimetype='application/json', status=200)
     ```
+1. Capture screenshot of the failed build, save it along as part of your submission.
+
+
+## AWS Codestar integrate with Jenkins using ASP.Net Core Project template
+
+1. Repeat the above steps 1 - 11, select 'ASP.NET Core' Web service on EC2 when creating the new codestar template wizard.
+
+ ![CodeStar Project Details](screens/codestar_dotnet.jpg "CodeStar Project Details")
+
+1. Logon to the AWS Jenkins as below:-
+
+* Jenkins Server 1
+    - url : http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/
+    - username : user
+    - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
+
+* Jenkins Server 2
+    - url : http://ec2-3-105-229-16.ap-southeast-2.compute.amazonaws.com/jenkins/
+    - username : user
+    - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
+
+1. Create a new freestyle project item with following naming convention 'aws_dotnet_<your initial>'
+
+1. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
+
+   ![CodeStar Project Details](screens/codestar_dotnet2.jpg "CodeStar Project Details")
+   ![CodeStar Project Details](screens/codestar_dotnet3.jpg "CodeStar Project Details")
+   ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
+   ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
+
+1. Capture screenshot of the successful build, save it along as part of your submission.
