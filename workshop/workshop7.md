@@ -82,4 +82,6 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
    ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
    ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
 
+1. Try to make any simple changes to the README.md and commit your codes to the github repo.
+
 1. Capture screenshot of the successful build, save it along as part of your submission.
