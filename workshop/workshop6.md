@@ -28,11 +28,6 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 * Checkout the development branch
 
-* Add the below codes to the package.json file under the scripts block
-```
-"deploy": "now --no-clipboard --token=$NOW_TOKEN --public --prod"
-```
-
 * Add a .travis.yml file to you  working repository
   - Notify all your co-workers on the build
   - Install all relevant dependencies
