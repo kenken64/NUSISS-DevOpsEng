@@ -54,13 +54,6 @@ notifications:
       - bunnyppl@gmail.com
     on_success: always
     on_failure: always
-  slack: 
-    rooms:
-      - csf-2019:JOLzMXebwOog6dJnFQ7yVERe#ken-build
-    on_success: change
-    on_failure: always 
-    template:
-      - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} in PR <%{pull_request_url}|#%{pull_request_number}> by %{author} %{result} in %{duration}"  
 branches:
   only:
    - master
