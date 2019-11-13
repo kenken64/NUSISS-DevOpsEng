@@ -55,7 +55,7 @@ notifications:
     on_failure: always
 branches:
   only:
-   - master
+   - development
 before_script:
   - npm install -g @angular/cli
   - npm install -g now
@@ -69,7 +69,7 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist/bitcoin
   on:
-    branch: master
+    branch: development
 
 ```
 * Travis should build wherever there is a push to the release branch
