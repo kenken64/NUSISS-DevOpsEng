@@ -17,8 +17,7 @@ The objective of this workshops is to learn how to setup and deploy frontend app
   <img src="./screens/travis1.png" >
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
-* Create a zeit.co account (https://zeit.co/) if you wish to publish to a new site
-* Install Zeit CLI
+
 * Create a Slack channel integrate your workspace with Travis
 * Select a deployable application from your repository
 
@@ -74,8 +73,8 @@ deploy:
 
 ```
 * Travis should build wherever there is a push to the release branch
-* After a successful build, the application should be published to Zeit (or
-GitHub)
+* After a successful build, the application should be published to 
+GitHub
 * Send a notification to your Slack channel regardless whether the build is
 successful or if it has failed
 
