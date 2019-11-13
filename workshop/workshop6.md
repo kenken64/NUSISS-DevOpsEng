@@ -68,22 +68,17 @@ before_script:
   - npm install -g @angular/cli
   - npm install -g now
 script:
-  - ng build --prod --base-href https://kenken64.github.io/weather-app/
-  - ng build --prod --output-path ./dist/zeit-cloud --base-href https://weather-app.bunnyppl.now.sh/
+  - ng build --prod --base-href https://kenken64.github.io/bitcoin-order-app/
+
   
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/weather-app
+  local_dir: dist/bitcoin-order-app
   on:
     branch: master
-deploy:
-  provider: script
-  script: npm run deploy 
-  local_dir: dist/zeit-cloud
-  on:
-    branch: master
+
 ```
 * Travis should build wherever there is a push to the release branch
 * After a successful build, the application should be published to Zeit (or
