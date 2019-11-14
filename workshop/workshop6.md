@@ -4,7 +4,6 @@
 The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis
 
 ## Pre-requisite
-* Slack Account
 * Travis account
 * Github Account
 
@@ -18,7 +17,6 @@ The objective of this workshops is to learn how to setup and deploy frontend app
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
 
-* Create a Slack channel integrate your workspace with Travis
 * Select a deployable application from your repository
 
 ## Workshop
@@ -56,7 +54,6 @@ before_script:
   - npm install -g now
 script:
   - ng build --prod --base-href https://<your github username>.github.io/bitcoin-order-app/
-
   
 deploy:
   provider: pages
@@ -73,7 +70,7 @@ GitHub
 * Send a notification to your Slack channel regardless whether the build is
 successful or if it has failed
 
-## Optional Workshop
+## Bonus - Workshop
 Only attempt this if you have completed the above workshop.
 * Delete the release branch when you have successfully published the
 front end application.

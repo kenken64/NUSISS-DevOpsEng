@@ -118,7 +118,7 @@ services:
 sudo docker-compose up --build
 ```
 
-7. Implement test on separate container, please replace the hash value of the container id from ps command
+7. Launch another Jupyter notebook terminal (slave server) to execute this step. Implement test on separate container, please replace the hash value of the container id from ps command
 
 ```
 docker ps 
@@ -173,7 +173,7 @@ EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 ```
 
-10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built f2422c014da3
+10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built ```<image id>```
 
 ```
 sudo docker build .
@@ -182,12 +182,10 @@ sudo docker build .
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-sudo docker run -p 8080:80 936ca285e822 > /dev/null 2>&1
+sudo nohup docker run -p 80:80 <image id> &
 ```
 
-12. Add a new firewall rules - inbound tcp port 8080 on the EC2 slave server.
-
-13. Launch your browser and try accessign the app http://```<slave server public DNS>:8080```
+12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
 
 
 # ECR, ECS Optional 

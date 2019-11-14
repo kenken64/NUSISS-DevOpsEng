@@ -97,8 +97,6 @@ Setting Up Puppet on EC2 Instances (Additional instructions will be provided dur
 SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
 
 ```
-$ cd ..
-$ cd Notebooks
 $ chmod 400 <your key pair>.pem 
 $ ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 ```
@@ -344,6 +342,7 @@ nano init.pp
 ```
 
 Create a module class init.pp file. Paste the below codes into the init.pp
+What this code does is install a linux utility htop and also the docker engine on the slave server.
 
 ### Master 
 ```
