@@ -4,7 +4,7 @@
 
 At the end of this tutorial, you will be able to push your code changes to Github and run it in an EC2 instance deployed AWS CodeBuild.
 
-All of AWS services in this tutorial should be in the same region Singapore (ap-southeast-1).
+All of AWS services in this tutorial should be in the same region Sydney (ap-southeast-2).
 
 ## Pre-requisites
 - Github Account
