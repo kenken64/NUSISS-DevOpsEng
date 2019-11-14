@@ -82,6 +82,20 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
    ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
    ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
 
-1. Try to make any simple changes to the README.md and commit your codes to the github repo.
-
 1. Capture screenshot of the successful build, save it along as part of your submission.
+
+1. Make changes to the dotnet unit test case namespace AspNetCoreWebServiceTest.Controllers , HelloControllerTest class as below where the ```Hello World1!!!``` with an extra exclamation mark.
+
+```
+        [Fact]
+        public void NoInputParamGetResponseTest()
+        {
+            HelloController controller = new HelloController();
+            var response = controller.Get().Value as Response;
+            Assert.Equal("Hello World!!!", response.output);
+        }
+```
+
+1. Commit your codes to the github and watch how the build will fail.
+
+1. Capture screenshot of the failed build, save it along as part of your submission.
