@@ -4,7 +4,7 @@
 
 At the end of this tutorial, you will be able to push your code changes to Github and run it in an EC2 instance deployed AWS CodeBuild.
 
-All of AWS services in this tutorial should be in the same region Singapore (ap-southeast-1).
+All of AWS services in this tutorial should be in the same region Sydney (ap-southeast-2).
 
 ## Pre-requisites
 - Github Account
@@ -73,7 +73,7 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
-1. Create a new freestyle project item with following naming convention 'aws_dotnet_<your initial>'
+1. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
 1. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
 
