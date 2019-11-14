@@ -73,7 +73,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
-1. Create a new freestyle project item with following naming convention 'aws_dotnet_<your initial>'
+1. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
 1. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
 
