@@ -187,6 +187,52 @@ nohup docker run -p 80:80 <image id> &
 
 12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
 
+13. Login to docker hub through the CLI
+
+```
+bunnyppl@instance-1:~/NUSISS-DevOpsEng/container/subsdevices$ sudo docker login
+```
+
+```
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: kenken64
+Password:
+WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
+
+14. Retrieve the docker Id from cli
+
+```
+sudo docker images
+```
+
+15. Tag the image
+
+```
+sudo docker tag d8b928587243 kenken64/subsdevices:v1
+```
+
+16. Push the tagged image to the docker hub
+
+```
+sudo docker push kenken64/subsdevices:v1
+```
+
+```
+The push refers to repository [docker.io/kenken64/subsdevices]
+82674fe9a8e6: Pushed
+6f5e00ced6e0: Pushed
+86865100bc00: Pushed
+7e93be41b55d: Pushed
+1c07e18a989b: Mounted from library/node
+b92d384cdf06: Mounted from library/node
+a464c54f93a9: Mounted from library/node
+v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
+```
 
 # ECR, ECS Optional 
 
