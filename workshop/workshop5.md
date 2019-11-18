@@ -190,7 +190,7 @@ nohup docker run -p 80:80 <image id> &
 13. Login to docker hub through the CLI
 
 ```
-bunnyppl@instance-1:~/NUSISS-DevOpsEng/container/subsdevices$ sudo docker login
+$ docker login
 ```
 
 ```
@@ -207,19 +207,19 @@ Login Succeeded
 14. Retrieve the docker Id from cli
 
 ```
-sudo docker images
+$ docker images
 ```
 
 15. Tag the image
 
 ```
-sudo docker tag d8b928587243 kenken64/subsdevices:v1
+$ docker tag d8b928587243 kenken64/subsdevices:v1
 ```
 
 16. Push the tagged image to the docker hub
 
 ```
-sudo docker push kenken64/subsdevices:v1
+$ docker push kenken64/subsdevices:v1
 ```
 
 ```
