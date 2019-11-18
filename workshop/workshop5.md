@@ -112,10 +112,10 @@ services:
         - .:/app
 ```
 
-6. Start the docker container using docker-compose, To terminate this process press Ctrl + C
+6. Start the docker container using docker-compose.
 
 ```
-sudo docker-compose up --build
+docker-compose up --build
 ```
 
 7. Launch another Jupyter notebook terminal (slave server) to execute this step. Implement test on separate container, please replace the hash value of the container id from ps command
@@ -152,7 +152,7 @@ services:
 8. Start the docker container using docker-compose, once the process is running with warning messages press Ctrl + C to terminate the prompt. 
 
 ```
-sudo docker-compose up --build
+docker-compose up --build
 ```
 
 9. Multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
@@ -176,13 +176,13 @@ COPY --from=builder /app/build /usr/share/nginx/html
 10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built ```<image id>```
 
 ```
-sudo docker build .
+docker build .
 ```
 
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-sudo nohup docker run -p 80:80 <image id> &
+nohup docker run -p 80:80 <image id> &
 ```
 
 12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
