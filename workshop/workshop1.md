@@ -76,7 +76,7 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Access the Jupyter notebook URL https://ec2-13-238-161-21.ap-southeast-2.compute.amazonaws.com:8888/tree? . Upload the pem to the root directory of the jupyter notebook.
+15. Access the Jupyter notebook URL https://nusiss.ngrok.io/tree? . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
