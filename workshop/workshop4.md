@@ -221,7 +221,13 @@ Add a server entry to the end of the [main] configuration section of the puppet.
 
 ```
 [main]
+ssldir = /var/lib/puppet/ssl
 server = <master public dns>
+
+[master]
+vardir = /var/lib/puppet
+cadir  = /var/lib/puppet/ssl/ca
+dns_alt_names = puppet
 
 [agent]
 runinterval = 5m
