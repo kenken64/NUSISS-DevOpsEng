@@ -399,6 +399,8 @@ To save press Ctrl + x and answer yes to save
 
 On the Puppet Agent node, sync with Puppet Master node.
 
+https://github.com/kenken64/devops-iac
+
 ### Agent/Slave
 ```
 puppet agent --test -d 
