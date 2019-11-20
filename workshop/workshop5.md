@@ -213,13 +213,13 @@ $ docker images
 15. Tag the image
 
 ```
-$ docker tag d8b928587243 kenken64/subsdevices:v1
+$ docker tag ```<docker ps image id>``` ```<your dockerhub userid>```/subsdevices:v1
 ```
 
 16. Push the tagged image to the docker hub
 
 ```
-$ docker push kenken64/subsdevices:v1
+$ docker push ```<your dockerhub userid>```/subsdevices:v1
 ```
 
 ```
