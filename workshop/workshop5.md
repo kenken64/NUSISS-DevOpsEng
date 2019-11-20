@@ -213,13 +213,13 @@ $ docker images
 15. Tag the image
 
 ```
-$ docker tag ```<docker ps image id>``` ```<your dockerhub userid>```/subsdevices:v1
+$ docker tag <docker ps image id> <your dockerhub userid>/subsdevices:v1
 ```
 
 16. Push the tagged image to the docker hub
 
 ```
-$ docker push ```<your dockerhub userid>```/subsdevices:v1
+$ docker push <your dockerhub userid>/subsdevices:v1
 ```
 
 ```
