@@ -1,4 +1,4 @@
-# S-DOEA - Workshop - DevOps in the Cloud 
+# S-DOEA - Workshop 6 - DevOps in the Cloud 
 
 ## Objective 
 The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis

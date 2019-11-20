@@ -1,4 +1,4 @@
-# S-DOEA - Workshop - End to end DevOps Engineering and Automation
+# S-DOEA - Workshop 7 - End to end DevOps Engineering and Automation
 
 ## AWS Codestar with Python Flask Project
 
@@ -7,6 +7,7 @@ At the end of this tutorial, you will be able to push your code changes to Githu
 All of AWS services in this tutorial should be in the same region Sydney (ap-southeast-2).
 
 ## Pre-requisites
+- Team workshop
 - Github Account
 - AWS Account
 - Region : Sydney

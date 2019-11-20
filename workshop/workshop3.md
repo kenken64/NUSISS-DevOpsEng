@@ -1,4 +1,4 @@
-# S-DOEA - Workshop - Jenkins - CI Workshop
+# S-DOEA - Workshop 3 - Jenkins - CI Workshop
 
 ## Pre-requisite
 * AWS Account (Will be provided by NUS ISS)

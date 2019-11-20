@@ -1,4 +1,4 @@
-# S-DOEA - Workshop - Jenkins Installation
+# S-DOEA - Workshop 2 - Jenkins Installation
 
 ## Pre-requisites for Cloud installation
 * AWS account
