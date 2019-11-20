@@ -101,7 +101,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 8. Capture screenshot of the failed build, save it along as part of your submission.
 
-9. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown in during lecturer day3.
+9. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
 
 10. Commit the Dockefile into your github repository.
 
