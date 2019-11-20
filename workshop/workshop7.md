@@ -99,3 +99,9 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 1. Commit your codes to the github and watch how the build will fail.
 
 1. Capture screenshot of the failed build, save it along as part of your submission.
+
+1. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown in during lecturer day3.
+
+1. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
+
+![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
