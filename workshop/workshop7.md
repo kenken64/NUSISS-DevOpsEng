@@ -61,7 +61,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
  ![CodeStar Project Details](screens/codestar_dotnet.jpg "CodeStar Project Details")
 
-1. Logon to the AWS Jenkins as below:-
+2. Logon to the AWS Jenkins as below:-
 
 * Jenkins Server 1
     - url : http://ec2-52-221-182-172.ap-southeast-1.compute.amazonaws.com/jenkins/
@@ -73,18 +73,18 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
-1. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
+3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
-1. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
+4. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
 
    ![CodeStar Project Details](screens/codestar_dotnet2.jpg "CodeStar Project Details")
    ![CodeStar Project Details](screens/codestar_dotnet3.jpg "CodeStar Project Details")
    ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
    ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
 
-1. Capture screenshot of the successful build, save it along as part of your submission.
+5. Capture screenshot of the successful build, save it along as part of your submission.
 
-1. Make changes to the dotnet unit test case namespace AspNetCoreWebServiceTest.Controllers , HelloControllerTest class as below where the ```Hello World1!!!``` with an extra exclamation mark.
+6. Make changes to the dotnet unit test case namespace AspNetCoreWebServiceTest.Controllers , HelloControllerTest class as below where the ```Hello World1!!!``` with an extra exclamation mark.
 
 ```
         [Fact]
@@ -96,12 +96,14 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
         }
 ```
 
-1. Commit your codes to the github and watch how the build will fail.
+7. Commit your codes to the github and watch how the build will fail.
 
-1. Capture screenshot of the failed build, save it along as part of your submission.
+8. Capture screenshot of the failed build, save it along as part of your submission.
 
-1. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown in during lecturer day3.
+9. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown in during lecturer day3.
 
-1. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
+10. Commit the Dockefile into your github repository.
+
+11. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
