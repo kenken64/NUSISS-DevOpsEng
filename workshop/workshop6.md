@@ -7,24 +7,27 @@ The objective of this workshops is to learn how to setup and deploy frontend app
 * Travis account
 * Github Account
 
-  - Generate the personal access token
-  <img src="./screens/github_token.png" >
-
-## Setup
-* Create an account in Travis and allow it access to your GitHub
-  - Configure a secure environment variable for all branches
-  <img src="./screens/travis1.png" >
-  <img src="./screens/travis2.png" >
-  <img src="./screens/travis3.png" >
-
-* Select a deployable application from your repository
-
 ## Workshop
 In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Zeit using Travis.
 
 * Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
 
+
 * Checkout the development branch
+
+* Generate the personal access token and save it somewhere on your editor
+  <img src="./screens/github_token.png" >
+
+* Select a deployable application from your repository, slide the sldier to enable the bitcoin-order-app from your github account
+
+* Navigate to the selected project's setting
+
+* Create an account in Travis and allow it to associate with your GitHub account
+  - Configure a GITHUB_TOKEN secure environment variable for all branches the value is generated fromt he about step
+  <img src="./screens/travis1.png" >
+  <img src="./screens/travis2.png" >
+  <img src="./screens/travis3.png" >
+
 
 * Add a .travis.yml file to you  working repository
   - Notify all your co-workers on the build
@@ -43,7 +46,7 @@ sudo: required
 notifications:
   email:
     recipients:
-      - bunnyppl@gmail.com
+      - <your email address>
     on_success: always
     on_failure: always
 branches:
@@ -60,6 +63,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist/bitcoin
+  edge: true
   on:
     branch: development
 
@@ -87,7 +91,6 @@ ng lint
 ```
 npm audit fix
 ```
-
 
 ## Dockerized a sample web app (Optional)
 
