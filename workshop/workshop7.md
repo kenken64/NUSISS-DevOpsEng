@@ -107,7 +107,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 11. Commit the Dockefile into your github repository.
 
-12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
+12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag along with the dockerhub credentials.
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
