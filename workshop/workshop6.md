@@ -20,7 +20,11 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 * Select a deployable application from your repository, slide the sldier to enable the bitcoin-order-app from your github account
 
-* Navigate to the selected project's setting
+* On the Travis CI platform, navigate to the selected project's setting
+
+* On the Travis CI platform, under settings of the project make sure the build validation is disabled
+
+<img src="./screens/travis4.png" >
 
 * Create an account in Travis and allow it to associate with your GitHub account
   - Configure a GITHUB_TOKEN secure environment variable for all branches the value is generated fromt he about step

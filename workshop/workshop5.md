@@ -190,6 +190,7 @@ nohup docker run -p 80:80 <image id> &
 13. Login to docker hub through the CLI
 
 ```
+$ sudo apt install gnupg2 pass
 $ docker login
 ```
 
