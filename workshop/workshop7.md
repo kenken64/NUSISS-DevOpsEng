@@ -29,7 +29,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
     ![CodeStar Project Details](screens/codestar-project-details.png "CodeStar Project Details")
 
-1. Enter your GitHub reporitory details.
+1. Enter your GitHub reporitory details. Select repo as public. 
 
     ![GitHub repository details](screens/codestar-github-connect.png "GitHub repository details")
 
