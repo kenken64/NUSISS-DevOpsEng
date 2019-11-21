@@ -70,7 +70,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
 * Jenkins Server 2
-    - url : ec2-54-153-133-155.ap-southeast-2.compute.amazonaws.com/jenkins/
+    - url : http://ec2-54-153-133-155.ap-southeast-2.compute.amazonaws.com/jenkins/
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
