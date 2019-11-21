@@ -101,12 +101,16 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 8. Capture screenshot of the failed build, save it along as part of your submission.
 
-9. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
+9. Stabilize the test case before dockerized the app.
 
-10. Commit the Dockefile into your github repository.
+10. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
 
-11. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
+11. Commit the Dockefile into your github repository.
+
+12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag.
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
-12. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+13. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+
+14. Try accessing the app via the end point created from the CodeStar dashboard.
