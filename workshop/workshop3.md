@@ -10,7 +10,7 @@
 1. Launch internet browser, navigate to the link below. Login using the credential provided as below:-
 
 * Jenkins Server 1
-    - url : http://ec2-3-1-102-120.ap-southeast-1.compute.amazonaws.com/jenkins/login?from=%2Fjenkins%2F
+    - url : http://ec2-3-1-102-120.ap-southeast-1.compute.amazonaws.com/jenkins/
     - username : user
     - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
 
