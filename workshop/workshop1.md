@@ -101,7 +101,7 @@ Perform this command to logon into the bitnami server
 $ cd ..
 $ cd Notebooks
 $ chmod 400 <pem filename>
-$ ssh -i <pem filename> ubuntu@<aws ec2 hostname>
+$ ssh -i <pem filename> bitnami@<aws ec2 hostname>
 ```
 Upon logging into the EC2 instance, change directory to /home/bitnami
 ```
