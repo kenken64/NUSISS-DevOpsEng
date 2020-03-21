@@ -254,8 +254,8 @@ puppet agent --enable
 Start the pupper service and also check the status of the service after issuing the start command
 
 ```
-service puppet start
-service puppet status
+service puppetmaster start
+service puppetmaster status
 ```
 
 
