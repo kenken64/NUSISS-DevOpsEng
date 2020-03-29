@@ -323,7 +323,7 @@ node "default" {
 
 To save press Ctrl + x and answer yes to save
 
-Create puppet module directory structure
+Create puppet module directory structure. This directory structure has to be that way so the pupper master able to sync the codes execution to the agent.
 
 ### Master 
 ```
@@ -411,7 +411,7 @@ https://github.com/kenken64/devops-iac
 ```
 puppet agent --test -d 
 ```
-### Capture Result save it to the Google drive
+### Capture Result save it to the LumiNUS submission folder
 ```
 $ docker --version
 ```
