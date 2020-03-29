@@ -198,7 +198,7 @@ Please refer to https://docs.bitnami.com/ for more details.
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins23.png"/>
 <br>
-
+29. Screenshot the jenkins login page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
 
 
 ## Pre-requisites for local workstation installation (Optional)

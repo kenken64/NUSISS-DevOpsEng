@@ -10,10 +10,10 @@
 1. Launch internet browser, navigate to the link below. Login using the credential provided as below:-
 
 * Jenkins Server 1
-    - url : http://ec2-3-1-102-120.ap-southeast-1.compute.amazonaws.com/jenkins/
+    - url : http://52.76.25.79/jenkins/
     
 * Jenkins Server 2
-    - url : http://ec2-54-153-133-155.ap-southeast-2.compute.amazonaws.com/jenkins/
+    - url : http://3.24.33.126/jenkins/
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci2.png">
