@@ -8,7 +8,7 @@ The objective of this workshops is to learn how to setup and deploy frontend app
 * Github Account
 
 ## Workshop
-In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Zeit using Travis.
+In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Github Pages using Travis.
 
 * Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
 
