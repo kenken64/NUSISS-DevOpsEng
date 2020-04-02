@@ -118,6 +118,14 @@ Assign a hostname for the Puppet Master EC2 instance
 sudo hostname <public dns>
 ```
 
+Resolve domain names without using Domain Name System
+
+Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
+
+```
+ifconfig
+```
+
 
 Assign a hostname for the Puppet Agent EC2 instance
 
@@ -128,12 +136,6 @@ sudo hostname <public dns>
 
 
 Resolve domain names without using Domain Name System
-
-Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
-```
-ifconfig
-```
-
 
 Verify the IP address for the Puppet Agent EC2 Instance, check against the AWS EC2 dashboard
 ```
@@ -173,6 +175,9 @@ Change the existing line to below
 ```
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
 ```
+
+Exit the editor press Ctrl + x then answer yes and press enter
+
 ```
 source ~/.bashrc
 ```
@@ -199,6 +204,9 @@ apt-get install puppet -y
 ```
 
 Kindly perform the command below to label the slave server prompt
+
+Refresh the environment profile as below:-
+
 ```
 nano ~/.bashrc
 ```
@@ -210,6 +218,9 @@ Change the existing line to below
 ```
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ slave $ '
 ```
+Exit the editor press Ctrl + x then answer yes and press ENTER key
+
+Refresh the environment profile as below:-
 ```
 source ~/.bashrc
 ```
@@ -246,7 +257,13 @@ Start the pupper service and also check the status of the service after issuing 
 
 ```
 service puppet start
+```
+```
 service puppet status
+```
+In order to exit the status press q
+
+```
 puppet agent --enable
 ```
 
@@ -257,6 +274,8 @@ Start the pupper service and also check the status of the service after issuing 
 service puppetmaster start
 service puppetmaster status
 ```
+
+In order to exit the status press q
 
 
 ### Agent/Slave
