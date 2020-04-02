@@ -15,7 +15,7 @@
 docker -v
 ```
 
-2. Test out whether docker-compose is installed correctly
+2. Test out whether docker-compose is installed correctly. If not kindly follow this installation guide (Linux) (https://docs.docker.com/compose/install/#install-compose)
 
 ```
 docker-compose -v
@@ -31,6 +31,13 @@ sudo groupadd docker
 
 ```
 sudo usermod -aG docker $USER
+
+```
+
+Refresh the user profile by issuing the below command
+
+```
+source ~/.bashrc
 ```
 
 5. Verify that you can run docker commands without sudo.
