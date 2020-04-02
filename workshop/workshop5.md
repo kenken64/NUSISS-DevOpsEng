@@ -77,17 +77,17 @@ git clone https://github.com/kenken64/reactjs-subdevice.git
 cd reactjs-subdevice
 ```
 
-2. Create a Dockerfile.dev under the React App (subsdevices)
+2. Create a Dockerfile.test under the React App (subsdevices)
 
 ```
 FROM node:alpine
 
 WORKDIR '/app'
 
-COPY package.json .
+COPY package.json ./
 RUN npm install
 
-COPY . .
+COPY ./ ./
 
 CMD ["npm", "run", "start"]
 ```
@@ -95,7 +95,7 @@ CMD ["npm", "run", "start"]
 3. Build the docker image
 
 ```
-docker build -f Dockerfile.dev -t kenken64/react-app .
+docker build -f Dockerfile.test -t kenken64/react-app .
 ```
 
 4. Run the docker image as container with port forward and volume mounting, once is up and running. To terminate this process press Ctrl + C
@@ -171,9 +171,9 @@ FROM node:alpine as builder
 
 WORKDIR '/app'
 
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 FROM nginx
