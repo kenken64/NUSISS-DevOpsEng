@@ -130,7 +130,7 @@ docker-compose up --build
 
 ```
 docker ps 
-docker exec -it <container id from docker ps> npm run test
+docker exec -it <_test container id from docker ps> npm run test
 ```
 
 - Add test service in the docker compose yml file
