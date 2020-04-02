@@ -204,7 +204,7 @@ $ docker login
 
 ```
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
-Username: kenken64
+Username: <your dockerhun username>
 Password:
 WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
 Configure a credential helper to remove this warning. See
