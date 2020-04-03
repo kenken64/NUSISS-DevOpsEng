@@ -33,7 +33,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
   <img src="./screens/travis3.png" >
 
 
-* Add a .travis.yml file to you  working repository
+* Add a .travis.yml file to you working repository, replace the email and github userid placeholder
   - Notify all your co-workers on the build
   - Install all relevant dependencies
   - Perform a build on the frontend
