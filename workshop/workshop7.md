@@ -102,6 +102,41 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 10. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
 
+```
+from ubuntu:latest
+
+WORKDIR backend-svr
+
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    apt-get install -y wget && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+
+RUN dpkg -i packages-microsoft-prod.deb
+
+RUN add-apt-repository universe
+
+RUN apt install apt-transport-https -y
+
+RUN apt-get update
+
+RUN apt install dotnet-sdk-3.0 -y
+
+COPY ./ ./
+
+RUN dotnet restore
+
+RUN dotnet build
+
+EXPOSE 5000:5000
+
+CMD [ "dotnet", "run" ]
+
+
+```
+
 11. Commit the Dockefile into your github repository.
 
 12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag along with the dockerhub credentials.
