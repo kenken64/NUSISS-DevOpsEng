@@ -96,7 +96,7 @@ ng lint
 npm audit fix
 ```
 
-## Dockerized a sample web app (Optional)
+## Dockerized a sample web app, deploy to Elastic Bean Stalk (Optional)
 
 <img src="../container/images/img16.png" width="400" height="200">
 
