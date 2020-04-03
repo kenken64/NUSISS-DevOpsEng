@@ -3,7 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ngrok.io
+* Access to this url : https://nusiss.ap.ngrok.io/
 
 # Setting up EC2 instances for puppet
 

@@ -4,7 +4,7 @@
 The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis
 
 ## Pre-requisite
-* Travis account
+* Travis account (https://travis-ci.org/)
 * Github Account
 
 ## Workshop

@@ -2,8 +2,8 @@
 
 ## Pre-requisite
 * AWS Account (Will be provided by NUS ISS)
-* Oracle Account 
-* Github Account 
+* Oracle Account (Optional)
+* Github Account (https://github.com/)
 
 ## Setup Jenkins before creating new build job
 
