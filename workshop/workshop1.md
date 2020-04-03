@@ -3,7 +3,7 @@
 ## Pre-requisites for Cloud installation
 * AWS account
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ap.ngrok.io/
+* Access to this url : https://nusiss.ngrok.io/
 * Region: Sydney
 
 
