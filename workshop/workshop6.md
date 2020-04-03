@@ -15,7 +15,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 * Checkout the development branch
 
-* Generate the personal access token and save it somewhere on your editor
+* Generate the personal access token, select the repo scope and save the token to somewhere on your editor
   <img src="./screens/github_token.png" >
 
 * Select a deployable application from your repository, slide the sldier to enable the bitcoin-order-app from your github account
