@@ -75,7 +75,7 @@ deploy:
 * Travis should build wherever there is a push to the release branch
 * After a successful build, the application should be published to 
 GitHub
-* Send a notification to your Slack channel regardless whether the build is
+* Send a notification to your email mailbox regardless whether the build is
 successful or if it has failed
 
 ## Bonus - Workshop
