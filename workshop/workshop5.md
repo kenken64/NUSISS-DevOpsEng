@@ -24,10 +24,10 @@ docker-compose -v
 3. Create the docker group.
 
 ```
-sudo groupadd docker
+$ sudo groupadd docker
 ```
 
-4. Add your user to the docker group.
+4. Add your user to the docker group. Refresh the user's profile
 
 ```
 sudo usermod -aG docker $USER
