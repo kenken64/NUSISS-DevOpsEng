@@ -27,7 +27,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 <img src="./screens/travis4.png" >
 
 * Create an account in Travis and allow it to associate with your GitHub account
-  - Configure a GITHUB_TOKEN secure environment variable for all branches the value is generated fromt he about step
+  - Configure a GITHUB_TOKEN secure environment variable for all branches the value is generated from  the Github personal token generation page. Click Add
   <img src="./screens/travis1.png" >
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
