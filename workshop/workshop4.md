@@ -3,7 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ngrok.io
+* Access to this url : https://nusiss.ngrok.io/
 
 # Setting up EC2 instances for puppet
 
@@ -11,7 +11,7 @@
 
 1.	Login to AWS consle and open the Amazon EC2 console.
 2.	In the top navigation bar, choose the region in the dropdown region selector.
-    *  Region: Singapore/Sydney (ap-south-east-1/ap-southeast-2	a)
+    *  Region: Sydney (ap-southeast-2	a)
 3.	In the left navigation pane, under Network and Security, click Key Pairs.
 4.	Create Key Pair.
 <br>
@@ -118,6 +118,14 @@ Assign a hostname for the Puppet Master EC2 instance
 sudo hostname <public dns>
 ```
 
+Resolve domain names without using Domain Name System
+
+Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
+
+```
+ifconfig
+```
+
 
 Assign a hostname for the Puppet Agent EC2 instance
 
@@ -128,12 +136,6 @@ sudo hostname <public dns>
 
 
 Resolve domain names without using Domain Name System
-
-Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
-```
-ifconfig
-```
-
 
 Verify the IP address for the Puppet Agent EC2 Instance, check against the AWS EC2 dashboard
 ```
@@ -173,6 +175,9 @@ Change the existing line to below
 ```
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
 ```
+
+Exit the editor press Ctrl + x then answer yes and press enter
+
 ```
 source ~/.bashrc
 ```
@@ -199,6 +204,9 @@ apt-get install puppet -y
 ```
 
 Kindly perform the command below to label the slave server prompt
+
+Refresh the environment profile as below:-
+
 ```
 nano ~/.bashrc
 ```
@@ -210,6 +218,9 @@ Change the existing line to below
 ```
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ slave $ '
 ```
+Exit the editor press Ctrl + x then answer yes and press ENTER key
+
+Refresh the environment profile as below:-
 ```
 source ~/.bashrc
 ```
@@ -246,7 +257,13 @@ Start the pupper service and also check the status of the service after issuing 
 
 ```
 service puppet start
+```
+```
 service puppet status
+```
+In order to exit the status press q
+
+```
 puppet agent --enable
 ```
 
@@ -254,9 +271,11 @@ puppet agent --enable
 Start the pupper service and also check the status of the service after issuing the start command
 
 ```
-service puppet start
-service puppet status
+service puppetmaster start
+service puppetmaster status
 ```
+
+In order to exit the status press q
 
 
 ### Agent/Slave
@@ -323,7 +342,7 @@ node "default" {
 
 To save press Ctrl + x and answer yes to save
 
-Create puppet module directory structure
+Create puppet module directory structure. This directory structure has to be that way so the pupper master able to sync the codes execution to the agent.
 
 ### Master 
 ```
@@ -411,7 +430,7 @@ https://github.com/kenken64/devops-iac
 ```
 puppet agent --test -d 
 ```
-### Capture Result save it to the Google drive
+### Capture Result save it to the LumiNUS submission folder
 ```
 $ docker --version
 ```

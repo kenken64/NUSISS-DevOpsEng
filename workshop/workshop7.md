@@ -10,7 +10,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 - Team workshop
 - Github Account
 - AWS Account
-- Region : Sydney
+- Region : Sydney (ap-southeast-2)
 - AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair. *There is no need for us to ssh into a machine here so we can skip the `chmod` step in the guide.*
 
 ## Step by step guide - basic CodeStar setup
@@ -65,14 +65,11 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 2. Logon to the AWS Jenkins as below:-
 
 * Jenkins Server 1
-    - url : http://ec2-3-1-102-120.ap-southeast-1.compute.amazonaws.com/jenkins/login?from=%2Fjenkins%2F
-    - username : user
-    - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
+    - url : http://52.76.25.79/jenkins/
 
 * Jenkins Server 2
-    - url : http://ec2-54-153-133-155.ap-southeast-2.compute.amazonaws.com/jenkins/
-    - username : user
-    - password : ```<PASSWORD WILL BE PROVIDED DURING CLASS>```
+    - url : http://3.24.33.126/jenkins/
+
 
 3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
@@ -104,6 +101,41 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 9. Stabilize the test case before dockerized the app.
 
 10. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
+
+```
+from ubuntu:latest
+
+WORKDIR backend-svr
+
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    apt-get install -y wget && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+
+RUN dpkg -i packages-microsoft-prod.deb
+
+RUN add-apt-repository universe
+
+RUN apt install apt-transport-https -y
+
+RUN apt-get update
+
+RUN apt install dotnet-sdk-3.0 -y
+
+COPY ./ ./
+
+RUN dotnet restore
+
+RUN dotnet build
+
+EXPOSE 5000:5000
+
+CMD [ "dotnet", "run" ]
+
+
+```
 
 11. Commit the Dockefile into your github repository.
 

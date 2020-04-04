@@ -15,7 +15,7 @@
 docker -v
 ```
 
-2. Test out whether docker-compose is installed correctly
+2. Test out whether docker-compose is installed correctly. If not kindly follow this installation guide (Linux) (https://docs.docker.com/compose/install/#install-compose)
 
 ```
 docker-compose -v
@@ -30,9 +30,14 @@ $ sudo groupadd docker
 4. Add your user to the docker group. Refresh the user's profile
 
 ```
-$ sudo usermod -aG docker $USER
-$ source ~/. bashrc
+sudo usermod -aG docker $USER
 
+```
+
+Refresh the user profile by issuing the below command
+
+```
+source ~/.bashrc
 ```
 
 5. Verify that you can run docker commands without sudo.
@@ -72,17 +77,17 @@ git clone https://github.com/kenken64/reactjs-subdevice.git
 cd reactjs-subdevice
 ```
 
-2. Create a Dockerfile.dev under the React App (subsdevices)
+2. Create a Dockerfile.test under the React App (subsdevices)
 
 ```
 FROM node:alpine
 
 WORKDIR '/app'
 
-COPY package.json .
+COPY package.json ./
 RUN npm install
 
-COPY . .
+COPY ./ ./
 
 CMD ["npm", "run", "start"]
 ```
@@ -90,7 +95,7 @@ CMD ["npm", "run", "start"]
 3. Build the docker image
 
 ```
-docker build -f Dockerfile.dev -t kenken64/react-app .
+docker build -f Dockerfile.test -t kenken64/react-app .
 ```
 
 4. Run the docker image as container with port forward and volume mounting, once is up and running. To terminate this process press Ctrl + C
@@ -107,7 +112,7 @@ services:
     web:
       build:
         context: .
-        dockerfile: Dockerfile.dev
+        dockerfile: Dockerfile.test
       ports:
         - "3000:3000"
       volumes:
@@ -125,7 +130,7 @@ docker-compose up --build
 
 ```
 docker ps 
-docker exec -it <container id from docker ps> npm run test
+docker exec -it <_test container id from docker ps> npm run test
 ```
 
 - Add test service in the docker compose yml file
@@ -136,7 +141,7 @@ services:
     web:
       build:
         context: .
-        dockerfile: Dockerfile.dev
+        dockerfile: Dockerfile.test
       ports:
         - "3000:3000"
       volumes:
@@ -145,7 +150,7 @@ services:
     test:
       build:
         context: .
-        dockerfile: Dockerfile.dev
+        dockerfile: Dockerfile.test
       volumes:
           - /app/node_modules
           - .:/app
@@ -166,9 +171,9 @@ FROM node:alpine as builder
 
 WORKDIR '/app'
 
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 FROM nginx
@@ -199,7 +204,7 @@ $ docker login
 
 ```
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
-Username: kenken64
+Username: <your dockerhub username>
 Password:
 WARNING! Your password will be stored unencrypted in /home/bunnyppl/.docker/config.json.
 Configure a credential helper to remove this warning. See

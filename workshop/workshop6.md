@@ -4,18 +4,18 @@
 The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis
 
 ## Pre-requisite
-* Travis account
+* Travis account (https://travis-ci.org/)
 * Github Account
 
 ## Workshop
-In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Zeit using Travis.
+In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Github Pages using Travis.
 
 * Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
 
 
 * Checkout the development branch
 
-* Generate the personal access token and save it somewhere on your editor
+* Generate the personal access token, select the repo scope and save the token to somewhere on your editor
   <img src="./screens/github_token.png" >
 
 * Select a deployable application from your repository, slide the sldier to enable the bitcoin-order-app from your github account
@@ -33,7 +33,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
   <img src="./screens/travis3.png" >
 
 
-* Add a .travis.yml file to you  working repository
+* Add a .travis.yml file to you working repository, replace the email and github userid placeholder
   - Notify all your co-workers on the build
   - Install all relevant dependencies
   - Perform a build on the frontend
@@ -75,7 +75,7 @@ deploy:
 * Travis should build wherever there is a push to the release branch
 * After a successful build, the application should be published to 
 GitHub
-* Send a notification to your Slack channel regardless whether the build is
+* Send a notification to your email mailbox regardless whether the build is
 successful or if it has failed
 
 ## Bonus - Workshop
@@ -96,7 +96,7 @@ ng lint
 npm audit fix
 ```
 
-## Dockerized a sample web app (Optional)
+## Dockerized a sample web app, deploy to Elastic Bean Stalk (Optional)
 
 <img src="../container/images/img16.png" width="400" height="200">
 
