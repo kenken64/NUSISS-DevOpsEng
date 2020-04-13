@@ -4,6 +4,7 @@
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
 * Access to this url : https://nusiss.ngrok.io/
+* AWS Region: Sydney (ap-southeast-2)
 
 # Setting up EC2 instances for puppet
 

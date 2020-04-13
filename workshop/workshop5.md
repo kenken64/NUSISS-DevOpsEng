@@ -6,6 +6,7 @@
 * Github Account
 * Access to the following URL : https://nusiss.ngrok.io/
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
+* AWS Region: Sydney (ap-southeast-2)
 
 ## Test out the Docker installation on the Puppet Slave server
 

@@ -1,10 +1,10 @@
 # S-DOEA - Workshop 2 - Jenkins Installation
 
 ## Pre-requisites for Cloud installation
-* AWS account
+* AWS NUS ISS account
 * Jupyter Notebbok Password will be provided during class
 * Access to this url : https://nusiss.ngrok.io/
-* Region: Sydney
+* AWS Region: Sydney (ap-southeast-2)
 
 
 ### Step by step installation
