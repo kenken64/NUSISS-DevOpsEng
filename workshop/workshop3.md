@@ -66,7 +66,7 @@ git clone https://github.com/<your username>/StackAnnotation
 <br>
 
 
-9. Lastly, configure the post build action where it will generate Junit published report from the ant build
+9. Before configure this step. Run the build manually with the step 8 configured and saved. Once the manual trigger build is successful proceed with configure the post build action where it will generate Junit published report from the ant build
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci15.png">
