@@ -84,6 +84,7 @@ git clone https://github.com/<your username>/StackAnnotation
 ```
 MyStringStack stack = new MyStringStack();
 stack.push (s1);
+assertTrue (stack.isEmpty());
 ```
 
 12. Commit the changes to the github.
