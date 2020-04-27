@@ -113,7 +113,7 @@ To https://github.com/<your github username>/ProjectA.git
    84e356d..b6c5251  master -> master
 ```
 
-13. Verify all the files are pushed to the github repo after the above steps. Use your browser navigate to the https://github.com/<your github username>/ProjectA.git
+13. Verify all the files are pushed to the github repo after the above steps. Use your browser navigate to the https://github.com/```<your github username>```/ProjectA.git
 
 14. Next on your terminal/command prompt let us create a branch in git.
 
@@ -155,7 +155,7 @@ git commit -m "new enhancement"
 git push origin enchancementA -u
 ```
 
-18. Navigate to the github url https://github.com/<your github username>/ProjectA.git check the branch is created.
+18. Navigate to the github url https://github.com/```<your github username>```/ProjectA.git check the branch is created.
 
 19. Create a pull request for your newly created branch
 
