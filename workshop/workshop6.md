@@ -17,14 +17,10 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 * Generate the personal access token, select the repo scope and save the token to somewhere on your editor
   <img src="./screens/github_token.png" >
-<<<<<<< HEAD
 
   <img src="./screens/github_token2.png" >
 
 
-=======
-  <img src="./screens/github_token2.png" >
->>>>>>> 44f80c86c305ca55d602b469759a1d69977dd9e0
 * Select a deployable application from your repository, slide the sldier to enable the bitcoin-order-app from your github account
 
 * On the Travis CI platform, navigate to the selected project's setting

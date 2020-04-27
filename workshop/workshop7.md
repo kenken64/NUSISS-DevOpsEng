@@ -122,7 +122,7 @@ RUN apt install apt-transport-https -y
 
 RUN apt-get update
 
-RUN apt install dotnet-sdk-3.0 -y
+RUN apt install dotnet-sdk-3.1 -y
 
 COPY ./ ./
 

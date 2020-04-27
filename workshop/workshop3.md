@@ -66,7 +66,7 @@ git clone https://github.com/<your username>/StackAnnotation
 <br>
 
 
-9. Lastly, configure the post build action where it will generate Junit published report from the ant build
+9. Before configure this step. Run the build manually with the step 8 configured and saved. Once the manual trigger build is successful proceed with configure the post build action where it will generate Junit published report from the ant build
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci15.png">
@@ -79,10 +79,12 @@ git clone https://github.com/<your username>/StackAnnotation
 <br>
 <img style="float: center;" src="./screens/jenkinsci17.png">
 <br>
-11. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file MyStringStackTest.java line 35 add a new line of code 
+11. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file MyStringStackTest.java under the testPush method right after the instantiation of the MyStringStack class.
 
 ```
+MyStringStack stack = new MyStringStack();
 stack.push (s1);
+assertTrue (stack.isEmpty());
 ```
 
 12. Commit the changes to the github.
