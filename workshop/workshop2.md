@@ -29,6 +29,8 @@ cd Projects
 
 mkdir ProjectA
 
+cd ProjectA
+
 ```
 3. Initialize the working directory as git enable project
 
