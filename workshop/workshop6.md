@@ -21,7 +21,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
   <img src="./screens/github_token2.png" >
 
 
-* Select a deployable application from your repository, slide the slider to enable the bitcoin-order-app from your github account
+* On the Travis CI platform, select a deployable application from your repository, slide the slider to enable the bitcoin-order-app from your github account
 
 * On the Travis CI platform, navigate to the selected project's setting
 
