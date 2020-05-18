@@ -1,7 +1,7 @@
 # S-DOEA - Workshop 1 - Github Workshop
 
 ## Pre-requisites 
-* Team workshop
+* Individual workshop
 * [Github](https://github.com/)/[Gitlab](https://about.gitlab.com/) account
 * Download & Install Git for Windows https://git-scm.com/download/win
 
