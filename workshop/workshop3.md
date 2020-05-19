@@ -33,7 +33,7 @@
 git clone https://github.com/<your username>/StackAnnotation
 ```
 
-3. Go to Jenkins, configure a new freestyle job
+3. Go to Jenkins, configure a new freestyle job as per the screenshot. Name your job item as "StackAnnotation_your initial"
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci7.png">
@@ -120,7 +120,7 @@ git push origin development
 git clone https://github.com/<your username>/StackAnnotationMaven.git
 ```
 
-3. Go to Jenkins, configure a new freestyle job, name the item name as StackAnnotationMaven
+3. Go to Jenkins, configure a new freestyle job as per the screenshot. Name your job item as "StackAnnotationMaven_your initial"
 <br>
 <img style="float: center;" src="./screens/jenkinsci21.png">
 <br>
