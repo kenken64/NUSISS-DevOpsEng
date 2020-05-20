@@ -10,6 +10,8 @@
 
 ## Test out the Docker installation on the Puppet Slave server
 
+Kindly logout from the previous workshop 4 login as ubuntu rather than using root
+
 1. Test out whether docker cli is install correctly
 
 ```
