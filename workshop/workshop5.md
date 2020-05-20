@@ -72,7 +72,7 @@ Relogin your Notebook terminal
 
 <img src="../container/images/img17.png" width="400" height="200">
 
-1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git . 
+1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git on the /home/ubuntu (Slave server) 
 
 ```
 git clone https://github.com/kenken64/reactjs-subdevice.git
