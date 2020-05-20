@@ -43,7 +43,7 @@ Refresh the user profile by issuing the below command
 source ~/.bashrc
 ```
 
-5. Verify that you can run docker commands without sudo.
+5. Verify that you can run docker commands without sudo. if you run into permission denied issue when running the below command kindly logout and ssh back to the slave server.
 
 ```
 $ docker run hello-world
