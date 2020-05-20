@@ -216,13 +216,13 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 Login Succeeded
 ```
 
-14. Retrieve the docker Id from cli
+14. Retrieve the react web docker Id from cli
 
 ```
 $ docker images
 ```
 
-15. Tag the image
+15. Tag the react web image
 
 ```
 $ docker tag <docker ps image id> <your dockerhub userid>/subsdevices:v1
