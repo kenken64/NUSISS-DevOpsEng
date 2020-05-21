@@ -82,7 +82,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 5. Capture screenshot of the successful build, save it along as part of your submission.
 
-6. Make changes to the dotnet unit test case namespace AspNetCoreWebServiceTest.Controllers , HelloControllerTest class as below where the ```Hello World1!!!``` with an extra exclamation mark.
+6. Open the project of the Donet project using your fav editor. Make changes to the dotnet unit test case namespace AspNetCoreWebServiceTest/Controllers/HelloControllerTest.cs as below where the ```Hello World1!!!``` with an extra exclamation mark.
 
 ```
         [Fact]
