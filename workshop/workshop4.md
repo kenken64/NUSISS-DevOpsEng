@@ -107,7 +107,9 @@ $ ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
 
 ```
-ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
+$ cd ..
+$ cd Notebooks
+$ ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
 ```
 
 
