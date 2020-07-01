@@ -1,3 +1,31 @@
+# Types of Git Workflow
+
+## Centralized Workflow
+In Centralized Workflow, the team develops projects in the exact same way as they do with Subversion. Git to power your development workflow presents a few advantages over SVN. First, it gives every developer their own local copy of the entire project. This isolated environment lets each developer work independently of all other changes to a project—they can add commits to their local repository and completely forget about upstream developments until it's convenient for them.
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:0869c664-5bc1-4bf2-bef0-12f3814b3187/01.svg?cdnVersion=1102"/>
+
+## Feature Branch Workflow
+Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code.
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:d0c471b4-61c8-4005-86bc-904d894e391b/04.svg?cdnVersion=1102"/>
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:2119c2a3-7dff-43ad-bf98-77672d93242f/05%20(1).svg?cdnVersion=1102"/>
+
+## Gitflow Workflow
+Gitflow Workflow provides a robust framework for managing larger projects. It assigns very specific roles to different branches and defines how and when they should interact. You also get to leverage all the benefits of the Feature Branch Workflow.
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:2bef0bef-22bc-4485-94b9-a9422f70f11c/02%20(2).svg?cdnVersion=1102" />
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:61ccc620-5249-4338-be66-94d563f2843c/05%20(2).svg?cdnVersion=1102"/>
+
+## Forking Workflow
+The Forking Workflow is fundamentally different than the other workflows. Instead of using a single server-side repository to act as the “central” codebase, it gives every developer a server-side repository. Developers push to their own server-side repositories, and only the project maintainer can push to the official repository. The result is a distributed workflow that provides a flexible way for large, organic teams (including untrusted third-parties) to collaborate securely. This also makes it an ideal workflow for open source projects.
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:0de71551-5c08-4fc4-ab6d-dc8a51bfcc5a/05.svg?cdnVersion=1102"/>
+
+https://www.atlassian.com/git/tutorials/comparing-workflows
+
 <img style="float: right;" src="./git1.jpg">
 
 # Git Terminology
