@@ -6,6 +6,9 @@
 * Access to this url : https://nusiss.ngrok.io/
 * AWS Region: Sydney (ap-southeast-2)
 
+## Notes
+* Please do not include the $ sign as part of the command.
+
 # Setting up EC2 instances for puppet
 
 ## Creating EC2 Key pair
@@ -95,7 +98,7 @@ Setting Up Puppet on EC2 Instances (Additional instructions will be provided dur
 <img style="float: center;" src="./screens/upload_pem3.png">
 <br> 
 
-SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
+12. SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
 
 ```
 $ cd ..
@@ -104,7 +107,7 @@ $ chmod 400 <your key pair>.pem
 $ ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 ```
 
-SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
+13. SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
 
 ```
 $ cd ..
@@ -114,11 +117,11 @@ $ ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
 
 
 
-Assign a hostname for the Puppet Master EC2 instance
+14. Assign a hostname for the Puppet Master EC2 instance
 
 ### Master
 ```
-sudo hostname <public dns>
+$ sudo hostname <public dns>
 ```
 
 Resolve domain names without using Domain Name System
@@ -126,15 +129,15 @@ Resolve domain names without using Domain Name System
 Verify the IP address for the Puppet Master EC2 Instance, check against the AWS EC2 dashboard
 
 ```
-ifconfig
+$ ifconfig
 ```
 
 
-Assign a hostname for the Puppet Agent EC2 instance
+15. Assign a hostname for the Puppet Agent EC2 instance
 
 ### Agent/Slave
 ```
-sudo hostname <public dns>
+$ sudo hostname <public dns>
 ```
 
 
@@ -142,11 +145,11 @@ Resolve domain names without using Domain Name System
 
 Verify the IP address for the Puppet Agent EC2 Instance, check against the AWS EC2 dashboard
 ```
-ifconfig
+$ ifconfig
 ```
 
 
-On Puppet Master EC2 Instance, perform the following steps:
+16. On Puppet Master EC2 Instance, perform the following steps:
 * Login as root
 * Add a Puppet Master private host entry
 * Update the system's package manager
@@ -157,18 +160,18 @@ On Puppet Master EC2 Instance, perform the following steps:
 Obtain the private ip and dns from the AWS EC2 dashboard. (Master)
 
 ```
-sudo su -
+$ sudo su -
 
-echo <private ip> <private dns> >> /etc/hosts
+$ echo <private ip> <private dns> >> /etc/hosts
 
-apt-get update
+$ apt-get update
 
-apt-get install puppetmaster -y
+$ apt-get install puppetmaster -y
 ```
 
 Kindly perform the command below to label the master server prompt
 ```
-nano ~/.bashrc
+$ nano ~/.bashrc
 ```
 Search the following line 
 ```
@@ -182,10 +185,10 @@ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\ master $ '
 Exit the editor press Ctrl + x then answer yes and press enter
 
 ```
-source ~/.bashrc
+$ source ~/.bashrc
 ```
 
-On Puppet Agent EC2 Instance, perform the following steps:
+17. On Puppet Agent EC2 Instance, perform the following steps:
 * Login as root
 *	Add a Puppet Master/Private host entry
 * Update the system's package manager
@@ -196,14 +199,14 @@ On Puppet Agent EC2 Instance, perform the following steps:
 Obtain the private ip and dns from the AWS EC2 dashboard (Agent/Slave)
 
 ```
-sudo su -
+$ sudo su -
 
-echo <private ip> <private dns> >> /etc/hosts
-echo <master private ip> <master private dns> >> /etc/hosts
-echo <master public ip> <master public dns> >> /etc/hosts
-apt-get update
+$ echo <private ip> <private dns> >> /etc/hosts
+$ echo <master private ip> <master private dns> >> /etc/hosts
+$ echo <master public ip> <master public dns> >> /etc/hosts
+$ apt-get update
 
-apt-get install puppet -y
+$ apt-get install puppet -y
 ```
 
 Kindly perform the command below to label the slave server prompt
@@ -211,7 +214,7 @@ Kindly perform the command below to label the slave server prompt
 Refresh the environment profile as below:-
 
 ```
-nano ~/.bashrc
+$ nano ~/.bashrc
 ```
 Search the following line 
 ```
@@ -225,13 +228,22 @@ Exit the editor press Ctrl + x then answer yes and press ENTER key
 
 Refresh the environment profile as below:-
 ```
-source ~/.bashrc
+$ source ~/.bashrc
 ```
-Configure Puppet Agent to be able to communicate with Puppet Master through the Puppet's configuration file puppet.conf located under the /etc/puppet directory on the Puppet Agent Linux operating system.
+
+### Agent/Slave
+
+18. Configure Puppet Agent to be able to communicate with Puppet Master through the Puppet's configuration file puppet.conf located under the /etc/puppet directory on the Puppet Agent Linux operating system.
 
 Add a server entry to the end of the [main] configuration section of the puppet.conf file. Important take note this must the public DNS server name if not the issue certification service won't work.
 
-### Agent/Slave
+
+Edit the /etc/puppet/puppet.conf using nano, in order to exit and save -> press Ctrl + X then follow by Y if any changes are made to the file.
+
+```
+$ nano /etc/puppet/puppet.conf
+```
+Add server and agent/runInterval attributes as the addition to the current values.
 
 ```
 [main]
@@ -256,47 +268,52 @@ Puppet Agent request for cert from Puppet Master
 
 
 ### Agent/Slave
-Start the pupper service and also check the status of the service after issuing the start command
+
+19. Start the pupper service and also check the status of the service after issuing the start command
 
 ```
-service puppet start
+$ service puppet start
 ```
 ```
-service puppet status
+$ service puppet status
 ```
 In order to exit the status press q
 
 ```
-puppet agent --enable
+$ puppet agent --enable
 ```
 
 ### Master
-Start the pupper service and also check the status of the service after issuing the start command
+
+20. Start the pupper service and also check the status of the service after issuing the start command
 
 ```
-service puppetmaster start
-service puppetmaster status
+$ service puppetmaster start
+$ service puppetmaster status
 ```
 
 In order to exit the status press q
 
 
 ### Agent/Slave
+21. Checking the list of certificates and cert requests on Puppet Master
+
 ```
-puppet agent --no-daemonize --onetime --verbose
-puppet agent --test -d
+$ puppet agent --no-daemonize --onetime --verbose
+$ puppet agent --test -d
 ```
 
-Checking the list of certificates and cert requests on Puppet Master
 
 ### Master
 
-Puppet Master sign cert request from Puppet Agent/Slave
+22. Puppet Master sign cert request from Puppet Agent/Slave
 
 ```
-puppet cert list -all
-puppet cert sign --all
+$ puppet cert list -all
+$ puppet cert sign --all
 ```
+
+### PuppetFile Development Structure 
 
 Puppet manifests are made up of a number of major components:
 1.	Resources: Individual configuration items
@@ -306,33 +323,35 @@ Puppet manifests are made up of a number of major components:
 5.	Classes: Collections of resources
 6.	Definitions: Composite collections of resources
 
-Create a pp file and modules on the Puppet Master node that tells Puppet where and what configuration to load for our clients in the etc/puppet/code manifests directory.
 
 ### Master 
+23. Create a pp file and modules on the Puppet Master node that tells Puppet where and what configuration to load for our clients in the etc/puppet/code manifests directory.
+
+
 ```
-cd /etc/puppet/code
+$ cd /etc/puppet/code
 
-mkdir environments
+$ mkdir environments
 
-cd environments
+$ cd environments
 
-mkdir production
+$ mkdir production
 
-cd production
+$ cd production
 
-mkdir modules
+$ mkdir modules
 
-mkdir manifests
+$ mkdir manifests
 
-cd manifests
+$ cd manifests
 ```
 
-Create a site.pp file that navigate to the custom module 
 
 ### Master 
+24. Create a site.pp file that navigate to the custom module 
 
 ```
-nano site.pp
+$ nano site.pp
 ```
 
 Enter the codes to the site pp file
@@ -345,36 +364,42 @@ node "default" {
 
 To save press Ctrl + x and answer yes to save
 
-Create puppet module directory structure. This directory structure has to be that way so the pupper master able to sync the codes execution to the agent.
 
 ### Master 
-```
-cd ../modules
-
-mkdir modulea
-
-cd  modulea
-
-mkdir files 
-
-mkdir manifests
-
-cd files 
-
-touch test.txt
-
-cd .. 
-
-cd manifests
-
-nano init.pp
+25. Create puppet module directory structure. This directory structure has to be that way so the pupper master able to sync the codes execution to the agent.
 
 ```
+$ cd ../modules
 
-Create a module class init.pp file. Paste the below codes into the init.pp
+$ mkdir modulea
+
+$ cd  modulea
+
+$ mkdir files 
+
+$ mkdir manifests
+
+$ cd files 
+
+$ touch test.txt
+
+$ cd .. 
+
+$ cd manifests
+
+```
+
+
+### Master 
+
+26. Create a module class init.pp file. Paste the below codes into the init.pp
 What this code does is install a linux utility htop and also the docker engine on the slave server.
 
-### Master 
+```
+$ nano init.pp
+
+```
+
 ```
 class modulea {
 file { '/home/ubuntu':
@@ -430,18 +455,29 @@ On the Puppet Agent node, sync with Puppet Master node.
 https://github.com/kenken64/devops-iac
 
 ### Agent/Slave
+
+27. Manually sync from with the master
+
 ```
-puppet agent --test -d 
+$ puppet agent --test -d 
 ```
-### Capture Result save it to the LumiNUS submission folder
+
+### Capture Result save it to the LumiNUS Workshop 4 submission folder
+
+28. Check whether the docker is installed 
+
 ```
 $ docker --version
 ```
+
+29. Check whether the htop is installed 
 
 ```
 htop
 ```
 Press Q to quit
+
+30. Verify whether the ```test.txt``` being copy from the master to the slave server 
 
 ```
 ls -lrt /home/ubuntu/test.txt
