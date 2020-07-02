@@ -15,7 +15,7 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 2. Checkout the development branch
 
-3. Generate the personal access token, select the repo scope and save the token to somewhere on your editor
+3. Generate the personal access token from Github platform, select the repo scope and save the token to somewhere on your editor
   <img src="./screens/github_token.png" >
 
   <img src="./screens/github_token2.png" >
@@ -30,13 +30,15 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 <img src="./screens/travis4.png" >
 
 7. Create an account in Travis and allow it to associate with your GitHub account
-  - Configure a GITHUB_TOKEN secure environment variable for all branches the value is generated from  the Github personal token generation page. Click Add
+  - Configure a GITHUB_TOKEN secure environment variable for all branches on Travis platform. The value shown on the screenshots is generated from  the Github personal token generation page (Step 3). Remember to Click on the Add button.
   <img src="./screens/travis1.png" >
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
 
 
-8. Add a .travis.yml file to you working repository, replace the email and github userid placeholder
+8. Add a .travis.yml file to you working repository (Cloned githubrepo ), replace the email and Github userid placeholder in arrow bracket within the yml file. Do not replace or remove the value ```$GITHUB_TOKEN```
+
+Features:
   - Notify all your co-workers on the build
   - Install all relevant dependencies
   - Perform a build on the frontend
