@@ -74,11 +74,28 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
 4. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
+ -  Configure SCM and the build schedule trigger
+ - Create 3 shell execute under the pre jenkins action
+```
+/usr/bin/dotnet restore
+
+/usr/bin/dotnet build
+
+/usr/bin/dotnet test
+
+```
+
 
    ![CodeStar Project Details](screens/codestar_dotnet2.jpg "CodeStar Project Details")
+
    ![CodeStar Project Details](screens/codestar_dotnet3.jpg "CodeStar Project Details")
+
    ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
+
    ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
+
+   ![CodeStar Project Details](screens/codestar_dotnet6.jpg "CodeStar Project Details")
+   
 
 5. Capture screenshot of the successful build, save it along as part of your submission.
 
