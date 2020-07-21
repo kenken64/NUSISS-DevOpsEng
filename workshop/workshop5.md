@@ -140,7 +140,7 @@ services:
 docker-compose up --detach --build
 ```
 
-7. Launch another Jupyter notebook terminal (slave server) to execute this step. Implement test on separate container, please replace the hash value of the container id from ps command.
+7. Execute the following command. Implement test on separate container, please replace the placeholder value of the container id on the exec command.
 
 ```
 $ docker ps 
