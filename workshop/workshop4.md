@@ -452,7 +452,7 @@ To save press Ctrl + x and answer yes to save
 
 On the Puppet Agent node, sync with Puppet Master node.
 
-https://github.com/kenken64/devops-iac
+Checkout the entire solution of the above master IAC codes on this link - https://github.com/kenken64/devops-iac
 
 ### Agent/Slave
 
