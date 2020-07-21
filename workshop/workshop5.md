@@ -72,15 +72,18 @@ Relogin your Notebook terminal
 
 <img src="../container/images/img17.png" width="400" height="200">
 
-1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git on the /home/ubuntu (Slave server) 
+1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git on the /home/ubuntu (Slave server). Checkout to the development branch.
 
 ```
-git clone https://github.com/kenken64/reactjs-subdevice.git
+$ git clone https://github.com/kenken64/reactjs-subdevice.git
 
-cd reactjs-subdevice
+$ cd reactjs-subdevice
+
+$ git checkout development
+
 ```
 
-2. Create a Dockerfile.test under the React App (subsdevices)
+2. Create a Dockerfile.test under the React App (subsdevices) on the root working directory
 
 ```
 FROM node:alpine
@@ -98,13 +101,21 @@ CMD ["npm", "run", "start"]
 3. Build the docker image
 
 ```
-docker build -f Dockerfile.test -t kenken64/react-app .
+$ docker build -f Dockerfile.test -t kenken64/react-app .
 ```
 
-4. Run the docker image as container with port forward and volume mounting, once is up and running. To terminate this process press Ctrl + C
+4. Run the docker image as container with port forward and volume mounting, once is up and running. 
 
 ```
-docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
+$ docker run -d -p 3000:3000 -v /app/node_modules -v $(pwd):/app kenken64/react-app
+```
+
+In order to exit the container , issue the subcommand ps to look for the container id and stop it
+
+```
+$ docker ps
+
+$ docker stop <container id>
 ```
 
 5. Create a docker-compose.yml
@@ -126,7 +137,7 @@ services:
 6. Start the docker container using docker-compose.
 
 ```
-docker-compose up --build
+docker-compose up --detach --build
 ```
 
 7. Launch another Jupyter notebook terminal (slave server) to execute this step. Implement test on separate container, please replace the hash value of the container id from ps command.
@@ -137,7 +148,13 @@ $ docker exec -it <web container id from docker ps> sh
 # npm run test
 ```
 
-- Add test service in the docker compose yml file
+In order to exit the shell out back to the host OS, type exit on the container shell
+
+```
+# exit
+```
+
+- Add test service in the docker compose yml file, save the yml
 
 ```
 version: '3'
@@ -161,13 +178,33 @@ services:
       command: ["npm", "run", "test"]
 ```
 
-8. Start the docker container using docker-compose, once the process is running with warning messages press Ctrl + C to terminate the prompt. 
+- Stop the container by using the below command
 
 ```
-docker-compose up --build
+$ docker-compose stop
 ```
 
-9. Multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
+8. Rebuild and Start the docker container using docker-compose, in order to incorporate the test service.
+
+```
+$ docker-compose up -d --build
+```
+
+Check whether the container is up and running by issueing the below command
+
+```
+$ docker ps
+```
+
+Once both the services is running stop the container
+
+```
+$ docker-compose stop
+
+```
+
+
+9. Let's continue building a multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
 
 ```
 # builder phase
@@ -194,8 +231,14 @@ docker build .
 11. Start the multi phase container setup and expose the port, please replace the hash value of the container id from step 10
 
 ```
-nohup docker run -p 80:80 <image id> &
+$ docker run -d -p 80:80 <image id>
 ```
+In order check whether the docker is running, list the running container
+
+```
+$ docker ps
+```
+
 
 12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
 
@@ -245,4 +288,12 @@ The push refers to repository [docker.io/kenken64/subsdevices]
 b92d384cdf06: Mounted from library/node
 a464c54f93a9: Mounted from library/node
 v1: digest: sha256:cac661266d1cf19ae4e72f8294e332275a4761a9f5bebe1fd663b1bc3a3c1d9a size: 1788
+```
+
+17. Rememer to stop all the container process after you have published the images to the registry.
+
+```
+$ docker ps 
+
+$ docker stop <container id>
 ```
