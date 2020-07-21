@@ -79,7 +79,11 @@ git clone https://github.com/<your username>/StackAnnotation
 <br>
 <img style="float: center;" src="./screens/jenkinsci17.png">
 <br>
-11. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file MyStringStackTest.java under the testPush method right after the instantiation of the MyStringStack class.
+11. Lets make changes to the test case and invalidate the build. the build on jenkins will fail. Under the file test/test/MyStringStackTest.java under the testPush method right after the instantiation of the MyStringStack class. Before making changes to the contact kindly checkout to the development branch within the working directory
+
+```
+$ git checkout development
+```
 
 ```
 MyStringStack stack = new MyStringStack();
