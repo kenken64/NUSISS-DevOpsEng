@@ -12,8 +12,15 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 
 1. Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
 
+```
+$ git clone https://github.com/<replace this with your github userid>/bitcoin-order-app
+```
 
 2. Checkout the development branch
+
+```
+ $ git checkout development
+```
 
 3. Generate the personal access token from Github platform, select the repo scope and save the token to somewhere on your editor
   <img src="./screens/github_token.png" >
@@ -63,7 +70,7 @@ branches:
    - development
 before_script:
   - npm install -g @angular/cli
-  - npm install -g now
+  
 script:
   - ng build --prod --base-href https://<your github username>.github.io/bitcoin-order-app/
   
@@ -85,7 +92,8 @@ successful or if it has failed
 
 ## Bonus - Workshop
 Only attempt this if you have completed the above workshop.
-* Delete the release branch when you have successfully published the
+
+* Delete the feature branch when you have successfully published the
 front end application.
 
 ```
@@ -100,3 +108,7 @@ ng lint
 ```
 npm audit fix
 ```
+
+* Dockerized the app and push the docker image to dockerhub
+
+* Deploy the app to AWS's ElasticBeanStalk
