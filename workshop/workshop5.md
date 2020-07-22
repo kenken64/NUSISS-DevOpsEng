@@ -137,7 +137,7 @@ services:
 6. Start the docker container using docker-compose.
 
 ```
-docker-compose up --detach --build
+docker-compose up -d --build
 ```
 
 7. Execute the following command. Implement test on separate container, please replace the placeholder value of the container id on the exec command.
