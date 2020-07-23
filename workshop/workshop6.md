@@ -111,4 +111,4 @@ npm audit fix
 
 * Dockerized the app and push the docker image to dockerhub and AWS private docker registry
 
-* Deploy the app to AWS's ElasticBeanStalk
+* Deploy the app to AWS's ElasticBeanStalk Docker v1
