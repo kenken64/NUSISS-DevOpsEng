@@ -104,7 +104,7 @@ after_success:
 ```
 ng lint
 ```
-* Perform vulnebrality scanning 
+* Perform vulnerability scanning on Angular libraries 
 ```
 npm audit fix
 ```
