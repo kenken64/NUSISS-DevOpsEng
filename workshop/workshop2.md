@@ -120,7 +120,7 @@ To https://github.com/<your github username>/ProjectA.git
 14. Next on your terminal/command prompt let us create a branch in git.
 
 ```
-git checkout -b enchancementA
+git checkout -b enhancementA
 ```
 
 15. In order to check the current branch run the below command, the terminal should see * pointed to the newly created branch name
@@ -154,7 +154,7 @@ git commit -m "new enhancement"
 ```
 
 ```
-git push origin enchancementA -u
+git push origin enhancementA -u
 ```
 
 18. Navigate to the project A github url https://github.com/kenken64/ProjectA.git check the branch is created. (Replace the github userid with yours)
