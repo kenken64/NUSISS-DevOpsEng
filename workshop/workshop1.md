@@ -162,40 +162,4 @@ Please refer to https://docs.bitnami.com/ for more details.
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins16.png"/>
 <br>
 
-21. Landed on a customize jenkins page, double click on the canvas stating Install suggested plugins.
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins17.png"/>
-<br>
-
-22. Wait for a few minutes for all the plugins to be install on the current jenkins instance
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins18.png"/>
-<br>
-
-23. Upon completion of the plugins instalation, finalize the steps by clicking on 'Save and Finish' button
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins19.png"/>
-<br>
-
-24. A restart on the jenkins server is required, press the restart button
-
-25. In order to verify all the respective plugins are installed properly. Navigate to Manage Jenkins then Manage Plugins.
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins20.png"/>
-<br>
-
-26. Update to the latest plugins is required at this point. Scroll down select All the updates and click on the 'Download now and install after restart' button
-
-27. Progress page will show right after the download button is triggered. Once everything is updated scroll down tick the checkbox to restart jenkins
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins21.png"/>
-<br>
-
-28. Navigate back to the plugin manager via Manage Jenkins. Go to the available plugin tab filter by Text Finder, eventually two plugins will show up Text Finder and Run Condition. Select both of this plugins and install it along with a restart. The reason we are installing this plugin is required for the next CI workshop 
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins22.png"/>
-<br>
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins23.png"/>
-<br>
-29. Screenshot the jenkins login page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
+21. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
