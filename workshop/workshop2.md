@@ -5,7 +5,7 @@
 * [Github](https://github.com/)/[Gitlab](https://about.gitlab.com/) account
 * Download & Install Git for Windows https://git-scm.com/download/win
 * Github SSH Windows 10 Setup https://dev.to/bdbch/setting-up-ssh-and-git-on-windows-10-2khk
-* Github SSH MacOS Setup https://medium.com/@kiran.jasvanee/the-process-to-generate-ssh-key-and-add-it-on-github-ba7139c07daf#:~:text=Steps%20to%20add%20your%20Mac's,label%20for%20the%20new%20key.
+* Github SSH MacOS Setup https://bit.ly/2Gndh54
 
 ### For mac users please use brew 
 
