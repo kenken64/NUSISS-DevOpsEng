@@ -53,7 +53,7 @@ git clone https://github.com/<your username>/StackAnnotation
 <img style="float: center;" src="./screens/jenkinsci11.png">
 <br>
 
-7. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
+7. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and polling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci10.png">
@@ -139,53 +139,51 @@ git clone https://github.com/<your username>/StackAnnotationMaven.git
 
 6. Under source code management, select Git then enter the repository URL as 'your StackAnnotationMaven github repo url'. Change the branch to be build to '*/development'
 
-7. Configure poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM
-
-8. Under source code management, select Git ten enter the repository URL as 'your StackAnnotation github repo url'. Change the branch sepcifier to '*/development'
-
 <br>
 <img style="float: center;" src="./screens/jenkinsci23.png">
 <br>
 
-9. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and pilling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
+7. Check the poll interval for the source code retrieval to be used as new build. Check Github hook trigger for GITScm polling and polling SCM. Configure the polling schedule as * * * * * (Polling every minute, feel free to change to your desire scheduling timing)
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci24.png">
 <br>
 
-10. Configure the pre build step, add top-level Maven step then select Maven version as 'Maven' follow by entering goals as surefire-report:report. Refer to https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html
+8. Configure the pre build step, add top-level Maven step then select Maven version as 'Maven' follow by entering goals as surefire-report:report. Refer to https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci25.png">
 <br>
 
 
-11. Lastly, configure the post build action where it will generate Junit published report from the maven build. Enter 'target/surefire-reports/TEST-sg.edu.nus.StackAnnotation.AppTest.xml' to the test report XML field.
+10. Lastly, configure the post build action where it will generate Junit published report from the maven build. Enter 'target/surefire-reports/TEST-sg.edu.nus.StackAnnotation.AppTest.xml' to the test report XML field.
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci26.png">
 <br>
 
-12. The build will trigger automatically
+11. The build will trigger automatically
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci27.png">
 <br>
 <img style="float: center;" src="./screens/jenkinsci28.png">
 <br>
-13. Lets make changes to the test case and invalidate the build. Under the file AppTest.java line 18 change the code to as below 
+
+12. Lets make changes to the test case and invalidate the build. Under the file AppTest.java line 18 change the code to as below 
 
 ```
 assertTrue( false );
 ```
 
-14. Commit the changes to the github.
+13. Commit the changes to the github.
 ```
 git add .
 git commit -m "fail the test case"
 git push origin development
 ```
-15. The outcome of the build will be unstable. Status of the build will be flag out as amber.
+
+14. The outcome of the build will be unstable. Status of the build will be flag out as amber.
 <br>
 <img style="float: center;" src="./screens/jenkinsci29.png">
 <br>
