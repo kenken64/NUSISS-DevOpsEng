@@ -170,7 +170,12 @@ git clone https://github.com/<your username>/StackAnnotationMaven.git
 <img style="float: center;" src="./screens/jenkinsci28.png">
 <br>
 
-12. Lets make changes to the test case and invalidate the build. Under the file AppTest.java line 18 change the code to as below 
+12. Before making changes to the code switch to the development branch. Lets make changes to the test case and invalidate the build. Under the file AppTest.java line 18 change the code to as below 
+
+
+```
+assertTrue( false );
+```
 
 ```
 assertTrue( false );
