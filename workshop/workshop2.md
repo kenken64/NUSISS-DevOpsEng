@@ -177,8 +177,76 @@ git push origin enhancementA -u
 
 For branching, tagging and etc please visit the following link https://github.com/kenken64/NUSISS-DevOpsEng/blob/master/git/README.md
 
+## Optional Workshop
+
+21. Let's try out git merge with a typical combining multiple branches of commits from master and feature branches
+
+
+
+<img style="width:350px;height:100px; float: center;" src="./screens/git7.png"/>
+
+22. Fork the following repository https://github.com/kenken64/gitmerge-workshop to your own github account
+
+23. The outcome of this optional workshop is to merge all the feature and master branches changes to a new master combined version
+
+```
+git branch
+
+feature
+*master
+```
+
+```
+git merge --squash feature
+```
+
+24. Issue a commit command to stage the changes
+
+```
+git commit -m "feature and master combined"
+```
+
+25. Push the final changes to the master branch
+
+```
+git push origin master -u
+```
+
+26. Edit the index2.html on the master branch, add a new paragraph right below hello world
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello World</p>
+    <p>Hello World 2</p>
+</body>
+</html>
+```
+
+
+26. Undo the mistakes done on the index2.html
+
+```
+git status
+```
+
+```
+git restore index2.html
+```
+
+```
+git status
+```
 
 ## Reference
 * Software sourcetree - https://www.sourcetreeapp.com/
 * Eclipse with Git - https://www.vogella.com/tutorials/EclipseGit/article.html
 * Visual Studio Code - https://scotch.io/tutorials/git-integration-in-visual-studio-code
+* Git Tower - https://www.git-tower.com/windows
+* Undo your git mistakes - https://www.youtube.com/watch?v=lX9hsdsAeTk
