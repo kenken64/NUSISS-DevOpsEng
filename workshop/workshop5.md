@@ -86,12 +86,12 @@ $ git checkout development
 2. Create a Dockerfile.test under the React App (subsdevices) on the root working directory
 
 ```
-FROM node:alpine
+FROM node:14-alpine
 
 WORKDIR '/app'
 
 COPY package.json ./
-RUN npm install --force
+RUN npm install
 
 COPY ./ ./
 
@@ -208,12 +208,12 @@ $ docker-compose stop
 
 ```
 # builder phase
-FROM node:alpine as builder
+FROM node:14-alpine as builder
 
 WORKDIR '/app'
 
 COPY package.json ./
-RUN npm install --force
+RUN npm install
 COPY ./ ./
 RUN npm run build
 
