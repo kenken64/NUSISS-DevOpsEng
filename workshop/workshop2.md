@@ -40,7 +40,7 @@ cd ProjectA
 git init
 ```
 
-4. Go to the Gitlab dashboard, add a new repository
+4. Go to the Github dashboard, add a new repository
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/git2.png"/>
 <br>
