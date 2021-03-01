@@ -192,12 +192,47 @@ For branching, tagging and etc please visit the following link https://github.co
 ```
 git branch
 
-feature
 *master
 ```
 
+* Create a feature2 branch 
+
 ```
-git merge --squash feature
+git checkout -b feature2
+```
+
+* Create a feature2.html within the feature2 branch, commit the codes.
+
+```
+git add .
+git commit -m "feature 2"
+git push origin feature2
+```
+
+* Create a feature3 branch 
+
+```
+git checkout -b feature3
+```
+
+* Create a feature3.html within the feature3 branch, commit the codes.
+
+```
+git add .
+git commit -m "feature 3"
+git push origin feature3
+```
+
+
+Switch back to the master branch to the latest commit
+
+```
+git checkout master
+```
+
+Merge feature3 branch into master branch, where feature2 is being ignored. 
+```
+git merge --squash feature3
 ```
 
 24. Issue a commit command to stage the changes
