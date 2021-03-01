@@ -194,33 +194,69 @@ git branch
 
 *master
 ```
+* Make sure your current branch is master, make changes to the index.html for commit 1
 
-* Create a feature2 branch 
+```
+nano index.html
+```
+
+```
+......
+commit 1
+```
+
+* Push the commit 1 to the master branch
+
+```
+git add .
+git commit -m "commit 1"
+git push origin master
+```
+
+Make changes to the index.html for commit 2
+
+```
+nano index.html
+```
+
+```
+......
+commit 1
+commit 2
+```
+
+* Push the commit 2 to the master branch
+
+```
+git add .
+git commit -m "commit 2"
+git push origin master
+```
+
+Branch out from commit 2
+
+
+* Push the master branch's commit 2 to the feature1 branch
+
+```
+git checkout -b feature1
+git add .
+git commit -m "create feature 1 branch"
+git push origin feature1
+```
+
+* Create another feature2 branch from commit 2 
 
 ```
 git checkout -b feature2
 ```
 
-* Create a feature2.html within the feature2 branch, commit the codes.
+* Push the master branch's commit 2 to the feature2 branch
 
 ```
 git add .
 git commit -m "feature 2"
 git push origin feature2
-```
-
-* Create a feature3 branch 
-
-```
-git checkout -b feature3
-```
-
-* Create a feature3.html within the feature3 branch, commit the codes.
-
-```
-git add .
-git commit -m "feature 3"
-git push origin feature3
 ```
 
 
@@ -230,15 +266,15 @@ Switch back to the master branch to the latest commit
 git checkout master
 ```
 
-Merge feature3 branch into master branch, where feature2 is being ignored. 
+Merge feature2 branch into master branch, where feature1 is being ignored. 
 ```
-git merge --squash feature3
+git merge --squash feature2
 ```
 
 24. Issue a commit command to stage the changes
 
 ```
-git commit -m "feature and master combined"
+git commit -m "feature2 and master combined with commit 1,2,3"
 ```
 
 25. Push the final changes to the master branch
