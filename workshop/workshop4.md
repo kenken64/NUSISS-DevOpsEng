@@ -3,7 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ngrok.io/
+* Access to this url : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
 * AWS Region: Sydney (ap-southeast-2)
 
 ## Notes
