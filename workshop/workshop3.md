@@ -187,10 +187,6 @@ git checkout development
 assertTrue( false );
 ```
 
-```
-assertTrue( false );
-```
-
 13. Commit the changes to the github.
 ```
 git add .
