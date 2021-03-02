@@ -27,8 +27,8 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 (You will need the private key file later to access the instances that we will create and launch with this key pair. If the key pair is lost, you will not be able to connect to the Amazon EC2 instances.)
 
 ## Creating Security Group
-1.	In the left navigation pane, under Network and Security, click Security Groups.
-2.	Create Security Group.
+1.	On the left navigation pane, under Network and Security, click Security Groups.
+2.	Create Security Group for this workshop. Name the security group name with the following naming convention ddmmyy_workshop4_<your initial>. The latest AWS screen will have 6 entries (screen capture was captured using their old console UI) . Lastly, make sure the source of all 3 entries are set to anywhere.
  
 <br>
 <img style="float: center;" src="./screens/puppet2.png">
