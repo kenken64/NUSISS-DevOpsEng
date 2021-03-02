@@ -3,7 +3,7 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
+* Access to this url (Jump host) : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
 * AWS Region: Sydney (ap-southeast-2)
 
 ## Notes
@@ -77,7 +77,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet8.png">
 <br> 
 
-11. Access the Jupyter notebook URL via https://nusiss.ngrok.io . Upload the pem to the root directory of the jupyter notebook.
+11. Access the Jupyter notebook URL via the jump host stated on the pre-requisite . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
