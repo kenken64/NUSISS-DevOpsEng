@@ -38,7 +38,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 
 1.	In the left navigation pane, under Instances, click Instances.
 2.	Launch Instance.
-3.	Select Ubuntu Server 18.04 LTS (HVM), SSD Volume Type image. Make sure both instance is created with 20GB disk space.
+3.	Select Ubuntu Server 18.04 LTS (HVM), SSD Volume Type image. Make sure both instances disk space being configure with 20GB.
  
 <br>
 <img style="float: center;" src="./screens/puppet3_1.png">
