@@ -56,8 +56,8 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet5.png">
 <br> 
  
-6.	Leave 5 as default. Important*: Step 4 allocate 20GB for both instance
-7.	Select the security group you have created earlier for your instances. Add two custom rules to the security group port 80 (HTTP) and 8140 (TCP). Port 8140 is used for the master and slave synchronization.
+6.	Leave 5 as default. Important*: Step 4 allocate 20GB for both instances
+7.	Select the security group that you have created earlier on for your both of your instances. Add two custom rules to the security group port 80 (HTTP) and 8140 (TCP). Port 8140 is used for the master and slave synchronization.
  
 <br>
 <img style="float: center;" src="./screens/puppet6.png">
