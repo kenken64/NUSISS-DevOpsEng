@@ -1,8 +1,7 @@
 # S-DOEA - Workshop 3 - Jenkins - CI Workshop
 
 ## Pre-requisite
-* AWS Account (Will be provided by NUS ISS)
-* Oracle Account (Optional)
+* Cloud Jenkins Server (Will be provided by NUS ISS)
 * Github Account (https://github.com/)
 
 ## Setup Jenkins before creating new build job
