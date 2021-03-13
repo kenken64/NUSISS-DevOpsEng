@@ -297,3 +297,21 @@ $ docker ps
 
 $ docker stop <container id>
 ```
+
+## Optional workshop 
+
+18. Create an account with snyk platform
+
+19. How can we scan vulnerabilities for a containerized app that uses Docker?
+
+* Hint below
+
+```
+docker scan --login --token <synk token >
+```
+
+```
+docker scan <docker tag name>
+```
+
+<img style="width:550px;height:300px; float: center;" src="./screens/synk.png"/>

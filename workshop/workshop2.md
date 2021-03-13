@@ -315,19 +315,6 @@ git restore index2.html
 git status
 ```
 
-28. How can we scan vulnerabilities for a containerized app that uses Docker?
-
-* Hint below
-
-```
-docker scan --login --token <synk token >
-```
-
-```
-docker scan <docker tag name>
-```
-
-<img style="width:550px;height:300px; float: center;" src="./screens/synk.png"/>
 
 
 ## Reference
