@@ -301,7 +301,7 @@ git push origin master -u
 ```
 
 
-26. Undo the mistakes done on the index2.html
+27. Undo the mistakes done on the index2.html
 
 ```
 git status
@@ -314,6 +314,21 @@ git restore index2.html
 ```
 git status
 ```
+
+28. How can we scan vulnerabilities for a containerized app that uses Docker?
+
+* Hint below
+
+```
+docker scan --login --token <synk token >
+```
+
+```
+docker scan <docker tag name>
+```
+
+<img style="width:550px;height:300px; float: center;" src="./screens/synk.png"/>
+
 
 ## Reference
 * Software sourcetree - https://www.sourcetreeapp.com/
