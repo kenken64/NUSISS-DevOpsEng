@@ -4,7 +4,7 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-* Access to the following URL : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
+* Access to the following URL : http://52.64.252.129:8888/login
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
 * AWS Region: Sydney (ap-southeast-2)
 
@@ -72,7 +72,7 @@ Relogin your Notebook terminal
 
 <img src="../container/images/img17.png" width="400" height="200">
 
-1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git on the /home/ubuntu (Slave server). Checkout to the development branch.
+1. Clone source code repo from https://github.com/kenken64/reactjs-subdevice.git on the /home/ubuntu (your Slave server). Checkout to the development branch.
 
 ```
 $ git clone https://github.com/kenken64/reactjs-subdevice.git

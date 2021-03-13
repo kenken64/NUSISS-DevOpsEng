@@ -3,11 +3,12 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url (Jump host) : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
+* Access to this url (Jump host) : http://52.64.252.129:8888/login
 * AWS Region: Sydney (ap-southeast-2)
 
 ## Notes
 * Please do not include the $ sign as part of the command.
+* Do not run Master and Slave commands on the Jup Notebook
 
 # Setting up EC2 instances for puppet
 
@@ -101,17 +102,14 @@ Setting Up Puppet on EC2 Instances (Additional instructions will be provided dur
 12. SSH into Puppet <b>Master</b> server via Jupyter Notebook Terminal
 
 ```
-$ cd ..
-$ cd Notebooks
+$ ls -lrt <your pem file>
 $ chmod 400 <your key pair>.pem 
 $ ssh -i <key pair>.pem ubuntu@<ec2 puppet master server public dns>
 ```
 
-13. SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal
+13. SSH into Puppet <b>Agent/Slave</b> server via Jupyter Notebook Terminal (separate tab on your browser), when conencting to the slave it is not required to change the pem file permission.
 
 ```
-$ cd ..
-$ cd Notebooks
 $ ssh -i <key pair>.pem ubuntu@<ec2 puppet slave server public dns>
 ```
 

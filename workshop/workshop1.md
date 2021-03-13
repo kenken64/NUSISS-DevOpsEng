@@ -3,7 +3,7 @@
 ## Pre-requisites for Cloud installation
 * AWS NUS ISS account
 * Jupyter Notebbok Password will be provided during class
-* Access to this url : https://nusiss.ngrok.io/ or http://ec2-13-239-1-27.ap-southeast-2.compute.amazonaws.com:8888/login
+* Access to this url (Jump host) : http://52.64.252.129:8888/login 
 * AWS Region: Sydney (ap-southeast-2)
 
 
@@ -76,7 +76,7 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Access the Jupyter notebook URL https://nusiss.ngrok.io/tree? . Upload the pem to the root directory of the jupyter notebook.
+15. Access the Jupyter notebook URL http://52.64.252.129:8888/login  . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
@@ -95,11 +95,10 @@ You will need the public DNS and the private key (PEM) file that have been downl
 <img style="float: center;" src="./screens/upload_pem3.png">
 <br> 
 
-Perform this command to logon into the bitnami server 
+Perform this command to logon into the bitnami server, make sure the pem is on the current directory.
 
 ```
-$ cd ..
-$ cd Notebooks
+$ ls -lrt <pem filename>
 $ chmod 400 <pem filename>
 $ ssh -i <pem filename> bitnami@<aws ec2 hostname>
 ```
