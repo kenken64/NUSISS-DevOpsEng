@@ -254,7 +254,8 @@ git checkout -b feature2
 * Create new index5.html with any content. Save the file
 
 ```
-nano index5.html
+nano index5/d
+.html
 ```
 
 * Push the master branch's commit 2 to the feature2 branch
