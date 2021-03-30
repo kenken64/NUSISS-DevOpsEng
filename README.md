@@ -39,7 +39,7 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | Docker Quizes | [Docker Quizes](./quizes/README.md)      |
 | Kurbenetes | [Kubernetes](./kubernetes/README.md)  - Coming soon    | 
 | Ansible | [ansible](./ansible/README.md)  - Coming soon     |
-| Terraform | [terraform](./terraform/README.md)  - Coming soon     | 
+| Terraform | [terraform](./terraform/README.md)     | 
 
 # Community and Social Media
 
