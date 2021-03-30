@@ -298,7 +298,7 @@ $ docker ps
 $ docker stop <container id>
 ```
 
-## Optional workshop 
+## Optional workshop (Only on MacOs and Windows)
 
 18. Create an account with snyk platform
 
