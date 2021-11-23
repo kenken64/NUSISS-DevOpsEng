@@ -57,7 +57,7 @@ Features:
 ```
 language: node_js
 node_js:
-  - node
+  - 16
 
 dist: bionic
 sudo: required
