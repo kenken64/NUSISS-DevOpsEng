@@ -32,8 +32,17 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 2.	Create Security Group for this workshop. Name the security group name with the following naming convention ```ddmmyy_workshop4_<your initial>```. The latest AWS screen will have 6 entries (screen capture was captured using their old console UI) . Lastly, make sure the source of all 3 entries are set to anywhere.
  
 <br>
-<img style="float: center;" src="./screens/puppet2.png">
+<img style="float: center;" src="./screens/security_group1.png">
 <br>
+
+<br>
+<img style="float: center;" src="./screens/security_group2.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/security_group3.png">
+<br>
+
 
 ## Creating EC2 Instances
 
@@ -45,7 +54,7 @@ The private key file, which is named yourname_puppet.pem, will be downloaded on 
 <img style="float: center;" src="./screens/puppet3_1.png">
 <br>
 
-4.	Choose an instance Type. Ensure you are on free tier.
+4.	Choose an instance Type. Ensure you are on free tier. Likewise if t2 micro is not availble use t2 small.
 
 <br>
 <img style="float: center;" src="./screens/puppet4.png">
