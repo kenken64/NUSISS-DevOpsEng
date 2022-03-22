@@ -37,19 +37,19 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
 
-5. Under the working directory of the bitcoin app create the follow directory
+5. Under the working directory of the bitcoin app create the following directory
 
 ```
 .github/workflows/
 ```
 
-6. Under the above directory which is likely to be hidden on the windows explorer create a file as below
+6. Under the above newly created directory which is likely to be hidden on the windows explorer create a file as below, not on the linux or mac system.
 
 ```
 .github/workflows/build.yml
 ```
 
-7. Add the following codes into the build.yml file to you working repository (Cloned githubrepo ), replace the email and Github userid placeholder in arrow bracket within the yml file. Do not replace or remove the value `$WORKSHOP6_GITHUB_TOKEN`. Please take note yaml file is case sensitive and indentation sensitive.
+7. Add the following codes into the build.yml file (Cloned githubrepo ). Do not replace or remove the value `$WORKSHOP6_GITHUB_TOKEN` and `GITHUB_TOKEN`. Please take note yaml file are case sensitive and indentation sensitive.
 
 Features:
 
