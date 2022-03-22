@@ -2,16 +2,15 @@
 
 ## Objective
 
-The objective of this workshops is to learn how to setup and deploy frontend app using Github with Travis
+The objective of this workshops is to learn how to setup and deploy frontend app using Github with Github Actions
 
 ## Pre-requisite
 
-- Travis account (https://www.travis-ci.com/)
 - Github Account
 
 ## Workshop
 
-In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Github Pages using Travis.
+In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Github Pages using Github Actions.
 
 1. Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
 
@@ -25,74 +24,123 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
  $ git checkout development
 ```
 
-3. Generate the personal access token from Github platform, select the repo scope and save the token to somewhere on your editor
+3. Generate the personal access token from Github platform, select the repo , workflow scope and save the token to somewhere on your editor
    <img src="./screens/github_token.png" >
 
-  <img src="./screens/github_token2.png" >
+   <img src="./screens/github_token2.png" >
 
-4. On the Travis CI platform, select a deployable application from your repository, slide the slider to enable the bitcoin-order-app from your github account
+   
+4. Navigate to the bitcoin app repository on the Github platform
 
-5. On the Travis CI platform, navigate to the selected project's setting
-
-6. On the Travis CI platform, under settings of the project make sure the build validation is disabled
-
-<img src="./screens/travis4.png" >
-
-7. Create an account in Travis and allow it to associate with your GitHub account
-
-- Configure a GITHUB_TOKEN secure environment variable for all branches on Travis platform. The value shown on the screenshots is generated from the Github personal token generation page (Step 3). Remember to Click on the Add button.
+- Configure a WORKSHOP6_GITHUB_TOKEN secret environment variable for the Bitcoin app repo. The value shown on the screenshots is generated from the Github personal token generation page (Step 3). Remember to Click on the Add secret button.
   <img src="./screens/travis1.png" >
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
 
-8. Add a .travis.yml file to you working repository (Cloned githubrepo ), replace the email and Github userid placeholder in arrow bracket within the yml file. Do not replace or remove the value `$GITHUB_TOKEN`
+5. Under the working directory of the bitcoin app create the follow directory
+
+```
+.github/workflows/
+```
+
+6. Under the above directory which is likely to be hidden on the windows explorer create a file as below
+
+```
+.github/workflows/build.yml
+```
+
+7. Add the following codes into the build.yml file to you working repository (Cloned githubrepo ), replace the email and Github userid placeholder in arrow bracket within the yml file. Do not replace or remove the value `$WORKSHOP6_GITHUB_TOKEN`. Please take note yaml file is case sensitive and indentation sensitive.
 
 Features:
 
-- Notify all your co-workers on the build
 - Install all relevant dependencies
 - Perform a build on the frontend
+- Execute all test cases for the frotnend app
 - Deploy to the cloud provider
 
 ```
-language: node_js
-node_js:
-  - 16
+name: Bitcoin order App
+on:
+  push:
+    branches:
+      - development
+jobs:
+  ci:
+    runs-on: ubuntu-latest
 
-dist: bionic
-sudo: required
+    strategy:
+      matrix:
+        node-version: [16.x]
 
-notifications:
-  email:
-    recipients:
-      - <your email address>
-    on_success: always
-    on_failure: always
-branches:
-  only:
-   - development
-before_script:
-  - npm install -g @angular/cli
+    steps:
+      - uses: actions/checkout@v2
+      - uses: browser-actions/setup-chrome@latest
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-script:
-  - ng build --prod --base-href https://<your github username>.github.io/bitcoin-order-app/
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # caching node_modules
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install Dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+      - name: Build
+        run: |
+          npm run build --
+      - name: Lint
+        run: |
+          npm run lint
+      - name: Update types to latest
+        run: |
+          npm install --save-dev @types/node@latest
+      - name: Test
+        run: |
+          npm run test
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
+          output-file: "false"
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/bitcoin
-  edge: true
-  on:
-    branch: development
+      - name: Create Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+      - name: Deploy
+        run: |
+          npm run deploy
 
 ```
 
-9. Travis should build wherever there is a push to the release branch
-10. After a successful build, the application should be published to
-    GitHub
-11. Send a notification to your email mailbox regardless whether the build is
-    successful or if it has failed
+8. Github actions should build wherever there is a push to the release branch
+
+```
+$ git add .
+$ git commit -m "add github actions"
+$ git push origin development
+```
+9. After a successful build, the application should be published to
+    GitHub pages
+
 
 ## Bonus - Workshop
 
@@ -106,7 +154,7 @@ after_success:
  - git push <remote_name> :<branch_name>
 ```
 
-- Perform static code analysis
+- Perform static code analysis with modification of the rules
 
 ```
 ng lint
