@@ -26,7 +26,7 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
 
 3. Generate the personal access token from Github platform, select the repo , workflow scope and save the token to somewhere on your editor
    <img src="./screens/github_token.png" >
-
+   <br>
    <img src="./screens/github_token2.png" >
 
    
