@@ -131,7 +131,7 @@ jobs:
 
 ```
 
-8. Github actions should build wherever there is a push to the release branch
+8. Github actions should build wherever there is a push to the development branch
 
 ```
 $ git add .
