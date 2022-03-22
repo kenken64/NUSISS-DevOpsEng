@@ -64,6 +64,12 @@ on:
   push:
     branches:
       - development
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -145,6 +151,12 @@ $ git push origin development
 ## Bonus - Workshop
 
 Only attempt this if you have completed the above workshop.
+
+- Tag the repo with the below command and push the changes 
+
+```
+git push origin <tag name>
+```
 
 - Delete the feature branch when you have successfully published the
   front end application. Replace both of the placeholder `<remote name>` and `<branch_name>`
