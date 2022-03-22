@@ -147,23 +147,29 @@ $ git push origin development
 Only attempt this if you have completed the above workshop.
 
 - Delete the feature branch when you have successfully published the
-  front end application.
+  front end application. Replace both of the placeholder `<remote name>` and `<branch_name>`
 
 ```
-after_success:
- - git push <remote_name> :<branch_name>
+- name: delete branch
+  run: |
+    git push <remote_name> :<branch_name>
 ```
 
 - Perform static code analysis with modification of the rules
 
 ```
-ng lint
+- name: lint
+  run: |
+    ng lint
 ```
 
 - Perform vulnerability scanning on Angular libraries
 
 ```
-npm audit fix
+- name: Audit 
+  run: |
+    npm audit fix
+
 ```
 
 - Dockerized the app and push the docker image to dockerhub and AWS private docker registry
