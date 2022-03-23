@@ -65,11 +65,6 @@ on:
     branches:
       - development
 
-on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 jobs:
   ci:
     runs-on: ubuntu-latest
