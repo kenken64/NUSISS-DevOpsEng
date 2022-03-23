@@ -18,10 +18,10 @@ In this workshop you will setup a CD/CI to automatically build and publish your 
 $ git clone https://github.com/<replace this with your github userid>/bitcoin-order-app
 ```
 
-2. Checkout the development branch
+2. Checkout the githubcicd branch
 
 ```
- $ git checkout development
+ $ git checkout githubcicd
 ```
 
 3. Generate the personal access token from Github platform, select the repo , workflow scope and save the token to somewhere on your editor
@@ -63,8 +63,7 @@ name: Bitcoin order App
 on:
   push:
     branches:
-      - development
-
+      - githubcicd
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -137,7 +136,7 @@ jobs:
 ```
 $ git add .
 $ git commit -m "add github actions"
-$ git push origin development
+$ git push origin githubcicd
 ```
 9. After a successful build, the application should be published to
     GitHub pages
