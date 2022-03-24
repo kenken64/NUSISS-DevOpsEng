@@ -43,4 +43,4 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 
 # Community and Social Media
 
-Join us on Fcaebook https://www.facebook.com/ISS.NUS/
+Join us on Facebook https://www.facebook.com/ISS.NUS/
