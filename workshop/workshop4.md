@@ -303,7 +303,7 @@ In order to exit the status press q
 
 
 ### Agent/Slave
-21. Checking the list of certificates and cert requests on Puppet Master
+21. Checking the list of certificates and cert requests on Puppet Master. ```** Double check your dashes **```
 
 ```
 $ puppet agent --no-daemonize --onetime --verbose
