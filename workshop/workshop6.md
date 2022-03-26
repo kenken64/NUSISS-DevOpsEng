@@ -178,6 +178,6 @@ git push origin <tag name>
 
 ```
 
-- Dockerized the app and push the docker image to dockerhub and AWS private docker registry
+- Dockerized the app and push the docker image to dockerhub OR AWS private docker registry
 
 - Deploy the app to AWS's ElasticBeanStalk Docker v1
