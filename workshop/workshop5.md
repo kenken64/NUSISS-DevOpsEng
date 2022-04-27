@@ -18,10 +18,10 @@ Kindly logout from the previous workshop 4 login as ubuntu rather than using roo
 docker -v
 ```
 
-2. Test out whether docker-compose is installed correctly. If not kindly follow this installation guide (Linux) (https://docs.docker.com/compose/install/#install-compose)
+2. Test out whether docker compose is installed correctly. If not kindly follow this installation guide (Linux) (https://docs.docker.com/compose/install/#install-compose)
 
 ```
-docker-compose -v
+docker compose version
 ```
 
 3. Create the docker group.
@@ -134,10 +134,10 @@ services:
         - .:/app
 ```
 
-6. Start the docker container using docker-compose.
+6. Start the docker container using docker compose.
 
 ```
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 7. Execute the following command. Implement test on separate container, please replace the placeholder value of the container id on the exec command.
@@ -181,13 +181,13 @@ services:
 - Stop the container by using the below command
 
 ```
-$ docker-compose stop
+$ docker compose stop
 ```
 
-8. Rebuild and Start the docker container using docker-compose, in order to incorporate the test service.
+8. Rebuild and Start the docker container using docker compose, in order to incorporate the test service.
 
 ```
-$ docker-compose up -d --build
+$ docker compose up -d --build
 ```
 
 Check whether the container is up and running by issueing the below command
@@ -199,7 +199,7 @@ $ docker ps
 Once both the services is running stop the container
 
 ```
-$ docker-compose stop
+$ docker compose stop
 
 ```
 
