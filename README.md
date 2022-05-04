@@ -11,6 +11,7 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | S-DOEA - Workshop - Containers and Container Management Workshop       | [Workshop #5](./workshop/workshop5.md) | 
 | S-DOEA - Workshop - DevOps in the Cloud     | [Workshop #6](./workshop/workshop6.md) | 
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation       | [Workshop #7](./workshop/workshop7.md) |
+| S-DOEA - Workshop - Kubernetes Workshop       | [Workshop #7](./workshop/k8.md) |
 
 <table>
     <tr>
