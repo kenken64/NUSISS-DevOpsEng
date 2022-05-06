@@ -118,11 +118,10 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 10. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
 
 ```
-from ubuntu:latest
+from ubuntu:18.04
 
 WORKDIR backend-svr
 
-RUN apt-get update && apt-get install -y gnupg2
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
