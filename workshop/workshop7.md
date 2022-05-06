@@ -64,10 +64,8 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
 2. Logon to the AWS Jenkins as below:-
 
-* Jenkins Server 1
-    - url : http://52.76.25.79/jenkins/
 
-* Jenkins Server 2
+* Jenkins Server 
     - url : http://3.24.33.126/jenkins/
 
 
@@ -123,6 +121,8 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 from ubuntu:latest
 
 WORKDIR backend-svr
+
+RUN apt-get update && apt-get install -y gnupg2
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
