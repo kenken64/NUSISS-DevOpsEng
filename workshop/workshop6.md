@@ -96,16 +96,16 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
-          npm ci
+          npm ci --force
       - name: Build
         run: |
-          npm run build --
+          npm run build --force
       - name: Lint
         run: |
           npm run lint
       - name: Update types to latest
         run: |
-          npm install --save-dev @types/node@latest
+          npm install --save-dev @types/node@latest --force
       - name: Test
         run: |
           npm run test
