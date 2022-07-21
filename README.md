@@ -18,8 +18,9 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
         <td><img style="width:650px;height:100px; float: right;" src="./git.png"/></td>
         <td><img style="width:350px;height:100px; float: right;" src="./docker.png"/></td>
     </tr>
-    <tr><td><img style="width:650px;height:100px; float: right;" src="./puppet.png"/></td>
-        <td><img style="width:650px;height:100px; float: right;" src="./aws_code_deploy.png"/><td>
+    <tr>
+        <td><img style="width:650px;height:100px; float: right;" src="./puppet.png"/></td>
+        <td><img style="width:650px;height:100px; float: right;" src="./aws_code_deploy.png"/></td>
     </tr>
     <tr>    
         <td><img style="width:650px;height:100px; float: right;" src="./dockerswarm.png"/></td>
@@ -44,4 +45,4 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 
 # Community and Social Media
 
-Join us on Fcaebook https://www.facebook.com/ISS.NUS/
+Join us on Facebook https://www.facebook.com/ISS.NUS/
