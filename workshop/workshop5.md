@@ -18,7 +18,7 @@ Kindly logout from the previous workshop 4 login as ubuntu rather than using roo
 docker -v
 ```
 
-2. Test out whether docker compose is installed correctly. If not kindly follow this installation guide (Linux) (https://docs.docker.com/compose/install/#install-compose)
+2. Test out whether docker compose is installed correctly. If not kindly follow this installation guide (Linux , plugin method) (https://docs.docker.com/compose/install/#install-compose)
 
 ```
 docker compose version
