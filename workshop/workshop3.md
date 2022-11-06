@@ -8,8 +8,8 @@
 
 1. Launch internet browser, navigate to the link below. Login using the credential provided as below:-
 
-* Jenkins Server (AWS) - Take note do not use your own jenkins server
-    - url : http://3.24.33.126/jenkins/
+* Jenkins Server (AWS) - Take note do use your own AWS jenkins server
+    - url : http://<your aws public ip>/jenkins/
 
 <br>
 <img style="float: center;" src="./screens/jenkinsci2.png">
