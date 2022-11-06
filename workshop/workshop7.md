@@ -62,11 +62,11 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
  ![CodeStar Project Details](screens/codestar_dotnet.jpg "CodeStar Project Details")
 
-2. Logon to the AWS Jenkins as below:-
+2. Logon to your own AWS Jenkins as below:-
 
 
-* Jenkins Server 
-    - url : http://3.24.33.126/jenkins/
+* Your own AWS Jenkins Server 
+    - url : http://```<your AWS Jenkins server's public ip address>```/jenkins/
 
 
 3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
