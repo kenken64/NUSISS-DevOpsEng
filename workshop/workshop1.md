@@ -77,7 +77,9 @@ http://139.59.254.93:8888/?token=e97b6d9fcc21cf9194cc1f848027a6dd855af778f6f47e8
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Access the Jupyter notebook URL http://52.64.252.129:8888/login  . Upload the pem to the root directory of the jupyter notebook.
+15. Access the Jupyter notebook URL  
+http://139.59.254.93:8888/?token=e97b6d9fcc21cf9194cc1f848027a6dd855af778f6f47e84   
+. Upload the pem to the root directory of the jupyter notebook.
 
 <br>
 <img style="float: center;" src="./screens/upload_pem.png">
