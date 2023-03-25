@@ -4,7 +4,7 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-* Access to the following URL : http://139.59.254.93:8888/?token=e97b6d9fcc21cf9194cc1f848027a6dd855af778f6f47e84
+* Access to the following URL : http://167.172.84.224:8888/?token=8d063065d0676c4a271dd12ecece5c7acf8f6befcea14159
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
 * AWS Region: Sydney (ap-southeast-2)
 
