@@ -8,8 +8,8 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | S-DOEA - Workshop - Github Workshop                              	| [Workshop #1](./workshop/workshop2.md) 	|
 | S-DOEA - Workshop - Jenkins Installation                         	| [Workshop #2](./workshop/workshop1.md) 	|
 | S-DOEA - Workshop - Jenkins - CI Workshop                        	| [Workshop #3](./workshop/workshop4.md) 	|
-| S-DOEA - Workshop - Containers and Container Management Workshop 	| [Workshop #4](./workshop/workshop3.2.md) 	|
-| S-DOEA - Workshop - Terraform and Ansible (IAC)                  	| [Workshop #5](./workshop/workshop5.md) 	|
+| S-DOEA - Workshop - Containers and Container Management Workshop 	| [Workshop #4](./workshop/workshop5.md) 	|
+| S-DOEA - Workshop - Terraform and Ansible (IAC)                  	| [Workshop #5](./workshop/workshop3-1.md) 	|
 | S-DOEA - Workshop - DevOps in the Cloud                          	| [Workshop #6](./workshop/workshop6.md) 	|
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation 	| [Workshop #7](./workshop/workshop7.md) 	|
 | S-DOEA - Workshop - Lint, SAST, DAST Workshop                    	| [Workshop #8](./workshop/workshop9.md) 	|
@@ -19,7 +19,8 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
         <td><img style="width:250px;height:100px; float: right;" src="./git.png"/></td>
         <td><img style="width:250px;height:100px; float: right;" src="./docker.png"/></td>
     </tr>
-    <tr><td><img style="width:250px;height:100px; float: right;" src="./puppet.png"/></td>
+    <tr>
+    <td><img style="width:250px;height:100px; float: right;" src="./puppet.png"/></td>
         <td><img style="width:250px;height:100px; float: right;" src="./aws_code_deploy.png"/><td>
     </tr>
     <tr>    
