@@ -16,15 +16,15 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 
 <table>
     <tr>
-        <td><img style="width:150px;height:100px; float: right;" src="./git.png"/></td>
-        <td><img style="width:150px;height:100px; float: right;" src="./docker.png"/></td>
+        <td><img style="width:250px;height:100px; float: right;" src="./git.png"/></td>
+        <td><img style="width:250px;height:100px; float: right;" src="./docker.png"/></td>
     </tr>
-    <tr><td><img style="width:150px;height:100px; float: right;" src="./puppet.png"/></td>
-        <td><img style="width:150px;height:100px; float: right;" src="./aws_code_deploy.png"/><td>
+    <tr><td><img style="width:250px;height:100px; float: right;" src="./puppet.png"/></td>
+        <td><img style="width:250px;height:100px; float: right;" src="./aws_code_deploy.png"/><td>
     </tr>
     <tr>    
-        <td><img style="width:150px;height:100px; float: right;" src="./dockerswarm.png"/></td>
-        <td><img style="width:150px;height:100px; float: right;" src="./Kubernetes.png"/></td>
+        <td><img style="width:250px;height:100px; float: right;" src="./dockerswarm.png"/></td>
+        <td><img style="width:250px;height:100px; float: right;" src="./Kubernetes.png"/></td>
     </tr>
 </table>
 
