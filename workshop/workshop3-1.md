@@ -1,5 +1,8 @@
 # S-DOEA - Workshop 4 - Terraform and Ansible
 
+## Pre-requisites 
+* Digital Ocean Account
+
 ## Terraform
 
 ### Objective
