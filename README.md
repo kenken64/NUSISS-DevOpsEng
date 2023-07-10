@@ -6,13 +6,15 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | ---------------------------------------------------------------- | :------------------------------------: |
 | S-DOEA - Workshop - Github Workshop                              | [Workshop #1](./workshop/workshop2.md) |
 | S-DOEA - Workshop - Jenkins Installation                         | [Workshop #2](./workshop/workshop1.md) |
-| S-DOEA - Workshop - Jenkins - CI Workshop                        | [Workshop #3](./workshop/workshop3.md) |
-| S-DOEA - Workshop - Infrastructure as Code Workshop (Puppet)     | [Workshop #4](./workshop/workshop4.md) |
-| S-DOEA - Workshop - Containers and Container Management Workshop | [Workshop #5](./workshop/workshop5.md) |
+| S-DOEA - Workshop - Jenkins - CI Workshop                        | [Workshop #3](./workshop/workshop4.md) |
+| S-DOEA - Workshop - Containers and Container Management Workshop | 
+[Workshop #4](./workshop/workshop3.2.md) |
+| S-DOEA - Workshop - Infrastructure as Code Workshop (Terraform and Ansible)     | 
+[Workshop #5](./workshop/workshop5.md) |
 | S-DOEA - Workshop - DevOps in the Cloud                          | [Workshop #6](./workshop/workshop6.md) |
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation | [Workshop #7](./workshop/workshop7.md) |
-| S-DOEA - Workshop - Kubernetes Workshop                          |    [Workshop #8](./workshop/k8.md)     |
-| S-DOEA - Workshop - Lint, SAST, DAST Workshop                    | [Workshop #9](./workshop/workshop9.md) |
+| ~~S-DOEA - Workshop - Kubernetes Workshop~~                          |    ~~[Workshop #8](./workshop/k8.md)~~     |
+| S-DOEA - Workshop - Lint, SAST, DAST Workshop                    | [Workshop #8](./workshop/workshop9.md) |
 
 <table>
     <tr>

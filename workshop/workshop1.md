@@ -4,8 +4,8 @@
 * AWS NUS ISS account
 * Jupyter Notebbok Password will be provided during class
 * Access to this url (Jump host) : 
-http://167.172.84.224:8888/?token=bd64f9d88ba3b5cd107f803018f045a25fc6384a4f2513ea
-* AWS Region: Sydney (ap-southeast-2)
+http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885
+* AWS Region: Singapore or Sydney
 
 
 ### Step by step installation
@@ -22,7 +22,10 @@ http://167.172.84.224:8888/?token=bd64f9d88ba3b5cd107f803018f045a25fc6384a4f2513
 
 4. Search 'bitnami jenkins' on AWS marketplace click on Select to create the instance
 <br>
+
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2-1.png"/>
 <img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2.png"/>
+
 
 5. On the next page a pricing details page will be shown. Click continue
 <br>
