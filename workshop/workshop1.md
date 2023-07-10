@@ -32,7 +32,7 @@ http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e8
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins3.png"/>
 <br>
 
-6. Choose an instance type which is  t2 micro (free tier). Click Next Configure Instance details
+6. Choose an instance type which is  t2 micro/small (free tier). Click Next Configure Instance details
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins4.png"/>
 <br>
@@ -47,7 +47,7 @@ http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e8
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins6.png"/>
 <br>
 
-9. Define a tag for your jenkins server click add tag on the key field specify 'server_name' and value as 'project_name_ubuntu_jenkins'. Click Next
+9. Define a tag for your jenkins server click add tag on the key field specify 'name' and value as 'project_name_ubuntu_jenkins'. Click Next
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins7.png"/>
 <br>
@@ -57,18 +57,14 @@ http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e8
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins8.png"/>
 <br>
 
-11. Review all the configuration and click on Launch
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins9.png"/>
-<br>
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/jenkins10.png"/>
-<br>
-
-12. Upon launching the instance AWS require us to create a new pair of private key to be use to access the instance.
+11. Upon launching the instance AWS require us to create a new pair of private key to be use to access the instance.
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins11.png"/>
 <br>
+
+
+12. Review all the configuration and click on Launch
+
 
 13. After creating the private key, a new instance will be launch. Kindly wait for a few minutes. Upon successful creation of the instance your instance is now ready to be use
 <br>
@@ -81,7 +77,7 @@ http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e8
 <br>
 
 15. Access the Jupyter notebook URL  
-http://167.172.84.224:8888/?token=b334426c5a75a9c9d978dea931edd9eaf2d01973fad50212  
+http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885 
 . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
