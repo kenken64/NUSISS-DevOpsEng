@@ -9,7 +9,7 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | S-DOEA - Workshop - Jenkins - CI Workshop                        | [Workshop #3](./workshop/workshop4.md) |
 | S-DOEA - Workshop - Containers and Container Management Workshop | 
 [Workshop #4](./workshop/workshop3.2.md) |
-| S-DOEA - Workshop - Infrastructure as Code Workshop (Terraform and Ansible)     | 
+| S-DOEA - Workshop - Terraform and Ansible (IAC)     | 
 [Workshop #5](./workshop/workshop5.md) |
 | S-DOEA - Workshop - DevOps in the Cloud                          | [Workshop #6](./workshop/workshop6.md) |
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation | [Workshop #7](./workshop/workshop7.md) |
