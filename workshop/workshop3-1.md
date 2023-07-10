@@ -141,6 +141,7 @@ on a server
 
 ### Setup
 a. Create a directory called workshop02 in your course repository.
+
 b. Read Step 1 and Step 2 of the following blog
 https://www.digitalocean.com/community/tutorials/how-to-set-up-the-
 code-server-cloud-ide-platform-on-ubuntu-20-04.
@@ -152,17 +153,28 @@ Once you have provisioned, note the IP address, root user and SSH keys used.
 Use these information to create an inventory file, inventory.yaml.
 Write a playbook that will use the inventory.yaml file to configure the
 server. The playbook should perform the following tasks
+
 • Update the /lib/systemd/system/code-server.service file
 with the code server password; change the following line
+
+
+```
 Environment=PASSWORD=__PLACEHOLDER__
+```
 with the password, assuming that the password is mypassword
+
+```
 Environment=PASSWORD=”mypassword”
-Day 03 Workshop Automating Infrastructure Provisioning and Configuration
-Page 2 of 2
+```
+
 • Update the /etc/nginx/sites-available/code-server.conf
 file with the domain code-<ipv4_address>.nip.io; change the line
 with server_name to
+
+```
 server_name code-<ipv4_address>.nip.io;
+
+```
 • Use systemd module to restart nginx and code-server services. You
 must also perform a daemon reload viz. set daemon_reload to yes.
 
