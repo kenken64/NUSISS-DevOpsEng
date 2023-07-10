@@ -10,11 +10,11 @@
 
 ## Test out the Docker installation on the Puppet Slave server
 
-Provision Ubuntu server under the AWS account 
+Provision Ubuntu server using your own AWS account 
 
 <img src="./screens/aws-ubuntu-1.png" width="400" height="200">
 
-Install docker engine using the following instructions
+Install docker engine using the below web link
 
 https://docs.docker.com/engine/install/ubuntu/
 
