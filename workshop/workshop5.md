@@ -8,7 +8,7 @@
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
 * AWS Region: Sydney (ap-southeast-2)
 
-## Test out the Docker installation on the Puppet Slave server
+## Test out the Docker installation on the AWS server
 
 Provision Ubuntu server using your own AWS account 
 
