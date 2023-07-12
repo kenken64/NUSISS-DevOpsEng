@@ -1,4 +1,4 @@
-# S-DOEA - Workshop 9 - Linting, DAST , SAST
+# S-DOEA - Workshop 8 - Linting, DAST , SAST
 
 ## Pre-requisites
 
