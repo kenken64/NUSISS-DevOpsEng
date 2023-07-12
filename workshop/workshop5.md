@@ -6,7 +6,7 @@
 * Github Account
 * Access to the following URL : [http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885](http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885)
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
-* AWS Region: Sydney (ap-southeast-2)
+* AWS Region: Singapore/Sydney
 
 ## Test out the Docker installation on the AWS server
 
