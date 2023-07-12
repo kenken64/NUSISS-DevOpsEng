@@ -108,7 +108,7 @@ jobs:
           npm install --save-dev @types/node@latest --force
       - name: Test
         run: |
-          npm run test --watch=false --browsers=ChromeHeadless
+          npm run test --watch=false --browsers=ChromeHeadlessCustom
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
