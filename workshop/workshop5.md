@@ -246,7 +246,7 @@ $ docker ps
 ```
 
 
-12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
+12. Launch your browser and try accessing the app http://```<aws ec2 slave server public DNS>```
 
 13. Login to docker hub through the CLI
 
