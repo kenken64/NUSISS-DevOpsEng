@@ -4,7 +4,7 @@
 * AWS NUS ISS account
 * Jupyter Notebbok Password will be provided during class
 * Access to this url (Jump host) : 
-http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885
+http://167.172.84.224:8888/?token=d71429b1e0eb21c79b676a9a5fbd5a78a7ea06f8ce97ca88
 * AWS Region: Singapore or Sydney
 
 
@@ -77,7 +77,7 @@ http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e8
 <br>
 
 15. Access the Jupyter notebook URL  
-http://167.172.84.224:8888/?token=29284d0ebe52c3e4c6346367ad5cfac60932c832ad86e885 
+http://167.172.84.224:8888/?token=d71429b1e0eb21c79b676a9a5fbd5a78a7ea06f8ce97ca88 
 . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
