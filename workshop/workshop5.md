@@ -1,4 +1,4 @@
-# S-DOEA - Workshop 5 - Containers and Container Management Workshop
+# S-DOEA - Workshop 4 - Containers and Container Management Workshop
 
 ## Pre-requisite
 * AWS Account 
@@ -6,9 +6,9 @@
 * Github Account
 * Access to the following URL : [http://167.172.84.224:8888/?token=d71429b1e0eb21c79b676a9a5fbd5a78a7ea06f8ce97ca88](http://167.172.84.224:8888/?token=d71429b1e0eb21c79b676a9a5fbd5a78a7ea06f8ce97ca88)
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
-* AWS Region: Sydney (ap-southeast-2)
+* AWS Region: Singapore/Sydney
 
-## Test out the Docker installation on the Puppet Slave server
+## Test out the Docker installation on the AWS server
 
 Provision Ubuntu server using your own AWS account 
 
@@ -246,7 +246,7 @@ $ docker ps
 ```
 
 
-12. Launch your browser and try accessign the app http://```<aws ec2 slave server public DNS>```
+12. Launch your browser and try accessing the app http://```<aws ec2 slave server public DNS>```
 
 13. Login to docker hub through the CLI
 

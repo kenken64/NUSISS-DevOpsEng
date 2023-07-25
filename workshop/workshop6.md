@@ -12,7 +12,7 @@ The objective of this workshops is to learn how to setup and deploy frontend app
 
 In this workshop you will setup a CD/CI to automatically build and publish your Frontend application to Github Pages using Github Actions.
 
-1. Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account.
+1. Fork the source codes from the following URL https://github.com/kenken64/bitcoin-order-app to your own Github account. (Uncheck fork only main branch)
 
 ```
 $ git clone https://github.com/<replace this with your github userid>/bitcoin-order-app
