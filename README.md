@@ -13,8 +13,7 @@ https://forms.gle/zUSeKCGSsXRyWvSR8
 | S-DOEA - Workshop - DevOps in the Cloud                          	| [Workshop #6](./workshop/workshop6.md) 	|
 | S-DOEA - Workshop - End to end DevOps Engineering and Automation 	| [Workshop #7](./workshop/workshop7.md) 	|
 | S-DOEA - Workshop - Lint, SAST, DAST Workshop                    	| [Workshop #8](./workshop/workshop9.md) 	|
-| S-DOEA - Workshop - Puppet                                        | 
-[Workshop #8.5](./workshop/workshop4.md)  |
+| S-DOEA - Workshop - Puppet                                        | [Workshop #8.5](./workshop/workshop4.md)  |
 
 <table>
     <tr>
