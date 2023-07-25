@@ -1,4 +1,4 @@
-# S-DOEA - Workshop 4 - Infrastructure as Code Workshop (Puppet)
+# S-DOEA - Workshop 4.5 - Infrastructure as Code Workshop (Puppet)
 
 ## Pre-requisite
 * AWS Account 
