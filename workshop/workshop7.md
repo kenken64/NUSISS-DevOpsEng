@@ -72,6 +72,7 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
 4. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
+ - Make sure bitnami and jenkins user are in the docker group before the jenkins configuration
  - Install Microsoft DotNet framework based on the Ubuntu release version
 
   (https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
