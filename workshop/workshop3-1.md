@@ -3,7 +3,7 @@
 ## Pre-requisites 
 * Digital Ocean Account
 
-## Terraform
+## Terraform (a)
 
 ### Objective
 The objective of this workshop is use Terraform’s HCL to write scripts to
@@ -132,7 +132,7 @@ The instructor will clone your repository at the end
 <br>
 
 
-## Ansible
+## Ansible (b)
 
 
 The objective of this workshop is to automate the installation of Code-Server
