@@ -81,9 +81,13 @@ All of AWS services in this tutorial should be in the same region Singapore or S
  - Install Microsoft DotNet framework based on the Ubuntu release version
 
   (https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
+ 
+ - Use the below command to check which ubuntu version is being provisioned.
+
  ```
  $ lsb_release -a 
- ``` 
+ ```
+  
  -  Configure SCM and the build schedule trigger
  - Create 3 shell execute under the pre jenkins action
 ```
