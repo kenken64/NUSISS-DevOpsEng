@@ -4,7 +4,7 @@
 
 At the end of this tutorial, you will be able to push your code changes to Github and run it in an EC2 instance deployed AWS CodeBuild.
 
-All of AWS services in this tutorial should be in the same region Sydney (ap-southeast-2).
+All of AWS services in this tutorial should be in the same region Singapore or Sydney (ap-southeast-1 or ap-southeast-2).
 
 ## Pre-requisites
 - Team workshop
@@ -62,12 +62,17 @@ All of AWS services in this tutorial should be in the same region Sydney (ap-sou
 
  ![CodeStar Project Details](screens/codestar_dotnet.jpg "CodeStar Project Details")
 
+ ![CodeStar Project Details](screens/codestar11.png "CodeStar Project Details")
+
+
 2. Logon to your own AWS Jenkins as below:-
 
 
 * Your own AWS Jenkins Server 
     - url : http://```<your AWS Jenkins server's public ip address>```/jenkins/
 
+* Install all the required plugins. Lecturer will provide the plugins pdf in the class. 
+   
 
 3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
 
