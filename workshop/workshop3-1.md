@@ -143,8 +143,7 @@ on a server
 a. Create a directory called workshop02 in your course repository.
 
 b. Read Step 1 and Step 2 of the following blog
-https://www.digitalocean.com/community/tutorials/how-to-set-up-the-
-code-server-cloud-ide-platform-on-ubuntu-20-04.
+https://www.digitalocean.com/community/tutorials/how-to-set-up-the-code-server-cloud-ide-platform-on-ubuntu-20-04
 
 ### Workshop
 Provision a Ubuntu server for this exercise. You can use Terraform or manually
