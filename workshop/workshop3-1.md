@@ -2,6 +2,7 @@
 
 ## Pre-requisites 
 * Digital Ocean Account
+* Jupyter Notebbok
 
 ## Terraform (a)
 
@@ -130,6 +131,10 @@ The instructor will clone your repository at the end
 <br>
 <img style="float: center;" src="./screens/terraform-2.png">
 <br>
+
+
+## Solution 
+
 
 
 ## Ansible (b)
