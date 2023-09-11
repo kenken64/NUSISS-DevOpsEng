@@ -134,8 +134,438 @@ The instructor will clone your repository at the end
 
 
 ## Solution 
+1. Access your Digital Ocean account.
 
 
+2. Create a Ubuntu Droplet 
+
+<br>
+<img style="float: center;" src="./screens/ansible11.png">
+<br>
+
+ * Select Singapore as region
+ * Select Ubuntu as the server Image v20.04 x64
+
+<br>
+<img style="float: center;" src="./screens/ansible12.png">
+<br>
+
+* Select cost saving server type (6 USD)
+
+<br>
+<img style="float: center;" src="./screens/ansible13.png">
+<br>
+
+* Choose the SSH authentication method and generate a fresh SSH key pair. Click the "New SSH Key" button, then follow the instructions provided on the right-hand side. Paste the contents of the "cat" command into the Digital Ocean text area.
+
+<br>
+<img style="float: center;" src="./screens/ansible14.png">
+<br>
+
+* Finalize the droplet
+
+<br>
+<img style="float: center;" src="./screens/ansible15.png">
+<br>
+
+3. Access the newly created ubuntu server
+
+```
+ssh root@<public ip address>
+```
+
+<br>
+<img style="float: center;" src="./screens/ansible16.png">
+<br>
+
+4. Generate the PKI key pair on the logon server 
+
+```
+ssh-keygen
+```
+
+<br>
+<img style="float: center;" src="./screens/ansible17.png">
+<br>
+
+5. Add the public key content to the Digital Ocean account security section
+
+<br>
+<img style="float: center;" src="./screens/ansible18.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/ansible19.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/ansible20.png">
+<br>
+
+6. Install terraform IAC tool on the ubuntu server
+
+```
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
+
+```
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
+
+```
+sudo apt update && sudo apt install terraform
+```
+
+
+7. Check the terraform version
+
+```
+terraform --version
+```
+<br>
+<img style="float: center;" src="./screens/ansible22.png">
+<br>
+
+8. Install Docker engine, given an instructions use the - Install using the Apt repository method
+
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
+9. Retrieve a DO API KEY from the Digital ocean platform. Set the environment variable of your DO API key to the ubuntu server using the following command
+
+```
+export DO_PAT=<replace this with the API key>
+```
+
+<br>
+<img style="float: center;" src="./screens/ansible23.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/ansible24.png">
+<br>
+
+
+
+10. Install docker machine binary
+
+To download and install the Docker Machine binary, type:
+
+```
+wget https://github.com/docker/machine/releases/download/v0.14.0/docker-machine-$(uname -s)-$(uname -m)
+
+```
+The name of the file should be docker-machine-Linux-x86_64. Rename it to docker-machine to make it easier to work with:
+
+```
+mv docker-machine-Linux-x86_64 docker-machine
+
+```
+
+Change the file permission to executable:
+
+```
+chmod +x docker-machine
+
+```
+Move or copy it to the usr/local/bin directory so that it will be available as a system command.
+
+```
+sudo mv docker-machine /usr/local/bin
+
+```
+
+Check the version, which will indicate that it’s properly installed:
+
+```
+docker-machine version
+
+```
+
+11. Create a docker machine within your DO account with following command
+
+```
+docker-machine create \
+        -d digitalocean \
+        --digitalocean-access-token  <do_pat_key> \
+        --digitalocean-image ubuntu-18-04-x64  \
+        --digitalocean-region sgp1 \
+        --digitalocean-backups=false \
+        --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
+        docker-nginx
+```
+
+<br>
+<img style="float: center;" src="./screens/ansible25.png">
+<br>
+
+12. Create a working directory for the following terraform project. 
+
+13. Create provider script for the provisioning of the DO servers
+
+```
+terraform {
+    required_providers {
+        docker = {
+            source = "kreuzwerker/docker"
+            version = "3.0.2"
+        }
+        digitalocean = {
+            source = "digitalocean/digitalocean"
+            version = "2.26.0"
+        }
+        local = {
+            source = "hashicorp/local"
+            version = "2.4.0"
+        }
+    }
+}
+
+provider docker {
+    # host = "unix:///var/run/docker.sock"
+    host = "tcp://${var.docker_host}:2376"
+    cert_path = var.docker_cert_path
+}
+
+provider digitalocean {
+    token = var.do_token
+
+}
+
+provider local { }
+```
+
+14. Create the variable script
+
+```
+variable do_token {
+    type = string
+    sensitive = true
+}
+
+variable docker_host {
+    type = string
+}
+
+variable docker_cert_path {
+    type = string
+    sensitive = true
+}
+
+variable app_namespace {
+    type = string 
+    default = "my"
+}
+
+variable database_version {
+    type = string
+    default = "v3.1"
+}
+
+variable backend_version {
+    type = string
+    default = "v3"
+}
+
+variable backend_instance_count{
+    type = number
+    default = 3
+}
+
+variable do_region {
+    type = string
+    default = "sgp1"
+}
+
+variable do_image {
+    type = string 
+    default = "ubuntu-20-04-x64"
+}
+
+variable do_size {
+    type = string
+    default = "s-1vcpu-512mb-10gb"
+}
+
+variable do_ssh_key {
+    type = string 
+    default = "www-1"
+}
+
+variable ssh_private_key {
+    type = string
+}
+```
+
+
+15. Create the resources script 
+
+```
+# images
+resource "docker_image" "bgg-database" {
+    name = "chukmunnlee/bgg-database:${var.database_version}"
+}
+
+resource "docker_image" "bgg-backend" {
+    name = "chukmunnlee/bgg-backend:${var.backend_version}"
+}
+
+# the stack
+resource "docker_network" "bgg-net" {
+    name = "${var.app_namespace}-bgg-net"
+}
+
+resource "docker_volume" "data-vol" {
+    name = "${var.app_namespace}-data-vol"
+}
+
+resource "docker_container" "bgg-database" {
+    name = "${var.app_namespace}-bgg-database"
+    image = docker_image.bgg-database.image_id
+
+    networks_advanced {
+      name = docker_network.bgg-net.id
+    }
+
+    volumes {
+      volume_name = docker_volume.data-vol.name
+      container_path = "/var/lib/mysql"
+    }
+
+    ports {
+        internal = 3306
+        external = 3306
+    }
+}
+
+resource "docker_container" "bgg-backend" {
+
+    count = var.backend_instance_count
+
+    name = "${var.app_namespace}-bgg-backend-${count.index}"
+    image = docker_image.bgg-backend.image_id
+
+    networks_advanced {
+      name = docker_network.bgg-net.id
+    }
+
+    env = [
+        "BGG_DB_USER=root",
+        "BGG_DB_PASSWORD=changeit",
+        "BGG_DB_HOST=${docker_container.bgg-database.name}",
+    ]
+
+    ports {
+        internal = 3000
+    }
+}
+
+resource "local_file" "nginx-conf" {
+    filename = "nginx.conf"
+    content = templatefile("sample.nginx.conf.tftpl", {
+        docker_host = var.docker_host,
+        ports = docker_container.bgg-backend[*].ports[0].external
+    })
+}
+
+data "digitalocean_ssh_key" "www-1" {
+    name = var.do_ssh_key
+}
+
+resource "digitalocean_droplet" "nginx" {
+    name = "nginx"
+    image = var.do_image
+    region = var.do_region
+    size = var.do_size
+
+    ssh_keys = [ data.digitalocean_ssh_key.www-1.id ]
+
+    connection {
+      type = "ssh"
+      user = "root"
+      private_key = file(var.ssh_private_key)
+      host = self.ipv4_address
+    }
+
+    provisioner "remote-exec" {
+        inline = [
+            "apt update -y",
+            "apt upgrade -y",
+            "apt install nginx -y",
+        ]
+    }
+    provisioner "file" {
+        source = local_file.nginx-conf.filename
+        destination = "/etc/nginx/nginx.conf"
+    }
+    provisioner "remote-exec" {
+        inline = [
+          "systemctl restart nginx",
+          "systemctl enable nginx",
+        ]
+    }
+}
+
+resource "local_file" "root_at_nginx" {
+    filename = "root@${digitalocean_droplet.nginx.ipv4_address}"
+    content = ""
+    file_permission = "0444"
+}
+
+output nginx_ip {
+    value = digitalocean_droplet.nginx.ipv4_address
+}
+
+output backend_ports {
+    value = docker_container.bgg-backend[*].ports[0].external
+}
+```
+
+16. Create the template configuration for the nginx reverse proxy server 
+
+```
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+	worker_connections 768;
+}
+
+http {
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	gzip on;
+
+	upstream apps {
+		least_conn;
+		# the following list the container endpoints
+		# one server line for each endpoint
+		# eg server <docker_host_ip>:<exposed_port>;
+		%{~ for p in ports ~}
+		server ${docker_host}:${p};
+		%{~ endfor ~}
+	}
+	server {
+		listen 80;
+		location / {
+			proxy_pass http://apps;
+		}
+	}
+}
+```
+
+17. Under the current working directory perform initialization on the scripts that was created previously.
+
+```
+terraform init
+```
+
+18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
+
+```
+terraform plan -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/workshop01/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
+```
 
 ## Ansible (b)
 
