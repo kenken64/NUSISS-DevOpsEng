@@ -188,7 +188,7 @@ ssh-keygen
 <img style="float: center;" src="./screens/ansible17.png">
 <br>
 
-5. Add the public key content to the Digital Ocean account security section
+5. Add the public key content to the Digital Ocean account security section, name it as www-1
 
 <br>
 <img style="float: center;" src="./screens/ansible18.png">
@@ -300,7 +300,7 @@ docker-machine create \
 
 12. Create a working directory for the following terraform project. 
 
-13. Create provider script for the provisioning of the DO servers
+13. Create provider script (provider.tf) for the provisioning of the DO servers
 
 ```
 terraform {
@@ -334,7 +334,7 @@ provider digitalocean {
 provider local { }
 ```
 
-14. Create the variable script
+14. Create the variable script (variables.tf)
 
 ```
 variable do_token {
@@ -397,7 +397,7 @@ variable ssh_private_key {
 ```
 
 
-15. Create the resources script 
+15. Create the resources script (resources.tf)
 
 ```
 # images
@@ -520,7 +520,7 @@ output backend_ports {
 }
 ```
 
-16. Create the template configuration for the nginx reverse proxy server 
+16. Create the template configuration for the nginx reverse proxy server (sample.nginx.conf.tftpl)
 
 ```
 user www-data;
@@ -561,11 +561,27 @@ http {
 terraform init
 ```
 
-18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
+18. Add a new SSH key name it as www-1 copy the public from the current control server.
+
+19. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
 
 ```
-terraform plan -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/workshop01/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
+export DO_PATH=<your DO personal access token>
 ```
+
+```
+terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
+```
+
+20. Once the provision plan is done, apply the changes to the DO cloud account using the following command
+
+```
+terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
+```
+
+<br>
+<img style="float: center;" src="./screens/ansible26.png">
+<br>
 
 ## Ansible (b)
 
