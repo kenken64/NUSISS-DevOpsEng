@@ -287,7 +287,7 @@ docker-machine version
 docker-machine create \
         -d digitalocean \
         --digitalocean-access-token  <do_pat_key> \
-        --digitalocean-image ubuntu-18-04-x64  \
+        --digitalocean-image ubuntu-20-04-x64  \
         --digitalocean-region sgp1 \
         --digitalocean-backups=false \
         --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
