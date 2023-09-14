@@ -564,7 +564,7 @@ terraform init
 18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
 
 ```
-export DO_PATH=<your DO personal access token>
+export DO_PAT=<your DO personal access token>
 ```
 
 ```
