@@ -2,7 +2,6 @@
 
 ## Pre-requisites 
 * Digital Ocean Account
-* Jupyter Notebbok
 
 ## Terraform (a)
 
