@@ -2,7 +2,6 @@
 
 ## Pre-requisites 
 * Digital Ocean Account
-* Jupyter Notebbok
 
 ## Terraform (a)
 
@@ -287,7 +286,7 @@ docker-machine version
 docker-machine create \
         -d digitalocean \
         --digitalocean-access-token  <do_pat_key> \
-        --digitalocean-image ubuntu-18-04-x64  \
+        --digitalocean-image ubuntu-20-04-x64  \
         --digitalocean-region sgp1 \
         --digitalocean-backups=false \
         --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
@@ -489,7 +488,6 @@ resource "digitalocean_droplet" "nginx" {
     provisioner "remote-exec" {
         inline = [
             "apt update -y",
-            "apt upgrade -y",
             "apt install nginx -y",
         ]
     }
@@ -564,7 +562,7 @@ terraform init
 18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
 
 ```
-export DO_PATH=<your DO personal access token>
+export DO_PAT=<your DO personal access token>
 ```
 
 ```
