@@ -579,7 +579,7 @@ terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/r
 <img style="float: center;" src="./screens/ansible26.png">
 <br>
 
-## Ansible (b)
+## Ansible (b) - Optional
 
 
 The objective of this workshop is to automate the installation of Code-Server
