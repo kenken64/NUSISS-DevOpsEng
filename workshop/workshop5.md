@@ -248,7 +248,7 @@ $ docker ps
 
 12. Launch your browser and try accessing the app http://```<aws ec2 slave server public DNS>```
 
-13. Remember to register a docker hub before logging to docker hub via the CLI
+13. Remember to register a docker hub account & verify your email before logging to docker hub via the CLI
 
 ```
 $ sudo apt install gnupg2 pass
