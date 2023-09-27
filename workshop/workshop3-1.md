@@ -559,7 +559,7 @@ http {
 terraform init
 ```
 
-18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront
+18. Take note before running the following provision command using terraform tools against DO server. The DO_PAT environment variable must be setup upfront. Replace the docker host ip with the docker-nginx public IP address.
 
 ```
 export DO_PAT=<your DO personal access token>
@@ -569,7 +569,7 @@ export DO_PAT=<your DO personal access token>
 terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
 ```
 
-19. Once the provision plan is done, apply the changes to the DO cloud account using the following command
+19. Once the provision plan is done, apply the changes to the DO cloud account using the following command. Replace the docker host ip with the docker-nginx public IP address.
 
 ```
 terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "docker_host=<docker host ip>" -var "docker_cert_path=/root/.docker/machine/machines/docker-nginx"
