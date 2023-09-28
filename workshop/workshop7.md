@@ -81,7 +81,7 @@ All of AWS services in this tutorial should be in the same region Singapore or S
  - Install Microsoft DotNet framework based on the Ubuntu release version
 
   (https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
- 
+
  - Use the below command to check which ubuntu version is being provisioned.
 
  ```
@@ -175,7 +175,7 @@ CMD [ "dotnet", "run" ]
 
 11. Commit the Dockefile into your github repository.
 
-12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag along with the dockerhub credentials.
+12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag along with the dockerhub credentials. Encountered a permission problem; please grant the appropriate docker permissions to the Jenkins Unix user. In addition to this, execute a Docker login prior to being able to push the image to Docker Hub.
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
