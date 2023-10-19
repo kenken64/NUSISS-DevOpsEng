@@ -4,9 +4,9 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-* Access to the following URL : [http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4](http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4)
+* Access to the following URL : [http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2](http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2)
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
-* AWS Region: Singapore/Sydney
+* AWS Region: Singapore
 
 ## Test out the Docker installation on the AWS server
 

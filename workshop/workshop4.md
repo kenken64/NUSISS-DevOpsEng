@@ -3,8 +3,8 @@
 ## Pre-requisite
 * AWS Account 
 * Jupyter Notebbok Password will be provided during class
-* Access to this url (Jump host) : [http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4](http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4)
-* AWS Region: Sydney (ap-southeast-2)
+* Access to this url (Jump host) : [http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2](http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2)
+* AWS Region: Singapore
 
 ## Notes
 * Please do not include the $ sign as part of the command.

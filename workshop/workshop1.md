@@ -4,9 +4,8 @@
 * AWS NUS ISS account
 * Jupyter Notebbok Password will be provided during class
 * Access to this url (Jump host) : 
-http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4
-* AWS Region: Singapore or Sydney
-
+http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2
+* AWS Region: Singapore
 
 ### Step by step installation
 1. Navigate to the AWS services link top left corner beside the AWS logo
@@ -77,7 +76,7 @@ http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d
 <br>
 
 15. Access the Jupyter notebook URL  
-http://159.223.95.85:8888/tree?token=0cadc22a6dc9ff20462b6dee0d749135c6e8dd1693d40fc4
+http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2
 . Upload the pem to the root directory of the jupyter notebook.
 
 <br>
