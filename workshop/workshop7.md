@@ -56,14 +56,30 @@ All of AWS services in this tutorial should be in the same region Singapore or S
 1. Capture screenshot of the failed build, save it along as part of your submission.
 
 
-## AWS Codestar integrate with Jenkins using ASP.Net Core Project template
+## AWS Codestar integrate with Jenkins using Spring Boot Project template
 
 1. Repeat the above steps 1 - 11, select 'ASP.NET Core' Web service on EC2 when creating the new codestar template wizard.
 
- ![CodeStar Project Details](screens/codestar_dotnet.jpg "CodeStar Project Details")
+ ![CodeStar Project Details](screens/javaspringboot/10.png "CodeStar Project Details")
 
- ![CodeStar Project Details](screens/codestar11.png "CodeStar Project Details")
+![CodeStar Project Details](screens/javaspringboot/11.png "CodeStar Project Details")
 
+![CodeStar Project Details](screens/javaspringboot/12.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/13.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/14.png "CodeStar Project Details")
+
+
+![CodeStar Project Details](screens/javaspringboot/15.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/16.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/17.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/18.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/9.png "CodeStar Project Details")
 
 2. Logon to your own AWS Jenkins as below:-
 
@@ -72,114 +88,78 @@ All of AWS services in this tutorial should be in the same region Singapore or S
     - url : http://```<your AWS Jenkins server's public ip address>```/jenkins/
 
 * Install all the required plugins. Lecturer will provide the plugins pdf in the class. 
+
+* Setup the system configuration according to the screenshot
+
+![CodeStar Project Details](screens/javaspringboot/19.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/20.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/21.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/22.png "CodeStar Project Details")
    
 
-3. Create a new freestyle project item with following naming convention ```'aws_dotnet_<your initial/group name>'```
+3. Create a new freestyle project item with following naming convention ```'aws_javaspringboot_group name>'```
 
-4. Configure the jenkins job as below, make sure to replace all the userid in the screenshots 
- - Make sure bitnami and jenkins user (Ubuntu users) are in the docker group before the jenkins configuration. Kindly check workshop # 4 on how to add docker group to a particular user.
- - Install Microsoft DotNet framework based on the Ubuntu release version
+4. Configure the jenkins job as below
 
-  (https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
+    ![CodeStar Project Details](screens/javaspringboot/23.png "CodeStar Project Details")
 
- - Use the below command to check which ubuntu version is being provisioned.
+    ![CodeStar Project Details](screens/javaspringboot/24.png "CodeStar Project Details")
 
- ```
- $ lsb_release -a 
- ```
+    ![CodeStar Project Details](screens/javaspringboot/25.png "CodeStar Project Details")
 
  -  Configure SCM and the build schedule trigger
- - Create 3 shell execute under the pre jenkins action
-```
-/usr/bin/dotnet restore
+ - Create 5 shell execute under the pre jenkins action
 
-/usr/bin/dotnet build
-
-/usr/bin/dotnet test
-
-```
-
-
-   ![CodeStar Project Details](screens/codestar_dotnet2.jpg "CodeStar Project Details")
-
-   ![CodeStar Project Details](screens/codestar_dotnet3.jpg "CodeStar Project Details")
-
-   ![CodeStar Project Details](screens/codestar_dotnet4.jpg "CodeStar Project Details")
-
-   ![CodeStar Project Details](screens/codestar_dotnet5.jpg "CodeStar Project Details")
-
-   ![CodeStar Project Details](screens/codestar_dotnet6.jpg "CodeStar Project Details")
+![CodeStar Project Details](screens/javaspringboot/4.png "CodeStar Project Details")
    
+![CodeStar Project Details](screens/javaspringboot/5.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/6.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/7.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/8.png "CodeStar Project Details")
 
 5. Capture screenshot of the successful build, save it along as part of your submission.
 
-6. Open the Dotnet project using your favourite editor. Make changes to the dotnet test case under the following namespace ```AspNetCoreWebServiceTest/Controllers/HelloControllerTest.cs``` as below where the ```Hello World1!!!``` with an extra exclamation mark.
-
-```
-        [Fact]
-        public void NoInputParamGetResponseTest()
-        {
-            HelloController controller = new HelloController();
-            var response = controller.Get().Value as Response;
-            Assert.Equal("Hello World!!!", response.output);
-        }
-```
+6. Open your preferred editor and access the Spring Boot project. Modify the Spring Boot test case located in the namespace com.aws.codestar.projecttemplates.controller.HelloWorldControllerTest. Update the EXPECTED_RESPONSE_VALUE to say "Hello AWS CodeStar!!".
 
 7. Commit your codes to the github and watch how the build will fail.
 
 8. Capture screenshot of the failed build, save it along as part of your submission.
 
-9. Stabilize the test case before dockerized the app.
+9. Stabilize the test case before dockerized the app. Revert back the changes back to a successful build.
 
-10. Create a Dockerfile on the root of the project directory for this dotnet project. *Hint shown  during lecturer day3.
+10. Create a Dockerfile on the root of the project directory for this Spring Boot project. *Hint shown  during lecturer day3.
 
 ```
-from ubuntu:18.04
+FROM tomcat:latest
 
-WORKDIR backend-svr
+ADD target/ROOT.war /usr/local/tomcat/webapps/
 
+EXPOSE 8080
 
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-get install -y wget && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-
-RUN dpkg -i packages-microsoft-prod.deb
-
-RUN add-apt-repository universe
-
-RUN apt install apt-transport-https -y
-
-RUN apt-get update
-
-RUN wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u4_amd64.deb
-
-RUN dpkg -i libicu57_57.1-6+deb9u4_amd64.deb
-
-RUN apt install dotnet-sdk-3.1 -y
-
-COPY ./ ./
-
-RUN dotnet restore
-
-RUN dotnet build
-
-EXPOSE 5000:5000
-
-CMD [ "dotnet", "run" ]
+CMD ["catalina.sh", "run"]
 
 
 ```
 
 11. Commit the Dockefile into your github repository.
 
-12. Configure your jenkins's pre build step to publish this project's image to dockerhub. Use your own dockerhub username as the prefix of the image tag along with the dockerhub credentials. Encountered a permission problem; please grant the appropriate docker permissions to the Jenkins Unix user. In addition to this, execute a Docker login prior to being able to push the image to Docker Hub.
+12. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login before pushing the image to Docker Hub.
+
+![CodeStar Project Details](screens/javaspringboot/1.png "CodeStar Project Details")
+
+![CodeStar Project Details](screens/javaspringboot/2.png "CodeStar Project Details")
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
 13. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+
+![CodeStar Project Details](screens/javaspringboot/3.png "CodeStar Project Details")
 
 14. Try accessing the app via the end point created from the CodeStar dashboard.
 
