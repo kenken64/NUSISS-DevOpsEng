@@ -58,7 +58,7 @@ All of AWS services in this tutorial should be in the same region Singapore or S
 
 ## AWS Codestar integrate with Jenkins using Spring Boot Project template
 
-1. Repeat the above steps 1 - 11, select 'ASP.NET Core' Web service on EC2 when creating the new codestar template wizard.
+1. Repeat the above steps 1 - 11, select 'Java Spring' Web service on EC2 when creating the new codestar template wizard.
 
  ![CodeStar Project Details](screens/javaspringboot/10.png "CodeStar Project Details")
 
