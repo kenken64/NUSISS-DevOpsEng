@@ -44,7 +44,7 @@ All of AWS services in this tutorial should be in the same region Singapore or S
 
 1. Capture screenshot of the successful build, save it along as part of your submission.
 
-1. In the lower right side of the Project setup page, the application endpoint will show up when the deployment has finished loading. You can check the deployment status in the Continuous deployment section.
+1. In the upper right side of the Project setup page, the application endpoint will show up when the deployment has finished loading. You can check the deployment status in the Continuous deployment section.
 
 1. Click the Application Endpoint when it is ready and you should be able to see the JSON response of your Flask API.
 
