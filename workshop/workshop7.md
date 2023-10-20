@@ -123,17 +123,7 @@ All of AWS services in this tutorial should be in the same region Singapore or S
 
 ![CodeStar Project Details](screens/javaspringboot/8.png "CodeStar Project Details")
 
-5. Capture screenshot of the successful build, save it along as part of your submission.
-
-6. Open your preferred editor and access the Spring Boot project. Modify the Spring Boot test case located in the namespace com.aws.codestar.projecttemplates.controller.HelloWorldControllerTest. Update the EXPECTED_RESPONSE_VALUE to say "Hello AWS CodeStar!!".
-
-7. Commit your codes to the github and watch how the build will fail.
-
-8. Capture screenshot of the failed build, save it along as part of your submission.
-
-9. Stabilize the test case before dockerized the app. Revert back the changes back to a successful build.
-
-10. Create a Dockerfile on the root of the project directory for this Spring Boot project. *Hint shown  during lecturer day3.
+5. Create a Dockerfile on the root of the project directory for this Spring Boot project. *Hint shown  during lecturer day3.
 
 ```
 FROM tomcat:latest
@@ -147,9 +137,34 @@ CMD ["catalina.sh", "run"]
 
 ```
 
-11. Commit the Dockefile into your github repository.
+6. Commit the Dockefile into your github repository.
 
-12. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login before pushing the image to Docker Hub.
+7. Capture screenshot of the successful build, save it along as part of your submission.
+
+8. Open your preferred editor and access the Spring Boot project. Modify the Spring Boot test case located in the namespace com.aws.codestar.projecttemplates.controller.HelloWorldControllerTest. Update the EXPECTED_RESPONSE_VALUE to say "Hello AWS CodeStar!!".
+
+9. Commit your codes to the github and watch how the build will fail.
+
+10. Capture screenshot of the failed build, save it along as part of your submission.
+
+11. Stabilize the test case before dockerized the app. Revert back the changes back to a successful build.
+
+12. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login on the terminal switching to jenkins username before pushing the image to Docker Hub.
+
+```
+$ sudo usermod -aG docker jenkins
+$ sudo usermod -aG docker bitnami
+  
+```
+
+13. Restart the EC2 jenkins instance
+
+14. Perform dockerlogin on the terminal under the jenkins username for the publication of the image to the hub
+
+```
+$ sudo su - jenkins
+$ docker login
+```
 
 ![CodeStar Project Details](screens/javaspringboot/1.png "CodeStar Project Details")
 
@@ -157,11 +172,11 @@ CMD ["catalina.sh", "run"]
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
-13. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+15. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
 
 ![CodeStar Project Details](screens/javaspringboot/3.png "CodeStar Project Details")
 
-14. Try accessing the app via the end point created from the CodeStar dashboard.
+16. Try accessing the app via the end point created from the CodeStar dashboard.
 
 ## Design and proposed CI CD pipeline for StoolViriiDetect Pte Ltd COVID19 - Internet of Things Project.
 
