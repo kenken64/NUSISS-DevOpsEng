@@ -631,3 +631,8 @@ Test your deployment by browsing to http://```<ip-address>```
 ### Submission
 When you have completed this workshop, commit your work to the repository.
 The instructor will clone your repository at the end
+
+## Solution
+
+https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
+
