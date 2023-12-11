@@ -582,8 +582,49 @@ terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/r
 ## Ansible (b) - Optional
 
 
-The objective of this workshop is to automate the installation of Code-Server
-on a server
+The objective of this workshop is to automate the installation of Code-Server on a server
+
+### Workshop
+Provision a Ubuntu server for this exercise. You can use Terraform or manually
+provision an instance on DigitalOcean’s console.
+Once you have provisioned, note the IP address, root user and SSH keys used.
+Use these information to create an inventory file, inventory.yaml.
+Write a playbook that will use the inventory.yaml file to configure the
+server. The playbook should perform the following tasks
+
+• Update the /lib/systemd/system/code-server.service file
+with the code server password; change the following line
+
+
+```
+Environment=PASSWORD=__PLACEHOLDER__
+```
+with the password, assuming that the password is mypassword
+
+```
+Environment=PASSWORD=”mypassword”
+```
+
+• Update the /etc/nginx/sites-available/code-server.conf
+file with the domain code-<ipv4_address>.nip.io; change the line
+with server_name to
+
+```
+server_name code-<ipv4_address>.nip.io;
+
+```
+• Use systemd module to restart nginx and code-server services. You
+must also perform a daemon reload viz. set daemon_reload to yes.
+
+
+### Test
+Test your deployment by browsing to http://```<ip-address>```
+
+### Submission
+When you have completed this workshop, commit your work to the repository.
+The instructor will clone your repository at the end
+
+### Setup
 
 1. Access your Digital Ocean account.
 
@@ -697,7 +738,7 @@ sudo apt install ansible
 ansible --version
 ```
 
-### Setup
+### Implementation
 a. Create a directory called workshop02 in your course repository.
 
 b. Read Step 1 and Step 2 of the following blog
@@ -868,40 +909,6 @@ output codeserver_ip {
 
 ```
 
-### Workshop
-Provision a Ubuntu server for this exercise. You can use Terraform or manually
-provision an instance on DigitalOcean’s console.
-Once you have provisioned, note the IP address, root user and SSH keys used.
-Use these information to create an inventory file, inventory.yaml.
-Write a playbook that will use the inventory.yaml file to configure the
-server. The playbook should perform the following tasks
-
-• Update the /lib/systemd/system/code-server.service file
-with the code server password; change the following line
-
-
-```
-Environment=PASSWORD=__PLACEHOLDER__
-```
-with the password, assuming that the password is mypassword
-
-```
-Environment=PASSWORD=”mypassword”
-```
-
-• Update the /etc/nginx/sites-available/code-server.conf
-file with the domain code-<ipv4_address>.nip.io; change the line
-with server_name to
-
-```
-server_name code-<ipv4_address>.nip.io;
-
-```
-• Use systemd module to restart nginx and code-server services. You
-must also perform a daemon reload viz. set daemon_reload to yes.
-
-
-
 ```
 terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "codeserver_password=password123456"
 ```
@@ -914,12 +921,6 @@ terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/r
 ansible-playbook playbook.yaml -i inventory.yaml
 ```
 
-### Test
-Test your deployment by browsing to http://```<ip-address>```
-
-### Submission
-When you have completed this workshop, commit your work to the repository.
-The instructor will clone your repository at the end
 
 ## Solution Repository URL
 
