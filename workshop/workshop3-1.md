@@ -767,20 +767,6 @@ server {
 e. Create an ansible template file code-server.service.j2
 
 ```
-server {
-    listen 80;
-    listen [::]:80;
-
-    server_name {{codeserver_domain}} {{ansible_host}};
-
-    location / {
-        proxy_pass http://127.0.0.1:8080/;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection upgrade;
-        proxy_set_header Accept-Encoding gzip;
-    }
-}
-root@ubuntu-s-1vcpu-512mb-10gb-sgp1-01:~/workshop02# cat code-server.service.j2
 [Unit]
 Description=code-server
 After=nginx.service
