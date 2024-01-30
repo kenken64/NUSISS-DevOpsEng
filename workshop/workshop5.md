@@ -168,7 +168,7 @@ services:
     web:
       build:
         context: .
-        dockerfile: Dockerfile.test
+        dockerfile: Dockerfile
       ports:
         - "3000:3000"
       volumes:
