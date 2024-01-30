@@ -190,7 +190,25 @@ services:
 $ docker compose stop
 ```
 
-8. Rebuild and Start the docker container using docker compose, in order to incorporate the test service.
+8. Let's continue building a multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
+
+```
+# builder phase
+FROM node:14-alpine as builder
+
+WORKDIR '/app'
+
+COPY package.json ./
+RUN npm install
+COPY ./ ./
+RUN npm run build
+
+FROM nginx
+EXPOSE 80
+COPY --from=builder /app/build /usr/share/nginx/html
+```
+
+9. Rebuild and Start the docker container using docker compose, in order to incorporate the test service.
 
 ```
 $ docker compose up -d --build
@@ -209,24 +227,6 @@ $ docker compose stop
 
 ```
 
-
-9. Let's continue building a multi step build process, different base images, create a Dockerfile file and copy paste the below to the Dockerfile
-
-```
-# builder phase
-FROM node:14-alpine as builder
-
-WORKDIR '/app'
-
-COPY package.json ./
-RUN npm install
-COPY ./ ./
-RUN npm run build
-
-FROM nginx
-EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
-```
 
 10. Build the multi phase container setup, DO NOT terminate this process. Wait till the following show up Successfully built ```<image id>```
 
