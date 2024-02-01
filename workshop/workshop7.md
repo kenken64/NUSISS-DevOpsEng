@@ -149,7 +149,8 @@ CMD ["catalina.sh", "run"]
 
 11. Stabilize the test case before dockerized the app. Revert back the changes back to a successful build.
 
-12. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login on the terminal switching to jenkins username before pushing the image to Docker Hub.
+12. Install Docker binaries on the jenkins server. (Workshop2)
+13. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login on the terminal switching to jenkins username before pushing the image to Docker Hub.
 
 ```
 $ sudo usermod -aG docker jenkins
@@ -157,9 +158,9 @@ $ sudo usermod -aG docker bitnami
   
 ```
 
-13. Restart the EC2 jenkins instance
+14. Restart the EC2 jenkins instance
 
-14. Perform dockerlogin on the terminal under the jenkins username for the publication of the image to the hub
+15. Perform dockerlogin on the terminal under the jenkins username for the publication of the image to the hub
 
 ```
 $ sudo su - jenkins
@@ -172,11 +173,11 @@ $ docker login
 
 ![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
 
-15. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+16. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
 
 ![CodeStar Project Details](screens/javaspringboot/3.png "CodeStar Project Details")
 
-16. Try accessing the app via the end point created from the CodeStar dashboard.
+17. Try accessing the app via the end point created from the CodeStar dashboard.
 
 ## Design and proposed CI CD pipeline for StoolViriiDetect Pte Ltd COVID19 - Internet of Things Project.
 
