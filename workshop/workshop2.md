@@ -1,332 +1,165 @@
-# S-DOEA - Workshop 1 - Github Workshop
+# S-DOEA - Workshop 2 - Jenkins Installation
 
-## Pre-requisites 
-* Individual workshop
-* [Github](https://github.com/)/[Gitlab](https://about.gitlab.com/) account
-* Download & Install Git for Windows https://git-scm.com/download/win
-* Github SSH Windows 10 Setup https://dev.to/bdbch/setting-up-ssh-and-git-on-windows-10-2khk
-* Github SSH MacOS Setup https://bit.ly/2Gndh54
+## Pre-requisites for Cloud installation
+* AWS NUS ISS account
+* Jupyter Notebbok Password will be provided during class
+* Access to this url (Jump host) : 
+http://159.223.95.85:8889/tree?token=dfe785d0a6acd4468a63405c680dd8c858961e69672fff6e
+* AWS Region: Singapore
 
-### For mac users please use brew 
-
-Homebrew (http://brew.sh/) is another alternative to install Git. If you have Homebrew installed, install Git via
-
-```
-brew install git
-```
-
-## Instructions
-
-1. Create/Sign up for a Github account
+### Step by step installation
+1. Navigate to the AWS services link top left corner beside the AWS logo
 <br>
-<img style="width:350px;height:100px; float: center;" src="./screens/git1.png"/>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins24.png"/>
 <br>
 
-2. Create a working directory on your machine
-
-```
-mkdir Projects
-
-cd Projects
-
-mkdir ProjectA
-
-cd ProjectA
-
-```
-3. Initialize the working directory as git enable project
-
-```
-git init
-```
-
-4. Go to the Github dashboard, add a new repository
+2. Search/Select EC2 under the compute category
+3. Launch a new instance, search 'bitnami jenkins' on the marketplace 
 <br>
-<img style="width:350px;height:100px; float: center;" src="./screens/git2.png"/>
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2.png"/>
 <br>
 
-
-5. Create a repo on Github, do not initialize README.md
-<br>
-<img style="width:350px;height:100px; float: center;" src="./screens/git3.png"/>
+4. Search 'bitnami jenkins' on AWS marketplace click on Select to create the instance
 <br>
 
-6. Associate the local working directory with the remote repository
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2-1.png"/>
+<img style="width:350px;height:100px; float: center;" src="./screens/aws_ec2_2.png"/>
 
-```
-git remote add origin https://github.com/<your github username>/ProjectA.git
-```
 
+5. On the next page a pricing details page will be shown. Click continue
 <br>
-<img style="width:350px;height:100px; float: center;" src="./screens/git4.png"/>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins3.png"/>
 <br>
 
-7. Issue the following command to to verify the association is correct
-
-```
-git remote -v
-
-origin	https://github.com/<your github username>/ProjectA.git (fetch)
-origin	https://github.com/<your github username>/ProjectA.git (push)
-```
-
-8. Create a README.md documentation as the initial file for your newly created repository
-
-```
-echo "# ProjectA" >> README.md
-```
-
-9. Create a html file index.html file with following content place on the project A directory
-
-```
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
-</html>
-```
-
-10. Add the files to the staging index
-
-```
-git add .
-```
-
-11. Confirm all the changes made to the working directory and ready to commit to the remote repository by issuing the following command. argument -m is comment to every check in of the source codes.
-
-```
-git commit -m "new"
-```
-
-12. Check in the changes to the remote repository
-
-```
-git push origin master
-
-Counting objects: 7, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (7/7), done.
-Writing objects: 100% (7/7), 510.18 KiB | 17.59 MiB/s, done.
-Total 7 (delta 4), reused 0 (delta 0)
-remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
-To https://github.com/<your github username>/ProjectA.git
-   84e356d..b6c5251  master -> master
-```
-
-13. Verify all the files are pushed to the github repo after the above steps. Use your browser navigate to the https://github.com/kenken64/ProjectA.git (replace the github userid with yours)
-
-14. Next on your terminal/command prompt let us create a branch in git.
-
-```
-git checkout -b enhancementA
-```
-
-15. In order to check the current branch run the below command, the terminal should see * pointed to the newly created branch name
-
-```
-git branch
-```
-
-16. Create a new file for this this newly created branch, index2.html
-
-```
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
-</html>
-```
-
-17. Add the new file created for the new branch to the remote repository
-
-```
-git add .
-```
-
-```
-git commit -m "new enhancement"
-```
-
-```
-git push origin enhancementA -u
-```
-
-18. Navigate to the project A github url https://github.com/kenken64/ProjectA.git check the branch is created. (Replace the github userid with yours)
-
-19. Create a pull request for your newly created branch
-
-<img style="width:350px;height:100px; float: center;" src="./screens/git6.png"/>
-
-20. Merge your newly created branch with your master branch.
-
-
-** Whenever there is new files created or any changes to the current codebase if the developer would like to check in their codes please run step 8,9,10 again. For those of you not very comfortable with command line there are many IDE Git integration software out there. See below screen capture for Visual Studio Code Git Plugin. Also Git GUI Standalone software by Atlassian https://www.sourcetreeapp.com/
-
+6. Choose an instance type which is  t2 micro/small (free tier). Click Next Configure Instance details
 <br>
-<img style="width:350px;height:100px; float: center;" src="./screens/git5.png"/>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins4.png"/>
+<br>
+
+7. Landed on a configure instance details page and by default nothing is require to be configure on this page. Click Add Storage
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins5.png"/>
+<br>
+
+8. On the configure storage page change 10GB to 15GB. Try not add more mount point overall AWS only give 30GB per instance on free tier.
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins6.png"/>
+<br>
+
+9. Define a tag for your jenkins server click add tag on the key field specify 'name' and value as 'project_name_ubuntu_jenkins'. Click Next
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins7.png"/>
+<br>
+
+10.  Configure security group as default no addition configuration is needed on this page
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins8.png"/>
+<br>
+
+11. Upon launching the instance AWS require us to create a new pair of private key to be use to access the instance.
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins11.png"/>
 <br>
 
 
-For branching, tagging and etc please visit the following link https://github.com/kenken64/NUSISS-DevOpsEng/blob/master/git/README.md
-
-## Optional Workshop
-
-21. Let's try out git merge with a typical combining multiple branches of commits from master and feature branches
+12. Review all the configuration and click on Launch
 
 
+13. After creating the private key, a new instance will be launch. Kindly wait for a few minutes. Upon successful creation of the instance your instance is now ready to be use
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins12.png"/>
+<br>
 
-<img style="width:350px;height:100px; float: center;" src="./screens/git7.png"/>
+14. Click on the instance id, the look out for instance status where it is running.
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
+<br>
 
-22. Fork the following repository https://github.com/kenken64/gitmerge-workshop to your own github account
+15. Access the Jupyter notebook URL  
+http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2
+. Upload the pem to the root directory of the jupyter notebook.
 
-23. The outcome of this optional workshop is to merge all the feature and master branches changes to a new master combined version
+<br>
+<img style="float: center;" src="./screens/upload_pem.png">
+<br> 
 
-```
-git branch
+<br>
+<img style="float: center;" src="./screens/upload_pem2.png">
+<br> 
 
-*master
-```
-* Make sure your current branch is master, make changes to the index.html for commit 1
 
-```
-nano index.html
-```
+You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into the respective EC2 bitnami instance.
+ 
 
-```
-......
-commit 1
-```
 
-* Push the commit 1 to the master branch
+<br>
+<img style="float: center;" src="./screens/upload_pem3.png">
+<br> 
 
-```
-git add .
-git commit -m "commit 1"
-git push origin master
-```
-
-Make changes to the index.html for commit 2
+Perform this command to logon into the bitnami server, make sure the pem is on the current directory.
 
 ```
-nano index.html
+$ ls -lrt <pem filename>
+$ chmod 400 <pem filename>
+$ ssh -i <pem filename> bitnami@<aws ec2 hostname>
+```
+Upon logging into the EC2 instance, change directory to /home/bitnami
+```
+$ cd /home/bitnami 
 ```
 
-```
-......
-commit 1
-commit 2
-```
-
-* Push the commit 2 to the master branch
+16. Server will prompt client to accept fingerprint signature before the terminal is allow to logon. Type 'Yes' and press enter
 
 ```
-git add .
-git commit -m "commit 2"
-git push origin master
+The authenticity of host '52.221.182.172 (52.221.182.172)' can't be established.
+ECDSA key fingerprint is SHA256:XHAuxI+mgND3yKJosxgTGXRskXCOehc5kCkA+KztOI4.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '52.221.182.172' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1085-aws x86_64)
+       ___ _ _                   _
+      | _ |_) |_ _ _  __ _ _ __ (_)
+      | _ \ |  _| ' \/ _` | '  \| |
+      |___/_|\__|_|_|\__,_|_|_|_|_|
+
+  *** Welcome to the Bitnami Jenkins 2.176.1-0 ***
+  *** Documentation:  https://docs.bitnami.com/aws/apps/jenkins/ ***
+  ***                 https://docs.bitnami.com/aws/ ***
+  *** Bitnami Forums: https://community.bitnami.com/ ***
 ```
 
-Branch out from commit 2
-
-
-* Push the master branch's commit 2 to the feature1 branch
+17. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
 
 ```
-git checkout -b feature1
-git add .
-git commit -m "create feature 1 branch"
-git push origin feature1
+more bitnami_credentials
 ```
-
-* Create another feature2 branch from commit 2 
+As result the more command will show the default username and password on your terminal screen
 
 ```
-git checkout -b feature2
+Welcome to the Bitnami Jenkins Stack
+
+******************************************************************************
+The default username and password is 'user' and 'Dh9b6mi4AQOF'.
+******************************************************************************
+
+You can also use this password to access the databases and any other component the stack in
+cludes.
+
+Please refer to https://docs.bitnami.com/ for more details.
 ```
 
-* Create new index5.html with any content. Save the file
+18. Retrieve ip4 public IP address or the DNS name from the AWS jenkins instance console panel
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins14.png"/>
+<br>
 
-```
-nano index5/d
-.html
-```
+19. Launch the web browser then access the jenkins web admin app.
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins15.png"/>
+<br>
 
-* Push the master branch's commit 2 to the feature2 branch
+20. Login to Jenkins with the username and password retrieve from the bitnami credentials flat file
+<br>
+<img style="width:350px;height:100px; float: center;" src="./screens/jenkins16.png"/>
+<br>
 
-```
-git add .
-git commit -m "feature 2"
-git push origin feature2
-```
-
-
-Switch back to the master branch to the latest commit
-
-```
-git checkout master
-```
-
-Merge feature2 branch into master branch, where feature1 is being ignored. 
-```
-git merge --squash feature2
-```
-
-24. Issue a commit command to stage the changes
-
-```
-git commit -m "feature2 and master combined with commit 1,2,3"
-```
-
-25. Push the final changes to the master branch
-
-```
-git push origin master -u
-```
-
-26. Edit the index2.html on the master branch, add a new paragraph right below hello world
-
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hello World</p>
-    <p>Hello World 2</p>
-</body>
-</html>
-```
-
-
-27. Undo the mistakes done on the index2.html
-
-```
-git status
-```
-
-```
-git restore index2.html
-```
-
-```
-git status
-```
-
-
-
-## Reference
-* Software sourcetree - https://www.sourcetreeapp.com/
-* Eclipse with Git - https://www.vogella.com/tutorials/EclipseGit/article.html
-* Visual Studio Code - https://scotch.io/tutorials/git-integration-in-visual-studio-code
-* Git Tower - https://www.git-tower.com/windows
-* Undo your git mistakes - https://www.youtube.com/watch?v=lX9hsdsAeTk
+21. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
