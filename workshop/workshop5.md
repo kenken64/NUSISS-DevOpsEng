@@ -4,7 +4,6 @@
 * AWS Account 
 * Dockerhub Account
 * Github Account
-* Access to the following URL : [http://159.223.95.85:8889/tree?token=dfe785d0a6acd4468a63405c680dd8c858961e69672fff6e](http://159.223.95.85:8889/tree?token=dfe785d0a6acd4468a63405c680dd8c858961e69672fff6e)
 * Reference material - https://gitlab.com/kenken64/docker-3tier-ecs 
 * AWS Region: Singapore
 
