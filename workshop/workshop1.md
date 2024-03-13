@@ -2,9 +2,6 @@
 
 ## Pre-requisites for Cloud installation
 * AWS NUS ISS account
-* Jupyter Notebbok Password will be provided during class
-* Access to this url (Jump host) : 
-http://159.223.95.85:8889/tree?token=dfe785d0a6acd4468a63405c680dd8c858961e69672fff6e
 * AWS Region: Singapore
 
 ### Step by step installation
@@ -75,59 +72,13 @@ http://159.223.95.85:8889/tree?token=dfe785d0a6acd4468a63405c680dd8c858961e69672
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Access the Jupyter notebook URL  
-http://159.223.95.85:8888/tree?token=394c70a059c71ff13c44a5d6b86865e563515339a8d9aaf2
-. Upload the pem to the root directory of the jupyter notebook.
-
-<br>
-<img style="float: center;" src="./screens/upload_pem.png">
-<br> 
-
-<br>
-<img style="float: center;" src="./screens/upload_pem2.png">
-<br> 
-
-
-You will need the public DNS and the private key (PEM) file that have been downloaded to SSH into the respective EC2 bitnami instance.
- 
-
-
-<br>
-<img style="float: center;" src="./screens/upload_pem3.png">
-<br> 
-
-Perform this command to logon into the bitnami server, make sure the pem is on the current directory.
-
-```
-$ ls -lrt <pem filename>
-$ chmod 400 <pem filename>
-$ ssh -i <pem filename> bitnami@<aws ec2 hostname>
-```
-Upon logging into the EC2 instance, change directory to /home/bitnami
+15. Upon logging into the EC2 instance, change directory to /home/bitnami
 ```
 $ cd /home/bitnami 
 ```
 
-16. Server will prompt client to accept fingerprint signature before the terminal is allow to logon. Type 'Yes' and press enter
 
-```
-The authenticity of host '52.221.182.172 (52.221.182.172)' can't be established.
-ECDSA key fingerprint is SHA256:XHAuxI+mgND3yKJosxgTGXRskXCOehc5kCkA+KztOI4.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '52.221.182.172' (ECDSA) to the list of known hosts.
-Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1085-aws x86_64)
-       ___ _ _                   _
-      | _ |_) |_ _ _  __ _ _ __ (_)
-      | _ \ |  _| ' \/ _` | '  \| |
-      |___/_|\__|_|_|\__,_|_|_|_|_|
-
-  *** Welcome to the Bitnami Jenkins 2.176.1-0 ***
-  *** Documentation:  https://docs.bitnami.com/aws/apps/jenkins/ ***
-  ***                 https://docs.bitnami.com/aws/ ***
-  *** Bitnami Forums: https://community.bitnami.com/ ***
-```
-
-17. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
+16. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
 
 ```
 more bitnami_credentials
@@ -147,19 +98,19 @@ cludes.
 Please refer to https://docs.bitnami.com/ for more details.
 ```
 
-18. Retrieve ip4 public IP address or the DNS name from the AWS jenkins instance console panel
+17. Retrieve ip4 public IP address or the DNS name from the AWS jenkins instance console panel
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins14.png"/>
 <br>
 
-19. Launch the web browser then access the jenkins web admin app.
+18. Launch the web browser then access the jenkins web admin app.
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins15.png"/>
 <br>
 
-20. Login to Jenkins with the username and password retrieve from the bitnami credentials flat file
+19. Login to Jenkins with the username and password retrieve from the bitnami credentials flat file
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins16.png"/>
 <br>
 
-21. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
+20. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
