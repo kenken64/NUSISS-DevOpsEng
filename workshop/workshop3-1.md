@@ -249,9 +249,9 @@ export DO_PAT=<replace this with the API key>
 
 To download and install the Docker Machine binary, type:
 
-```
-wget https://github.com/docker/machine/releases/download/v0.14.0/docker-machine-$(uname -s)-$(uname -m)
 
+```
+curl -O "https://gitlab-docker-machine-downloads.s3.amazonaws.com/v0.16.2-gitlab.19/docker-machine-Linux-x86_64"
 ```
 The name of the file should be docker-machine-Linux-x86_64. Rename it to docker-machine to make it easier to work with:
 
