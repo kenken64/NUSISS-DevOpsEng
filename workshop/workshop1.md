@@ -76,7 +76,7 @@
 ```
 $ ls -lrt <location of your pem filename>
 $ chmod 400 <location of your pem filename>
-$ ssh -i <pem filename> bitnami@<AWS jenkins server Public IP>
+$ ssh -i <location of your pem filename> bitnami@<AWS jenkins server Public IP>
 
 ```
 
