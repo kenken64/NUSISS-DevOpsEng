@@ -72,7 +72,7 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Use Git Bash to log into the newly created server. Ensure to replace the placeholder with the corresponding values enclosed in <>
+15. Use Git Bash on your local environment to log into the newly created server. Ensure to replace the placeholder with the corresponding values enclosed in <>
 ```
 $ ls -lrt <location of your pem filename>
 $ chmod 400 <location of your pem filename>
