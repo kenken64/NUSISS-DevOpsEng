@@ -72,13 +72,21 @@
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins13.png"/>
 <br>
 
-15. Upon logging into the EC2 instance, change directory to /home/bitnami
+15. Use Git Bash to log into the newly created server. Ensure to replace the placeholder with the corresponding values enclosed in <>
+```
+$ ls -lrt <location of your pem filename>
+$ chmod 400 <location of your pem filename>
+$ ssh -i <pem filename> bitnami@<AWS jenkins server Public IP>
+
+```
+
+16. Upon logging into the EC2 instance, change directory to /home/bitnami
 ```
 $ cd /home/bitnami 
 ```
 
 
-16. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
+17. Look for the username and password under the bitnami_credentials file. View the bitnami_credentials file with the following command
 
 ```
 more bitnami_credentials
@@ -98,19 +106,19 @@ cludes.
 Please refer to https://docs.bitnami.com/ for more details.
 ```
 
-17. Retrieve ip4 public IP address or the DNS name from the AWS jenkins instance console panel
+18. Retrieve ip4 public IP address or the DNS name from the AWS jenkins instance console panel
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins14.png"/>
 <br>
 
-18. Launch the web browser then access the jenkins web admin app.
+19. Launch the web browser then access the jenkins web admin app.
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins15.png"/>
 <br>
 
-19. Login to Jenkins with the username and password retrieve from the bitnami credentials flat file
+20. Login to Jenkins with the username and password retrieve from the bitnami credentials flat file
 <br>
 <img style="width:350px;height:100px; float: center;" src="./screens/jenkins16.png"/>
 <br>
 
-20. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
+21. Screenshot the jenkins dashboard page with the URL shown on the address bar. Save the screenshot to Luminus submission folder.
