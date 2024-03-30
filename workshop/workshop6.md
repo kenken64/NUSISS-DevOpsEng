@@ -143,6 +143,7 @@ $ git push origin githubcicd
 9. After a successful build, the application should be published to
     GitHub pages
 
+<img src="./screens/githubactions.png" >
 
 ## Bonus - Workshop
 
