@@ -198,7 +198,7 @@ ssh-keygen
 <br>
 
 <br>
-<img style="float: center;" src="./screens/ansible20.png">
+<img style="float: center;" src="./screens/Screenshot from 2024-04-18 09-12-57.png">
 <br>
 
 6. Install terraform IAC tool on the ubuntu server
