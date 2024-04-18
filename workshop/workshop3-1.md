@@ -234,7 +234,9 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 ```
 export DO_PAT=<replace this with the API key>
 ```
-
+<br>
+<img style="float: center;" src="./screens/Screenshot from 2024-04-18 09-29-02.png">
+<br>
 <br>
 <img style="float: center;" src="./screens/ansible23.png">
 <br>
