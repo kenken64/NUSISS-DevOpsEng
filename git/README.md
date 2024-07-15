@@ -542,3 +542,17 @@ ask your question in IRC.
 ### Git Workflow
 
 <img style="float: right;" src="./git6.png">
+
+### Git Merge vs Rebase vs Cherry Pick
+
+
+<img style="float: right;" src="./git_main.png">
+
+
+<img style="float: right;" src="./git_merge.png">
+
+
+<img style="float: right;" src="./git_rebase.png">
+
+
+<img style="float: right;" src="./cherry_pick.png">
