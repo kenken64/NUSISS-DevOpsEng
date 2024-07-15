@@ -1,4 +1,4 @@
-### DevOps Maturity Checklist Survey
+### DevSecOps Maturity Checklist Survey
 
 https://forms.gle/zUSeKCGSsXRyWvSR8
 
