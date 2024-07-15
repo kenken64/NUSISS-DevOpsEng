@@ -1,183 +1,339 @@
 # S-DOEA - Workshop 7 - End to end DevOps Engineering and Automation
 
-## AWS Codestar with Python Flask Project
 
-At the end of this tutorial, you will be able to push your code changes to Github and run it in an EC2 instance deployed AWS CodeBuild.
-
-All of AWS services in this tutorial should be in the same region Singapore or Sydney (ap-southeast-1 or ap-southeast-2).
-
-## Pre-requisites
-- Team workshop
-- Github Account
-- AWS Account
-- AWS Region : Singapore/Sydney (ap-southeast-1/2)
-- AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair. *There is no need for us to ssh into a machine here so we can skip the `chmod` step in the guide.*
-
-## Step by step guide - basic CodeStar setup
-
-1. Open [AWS Codestar](https://console.aws.amazon.com/codestar/home).
-
-1. Click "Create a new project".
-
-1. Choose Python (Flask) Web server / Amazon EC2.
-
-1. Enter your Project Details.
-
-1. Choose GitHub as your repository.
-
-1. Click "Connect to GitHub" button.
-
-    ![CodeStar Project Details](screens/codestar-project-details.png "CodeStar Project Details")
-
-1. Enter your GitHub reporitory details. Select repo as public. 
-
-    ![GitHub repository details](screens/codestar-github-connect.png "GitHub repository details")
-
-1. After reviewing the project details, click "Create Project". This will automatically create the GitHub repository for you. You can visit GitHub afterwards to see your repository.
-
-1. Choose the keypair that you have created in the Pre-Requisites as you Key Pair.
-
-1. Click "Next" button, you will be redirected to the Project setup page. Try to refresh the page to see if the project setup has finished.
-
-    ![Project loading](screens/setup-loading.png "Project loading")
+## Ansible
 
 
-1. Capture screenshot of the successful build, save it along as part of your submission.
+The objective of this workshop is to automate the installation of Code-Server on a server
 
-1. In the upper right side of the Project setup page, the application endpoint will show up when the deployment has finished loading. You can check the deployment status in the Continuous deployment section.
+### Workshop
+Provision a Ubuntu server for this exercise. You can use Terraform or manually
+provision an instance on DigitalOcean’s console.
+Once you have provisioned, note the IP address, root user and SSH keys used.
+Use these information to create an inventory file, inventory.yaml.
+Write a playbook that will use the inventory.yaml file to configure the
+server. The playbook should perform the following tasks
 
-1. Click the Application Endpoint when it is ready and you should be able to see the JSON response of your Flask API.
-
-1. Update your `helloworld/application.py` file to change your application's output using GitHub's web interface. Observe the deployment pipeline and refresh your Application Endpoint. You can change the following line under the `get()` method:
-
-    ```
-    return Response(json.dumps({'Output': 'Hello World from Codestar'}), mimetype='application/json', status=200)
-    ```
-1. Capture screenshot of the failed build, save it along as part of your submission.
-
-
-## AWS Codestar integrate with Jenkins using Spring Boot Project template
-
-1. Repeat the above steps 1 - 11, select 'Java Spring' Web service on EC2 when creating the new codestar template wizard.
-
- ![CodeStar Project Details](screens/javaspringboot/10.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/11.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/12.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/13.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/14.png "CodeStar Project Details")
-
-
-![CodeStar Project Details](screens/javaspringboot/15.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/16.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/17.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/18.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/9.png "CodeStar Project Details")
-
-2. Logon to your own AWS Jenkins as below:-
-
-
-* Your own AWS Jenkins Server 
-    - url : http://```<your AWS Jenkins server's public ip address>```/jenkins/
-
-* Install all the required plugins. Lecturer will provide the plugins pdf in the class. 
-
-* Setup the system configuration according to the screenshot
-
-![CodeStar Project Details](screens/javaspringboot/19.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/20.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/21.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/22.png "CodeStar Project Details")
-   
-
-3. Create a new freestyle project item with following naming convention ```'aws_javaspringboot_group name>'```
-
-4. Configure the jenkins job as below
-
-    ![CodeStar Project Details](screens/javaspringboot/23.png "CodeStar Project Details")
-
-    ![CodeStar Project Details](screens/javaspringboot/24.png "CodeStar Project Details")
-
-    ![CodeStar Project Details](screens/javaspringboot/25.png "CodeStar Project Details")
-
- -  Configure SCM and the build schedule trigger
- - Create 5 shell execute under the pre jenkins action
-
-![CodeStar Project Details](screens/javaspringboot/4.png "CodeStar Project Details")
-   
-![CodeStar Project Details](screens/javaspringboot/5.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/6.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/7.png "CodeStar Project Details")
-
-![CodeStar Project Details](screens/javaspringboot/8.png "CodeStar Project Details")
-
-5. Create a Dockerfile on the root of the project directory for this Spring Boot project. *Hint shown  during lecturer day3.
-
-```
-FROM tomcat:latest
-
-ADD target/ROOT.war /usr/local/tomcat/webapps/
-
-EXPOSE 8080
-
-CMD ["catalina.sh", "run"]
+• Update the /lib/systemd/system/code-server.service file
+with the code server password; change the following line
 
 
 ```
-
-6. Commit the Dockefile into your github repository.
-
-7. Capture screenshot of the successful build, save it along as part of your submission.
-
-8. Open your preferred editor and access the Spring Boot project. Modify the Spring Boot test case located in the namespace com.aws.codestar.projecttemplates.controller.HelloWorldControllerTest. Update the EXPECTED_RESPONSE_VALUE to say "Hello AWS CodeStar!!".
-
-9. Commit your codes to the github and watch how the build will fail.
-
-10. Capture screenshot of the failed build, save it along as part of your submission.
-
-11. Stabilize the test case before dockerized the app. Revert back the changes back to a successful build.
-
-12. Install Docker binaries on the jenkins server. (Workshop4)
-13. Set up the pre-build step in your Jenkins configuration to push the project's image to DockerHub. Use your DockerHub username as the prefix for the image tag, and provide DockerHub credentials. If you face permission issues, ensure that the Jenkins Unix user has the necessary Docker permissions. Additionally, perform a Docker login on the terminal switching to jenkins username before pushing the image to Docker Hub.
+Environment=PASSWORD=__PLACEHOLDER__
+```
+with the password, assuming that the password is mypassword
 
 ```
-$ sudo usermod -aG docker jenkins
-$ sudo usermod -aG docker bitnami
-  
+Environment=PASSWORD=”mypassword”
 ```
 
-14. Restart the EC2 jenkins instance
-
-15. Perform dockerlogin on the terminal under the jenkins username for the publication of the image to the hub
+• Update the /etc/nginx/sites-available/code-server.conf
+file with the domain code-<ipv4_address>.nip.io; change the line
+with server_name to
 
 ```
-$ sudo su - jenkins
-$ docker login
+server_name code-<ipv4_address>.nip.io;
+
+```
+• Use systemd module to restart nginx and code-server services. You
+must also perform a daemon reload viz. set daemon_reload to yes.
+
+
+### Test
+Test your deployment by browsing to http://```<ip-address>```
+
+### Submission
+When you have completed this workshop, commit your work to the repository.
+The instructor will clone your repository at the end
+
+### Setup
+
+1. Access your Digital Ocean account.
+
+
+2. Create a Ubuntu Droplet 
+
+<br>
+<img style="float: center;" src="./screens/ansible11.png">
+<br>
+
+ * Select Singapore as region
+ * Select Ubuntu as the server Image v20.04 x64
+
+<br>
+<img style="float: center;" src="./screens/ansible12.png">
+<br>
+
+* Select cost saving server type (6 USD)
+
+<br>
+<img style="float: center;" src="./screens/ansible13.png">
+<br>
+
+* Choose the SSH authentication method and generate a fresh SSH key pair. Click the "New SSH Key" button, then follow the instructions provided on the right-hand side. Paste the contents of the "cat" command into the Digital Ocean text area.
+
+<br>
+<img style="float: center;" src="./screens/ansible14.png">
+<br>
+
+* Finalize the droplet
+
+<br>
+<img style="float: center;" src="./screens/ansible15.png">
+<br>
+
+3. Access the newly created ubuntu server
+
+```
+ssh root@<public ip address>
 ```
 
-![CodeStar Project Details](screens/javaspringboot/1.png "CodeStar Project Details")
+<br>
+<img style="float: center;" src="./screens/ansible16.png">
+<br>
 
-![CodeStar Project Details](screens/javaspringboot/2.png "CodeStar Project Details")
+4. Generate the PKI key pair on the logon server 
 
-![CodeStar Project Details](screens/docker_jenkins.jpg "CodeStar Project Details")
+```
+ssh-keygen
+```
 
-16. Capture screenshot of the successful docker build and also the image is being store on the dockerhub repo, save it along as part of your submission.
+<br>
+<img style="float: center;" src="./screens/ansible17.png">
+<br>
 
-![CodeStar Project Details](screens/javaspringboot/3.png "CodeStar Project Details")
+5. Add the public key content to the Digital Ocean account security section, name it as www-1
 
-17. Try accessing the app via the end point created from the CodeStar dashboard.
+<br>
+<img style="float: center;" src="./screens/ansible18.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/ansible19.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/ansible20.png">
+<br>
+
+6. Install terraform IAC tool on the ubuntu server
+
+```
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
+
+```
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
+
+```
+sudo apt update && sudo apt install terraform
+```
+
+
+7. Check the terraform version
+
+```
+terraform --version
+```
+<br>
+<img style="float: center;" src="./screens/ansible22.png">
+<br>
+
+8. Install Ansible on the Ubuntu instance
+
+```
+sudo apt-add-repository ppa:ansible/ansible
+
+sudo apt update
+
+sudo apt install ansible-core
+```
+
+<br>
+<img style="float: center;" src="./screens/Screenshot from 2023-12-11 14-18-17.png">
+<br>
+
+9. Check the ansible version
+
+```
+ansible --version
+```
+
+### Implementation
+a. Create a directory called workshop02 in your course repository.
+
+b. Read Step 1 and Step 2 of the following blog
+https://www.digitalocean.com/community/tutorials/how-to-set-up-the-
+code-server-cloud-ide-platform-on-ubuntu-20-04.
+
+c. Change directory into the workshop02 folder
+
+d. Create an ansible template file for server configuration. code-server.conf.j2
+
+```
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name {{codeserver_domain}} {{ansible_host}};
+
+    location / {
+        proxy_pass http://127.0.0.1:8080/;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+    }
+}
+```
+e. Create an ansible template file code-server.service.j2
+
+```
+[Unit]
+Description=code-server
+After=nginx.service
+
+[Service]
+Type=simple
+Environment=PASSWORD={{codeserver_password}}
+ExecStart=/usr/bin/code-server --bind-addr 127.0.0.1:8080 --user-data-dir /var/lib/code-server --auth password
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+f. Create a terraform template file inventory.yaml.tftpl
+
+```
+all:
+    vars:
+        ansible_connection: ssh
+        ansible_user: root
+        ansible_ssh_private_key: ${ssh_private_key}
+    hosts:
+        codeserver:
+            ansible_host: ${codeserver_ip}
+            codeserver_domain: ${codeserver_domain}
+            codeserver_password : ${codeserver_password}
+```
+
+g. Create a provider terraform script provider.tf
+
+```
+terraform {
+  required_providers {
+    digitalocean = {
+        source = "digitalocean/digitalocean"
+        version = "2.26.0"
+    }
+    local = {
+        source = "hashicorp/local"
+        version = "2.4.0"
+    }
+  }
+}
+
+provider digitalocean {
+    token = var.do_token
+}
+
+```
+
+h. Create a variables terraform script variables.tf
+
+```
+variable do_token {
+    type = string
+    sensitive = true
+}
+
+variable do_region {
+    type = string
+    default = "sgp1"
+}
+
+variable do_image {
+    type = string
+    default = "ubuntu-20-04-x64"
+}
+
+variable do_size {
+    type = string
+    default = "s-1vcpu-1gb"
+}
+
+variable do_ssh_key {
+    type = string
+    default = "www-1"
+}
+
+variable ssh_private_key {
+    type = string
+}
+
+variable codeserver_password {
+    type = string
+}
+
+```
+
+i. Create a resources terraform script resources.tf
+
+```
+#ssh key
+data "digitalocean_ssh_key" "www-1" {
+    name = var.do_ssh_key
+}
+
+resource "digitalocean_droplet" "codeserver" {
+    name = "codeserver"
+    image = var.do_image
+    region = var.do_region
+    size = var.do_size
+
+    ssh_keys = [ data.digitalocean_ssh_key.www-1.id ]
+}
+
+resource "local_file" "root_at_codeserver" {
+    filename = "root@${digitalocean_droplet.codeserver.ipv4_address}"
+    content = ""
+    file_permission = "0444"
+}
+
+resource "local_file" "inventory" {
+    filename = "inventory.yaml"
+    content = templatefile("inventory.yaml.tftpl",{
+        codeserver_ip = digitalocean_droplet.codeserver.ipv4_address
+        ssh_private_key = var.ssh_private_key
+        codeserver_domain = "code-server-${digitalocean_droplet.codeserver.ipv4_address}.nip.io"
+        codeserver_password = var.codeserver_password 
+    })
+    file_permission = "0444"
+}
+
+output codeserver_ip {
+    value =  digitalocean_droplet.codeserver.ipv4_address
+}
+
+```
+
+```
+terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "codeserver_password=password123456"
+```
+
+```
+terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "codeserver_password=password123456"
+```
+
+```
+ansible-playbook playbook.yaml -i inventory.yaml
+```
+
+
+## Solution Repository URL
+
+https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
+
 
 ## Design and proposed CI CD pipeline for StoolViriiDetect Pte Ltd COVID19 - Internet of Things Project.
 
