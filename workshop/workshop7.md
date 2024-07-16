@@ -336,65 +336,65 @@ https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 # Container scanning - Docker scout
 
-## Spin off a digital ocean ubuntu 22.04 instance
+## 1. Spin off a digital ocean ubuntu 22.04 instance
 
-## Setup docker scout cli
+## 2. Setup docker scout cli
  
  ```
 curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install-scout.sh
 
 sh install-scout.sh
  ```
-## Initital docker scout
+## 3. Initital docker scout
 
 ```
 docker scout init
 ```
 
-## Clone down the scout vulnerable demo backend server
+## 4. Clone down the scout vulnerable demo backend server
 
 ```
 git clone https://github.com/docker/scout-demo-server.git
 ```
 
-## Change to the working directory
+## 5. Change to the working directory
 
 ```
 cd scout-demo-service
 ```
 
 
-## Login to the docker repository (Dockerhub), kindly use the dockerhub credential
+## 6. Login to the docker repository (Dockerhub), kindly use the dockerhub credential
 
 ```
 docker login
 ```
 
-## Build the demo server docker image, replace the placeholder with your own dockerhub username
+## 7. Build the demo server docker image, replace the placeholder with your own dockerhub username
 
 ```
 docker build --push -t <dockerhub username>/scout-demo:v1 .
 ```
 
-## Enroll your account in order to enable the docker scout features
+## 8. Enroll your account in order to enable the docker scout features
 
 ```
 docker scout enroll <dockerhub username>
 ```
 
-## Enable your repo to be scan with docker scout
+## 9. Enable your repo to be scan with docker scout
 
 ```
 docker scout repo enable --org kenken64
 ```
 
-## Scan docker image with known vulnerabilities, filter only check with a certain package
+## 10. Scan docker image with known vulnerabilities, filter only check with a certain package
 
 ```
 docker scout cves --only-package express
 ```
 
-## Edit the package.json file by upgradeing the express library to specific version
+## 11. Edit the package.json file by upgradeing the express library to specific version
 
 ```
 "dependencies": {
@@ -402,25 +402,25 @@ docker scout cves --only-package express
 }
 ```
 
-## Reinstall the express library
+## 12. Reinstall the express library
 
 ```
 npm install
 ```
 
-## Rebuild the docker image 
+## 13. Rebuild the docker image 
 
 ```
 docker build --push -t <dockerhub username>/scout-demo:v2 .
 
 ```
 
-## Re-scan for known vulnerablities
+## 14. Re-scan for known vulnerablities
 ```
 docker scout cves --only-package express
 ```
 
-## Evaluate policy compliance within the containers
+## 15. Evaluate policy compliance within the containers
 
 ```
 docker scout config organization <dockerhub username>
@@ -430,28 +430,28 @@ docker scout config organization <dockerhub username>
 docker scout quickview
 ```
 
-## This will show you critical compliance issues
+## 16. This will show you critical compliance issues
 
-## Resolution to the above issues. Edit your Dockerfile
+## 17. Resolution to the above issues. Edit your Dockerfile
 ```
 CMD ["node", "/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-## Push the new docker image to the repository 
+## 18. Push the new docker image to the repository 
 
 ```
 docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo:v3 .
 
 ```
 
-## If the build did not push to the repository run the following command
+## 19. If the build did not push to the repository run the following command
 
 ```
 docker push <dockerhub username>/scout-demo:v3
 ```
 
-## View your docker scout dashboard
+## 20. View your docker scout dashboard
 
 
 
