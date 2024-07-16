@@ -336,15 +336,16 @@ https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 # Container scanning - Docker scout - Part 2
 
-## 1. Spin off a digital ocean ubuntu 22.04 instance
+## 1. Spin off a digital ocean ubuntu 22.04 instance with docker engine and cli installed
 
-## 2. Setup docker scout cli
+https://docs.docker.com/engine/install/ubuntu/
+
+
+## 2. Setup docker scout cli on the newly created ubuntu instance (Manual installtion)
  
- ```
-curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install-scout.sh
-
-sh install-scout.sh
- ```
+```
+curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+```
 ## 3. Initital docker scout
 
 ```
