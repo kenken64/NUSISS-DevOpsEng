@@ -1,7 +1,7 @@
 # S-DOEA - Workshop 7 - End to end DevOps Engineering and Automation
 
 
-## Ansible
+## Ansible - Part 1
 
 
 The objective of this workshop is to automate the installation of Code-Server on a server
@@ -334,7 +334,7 @@ ansible-playbook playbook.yaml -i inventory.yaml
 https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 
-# Container scanning - Docker scout
+# Container scanning - Docker scout - Part 2
 
 ## 1. Spin off a digital ocean ubuntu 22.04 instance
 
