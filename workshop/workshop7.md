@@ -346,16 +346,11 @@ https://docs.docker.com/engine/install/ubuntu/
 ```
 curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
 ```
-## 3. Initital docker scout
+
+## 3. Clone down the scout vulnerable demo backend server
 
 ```
-docker scout init
-```
-
-## 4. Clone down the scout vulnerable demo backend server
-
-```
-git clone https://github.com/docker/scout-demo-server.git
+git clone https://github.com/docker/scout-demo-service.git
 ```
 
 ## 5. Change to the working directory
@@ -380,19 +375,17 @@ docker build --push -t <dockerhub username>/scout-demo:v1 .
 ## 8. Enroll your account in order to enable the docker scout features
 
 ```
-docker scout enroll <dockerhub username>
-```
-
-## 9. Enable your repo to be scan with docker scout
-
-```
-docker scout repo enable --org kenken64
+docker scout enroll <ORG NAME>
 ```
 
 ## 10. Scan docker image with known vulnerabilities, filter only check with a certain package
 
 ```
 docker scout cves --only-package express
+```
+
+```
+docker scout recommendations kenken64/scout-demo:v1
 ```
 
 ## 11. Edit the package.json file by upgradeing the express library to specific version
