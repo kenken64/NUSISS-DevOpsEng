@@ -336,7 +336,7 @@ https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 # Container scanning - Docker scout - Part 2
 
-## 1. Spin off a digital ocean ubuntu 22.04 instance with docker engine and cli installed
+## 1. Spin off a digital ocean ubuntu 24.04 (1vcpu 1GB RAM) instance with docker engine and cli installed
 
 https://docs.docker.com/engine/install/ubuntu/
 
@@ -347,13 +347,13 @@ https://docs.docker.com/engine/install/ubuntu/
 curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
 ```
 
-## 3. Clone down the scout vulnerable demo backend server
+## 3. Git clone down the scout vulnerable demo service server
 
 ```
 git clone https://github.com/docker/scout-demo-service.git
 ```
 
-## 5. Change to the working directory
+## 5. Change to the demo service working directory
 
 ```
 cd scout-demo-service
@@ -384,11 +384,20 @@ docker scout enroll <ORG NAME>
 docker scout cves --only-package express
 ```
 
+<br>
+<img style="float: center;" src="./screens/scout1.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/scout2.png">
+<br>
+
+
 ```
 docker scout recommendations kenken64/scout-demo:v1
 ```
 
-## 11. Edit the package.json file by upgradeing the express library to specific version
+## 11. Edit the package.json file by upgrading the express library to specific version
 
 ```
 "dependencies": {
