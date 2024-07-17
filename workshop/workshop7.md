@@ -360,7 +360,7 @@ cd scout-demo-service
 ```
 
 
-## 6. Login to the docker repository (Dockerhub), kindly use the dockerhub credential
+## 6. Login to the docker repository (Dockerhub), kindly use the dockerhub credential provided by the ISS lecturer.
 
 ```
 docker login
@@ -375,7 +375,7 @@ docker build --push -t <dockerhub username>/scout-demo:v1 .
 ## 8. Enroll your account in order to enable the docker scout features
 
 ```
-docker scout enroll <ORG NAME>
+docker scout enroll issdevsecops
 ```
 
 ## 10. Scan docker image with known vulnerabilities, filter only check with a certain package
@@ -397,66 +397,143 @@ docker scout cves --only-package express
 docker scout recommendations kenken64/scout-demo:v1
 ```
 
+<br>
+<img style="float: center;" src="./screens/scout3.png">
+<br>
+
+
 ## 11. Edit the package.json file by upgrading the express library to specific version
+
+
+```
+nano package.json
+```
 
 ```
 "dependencies": {
-    "express": "4.17.3"
+    "express": "4.19.2"
 }
 ```
 
-## 12. Reinstall the express library
+## 12. Install NPM before reinstall the express library
 
 ```
-npm install
+apt install npm
 ```
 
-## 13. Rebuild the docker image 
+```
+npm i
+```
+
+## 13. Rebuild the docker image and push to dockerhub
 
 ```
 docker build --push -t <dockerhub username>/scout-demo:v2 .
 
 ```
 
-## 14. Re-scan for known vulnerablities
+<br>
+<img style="float: center;" src="./screens/scout4.png">
+<br>
+
+
+## 14. Re-scan for known vulnerablities on the express library. The result of this scan will show all cves are fixed. Upload this screenshot as submission
+
 ```
 docker scout cves --only-package express
 ```
 
+<br>
+<img style="float: center;" src="./screens/scout5.png">
+<br>
+
+
 ## 15. Evaluate policy compliance within the containers
 
 ```
-docker scout config organization <dockerhub username>
+docker scout config organization issdevsecops
 ```
 
 ```
 docker scout quickview
 ```
+<br>
+<img style="float: center;" src="./screens/scout6.png">
+<br>
 
-## 16. This will show you critical compliance issues
+
+## 16. This will show you critical compliance issues, non default non root user found
 
 ## 17. Resolution to the above issues. Edit your Dockerfile
+
+```
+nano Dockerfile
+```
+
 ```
 CMD ["node", "/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-## 18. Push the new docker image to the repository 
+## 18. Before building a new and push the new docker image to the repository, we need to enable container store for docker engine
+
+```
+nano /etc/docker/daemon.json
+```
+
+## Paste the following content to the json file
+```
+{
+    "features": {
+        "containerd-snapshotter": true
+    }
+}
+```
+
+## Follow by a restart on the docker engine
+
+```
+systemctl restart docker
+```
 
 ```
 docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo:v3 .
 
 ```
 
-## 19. If the build did not push to the repository run the following command
+## 19. Review your docker scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder.
 
 ```
-docker push <dockerhub username>/scout-demo:v3
+docker scout quickview
 ```
 
-## 20. View your docker scout dashboard
+<br>
+<img style="float: center;" src="./screens/scout7.png">
+<br>
 
+<br>
+<img style="float: center;" src="./screens/scout8.png">
+<br>
 
+<br>
+<img style="float: center;" src="./screens/scout9.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/scout10.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/scout11.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/scout12.png">
+<br>
+
+<br>
+<img style="float: center;" src="./screens/scout13.png">
+<br>
 
 
 ## Design and proposed CI CD pipeline for StoolViriiDetect Pte Ltd COVID19 - Internet of Things Project.
