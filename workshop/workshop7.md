@@ -370,7 +370,7 @@ docker login
 6. Build the demo server docker image, replace the placeholder with your own dockerhub username
 
 ```
-docker build --push -t <dockerhub username>/scout-demo:v1 .
+docker build --push -t <dockerhub username>/scout-demo-<grp number>:v1 .
 ```
 
 7. Enroll your account in order to enable the docker scout features
@@ -395,7 +395,7 @@ docker scout cves --only-package express
 
 
 ```
-docker scout recommendations kenken64/scout-demo:v1
+docker scout recommendations kenken64/scout-demo-<grp number>:v1
 ```
 
 <br>
@@ -429,7 +429,7 @@ npm i
 11. Rebuild the docker image and push to dockerhub
 
 ```
-docker build --push -t <dockerhub username>/scout-demo:v2 .
+docker build --push -t <dockerhub username>/scout-demo-<grp number>:v2 .
 
 ```
 
@@ -498,7 +498,7 @@ systemctl restart docker
 ```
 
 ```
-docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo:v3 .
+docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo-<grp number>:v3 .
 
 ```
 
