@@ -336,49 +336,50 @@ https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 # Container scanning - Docker scout - Part 2
 
-## 1. Spin off a digital ocean ubuntu 24.04 (1vcpu 1GB RAM) instance with docker engine and cli installed
+
+1. Spin off a digital ocean ubuntu 24.04 (1vcpu 1GB RAM) instance with docker engine and cli installed
 
 https://docs.docker.com/engine/install/ubuntu/
 
 
-## 2. Setup docker scout cli on the newly created ubuntu instance (Manual installtion)
+2. Setup docker scout cli on the newly created ubuntu instance (Manual installtion)
  
 ```
 curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
 ```
 
-## 3. Git clone down the scout vulnerable demo service server
+3. Git clone down the scout vulnerable demo service server
 
 ```
 git clone https://github.com/docker/scout-demo-service.git
 ```
 
-## 5. Change to the demo service working directory
+4. Change to the demo service working directory
 
 ```
 cd scout-demo-service
 ```
 
 
-## 6. Login to the docker repository (Dockerhub), kindly use the dockerhub credential provided by the ISS lecturer.
+5. Login to the docker repository (Dockerhub), kindly use the dockerhub credential provided by the ISS lecturer.
 
 ```
 docker login
 ```
 
-## 7. Build the demo server docker image, replace the placeholder with your own dockerhub username
+6. Build the demo server docker image, replace the placeholder with your own dockerhub username
 
 ```
 docker build --push -t <dockerhub username>/scout-demo:v1 .
 ```
 
-## 8. Enroll your account in order to enable the docker scout features
+7. Enroll your account in order to enable the docker scout features
 
 ```
 docker scout enroll issdevsecops
 ```
 
-## 10. Scan docker image with known vulnerabilities, filter only check with a certain package
+8. Scan docker image with known vulnerabilities, filter only check with a certain package
 
 ```
 docker scout cves --only-package express
@@ -402,7 +403,7 @@ docker scout recommendations kenken64/scout-demo:v1
 <br>
 
 
-## 11. Edit the package.json file by upgrading the express library to specific version
+9. Edit the package.json file by upgrading the express library to specific version
 
 
 ```
@@ -415,7 +416,7 @@ nano package.json
 }
 ```
 
-## 12. Install NPM before reinstall the express library
+10. Install NPM before reinstall the express library
 
 ```
 apt install npm
@@ -425,7 +426,7 @@ apt install npm
 npm i
 ```
 
-## 13. Rebuild the docker image and push to dockerhub
+11. Rebuild the docker image and push to dockerhub
 
 ```
 docker build --push -t <dockerhub username>/scout-demo:v2 .
@@ -437,7 +438,7 @@ docker build --push -t <dockerhub username>/scout-demo:v2 .
 <br>
 
 
-## 14. Re-scan for known vulnerablities on the express library. The result of this scan will show all cves are fixed. Upload this screenshot as submission
+12. Re-scan for known vulnerablities on the express library. The result of this scan will show all cves are fixed. Upload this screenshot as submission
 
 ```
 docker scout cves --only-package express
@@ -448,7 +449,7 @@ docker scout cves --only-package express
 <br>
 
 
-## 15. Evaluate policy compliance within the containers
+13. Evaluate policy compliance within the containers
 
 ```
 docker scout config organization issdevsecops
@@ -462,9 +463,9 @@ docker scout quickview
 <br>
 
 
-## 16. This will show you critical compliance issues, non default non root user found
+14. This will show you critical compliance issues, non default non root user found
 
-## 17. Resolution to the above issues. Edit your Dockerfile
+15. Resolution to the above issues. Edit your Dockerfile
 
 ```
 nano Dockerfile
@@ -475,13 +476,13 @@ CMD ["node", "/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-## 18. Before building a new and push the new docker image to the repository, we need to enable container store for docker engine
+16. Before building a new and push the new docker image to the repository, we need to enable container store for docker engine
 
 ```
 nano /etc/docker/daemon.json
 ```
 
-## Paste the following content to the json file
+17. Paste the following content to the json file
 ```
 {
     "features": {
@@ -490,7 +491,7 @@ nano /etc/docker/daemon.json
 }
 ```
 
-## Follow by a restart on the docker engine
+18. Follow by a restart on the docker engine
 
 ```
 systemctl restart docker
@@ -501,7 +502,7 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 
 ```
 
-## 19. Review your docker scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder.
+19. Review your docker scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder.
 
 ```
 docker scout quickview
