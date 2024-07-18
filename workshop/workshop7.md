@@ -329,6 +329,8 @@ terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa
 terraform apply -auto-approve -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "codeserver_password=password123456"
 ```
 
+Get the playbook.yml from the solution github repository 
+
 ```
 ansible-playbook playbook.yaml -i inventory.yaml
 ```
@@ -349,6 +351,7 @@ https://docs.docker.com/engine/install/ubuntu/
 2. Setup docker scout cli on the newly created ubuntu instance (Manual installtion)
  
 ```
+mkdir ~/.docker
 ```
 
 ```
