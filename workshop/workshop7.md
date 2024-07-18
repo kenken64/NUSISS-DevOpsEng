@@ -318,6 +318,10 @@ output codeserver_ip {
 ```
 
 ```
+terraform init
+```
+
+```
 terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "codeserver_password=password123456"
 ```
 
