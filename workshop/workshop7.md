@@ -349,6 +349,9 @@ https://docs.docker.com/engine/install/ubuntu/
 2. Setup docker scout cli on the newly created ubuntu instance (Manual installtion)
  
 ```
+```
+
+```
 curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
 ```
 
