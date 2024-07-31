@@ -501,7 +501,7 @@ nano /etc/docker/daemon.json
 }
 ```
 
-18. Follow by a restart on the docker engine
+18. Follow by a restart on the docker engine, follow by a rebuild of the image to v3
 
 ```
 systemctl restart docker
@@ -512,7 +512,7 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 
 ```
 
-19. Review your docker scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder.
+19. Please review your Docker Scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder, ensuring that all previously mentioned issues have been fully resolved. Refer to the screenshots below for guidance.
 
 ```
 docker scout quickview
