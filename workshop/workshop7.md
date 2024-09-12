@@ -340,7 +340,7 @@ ansible-playbook playbook.yaml -i inventory.yaml
 https://github.com/kenken64/aipc-jun2023/tree/main/workshop02
 
 
-# Container scanning - Docker scout - Part 2
+# Container scanning - Docker scout - Part 2 (Optional)
 
 
 1. Spin off a digital ocean ubuntu 24.04 (1vcpu 1GB RAM) instance with docker engine and cli installed
