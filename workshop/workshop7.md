@@ -516,6 +516,45 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 ```
 docker scout quickview
 ```
+20. Edit the Dockerfile
+
+```
+FROM alpine:latest
+
+ENV BLUEBIRD_WARNINGS=0 \
+  NODE_ENV=production \
+  NODE_NO_WARNINGS=1 \
+  NPM_CONFIG_LOGLEVEL=warn \
+  SUPPRESS_NO_CONFIG_WARNING=true
+
+RUN apk add --no-cache \
+  nodejs
+RUN apk update && apk upgrade
+COPY package.json ./
+
+RUN  apk add --no-cache npm \
+ && npm i --no-optional \
+ && npm cache clean --force \
+ && apk del npm
+ 
+COPY . /app
+
+CMD ["node","/app/app.js"]
+
+EXPOSE 3000
+USER appuser
+```
+21. Run the following to fix the remaining vulnerabilities
+
+```
+npm audit fix --force
+```
+
+22. Publish the final docker image to the hub. Make sure there isnt any remaining vulnerabilities
+
+```
+docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo-<grp number>:v4 .
+```
 
 <br>
 <img style="float: center;" src="./screens/scout7.png">
