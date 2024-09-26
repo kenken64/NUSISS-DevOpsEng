@@ -544,13 +544,13 @@ CMD ["node","/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-21. Run the following to fix the remaining vulnerabilities
+21. Run the following to fix the remaining vulnerability
 
 ```
 npm audit fix --force
 ```
 
-22. Publish the final docker image to the hub. Make sure there isnt any remaining vulnerabilities
+22. Publish the final docker image to the hub. Make sure there isnt any remaining vulnerability
 
 ```
 docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo-<grp number>:v4 .
