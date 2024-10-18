@@ -560,6 +560,13 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 <img style="float: center;" src="./screens/scout7.png">
 <br>
 
+23. Enable the scout scanning , navigate the repository seetings
+
+<br>
+<img style="float: center;" src="./screens/scout14.png">
+<br>
+
+
 <br>
 <img style="float: center;" src="./screens/scout8.png">
 <br>
