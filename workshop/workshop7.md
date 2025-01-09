@@ -370,7 +370,7 @@ cd scout-demo-service
 ```
 
 
-5. Login to the docker repository (Dockerhub), kindly use the dockerhub credential provided by the ISS lecturer.
+5. Login to the docker repository (Dockerhub), kindly use the dockerhub credential.
 
 ```
 docker login
