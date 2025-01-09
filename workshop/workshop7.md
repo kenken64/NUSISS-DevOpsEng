@@ -382,13 +382,8 @@ docker login
 docker build --push -t <dockerhub username>/scout-demo-<grp number>:v1 .
 ```
 
-7. Enroll your account in order to enable the docker scout features
 
-```
-docker scout enroll issdevsecops
-```
-
-8. Scan docker image with known vulnerabilities, filter only check with a certain package
+7. Scan docker image with known vulnerabilities, filter only check with a certain package
 
 ```
 docker scout cves --only-package express
@@ -412,7 +407,7 @@ docker scout recommendations kenken64/scout-demo-<grp number>:v1
 <br>
 
 
-9. Edit the package.json file by upgrading the express library to specific version
+8. Edit the package.json file by upgrading the express library to specific version
 
 
 ```
@@ -425,7 +420,7 @@ nano package.json
 }
 ```
 
-10. Install NPM before reinstall the express library
+9. Install NPM before reinstall the express library
 
 ```
 apt install npm
@@ -435,7 +430,7 @@ apt install npm
 npm i
 ```
 
-11. Rebuild the docker image and push to dockerhub
+10. Rebuild the docker image and push to dockerhub
 
 ```
 docker build --push -t <dockerhub username>/scout-demo-<grp number>:v2 .
@@ -447,7 +442,7 @@ docker build --push -t <dockerhub username>/scout-demo-<grp number>:v2 .
 <br>
 
 
-12. Re-scan for known vulnerablities on the express library. The result of this scan will show all cves are fixed. Upload this screenshot as submission
+11. Re-scan for known vulnerablities on the express library. The result of this scan will show all cves are fixed. Upload this screenshot as submission
 
 ```
 docker scout cves --only-package express
@@ -458,11 +453,8 @@ docker scout cves --only-package express
 <br>
 
 
-13. Evaluate policy compliance within the containers
+12. Evaluate policy compliance within the containers
 
-```
-docker scout config organization issdevsecops
-```
 
 ```
 docker scout quickview
@@ -472,9 +464,9 @@ docker scout quickview
 <br>
 
 
-14. This will show you critical compliance issues, non default non root user found
+13. This will show you critical compliance issues, non default non root user found
 
-15. Resolution to the above issues. Edit your Dockerfile
+14. Resolution to the above issues. Edit your Dockerfile
 
 ```
 nano Dockerfile
@@ -485,13 +477,13 @@ CMD ["node", "/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-16. Before building a new and push the new docker image to the repository, we need to enable container store for docker engine
+15. Before building a new and push the new docker image to the repository, we need to enable container store for docker engine
 
 ```
 nano /etc/docker/daemon.json
 ```
 
-17. Paste the following content to the json file
+16. Paste the following content to the json file
 ```
 {
     "features": {
@@ -500,7 +492,7 @@ nano /etc/docker/daemon.json
 }
 ```
 
-18. Follow by a restart on the docker engine, follow by a rebuild of the image to v3
+17. Follow by a restart on the docker engine, follow by a rebuild of the image to v3
 
 ```
 systemctl restart docker
@@ -511,12 +503,12 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 
 ```
 
-19. Please review your Docker Scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder, ensuring that all previously mentioned issues have been fully resolved. Refer to the screenshots below for guidance.
+18. Please review your Docker Scout dashboard or the compliance quickview. Upload your final Dockerfile to the submission folder, ensuring that all previously mentioned issues have been fully resolved. Refer to the screenshots below for guidance.
 
 ```
 docker scout quickview
 ```
-20. Edit the Dockerfile
+19. Edit the Dockerfile
 
 ```
 FROM alpine:latest
@@ -544,13 +536,13 @@ CMD ["node","/app/app.js"]
 EXPOSE 3000
 USER appuser
 ```
-21. Run the following to fix the remaining vulnerability
+20. Run the following to fix the remaining vulnerability
 
 ```
 npm audit fix --force
 ```
 
-22. Publish the final docker image to the hub. Make sure there isnt any remaining vulnerability
+21. Publish the final docker image to the hub. Make sure there isnt any remaining vulnerability
 
 ```
 docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-demo-<grp number>:v4 .
@@ -560,7 +552,7 @@ docker build --provenance=true --sbom=true --push -t <dockerhub username>/scout-
 <img style="float: center;" src="./screens/scout7.png">
 <br>
 
-23. Enable the scout scanning , navigate the repository seetings
+22. Enable the scout scanning , navigate the repository seetings
 
 <br>
 <img style="float: center;" src="./screens/scout14.png">
