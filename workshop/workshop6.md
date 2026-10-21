@@ -24,7 +24,7 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
  $ git checkout githubcicd
 ```
 
-3. Generate the personal access token from Github platform, select the repo , workflow scope and save the token to somewhere on your editor.
+3. Generate a personal access token (classic) on GitHub with the `repo` and `workflow` scopes. The token must belong to an account with write access to your fork. Copy it for the repository secret in Step 4; do not commit the token to the repository.
 
 
    <img src="./screens/github_token.png" >
@@ -34,7 +34,7 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
    
 4. Navigate to the bitcoin app repository on the Github platform
 
-- Configure a WORKSHOP6_GITHUB_TOKEN secret environment variable for the Bitcoin app repo. The value shown on the screenshots is generated from the Github personal token generation page (Step 3). Remember to Click on the Add secret button.
+- Under **Settings > Secrets and variables > Actions > New repository secret**, create a secret named `WORKSHOP6_GITHUB_TOKEN` with the token from Step 3. Click **Add secret**.
   <img src="./screens/travis1.png" >
   <img src="./screens/travis2.png" >
   <img src="./screens/travis3.png" >
@@ -51,16 +51,19 @@ $ git clone https://github.com/<replace this with your github userid>/bitcoin-or
 .github/workflows/build.yml
 ```
 
-7. Add the following codes into the build.yml file (Cloned githubrepo ). Do not replace or remove the value `$WORKSHOP6_GITHUB_TOKEN` and `GITHUB_TOKEN`. Please take note yaml file are case sensitive and indentation sensitive.
+7. Add the following code to `build.yml` in your cloned repository. Keep `${{ secrets.WORKSHOP6_GITHUB_TOKEN }}` and the `GITHUB_TOKEN` environment variable name exactly as shown; GitHub Actions reads the token from the repository secret. YAML is case sensitive and indentation sensitive.
+
+The checkout step must also use `WORKSHOP6_GITHUB_TOKEN`. Checkout persists its credentials for later Git commands, including the changelog action's commit/tag push and the deployment push. Setting the token only on the changelog and release steps leaves checkout using the default `GITHUB_TOKEN`, which can cause `Permission denied to github-actions[bot]` and HTTP 403 errors when pushing. See the [checkout authentication documentation](https://github.com/actions/checkout/tree/v2#usage).
 
 Features:
 
 - Install all relevant dependencies
 - Perform a build on the frontend
-- Execute all test cases for the frotnend app
+- Lint the frontend app (the test step is included but commented out)
+- Create a changelog-based release when there are releasable changes
 - Deploy to the cloud provider
 
-```
+```yaml
 name: Bitcoin order App
 on:
   push:
@@ -76,6 +79,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
       - uses: browser-actions/setup-chrome@latest
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
